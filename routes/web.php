@@ -6,6 +6,7 @@ use App\Http\Controllers\ReportController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UtilitiesController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,9 +39,14 @@ Route::get('/utilities/form', function () {
 
 Route::get('/process-payment', [PaymentController::class, 'index']);
 
-Route::get('/users', [UserController::class, 'index']);
-Route::get('/users/form', function () {
-    return view('users.form');
+Route::group(['prefix' => 'users', 'namespace' => 'User'], function () {
+    Route::get('/', [UserController::class, 'index']);
+    Route::get('/list', [UserController::class, 'list']);
+    Route::post('/', [UserController::class, 'store']);
+    Route::delete('/{user}/user', [UserController::class, 'destroy']);
+    Route::get('/{user}/edit', [UserController::class, 'show']);
+    Route::get('/form', [UserController::class, 'create']);
+    Route::put('/{user}', [UserController::class, 'update']);
 });
 
 Route::get('/reports', [ReportController::class, 'index']);;

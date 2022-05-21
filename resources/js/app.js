@@ -1,7 +1,15 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+import store from "./store/store"
 import { SweetModal, SweetModalTab } from 'sweet-modal-vue'
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/src/sweetalert2.scss'
+
+const options = {
+    confirmButtonColor: '#2563EB',
+    cancelButtonColor: '#EF4444',
+};
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('dashboard', require('./components/dashboard/index.vue').default);
@@ -23,6 +31,9 @@ Vue.component('report', require('./components/reports/index.vue').default);
 Vue.component('sweet-modal', SweetModal);
 Vue.component('sweet-modal-tab', SweetModalTab);
 
+Vue.use(VueSweetalert2, options)
+
 const app = new Vue({
     el: '#app',
+    store
 });
