@@ -52,7 +52,8 @@
             </nav>
         </div>
         <div class="flex-shrink-0 flex border-t border-indigo-800 p-4">
-            <a class="bg-red-500 hover:bg-red-700 group w-full text-center text-white flex items-center px-2 py-2 text-sm font-medium rounded-md">
+            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();" class="bg-red-500 hover:bg-red-700 group w-full text-center text-white flex items-center px-2 py-2 text-sm font-medium rounded-md">
                 <!-- Heroicon name: outline/chart-bar -->
                 <p class="flex justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -61,6 +62,10 @@
                     <span class="grid content-center">Logout</span>
                 </p>
             </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
         </div>
     </div>  
 </aside>
