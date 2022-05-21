@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UtilitiesController;
@@ -38,6 +39,5 @@ Route::get('/utilities/form', function () {
 Route::get('/process-payment', [PaymentController::class, 'index']);
 
 Route::get('/users', [UserController::class, 'index']);
-// Route::get('/utilities/form', function () {
-//     return view('utility.form');
-// });
+
+Route::get('/reports', [ReportController::class, 'index']);;

@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <student-view />
+    <report />
 @endsection
