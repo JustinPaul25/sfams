@@ -39,5 +39,8 @@ Route::get('/utilities/form', function () {
 Route::get('/process-payment', [PaymentController::class, 'index']);
 
 Route::get('/users', [UserController::class, 'index']);
+Route::get('/users/form', function () {
+    return view('users.form');
+});
 
 Route::get('/reports', [ReportController::class, 'index']);;

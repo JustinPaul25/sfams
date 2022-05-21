@@ -606,6 +606,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-8 {
   margin-left: 2rem;
 }
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
 .block {
   display: block;
 }
@@ -713,6 +716,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .max-w-4xl {
   max-width: 56rem;
+}
+.max-w-prose {
+  max-width: 65ch;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -1171,8 +1177,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .leading-4 {
   line-height: 1rem;
 }
+.leading-8 {
+  line-height: 2rem;
+}
 .tracking-wider {
   letter-spacing: 0.05em;
+}
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+.tracking-tight {
+  letter-spacing: -0.025em;
 }
 .text-gray-200 {
   --tw-text-opacity: 1;

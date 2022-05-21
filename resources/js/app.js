@@ -16,6 +16,7 @@ Vue.component('utility-form', require('./components/utilities/form.vue').default
 Vue.component('payment', require('./components/payment/index.vue').default);
 
 Vue.component('user', require('./components/users/index.vue').default);
+Vue.component('user-form', require('./components/users/form.vue').default);
 
 Vue.component('report', require('./components/reports/index.vue').default);
 
