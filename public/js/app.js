@@ -32359,7 +32359,6 @@ var render = function () {
                 _c("div", { staticClass: "flex-1 min-w-0" }, [
                   _c("div", { staticClass: "flex items-center" }, [
                     _c("img", {
-                      staticClass: "hidden h-16 w-16 rounded-full sm:block",
                       attrs: {
                         src: "https://unsplash.com/photos/dikSCKC9qQE",
                         alt: "",
@@ -32863,7 +32862,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "flex items-center" }, [
       _c("img", {
-        staticClass: "h-16 w-16 rounded-full sm:hidden",
         attrs: { src: "https://unsplash.com/photos/dikSCKC9qQE", alt: "" },
       }),
       _vm._v(" "),
