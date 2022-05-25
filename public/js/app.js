@@ -32359,8 +32359,9 @@ var render = function () {
                 _c("div", { staticClass: "flex-1 min-w-0" }, [
                   _c("div", { staticClass: "flex items-center" }, [
                     _c("img", {
+                      staticClass: "hidden h-16 w-16 rounded-full sm:block",
                       attrs: {
-                        src: "https://unsplash.com/photos/dikSCKC9qQE",
+                        src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.6&w=256&h=256&q=80",
                         alt: "",
                       },
                     }),
@@ -32862,7 +32863,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "flex items-center" }, [
       _c("img", {
-        attrs: { src: "https://unsplash.com/photos/dikSCKC9qQE", alt: "" },
+        staticClass: "h-16 w-16 rounded-full sm:hidden",
+        attrs: {
+          src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.6&w=256&h=256&q=80",
+          alt: "",
+        },
       }),
       _vm._v(" "),
       _c(
