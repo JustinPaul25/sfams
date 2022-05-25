@@ -32360,7 +32360,10 @@ var render = function () {
                   _c("div", { staticClass: "flex items-center" }, [
                     _c("img", {
                       staticClass: "hidden h-16 w-16 rounded-full sm:block",
-                      attrs: { src: "download.jpg", alt: "" },
+                      attrs: {
+                        src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.6&w=256&h=256&q=80",
+                        alt: "",
+                      },
                     }),
                     _vm._v(" "),
                     _c("div", [
@@ -32861,7 +32864,10 @@ var staticRenderFns = [
     return _c("div", { staticClass: "flex items-center" }, [
       _c("img", {
         staticClass: "h-16 w-16 rounded-full sm:hidden",
-        attrs: { src: "download.jpg", alt: "" },
+        attrs: {
+          src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.6&w=256&h=256&q=80",
+          alt: "",
+        },
       }),
       _vm._v(" "),
       _c(
