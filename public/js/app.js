@@ -32367,31 +32367,7 @@ var render = function () {
                     }),
                     _vm._v(" "),
                     _c("div", [
-                      _c(
-                        "div",
-                        { staticClass: "flex items-center" },
-                        [
-                          _c("img", {
-                            staticClass: "h-16 w-16 rounded-full sm:hidden",
-                            attrs: {
-                              src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.6&w=256&h=256&q=80",
-                              alt: "",
-                            },
-                          }),
-                          _vm._v(" "),
-                          _c("b-img", { attrs: { src: "download.jpg" } }),
-                          _vm._v(" "),
-                          _c(
-                            "h1",
-                            {
-                              staticClass:
-                                "ml-3 text-2xl font-bold leading-7 text-gray-900 sm:leading-9 sm:truncate",
-                            },
-                            [_vm._v("Dominique ")]
-                          ),
-                        ],
-                        1
-                      ),
+                      _vm._m(0),
                       _vm._v(" "),
                       _c(
                         "dl",
@@ -32595,11 +32571,11 @@ var render = function () {
                         ),
                       ]),
                       _vm._v(" "),
-                      _vm._m(0),
+                      _vm._m(1),
                     ]),
                   ]),
                   _vm._v(" "),
-                  _vm._m(1),
+                  _vm._m(2),
                 ]
               ),
               _vm._v(" "),
@@ -32643,11 +32619,11 @@ var render = function () {
                         ),
                       ]),
                       _vm._v(" "),
-                      _vm._m(2),
+                      _vm._m(3),
                     ]),
                   ]),
                   _vm._v(" "),
-                  _vm._m(3),
+                  _vm._m(4),
                 ]
               ),
               _vm._v(" "),
@@ -32685,11 +32661,11 @@ var render = function () {
                         ),
                       ]),
                       _vm._v(" "),
-                      _vm._m(4),
+                      _vm._m(5),
                     ]),
                   ]),
                   _vm._v(" "),
-                  _vm._m(5),
+                  _vm._m(6),
                 ]
               ),
             ]
@@ -32750,7 +32726,7 @@ var render = function () {
                             ]
                           ),
                           _vm._v(" "),
-                          _vm._m(6),
+                          _vm._m(7),
                         ]
                       ),
                       _vm._v(" "),
@@ -32782,7 +32758,7 @@ var render = function () {
             ]
           ),
           _vm._v(" "),
-          _vm._m(7),
+          _vm._m(8),
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "hidden sm:block" }, [
@@ -32799,7 +32775,7 @@ var render = function () {
                     "table",
                     { staticClass: "min-w-full divide-y divide-gray-200" },
                     [
-                      _vm._m(8),
+                      _vm._m(9),
                       _vm._v(" "),
                       _c(
                         "tbody",
@@ -32859,18 +32835,18 @@ var render = function () {
                               ]
                             ),
                             _vm._v(" "),
-                            _vm._m(9),
-                            _vm._v(" "),
                             _vm._m(10),
                             _vm._v(" "),
                             _vm._m(11),
+                            _vm._v(" "),
+                            _vm._m(12),
                           ]),
                         ]
                       ),
                     ]
                   ),
                   _vm._v(" "),
-                  _vm._m(12),
+                  _vm._m(13),
                 ]
               ),
             ]),
@@ -32881,6 +32857,29 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex items-center" }, [
+      _c("img", {
+        staticClass: "h-16 w-16 rounded-full sm:hidden",
+        attrs: {
+          src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.6&w=256&h=256&q=80",
+          alt: "",
+        },
+      }),
+      _vm._v(" "),
+      _c(
+        "h1",
+        {
+          staticClass:
+            "ml-3 text-2xl font-bold leading-7 text-gray-900 sm:leading-9 sm:truncate",
+        },
+        [_vm._v("Dominique ")]
+      ),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
