@@ -8,6 +8,41 @@
                     <p class="mt-1 max-w-2xl text-sm text-gray-500">Please make sure to fill the required fields.</p>
                 </div>
 
+                <nav aria-label="Progress" class="mt-2 p-2 rounded bg-white">
+                    <ol role="list" class="space-y-4 md:flex md:space-y-0 md:space-x-8">
+                        <li class="md:flex-1">
+                        <!-- Completed Step -->
+                        <a href="#" class="group pl-4 py-2 flex flex-col border-l-4 border-blue-600 hover:border-blue-800 md:pl-0 md:pt-4 md:pb-0 md:border-l-0 md:border-t-4">
+                            <span class="text-xs text-blue-600 font-semibold tracking-wide uppercase group-hover:text-blue-800">Step 1</span>
+                            <span class="text-sm font-medium">Personal details</span>
+                        </a>
+                        </li>
+
+                        <li class="md:flex-1">
+                        <!-- Current Step -->
+                        <a href="#" class="pl-4 py-2 flex flex-col border-l-4 border-blue-600 md:pl-0 md:pt-4 md:pb-0 md:border-l-0 md:border-t-4" aria-current="step">
+                            <span class="text-xs text-blue-600 font-semibold tracking-wide uppercase">Step 2</span>
+                            <span class="text-sm font-medium">School Last Attended</span>
+                        </a>
+                        </li>
+
+                        <li class="md:flex-1">
+                        <!-- Upcoming Step -->
+                        <a href="#" class="group pl-4 py-2 flex flex-col border-l-4 border-gray-200 hover:border-gray-300 md:pl-0 md:pt-4 md:pb-0 md:border-l-0 md:border-t-4">
+                            <span class="text-xs text-gray-500 font-semibold tracking-wide uppercase group-hover:text-gray-700">Step 3</span>
+                            <span class="text-sm font-medium">Admission Officer</span>
+                        </a>
+                        </li>
+
+                        <li class="md:flex-1">
+                        <!-- Upcoming Step -->
+                        <a href="#" class="group pl-4 py-2 flex flex-col border-l-4 border-gray-200 hover:border-gray-300 md:pl-0 md:pt-4 md:pb-0 md:border-l-0 md:border-t-4">
+                            <span class="text-xs text-gray-500 font-semibold tracking-wide uppercase group-hover:text-gray-700">Step 4</span>
+                            <span class="text-sm font-medium">Preview</span>
+                        </a>
+                        </li>
+                    </ol>
+                </nav>
                 <div class="mt-6 sm:mt-5">
                     <h3 class="text-lg leading-6 font-medium text-blue-700">Student Personal Information</h3>
                 </div>
@@ -168,3 +203,19 @@
         </form>
     </div>
 </template>
+
+<script>
+
+export default {
+    data() {
+        return {
+            step: 1
+        };
+    },
+    methods: {
+        nextStep() {
+            this.step += 1
+        }
+    }
+}
+</script>
