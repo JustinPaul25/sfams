@@ -32611,7 +32611,7 @@ var render = function () {
                     _c("img", {
                       staticClass: "hidden h-16 w-16 rounded-full sm:block",
                       attrs: {
-                        src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.6&w=256&h=256&q=80",
+                        src: "https://web.facebook.com/pbccmimainschool/photos/a.1920236288115137/3184922808313139/",
                         alt: "",
                       },
                     }),
@@ -33115,7 +33115,7 @@ var staticRenderFns = [
       _c("img", {
         staticClass: "h-16 w-16 rounded-full sm:hidden",
         attrs: {
-          src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.6&w=256&h=256&q=80",
+          src: "https://web.facebook.com/pbccmimainschool/photos/a.1920236288115137/3184922808313139/",
           alt: "",
         },
       }),
