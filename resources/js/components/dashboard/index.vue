@@ -53,7 +53,7 @@
                                     <dl>
                                     <dt class="text-sm font-medium text-gray-500 truncate">Total Amount Paid</dt>
                                     <dd>
-                                        <div class="text-lg font-medium text-gray-900">$30,659.45</div>
+                                        <div class="text-lg font-medium text-gray-900">₱3,659.45</div>
                                     </dd>
                                     </dl>
                                 </div>
