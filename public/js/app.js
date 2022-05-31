@@ -32608,6 +32608,8 @@ var render = function () {
               [
                 _c("div", { staticClass: "flex-1 min-w-0" }, [
                   _c("div", { staticClass: "flex items-center" }, [
+                    _c("img", { attrs: { src: "download.jpg" } }),
+                    _vm._v(" "),
                     _c("img", {
                       staticClass: "hidden h-16 w-16 rounded-full sm:block",
                       attrs: { src: "download.jpg", alt: "" },
