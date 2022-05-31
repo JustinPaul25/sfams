@@ -33077,7 +33077,7 @@ var render = function () {
                                           staticClass:
                                             "text-gray-500 truncate group-hover:text-gray-900",
                                         },
-                                        [_vm._v("Payment to Molly Sanders")]
+                                        [_vm._v("Payment to Ira Juaton")]
                                       ),
                                     ]
                                   ),
@@ -33181,7 +33181,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("dd", [
           _c("div", { staticClass: "text-lg font-medium text-gray-900" }, [
-            _vm._v("$30,659.45"),
+            _vm._v("₱1,000.45"),
           ]),
         ]),
       ]),
@@ -33218,7 +33218,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("dd", [
           _c("div", { staticClass: "text-lg font-medium text-gray-900" }, [
-            _vm._v("$30,659.45"),
+            _vm._v("₱3,000.45"),
           ]),
         ]),
       ]),
@@ -33250,14 +33250,14 @@ var staticRenderFns = [
       { staticClass: "flex flex-col text-gray-500 text-sm truncate" },
       [
         _c("span", { staticClass: "truncate" }, [
-          _vm._v("Payment from Molly Sanders"),
+          _vm._v("Payment from Ira Juaton"),
         ]),
         _vm._v(" "),
         _c("span", [
           _c("span", { staticClass: "text-gray-900 font-medium" }, [
-            _vm._v("$20,000"),
+            _vm._v("₱2,000"),
           ]),
-          _vm._v(" USD"),
+          _vm._v("PESO"),
         ]),
         _vm._v(" "),
         _c("time", { attrs: { datetime: "2020-07-11" } }, [
@@ -33362,7 +33362,7 @@ var staticRenderFns = [
       },
       [
         _c("span", { staticClass: "text-gray-900 font-medium" }, [
-          _vm._v("$20,000 "),
+          _vm._v("₱2,000 "),
         ]),
         _vm._v("\n                            USD\n                        "),
       ]
