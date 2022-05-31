@@ -8,6 +8,7 @@
                     <div class="flex-1 min-w-0">
                     <!-- Profile -->
                     <div class="flex items-center">
+                        <img src="download.jpg">
                         <img class="hidden h-16 w-16 rounded-full sm:block" src="download.jpg" alt="">
                         <div>
                         <div class="flex items-center">
