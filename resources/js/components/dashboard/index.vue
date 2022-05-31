@@ -77,7 +77,7 @@
                                     <dl>
                                     <dt class="text-sm font-medium text-gray-500 truncate">Total Unpaid Amount</dt>
                                     <dd>
-                                        <div class="text-lg font-medium text-gray-900">$30,659.45</div>
+                                        <div class="text-lg font-medium text-gray-900">₱1,000.45</div>
                                     </dd>
                                     </dl>
                                 </div>
@@ -103,7 +103,7 @@
                                     <dl>
                                     <dt class="text-sm font-medium text-gray-500 truncate">Total Amount Paid</dt>
                                     <dd>
-                                        <div class="text-lg font-medium text-gray-900">$30,659.45</div>
+                                        <div class="text-lg font-medium text-gray-900">₱3,000.45</div>
                                     </dd>
                                     </dl>
                                 </div>
@@ -133,8 +133,8 @@
                             <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
                             </svg>
                             <span class="flex flex-col text-gray-500 text-sm truncate">
-                            <span class="truncate">Payment from Molly Sanders</span>
-                            <span><span class="text-gray-900 font-medium">$20,000</span> USD</span>
+                            <span class="truncate">Payment from Ira Juaton</span>
+                            <span><span class="text-gray-900 font-medium">₱2,000</span>PESO</span>
                             <time datetime="2020-07-11">July 11, 2020</time>
                             </span>
                         </span>
@@ -180,12 +180,12 @@
                                     <svg class="flex-shrink-0 h-5 w-5 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                     <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
                                     </svg>
-                                    <p class="text-gray-500 truncate group-hover:text-gray-900">Payment to Molly Sanders</p>
+                                    <p class="text-gray-500 truncate group-hover:text-gray-900">Payment to Ira Juaton</p>
                                 </a>
                                 </div>
                             </td>
                             <td class="px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500">
-                                <span class="text-gray-900 font-medium">$20,000 </span>
+                                <span class="text-gray-900 font-medium">₱2,000 </span>
                                 USD
                             </td>
                             <td class="hidden px-6 py-4 whitespace-nowrap text-sm text-gray-500 md:block">

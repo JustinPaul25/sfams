@@ -33126,7 +33126,7 @@ var staticRenderFns = [
           staticClass:
             "ml-3 text-2xl font-bold leading-7 text-gray-900 sm:leading-9 sm:truncate",
         },
-        [_vm._v("Dominique ")]
+        [_vm._v("PBCCMI")]
       ),
     ])
   },
@@ -33144,7 +33144,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("dd", [
           _c("div", { staticClass: "text-lg font-medium text-gray-900" }, [
-            _vm._v("$30,659.45"),
+            _vm._v("₱3,000.45"),
           ]),
         ]),
       ]),
