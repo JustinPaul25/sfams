@@ -33603,7 +33603,7 @@ var render = function () {
                                         staticClass:
                                           "whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-bold text-blue-700 sm:pl-6 lg:pl-8",
                                       },
-                                      [_vm._v("Lindsay Walton")]
+                                      [_vm._v("Ira Juaton")]
                                     ),
                                     _vm._v(" "),
                                     _c(
@@ -33612,7 +33612,7 @@ var render = function () {
                                         staticClass:
                                           "whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden sm:table-cell",
                                       },
-                                      [_vm._v("$3,509.00")]
+                                      [_vm._v("₱3,509.00")]
                                     ),
                                     _vm._v(" "),
                                     _c(
@@ -33621,7 +33621,7 @@ var render = function () {
                                         staticClass:
                                           "whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden lg:table-cell",
                                       },
-                                      [_vm._v("$3,509.00")]
+                                      [_vm._v("₱3,509.00")]
                                     ),
                                     _vm._v(" "),
                                     _c(
@@ -33691,7 +33691,7 @@ var render = function () {
                                         staticClass:
                                           "whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-bold text-blue-700 sm:pl-6 lg:pl-8",
                                       },
-                                      [_vm._v("Lindsay Walton")]
+                                      [_vm._v("Ira Juaton")]
                                     ),
                                     _vm._v(" "),
                                     _c(
@@ -33700,7 +33700,7 @@ var render = function () {
                                         staticClass:
                                           "whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden sm:table-cell",
                                       },
-                                      [_vm._v("$3,509.00")]
+                                      [_vm._v("₱3,509.00")]
                                     ),
                                     _vm._v(" "),
                                     _c(
@@ -33709,7 +33709,7 @@ var render = function () {
                                         staticClass:
                                           "whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden lg:table-cell",
                                       },
-                                      [_vm._v("$3,509.00")]
+                                      [_vm._v("₱3,509.00")]
                                     ),
                                     _vm._v(" "),
                                     _c(
@@ -33779,7 +33779,7 @@ var render = function () {
                                         staticClass:
                                           "whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-bold text-blue-700 sm:pl-6 lg:pl-8",
                                       },
-                                      [_vm._v("Lindsay Walton")]
+                                      [_vm._v("Ira Juaton")]
                                     ),
                                     _vm._v(" "),
                                     _c(
@@ -33788,7 +33788,7 @@ var render = function () {
                                         staticClass:
                                           "whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden sm:table-cell",
                                       },
-                                      [_vm._v("$3,509.00")]
+                                      [_vm._v("₱3,509.00")]
                                     ),
                                     _vm._v(" "),
                                     _c(
@@ -33797,7 +33797,7 @@ var render = function () {
                                         staticClass:
                                           "whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden lg:table-cell",
                                       },
-                                      [_vm._v("$3,509.00")]
+                                      [_vm._v("₱3,509.00")]
                                     ),
                                     _vm._v(" "),
                                     _c(
@@ -34347,7 +34347,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "sm:flex-auto text-right" }, [
       _c("h1", { staticClass: "text-xl font-semibold text-blue-700" }, [
-        _vm._v("Lindsay Walton"),
+        _vm._v("Ira Juaton"),
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "mt-2 text-sm text-gray-700" }, [
@@ -34371,7 +34371,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("p", { staticClass: "text-sm text-blue-700 truncate" }, [
-        _vm._v("$3,509.00"),
+        _vm._v("₱3,509.00"),
       ]),
     ])
   },
@@ -34391,7 +34391,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("p", { staticClass: "text-sm text-blue-700 truncate" }, [
-        _vm._v("$3,509.00"),
+        _vm._v("₱3,509.00"),
       ]),
     ])
   },
@@ -34411,7 +34411,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("p", { staticClass: "text-sm text-blue-700 truncate" }, [
-        _vm._v("$3,509.00"),
+        _vm._v("₱3,509.00"),
       ]),
     ])
   },
@@ -34431,7 +34431,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("p", { staticClass: "text-sm text-blue-700 truncate" }, [
-        _vm._v("$3,509.00"),
+        _vm._v("₱3,509.00"),
       ]),
     ])
   },
@@ -34451,7 +34451,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("p", { staticClass: "text-sm text-blue-700 truncate" }, [
-        _vm._v("$3,509.00"),
+        _vm._v("₱3,509.00"),
       ]),
     ])
   },
@@ -34471,7 +34471,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("p", { staticClass: "text-sm text-blue-700 truncate" }, [
-        _vm._v("$3,509.00"),
+        _vm._v("₱3,509.00"),
       ]),
     ])
   },
@@ -34502,7 +34502,7 @@ var staticRenderFns = [
                 staticClass:
                   "text-sm text-blue-700 text-2xl font-black truncate",
               },
-              [_vm._v("$3,509.00")]
+              [_vm._v("₱3,509.00")]
             ),
           ]),
         ]

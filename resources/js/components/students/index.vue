@@ -140,10 +140,10 @@
                             <tbody class="divide-y divide-gray-200 bg-white">
                             <tr>
                                 <td class="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-blue-700 sm:pl-6">AAPS0L</td>
-                                <td class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 hover:text-blue-700"><a href="/students/view">Dela Cruz, Juan A.</a></td>
+                                <td class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 hover:text-blue-700"><a href="/students/view">Juaton, Ira A.</a></td>
                                 <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">1 - A</td>
-                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">$4.37</td>
-                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">$3,509.00</td>
+                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">₱4.37</td>
+                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">₱3,509.00</td>
                                 <td class="relative whitespace-nowrap py-2 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                     <a href="#" class="text-blue-700 hover:text-blue-700 mr-3">Process Payment<span class="sr-only">, AAPS0L</span></a>
                                     <a href="/students/form" class="text-blue-500 hover:text-blue-700">Edit<span class="sr-only">, AAPS0L</span></a>
