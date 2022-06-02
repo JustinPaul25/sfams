@@ -114,9 +114,9 @@
                             <tbody class="divide-y divide-gray-200 bg-white">
                             <tr>
                                 <td class="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-blue-700 sm:pl-6">AAPS0L</td>
-                                <td class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 hover:text-blue-700"><a href="/students/view">Dela Cruz, Juan A.</a></td>
+                                <td class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 hover:text-blue-700"><a href="/students/view">Juaton, Ira A.</a></td>
                                 <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">1 - A</td>
-                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">$4.37</td>
+                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">₱4.37</td>
                                 <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">April 20, 2022</td>
                             </tr>
 
