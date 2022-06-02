@@ -36630,7 +36630,7 @@ var render = function () {
                     }),
                   ]
                 ),
-                _vm._v(" Student Name"),
+                _vm._v(" Student Name: Ira Juaton"),
               ]
             ),
             _vm._v(" "),
