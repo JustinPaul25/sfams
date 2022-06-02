@@ -35088,7 +35088,7 @@ var staticRenderFns = [
                               },
                               [
                                 _c("a", { attrs: { href: "/students/view" } }, [
-                                  _vm._v("Dela Cruz, Juan A."),
+                                  _vm._v("Juaton, Ira A."),
                                 ]),
                               ]
                             ),
@@ -35108,7 +35108,7 @@ var staticRenderFns = [
                                 staticClass:
                                   "whitespace-nowrap px-2 py-2 text-sm text-gray-500",
                               },
-                              [_vm._v("$4.37")]
+                              [_vm._v("₱4.37")]
                             ),
                             _vm._v(" "),
                             _c(
