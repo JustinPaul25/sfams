@@ -189,12 +189,7 @@
                             <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
                           </p>
                         </div>
-                        <div class="flex-1 min-w-0">
-                          <p class="text-sm font-medium text-gray-900 truncate">Delivery Fee</p>
-                        </div>
-                        <div>
-                          <p class="text-sm text-blue-700 truncate">$3,509.00</p>
-                        </div>
+                       
                       </div>
                     </li>
                     <li class="py-1">

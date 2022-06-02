@@ -32611,7 +32611,7 @@ var render = function () {
                     _c("img", {
                       staticClass: "hidden h-16 w-16 rounded-full sm:block",
                       attrs: {
-                        src: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Fpbccmimainschool%2F&psig=AOvVaw01tQqXmRn5-fgHrePIIiQ9&ust=1654089686413000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNC46rDqifgCFQAAAAAdAAAAABAD",
+                        src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.6&w=256&h=256&q=80",
                         alt: "",
                       },
                     }),
@@ -33115,7 +33115,7 @@ var staticRenderFns = [
       _c("img", {
         staticClass: "h-16 w-16 rounded-full sm:hidden",
         attrs: {
-          src: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Fpbccmimainschool%2F&psig=AOvVaw01tQqXmRn5-fgHrePIIiQ9&ust=1654089686413000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNC46rDqifgCFQAAAAAdAAAAABAD",
+          src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.6&w=256&h=256&q=80",
           alt: "",
         },
       }),
