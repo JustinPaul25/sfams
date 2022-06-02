@@ -43,9 +43,9 @@
                         </thead>
                         <tbody class="bg-white">
                           <tr>
-                            <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-bold text-blue-700 sm:pl-6 lg:pl-8">Lindsay Walton</td>
-                            <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden sm:table-cell">$3,509.00</td>
-                            <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden lg:table-cell">$3,509.00</td>
+                            <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-bold text-blue-700 sm:pl-6 lg:pl-8">Ira Juaton</td>
+                            <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden sm:table-cell">₱3,509.00</td>
+                            <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden lg:table-cell">₱3,509.00</td>
                             <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500">Member</td>
                             <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pr-4 pl-3 text-right text-sm font-medium sm:pr-6 lg:pr-8">
                               <p class="text-blue-700 hover:text-blue-500 cursor-pointer">
@@ -57,9 +57,9 @@
                             </td>
                           </tr>
                           <tr>
-                            <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-bold text-blue-700 sm:pl-6 lg:pl-8">Lindsay Walton</td>
-                            <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden sm:table-cell">$3,509.00</td>
-                            <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden lg:table-cell">$3,509.00</td>
+                            <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-bold text-blue-700 sm:pl-6 lg:pl-8">Ira Juaton</td>
+                            <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden sm:table-cell">₱3,509.00</td>
+                            <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden lg:table-cell">₱3,509.00</td>
                             <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500">Member</td>
                             <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pr-4 pl-3 text-right text-sm font-medium sm:pr-6 lg:pr-8">
                               <p class="text-blue-700 hover:text-blue-500 cursor-pointer">
@@ -71,9 +71,9 @@
                             </td>
                           </tr>
                           <tr>
-                            <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-bold text-blue-700 sm:pl-6 lg:pl-8">Lindsay Walton</td>
-                            <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden sm:table-cell">$3,509.00</td>
-                            <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden lg:table-cell">$3,509.00</td>
+                            <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-bold text-blue-700 sm:pl-6 lg:pl-8">Ira Juaton</td>
+                            <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden sm:table-cell">₱3,509.00</td>
+                            <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden lg:table-cell">₱3,509.00</td>
                             <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500">Member</td>
                             <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pr-4 pl-3 text-right text-sm font-medium sm:pr-6 lg:pr-8">
                               <p class="text-blue-700 hover:text-blue-500 cursor-pointer">
@@ -96,7 +96,7 @@
             <div class="sticky top-6 space-y-4">
               <div class="bg-white p-4 rounded border border-blue-600">
                 <div class="sm:flex-auto text-right">
-                  <h1 class="text-xl font-semibold text-blue-700">Lindsay Walton</h1>
+                  <h1 class="text-xl font-semibold text-blue-700">Ira Juaton</h1>
                   <p class="mt-2 text-sm text-gray-700">Grade 1 - A</p>
                 </div>
                 <div class="flow-root mt-6">
@@ -114,7 +114,7 @@
                           <p class="text-sm font-medium text-gray-900 truncate">Entrance Fee</p>
                         </div>
                         <div>
-                          <p class="text-sm text-blue-700 truncate">$3,509.00</p>
+                          <p class="text-sm text-blue-700 truncate">₱3,509.00</p>
                         </div>
                       </div>
                     </li>
@@ -131,7 +131,7 @@
                           <p class="text-sm font-medium text-gray-900 truncate">Tuition Fee</p>
                         </div>
                         <div>
-                          <p class="text-sm text-blue-700 truncate">$3,509.00</p>
+                          <p class="text-sm text-blue-700 truncate">₱3,509.00</p>
                         </div>
                       </div>
                     </li>
@@ -148,7 +148,7 @@
                           <p class="text-sm font-medium text-gray-900 truncate">Books Fee</p>
                         </div>
                         <div>
-                          <p class="text-sm text-blue-700 truncate">$3,509.00</p>
+                          <p class="text-sm text-blue-700 truncate">₱3,509.00</p>
                         </div>
                       </div>
                     </li>
@@ -163,7 +163,7 @@
                           <p class="text-sm font-medium text-gray-900 truncate">Back Account</p>
                         </div>
                         <div>
-                          <p class="text-sm text-blue-700 truncate">$3,509.00</p>
+                          <p class="text-sm text-blue-700 truncate">₱3,509.00</p>
                         </div>
                       </div>
                     </li>
@@ -178,7 +178,7 @@
                           <p class="text-sm font-medium text-gray-900 truncate">Photocopy</p>
                         </div>
                         <div>
-                          <p class="text-sm text-blue-700 truncate">$3,509.00</p>
+                          <p class="text-sm text-blue-700 truncate">₱3,509.00</p>
                         </div>
                       </div>
                     </li>
@@ -196,7 +196,7 @@
                           <p class="text-sm font-medium text-gray-900 truncate">Others</p>
                         </div>
                         <div>
-                          <p class="text-sm text-blue-700 truncate">$3,509.00</p>
+                          <p class="text-sm text-blue-700 truncate">₱3,509.00</p>
                         </div>
                       </div>
                     </li>
@@ -206,7 +206,7 @@
                           <p class="text-sm font-medium text-gray-900 truncate">Total:</p>
                         </div>
                         <div>
-                          <p class="text-sm text-blue-700 text-2xl font-black truncate">$3,509.00</p>
+                          <p class="text-sm text-blue-700 text-2xl font-black truncate">₱3,509.00</p>
                         </div>
                       </div>
                     </li>

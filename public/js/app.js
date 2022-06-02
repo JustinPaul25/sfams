@@ -5691,15 +5691,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   methods: {
     openStudentModal: function openStudentModal() {
@@ -34097,65 +34088,6 @@ var render = function () {
                                 _vm._m(12),
                                 _vm._v(" "),
                                 _vm._m(13),
-                              ]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "py-1" }, [
-                            _c(
-                              "div",
-                              { staticClass: "flex items-center space-x-1" },
-                              [
-                                _c("div", { staticClass: "flex-shrink-0" }, [
-                                  _c("p", { staticClass: "text-gray-500" }, [
-                                    _c(
-                                      "svg",
-                                      {
-                                        staticClass: "css-i6dzq1",
-                                        attrs: {
-                                          viewBox: "0 0 24 24",
-                                          width: "24",
-                                          height: "24",
-                                          stroke: "currentColor",
-                                          "stroke-width": "2",
-                                          fill: "none",
-                                          "stroke-linecap": "round",
-                                          "stroke-linejoin": "round",
-                                        },
-                                      },
-                                      [
-                                        _c("rect", {
-                                          attrs: {
-                                            x: "1",
-                                            y: "3",
-                                            width: "15",
-                                            height: "13",
-                                          },
-                                        }),
-                                        _c("polygon", {
-                                          attrs: {
-                                            points:
-                                              "16 8 20 8 23 11 23 16 16 16 16 8",
-                                          },
-                                        }),
-                                        _c("circle", {
-                                          attrs: {
-                                            cx: "5.5",
-                                            cy: "18.5",
-                                            r: "2.5",
-                                          },
-                                        }),
-                                        _c("circle", {
-                                          attrs: {
-                                            cx: "18.5",
-                                            cy: "18.5",
-                                            r: "2.5",
-                                          },
-                                        }),
-                                      ]
-                                    ),
-                                  ]),
-                                ]),
                               ]
                             ),
                           ]),
