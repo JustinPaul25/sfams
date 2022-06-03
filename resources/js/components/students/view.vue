@@ -42,6 +42,15 @@
                         <p>+639232323232</p>
                         <p>jane@email.com</p>
                     </dd>
+                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                        <div class="bars">
+                        <div class="info">
+                            <span>HTML</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="line html"></div>
+                    </div>
+                    </dd>
                 </div>
                 </dl>
             </div>
