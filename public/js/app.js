@@ -32595,11 +32595,14 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("main", { staticClass: "flex-1 pb-8 bg-blue-700" }, [
+    _c("main", { staticClass: "flex-1 pb-8" }, [
       _c("div", { staticClass: "bg-white shadow" }, [
         _c(
           "div",
-          { staticClass: "px-4 sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8" },
+          {
+            staticClass:
+              "px-4 sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8 bg-blue-700",
+          },
           [
             _c(
               "div",
