@@ -32599,16 +32599,13 @@ var render = function () {
       _c("div", { staticClass: "bg-white shadow" }, [
         _c(
           "div",
-          {
-            staticClass:
-              "px-4 sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8 bg-blue-700",
-          },
+          { staticClass: "px-4 sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8" },
           [
             _c(
               "div",
               {
                 staticClass:
-                  "py-6 md:flex md:items-center md:justify-between lg:border-t lg:bg-blue-700",
+                  "py-6 md:flex md:items-center md:justify-between lg:border-t lg:border-gray-200",
               },
               [
                 _c("div", { staticClass: "flex-1 min-w-0" }, [
