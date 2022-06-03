@@ -1,5 +1,5 @@
 <aside class="h-screen sticky top-0">
-    <div class="w-60 h-screen flex-1 flex flex-col min-h-0 bg-cyan-300">
+    <div class="w-60 h-screen flex-1 flex flex-col min-h-0 bg-sky-500">
         <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
             <div class="flex items-center flex-shrink-0 px-4 flex justify-center">
                 <p class="font-black text-4xl text-white">SFAMS</p>
