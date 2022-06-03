@@ -5691,6 +5691,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   methods: {
     openStudentModal: function openStudentModal() {
@@ -34131,7 +34147,46 @@ var render = function () {
                             ),
                           ]),
                           _vm._v(" "),
-                          _vm._m(16),
+                          _c("li", { staticClass: "py-1" }, [
+                            _c(
+                              "div",
+                              { staticClass: "flex items-center space-x-1" },
+                              [
+                                _c("div", { staticClass: "flex-shrink-0" }, [
+                                  _c("p", { staticClass: "text-gray-500" }, [
+                                    _c(
+                                      "svg",
+                                      {
+                                        staticClass: "h-6 w-6",
+                                        attrs: {
+                                          xmlns: "http://www.w3.org/2000/svg",
+                                          fill: "none",
+                                          viewBox: "0 0 24 24",
+                                          stroke: "currentColor",
+                                          "stroke-width": "2",
+                                        },
+                                      },
+                                      [
+                                        _c("path", {
+                                          attrs: {
+                                            "stroke-linecap": "round",
+                                            "stroke-linejoin": "round",
+                                            d: "M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+                                          },
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(16),
+                                _vm._v(" "),
+                                _vm._m(17),
+                              ]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _vm._m(18),
                         ]
                       ),
                     ]),
@@ -34452,6 +34507,26 @@ var staticRenderFns = [
     return _c("div", [
       _c("p", { staticClass: "text-sm text-blue-700 truncate" }, [
         _vm._v("₱3,509.00"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-1 min-w-0" }, [
+      _c("p", { staticClass: "text-sm font-medium text-gray-900 truncate" }, [
+        _vm._v("Tuition fee Discount"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("p", { staticClass: "text-sm text-blue-700 truncate" }, [
+        _vm._v("₱0"),
       ]),
     ])
   },
