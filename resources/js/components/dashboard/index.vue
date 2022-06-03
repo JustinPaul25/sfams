@@ -1,6 +1,6 @@
 <template>
     <div>
-        <main class="flex-1 pb-8">
+        <main class="flex-1 pb-8 bg-blue-700">
             <!-- Page header -->
             <div class="bg-white shadow">
                 <div class="px-4 sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">

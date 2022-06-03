@@ -1919,9 +1919,9 @@ Ensure the default browser behavior of the `hidden` attribute.
     border-top-width: 1px;
   }
 
-  .lg\:border-gray-200 {
-    --tw-border-opacity: 1;
-    border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  .lg\:bg-blue-700 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(29 78 216 / var(--tw-bg-opacity));
   }
 
   .lg\:px-8 {
