@@ -8,7 +8,7 @@
                 <div class="card bg-blue-700 shadow-lg   w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
                 <div class="card bg-blue-300 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-6"></div>
                 <div class="relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md w-96 h-96">
-                    <label for="" class="block mt-3 text-lg font-bold text-gray-700 text-center font-semibold">
+                    <label for="" class="block mt-3 text-3xl font-bold text-gray-700 text-center font-semibold">
                         SFAMS
                     </label>
                     <form method="POST" class="mt-10" action="{{ route('login') }}">

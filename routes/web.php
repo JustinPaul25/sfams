@@ -25,9 +25,7 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/students', [StudentController::class, 'index'])->name('students');
-Route::get('/students/form', function () {
-    return view('students.form');
-});
+Route::get('/students/form', [StudentController::class, 'create']);
 Route::get('/students/view', function () {
     return view('students.view');
 });
