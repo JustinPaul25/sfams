@@ -5,7 +5,7 @@
             <div class="mx-auto">
                 <dl class="rounded-lg sm:grid sm:grid-cols-1">
                     <div class="flex flex-col p-1">
-                        <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2">Name</dt>
+                        <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>Name</dt>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
                             <div class="relative inline-block text-gray-700 w-full">
                                 <input v-model="form.last_school_attended" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="School Name">
@@ -15,7 +15,7 @@
                 </dl>
                 <dl class="rounded-lg sm:grid sm:grid-cols-1">
                     <div class="flex flex-col p-1">
-                        <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2">Address</dt>
+                        <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>Address</dt>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
                             <div class="relative inline-block text-gray-700 w-full">
                                 <input v-model="form.last_school_address" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="School Address">
@@ -25,7 +25,7 @@
                 </dl>
                 <dl class="rounded-lg sm:grid sm:grid-cols-2">
                     <div class="flex flex-col p-2">
-                        <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2">Grade and Section</dt>
+                        <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>Grade and Section</dt>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
                             <div class="relative inline-block text-gray-700 w-full">
                                 <input v-model="form.last_school_grade_section" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Grade and Section">
@@ -33,10 +33,11 @@
                         </div>
                     </div>
                     <div class="flex flex-col p-2">
-                        <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2">School Year</dt>
+                        <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>School Year</dt>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
                             <div class="relative inline-block text-gray-700 w-full">
-                                <input v-model="form.last_school_school_year" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="School Year">
+                                <input type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="School Year">
+                                <masked-input v-model="form.last_school_school_year" mask="1111-1111" type="text" placeholder="School Year" @input="rawVal = arguments[1]" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
                             </div>
                         </div>
                     </div>
@@ -66,10 +67,32 @@ export default {
     },
     methods: {
         nextStep() {
-            this.$emit('next-step')
+            if(this.checkInputs()) {
+                this.$emit('next-step', this.form)   
+            }
         },
         prevStep() {
             this.$emit('prev-step')
+        },
+        checkInputs() {
+            var isCleared = true;
+            if(this.form.last_school_attended === '') {
+                this.required.push("School Name is Required.")
+                var isCleared = false;
+            }
+            if(this.form.last_school_address === '') {
+                this.required.push("School Address is Required.")
+                var isCleared = false;
+            }
+            if(this.form.last_school_grade_section === '') {
+                this.required.push("Grade and Section is Required.")
+                var isCleared = false;
+            }
+            if(this.form.last_school_school_year === '') {
+                this.required.push("School Year is Required.")
+                var isCleared = false;
+            }
+            return isCleared;
         }
     }
 }

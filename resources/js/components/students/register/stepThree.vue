@@ -36,7 +36,7 @@
                     <legend class="sr-only">Transferee</legend>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                        <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        <input v-model="form.psa"  id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         </div>
                         <div class="ml-3 text-sm">
                         <label for="comments" class="font-medium text-gray-700">PSA Birth Certificate</label>
@@ -45,7 +45,7 @@
                     </div>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                        <input id="candidates" aria-describedby="candidates-description" name="candidates" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        <input v-model="form.good_moral" id="candidates" aria-describedby="candidates-description" name="candidates" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         </div>
                         <div class="ml-3 text-sm">
                         <label for="candidates" class="font-medium text-gray-700">Good Moral</label>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                        <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        <input v-model="form.card" id="offers" aria-describedby="offers-description" name="offers" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         </div>
                         <div class="ml-3 text-sm">
                         <label for="offers" class="font-medium text-gray-700">Card</label>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                        <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        <input v-model="form.one_three_seven"  id="offers" aria-describedby="offers-description" name="offers" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         </div>
                         <div class="ml-3 text-sm">
                         <label for="offers" class="font-medium text-gray-700">Form 137</label>
@@ -76,7 +76,7 @@
                     <legend class="sr-only">Transferee</legend>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                        <input id="candidates" aria-describedby="candidates-description" name="candidates" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        <input v-model="form.coc" id="candidates" aria-describedby="candidates-description" name="candidates" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         </div>
                         <div class="ml-3 text-sm">
                         <label for="candidates" class="font-medium text-gray-700">Certificate of Completion</label>
@@ -84,7 +84,7 @@
                     </div>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                        <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        <input v-model="form.psa" id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         </div>
                         <div class="ml-3 text-sm">
                         <label for="comments" class="font-medium text-gray-700">PSA Birth Certificate</label>
@@ -96,7 +96,7 @@
                     <legend class="sr-only">Transferee</legend>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                        <input id="candidates" aria-describedby="candidates-description" name="candidates" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        <input v-model="form.coc" id="candidates" aria-describedby="candidates-description" name="candidates" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         </div>
                         <div class="ml-3 text-sm">
                         <label for="candidates" class="font-medium text-gray-700">Certificate of Completion</label>
@@ -104,7 +104,7 @@
                     </div>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                        <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        <input v-model="form.psa" id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         </div>
                         <div class="ml-3 text-sm">
                         <label for="comments" class="font-medium text-gray-700">PSA Birth Certificate</label>
@@ -113,7 +113,7 @@
                     </div>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                        <input id="candidates" aria-describedby="candidates-description" name="candidates" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        <input v-model="form.eccd" id="candidates" aria-describedby="candidates-description" name="candidates" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         </div>
                         <div class="ml-3 text-sm">
                         <label for="candidates" class="font-medium text-gray-700">ECCD Checklist</label>
@@ -121,7 +121,7 @@
                     </div>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                        <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        <input v-model="form.card" id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         </div>
                         <div class="ml-3 text-sm">
                         <label for="comments" class="font-medium text-gray-700">Card</label>
@@ -133,7 +133,7 @@
                     <legend class="sr-only">Transferee</legend>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                        <input id="candidates" aria-describedby="candidates-description" name="candidates" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        <input v-model="form.coc" id="candidates" aria-describedby="candidates-description" name="candidates" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         </div>
                         <div class="ml-3 text-sm">
                         <label for="candidates" class="font-medium text-gray-700">Certificate of Completion</label>
@@ -141,7 +141,7 @@
                     </div>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                        <input id="candidates" aria-describedby="candidates-description" name="candidates" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        <input v-model="form.picture" id="candidates" aria-describedby="candidates-description" name="candidates" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         </div>
                         <div class="ml-3 text-sm">
                         <label for="candidates" class="font-medium text-gray-700">1x1 Picture</label>
@@ -149,7 +149,7 @@
                     </div>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                        <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        <input v-model="form.psa" id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         </div>
                         <div class="ml-3 text-sm">
                         <label for="comments" class="font-medium text-gray-700">PSA Birth Certificate</label>
@@ -158,7 +158,7 @@
                     </div>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                        <input id="candidates" aria-describedby="candidates-description" name="candidates" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        <input v-model="form.good_moral" id="candidates" aria-describedby="candidates-description" name="candidates" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         </div>
                         <div class="ml-3 text-sm">
                         <label for="candidates" class="font-medium text-gray-700">Good Moral</label>
@@ -166,7 +166,7 @@
                     </div>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                        <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        <input v-model="form.card" id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         </div>
                         <div class="ml-3 text-sm">
                         <label for="comments" class="font-medium text-gray-700">Card</label>
@@ -175,7 +175,7 @@
                     </div>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                        <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        <input v-model="form.one_three_seven" id="offers" aria-describedby="offers-description" name="offers" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         </div>
                         <div class="ml-3 text-sm">
                         <label for="offers" class="font-medium text-gray-700">Form 137</label>
@@ -199,12 +199,20 @@
         data() {
             return {
                 type:'',
-                level: ''
+                level: '',
+                form: {
+                    psa: false,
+                    good_moral: false,
+                    card: false,
+                    one_three_seven: false,
+                    coc: false,
+                    picture: false
+                }
             }
         },
         methods: {
             nextStep() {
-            this.$emit('next-step')
+                this.$emit('next-step', this.form)
             },
             prevStep() {
                 this.$emit('prev-step')

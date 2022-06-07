@@ -76,19 +76,22 @@ export default {
     data() {
         return {
             step: 1,
-            form: {
-                department: ''
-            }
+            form: {}
         };
     },
     methods: {
         incStep() {
             this.step += 1
         },
-        nextStepTwo() {
+        nextStepTwo(form) {
+            this.form = form
             this.incStep()
         },
-        nextStepThree() {
+        nextStepThree(form) {
+            this.form.last_school_attended = form.last_school_attended
+            this.form.last_school_address = form.last_school_address
+            this.form.last_school_grade_section = form.last_school_grade_section
+            this.form.last_school_school_year = form.last_school_school_year
             this.incStep()
         },
         nextStepFour() {

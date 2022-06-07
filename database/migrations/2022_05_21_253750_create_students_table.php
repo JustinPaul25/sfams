@@ -37,7 +37,7 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('province')->nullable();
             $table->string('contact_person')->nullable();
-            $table->string('contact_number')->nullable();
+            $table->string('contact_person_number')->nullable();
             $table->string('last_school_attended')->nullable();
             $table->string('last_school_address')->nullable();
             $table->string('last_school_grade_section')->nullable();

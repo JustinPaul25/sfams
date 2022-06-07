@@ -5965,19 +5965,22 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       step: 1,
-      form: {
-        department: ''
-      }
+      form: {}
     };
   },
   methods: {
     incStep: function incStep() {
       this.step += 1;
     },
-    nextStepTwo: function nextStepTwo() {
+    nextStepTwo: function nextStepTwo(form) {
+      this.form = form;
       this.incStep();
     },
-    nextStepThree: function nextStepThree() {
+    nextStepThree: function nextStepThree(form) {
+      this.form.last_school_attended = form.last_school_attended;
+      this.form.last_school_address = form.last_school_address;
+      this.form.last_school_grade_section = form.last_school_grade_section;
+      this.form.last_school_school_year = form.last_school_school_year;
       this.incStep();
     },
     nextStepFour: function nextStepFour() {
@@ -5999,6 +6002,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6251,6 +6281,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['levels'],
   data: function data() {
     return {
+      required: [],
       form: {
         department: '',
         first_name: '',
@@ -6272,13 +6303,110 @@ __webpack_require__.r(__webpack_exports__);
         purok_street: '',
         barangay: '',
         city: '',
-        province: ''
+        province: '',
+        contact_person: '',
+        contact_person_number: '',
+        last_school_attended: '',
+        last_school_address: '',
+        last_school_grade_section: '',
+        last_school_school_year: ''
       }
     };
   },
   methods: {
     nextStep: function nextStep() {
-      this.$emit('next-step');
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (_this.checkInputs()) {
+                  _this.$emit('next-step', _this.form);
+                } else {
+                  window.scrollTo(0, 0);
+                }
+
+              case 1:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    checkInputs: function checkInputs() {
+      var isCleared = true;
+
+      if (this.form.first_name === '') {
+        this.required.push("Student First Name Is Required.");
+        var isCleared = false;
+      }
+
+      if (this.form.last_name === '') {
+        this.required.push("Student Last Name Is Required.");
+        var isCleared = false;
+      }
+
+      if (this.form.birth_date === '') {
+        this.required.push("Student Birth Date Is Required.");
+        var isCleared = false;
+      }
+
+      if (this.form.birth_place === '') {
+        this.required.push("Student Birth Place Is Required.");
+        var isCleared = false;
+      }
+
+      if (this.form.birth_place === '') {
+        this.required.push("Student Gender Is Required.");
+        var isCleared = false;
+      }
+
+      if (this.form.grade_entered_id === '') {
+        this.required.push("Student Grade Entered Is Required.");
+        var isCleared = false;
+      }
+
+      if (this.form.phone === '') {
+        this.required.push("Student Phone Is Required.");
+        var isCleared = false;
+      }
+
+      if (this.form.mother_name === '' && this.form.father_name === '' && this.form.guardian_name === '') {
+        this.required.push("Please add guardian information if no Mother and Father.");
+      }
+
+      if (this.form.mother_phone === '' && this.form.father_phone === '' && this.form.guardian_phone === '') {
+        this.required.push("Please add guardian contact number if no Mother and Father. Or type N/A if none");
+      }
+
+      if (this.form.purok_street === '') {
+        this.required.push("Purok or Street is empty please add N/A or None");
+      }
+
+      if (this.form.barangay === '') {
+        this.required.push("Barangay is required");
+      }
+
+      if (this.form.city === '') {
+        this.required.push("City is required");
+      }
+
+      if (this.form.province === '') {
+        this.required.push("Province is required");
+      }
+
+      if (this.form.contact_person === '') {
+        this.required.push("Contact Person is required");
+      }
+
+      if (this.form.contact_person_number === '') {
+        this.required.push("Contact Person Number is required");
+      }
+
+      return isCleared;
     }
   }
 });
@@ -6496,12 +6624,20 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       type: '',
-      level: ''
+      level: '',
+      form: {
+        psa: false,
+        good_moral: false,
+        card: false,
+        one_three_seven: false,
+        coc: false,
+        picture: false
+      }
     };
   },
   methods: {
     nextStep: function nextStep() {
-      this.$emit('next-step');
+      this.$emit('next-step', this.form);
     },
     prevStep: function prevStep() {
       this.$emit('prev-step');
@@ -6576,6 +6712,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -6589,10 +6726,37 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     nextStep: function nextStep() {
-      this.$emit('next-step');
+      if (this.checkInputs()) {
+        this.$emit('next-step', this.form);
+      }
     },
     prevStep: function prevStep() {
       this.$emit('prev-step');
+    },
+    checkInputs: function checkInputs() {
+      var isCleared = true;
+
+      if (this.form.last_school_attended === '') {
+        this.required.push("School Name is Required.");
+        var isCleared = false;
+      }
+
+      if (this.form.last_school_address === '') {
+        this.required.push("School Address is Required.");
+        var isCleared = false;
+      }
+
+      if (this.form.last_school_grade_section === '') {
+        this.required.push("Grade and Section is Required.");
+        var isCleared = false;
+      }
+
+      if (this.form.last_school_school_year === '') {
+        this.required.push("School Year is Required.");
+        var isCleared = false;
+      }
+
+      return isCleared;
     }
   }
 });
@@ -37385,6 +37549,60 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _vm.required.length > 0
+      ? _c("div", { staticClass: "rounded-md bg-red-50 p-4" }, [
+          _c("div", { staticClass: "flex" }, [
+            _c("div", { staticClass: "flex-shrink-0" }, [
+              _c(
+                "svg",
+                {
+                  staticClass: "h-5 w-5 text-red-400",
+                  attrs: {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    viewBox: "0 0 20 20",
+                    fill: "currentColor",
+                    "aria-hidden": "true",
+                  },
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      "fill-rule": "evenodd",
+                      d: "M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z",
+                      "clip-rule": "evenodd",
+                    },
+                  }),
+                ]
+              ),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "ml-3" }, [
+              _c("h3", { staticClass: "text-sm font-medium text-red-800" }, [
+                _vm._v(
+                  "There were " +
+                    _vm._s(_vm.required.length) +
+                    " errors with your submission"
+                ),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mt-2 text-sm text-red-700" }, [
+                _c(
+                  "ul",
+                  {
+                    staticClass: "list-disc pl-5 space-y-1",
+                    attrs: { role: "list" },
+                  },
+                  _vm._l(_vm.required, function (message) {
+                    return _c("li", [_vm._v(_vm._s(message))])
+                  }),
+                  0
+                ),
+              ]),
+            ]),
+          ]),
+        ])
+      : _vm._e(),
+    _vm._v(" "),
     _c(
       "p",
       { staticClass: "text-centered text-2xl text-gray-900 pt-2 font-bold" },
@@ -37496,14 +37714,7 @@ var render = function () {
     _c("div", { staticClass: "mx-auto" }, [
       _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-3" }, [
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _c(
-            "dt",
-            {
-              staticClass:
-                "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-            },
-            [_vm._v("First Name")]
-          ),
+          _vm._m(1),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -37580,14 +37791,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _c(
-            "dt",
-            {
-              staticClass:
-                "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-            },
-            [_vm._v("Last Name")]
-          ),
+          _vm._m(2),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -37624,14 +37828,7 @@ var render = function () {
       _vm._v(" "),
       _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-3" }, [
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _c(
-            "dt",
-            {
-              staticClass:
-                "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-            },
-            [_vm._v("Date of Birth")]
-          ),
+          _vm._m(3),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -37666,14 +37863,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _c(
-            "dt",
-            {
-              staticClass:
-                "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-            },
-            [_vm._v("Place of Birth")]
-          ),
+          _vm._m(4),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -37708,14 +37898,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _c(
-            "dt",
-            {
-              staticClass:
-                "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-            },
-            [_vm._v("Gender")]
-          ),
+          _vm._m(5),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -37775,14 +37958,7 @@ var render = function () {
       _vm._v(" "),
       _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-2" }, [
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _c(
-            "dt",
-            {
-              staticClass:
-                "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-            },
-            [_vm._v("Grade to Enter")]
-          ),
+          _vm._m(6),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -37842,14 +38018,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _c(
-            "dt",
-            {
-              staticClass:
-                "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-            },
-            [_vm._v("Mobile Number")]
-          ),
+          _vm._m(7),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -37941,8 +38110,8 @@ var render = function () {
                 staticClass:
                   "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300",
                 attrs: {
-                  id: "push-everything",
-                  name: "push-notifications",
+                  id: "father_living",
+                  name: "father_deceased",
                   value: "0",
                   type: "radio",
                 },
@@ -37977,8 +38146,8 @@ var render = function () {
                 staticClass:
                   "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300",
                 attrs: {
-                  id: "push-email",
-                  name: "push-notifications",
+                  id: "father_deceased",
+                  name: "father_deceased",
                   value: "1",
                   type: "radio",
                 },
@@ -38102,8 +38271,8 @@ var render = function () {
                 staticClass:
                   "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300",
                 attrs: {
-                  id: "push-everything",
-                  name: "push-notifications",
+                  id: "mother_living",
+                  name: "mother_deceased",
                   value: "0",
                   type: "radio",
                 },
@@ -38138,8 +38307,8 @@ var render = function () {
                 staticClass:
                   "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300",
                 attrs: {
-                  id: "push-email",
-                  name: "push-notifications",
+                  id: "mother_deceased",
+                  name: "mother_deceased",
                   value: "1",
                   type: "radio",
                 },
@@ -38207,14 +38376,7 @@ var render = function () {
       _vm._v(" "),
       _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-2" }, [
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _c(
-            "dt",
-            {
-              staticClass:
-                "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-            },
-            [_vm._v("Guardians's Name(If not living with parents)")]
-          ),
+          _vm._m(8),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -38294,16 +38456,15 @@ var render = function () {
         _vm._v("Current Address"),
       ]),
       _vm._v(" "),
+      _c(
+        "span",
+        { staticClass: "text-sm font-bold", staticStyle: { color: "#ff0000" } },
+        [_vm._v("Put N/A or None if nothing to input")]
+      ),
+      _vm._v(" "),
       _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-2" }, [
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _c(
-            "dt",
-            {
-              staticClass:
-                "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-            },
-            [_vm._v("Purok/Street")]
-          ),
+          _vm._m(9),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -38338,14 +38499,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _c(
-            "dt",
-            {
-              staticClass:
-                "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-            },
-            [_vm._v("Barangay")]
-          ),
+          _vm._m(10),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -38382,14 +38536,7 @@ var render = function () {
       _vm._v(" "),
       _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-2" }, [
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _c(
-            "dt",
-            {
-              staticClass:
-                "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-            },
-            [_vm._v("City")]
-          ),
+          _vm._m(11),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -38424,14 +38571,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _c(
-            "dt",
-            {
-              staticClass:
-                "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-            },
-            [_vm._v("Province")]
-          ),
+          _vm._m(12),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -38472,14 +38612,7 @@ var render = function () {
       _vm._v(" "),
       _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-2" }, [
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _c(
-            "dt",
-            {
-              staticClass:
-                "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-            },
-            [_vm._v("Name")]
-          ),
+          _vm._m(13),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -38514,43 +38647,36 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _c(
-            "dt",
-            {
-              staticClass:
-                "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-            },
-            [_vm._v("Phone Number")]
-          ),
+          _vm._m(14),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
               "div",
               { staticClass: "relative inline-block text-gray-700 w-full" },
               [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.contact_number,
-                      expression: "form.contact_number",
-                    },
-                  ],
+                _c("masked-input", {
                   staticClass:
                     "w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
-                  attrs: { type: "text", placeholder: "Phone Number" },
-                  domProps: { value: _vm.form.contact_number },
+                  attrs: {
+                    mask: "\\+\\63 (111) 111-1111",
+                    type: "text",
+                    placeholder: "Phone Number",
+                  },
                   on: {
                     input: function ($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.form, "contact_number", $event.target.value)
+                      _vm.rawVal = arguments[1]
                     },
                   },
+                  model: {
+                    value: _vm.form.contact_person_number,
+                    callback: function ($$v) {
+                      _vm.$set(_vm.form, "contact_person_number", $$v)
+                    },
+                    expression: "form.contact_person_number",
+                  },
                 }),
-              ]
+              ],
+              1
             ),
           ]),
         ]),
@@ -38603,6 +38729,196 @@ var staticRenderFns = [
         [_vm._v("Student Department")]
       ),
     ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("First Name"),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("Last Name"),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("Date of Birth"),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("Place of Birth"),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("Gender"),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("Grade to Enter"),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("Mobile Number"),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _vm._v("Guardians's Name "),
+        _c(
+          "span",
+          { staticClass: "text-sm", staticStyle: { color: "#ff0000" } },
+          [
+            _vm._v(
+              "(If not living with parents/Required if no Mother or Father input)"
+            ),
+          ]
+        ),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("Purok/Street"),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("Barangay"),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("City"),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("Province"),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("Name"),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("Phone Number"),
+      ]
+    )
   },
 ]
 render._withStripped = true
@@ -38776,7 +39092,235 @@ var render = function () {
       ]),
       _vm._v(" "),
       _vm.type == "transferee"
-        ? _c("div", [_vm._m(0)])
+        ? _c("div", [
+            _c("fieldset", { staticClass: "space-y-5 ml-5" }, [
+              _c("legend", { staticClass: "sr-only" }, [_vm._v("Transferee")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "relative flex items-start" }, [
+                _c("div", { staticClass: "flex items-center h-5" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.psa,
+                        expression: "form.psa",
+                      },
+                    ],
+                    staticClass:
+                      "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
+                    attrs: {
+                      id: "comments",
+                      "aria-describedby": "comments-description",
+                      name: "comments",
+                      type: "checkbox",
+                    },
+                    domProps: {
+                      checked: Array.isArray(_vm.form.psa)
+                        ? _vm._i(_vm.form.psa, null) > -1
+                        : _vm.form.psa,
+                    },
+                    on: {
+                      change: function ($event) {
+                        var $$a = _vm.form.psa,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = null,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 &&
+                              _vm.$set(_vm.form, "psa", $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              _vm.$set(
+                                _vm.form,
+                                "psa",
+                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                              )
+                          }
+                        } else {
+                          _vm.$set(_vm.form, "psa", $$c)
+                        }
+                      },
+                    },
+                  }),
+                ]),
+                _vm._v(" "),
+                _vm._m(0),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "relative flex items-start" }, [
+                _c("div", { staticClass: "flex items-center h-5" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.good_moral,
+                        expression: "form.good_moral",
+                      },
+                    ],
+                    staticClass:
+                      "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
+                    attrs: {
+                      id: "candidates",
+                      "aria-describedby": "candidates-description",
+                      name: "candidates",
+                      type: "checkbox",
+                    },
+                    domProps: {
+                      checked: Array.isArray(_vm.form.good_moral)
+                        ? _vm._i(_vm.form.good_moral, null) > -1
+                        : _vm.form.good_moral,
+                    },
+                    on: {
+                      change: function ($event) {
+                        var $$a = _vm.form.good_moral,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = null,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 &&
+                              _vm.$set(
+                                _vm.form,
+                                "good_moral",
+                                $$a.concat([$$v])
+                              )
+                          } else {
+                            $$i > -1 &&
+                              _vm.$set(
+                                _vm.form,
+                                "good_moral",
+                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                              )
+                          }
+                        } else {
+                          _vm.$set(_vm.form, "good_moral", $$c)
+                        }
+                      },
+                    },
+                  }),
+                ]),
+                _vm._v(" "),
+                _vm._m(1),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "relative flex items-start" }, [
+                _c("div", { staticClass: "flex items-center h-5" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.card,
+                        expression: "form.card",
+                      },
+                    ],
+                    staticClass:
+                      "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
+                    attrs: {
+                      id: "offers",
+                      "aria-describedby": "offers-description",
+                      name: "offers",
+                      type: "checkbox",
+                    },
+                    domProps: {
+                      checked: Array.isArray(_vm.form.card)
+                        ? _vm._i(_vm.form.card, null) > -1
+                        : _vm.form.card,
+                    },
+                    on: {
+                      change: function ($event) {
+                        var $$a = _vm.form.card,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = null,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 &&
+                              _vm.$set(_vm.form, "card", $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              _vm.$set(
+                                _vm.form,
+                                "card",
+                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                              )
+                          }
+                        } else {
+                          _vm.$set(_vm.form, "card", $$c)
+                        }
+                      },
+                    },
+                  }),
+                ]),
+                _vm._v(" "),
+                _vm._m(2),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "relative flex items-start" }, [
+                _c("div", { staticClass: "flex items-center h-5" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.one_three_seven,
+                        expression: "form.one_three_seven",
+                      },
+                    ],
+                    staticClass:
+                      "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
+                    attrs: {
+                      id: "offers",
+                      "aria-describedby": "offers-description",
+                      name: "offers",
+                      type: "checkbox",
+                    },
+                    domProps: {
+                      checked: Array.isArray(_vm.form.one_three_seven)
+                        ? _vm._i(_vm.form.one_three_seven, null) > -1
+                        : _vm.form.one_three_seven,
+                    },
+                    on: {
+                      change: function ($event) {
+                        var $$a = _vm.form.one_three_seven,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = null,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 &&
+                              _vm.$set(
+                                _vm.form,
+                                "one_three_seven",
+                                $$a.concat([$$v])
+                              )
+                          } else {
+                            $$i > -1 &&
+                              _vm.$set(
+                                _vm.form,
+                                "one_three_seven",
+                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                              )
+                          }
+                        } else {
+                          _vm.$set(_vm.form, "one_three_seven", $$c)
+                        }
+                      },
+                    },
+                  }),
+                ]),
+                _vm._v(" "),
+                _vm._m(3),
+              ]),
+            ]),
+          ])
         : _c("div", [
             _vm.level == "KTN"
               ? _c("fieldset", { staticClass: "space-y-5 ml-5" }, [
@@ -38784,9 +39328,113 @@ var render = function () {
                     _vm._v("Transferee"),
                   ]),
                   _vm._v(" "),
-                  _vm._m(1),
+                  _c("div", { staticClass: "relative flex items-start" }, [
+                    _c("div", { staticClass: "flex items-center h-5" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.coc,
+                            expression: "form.coc",
+                          },
+                        ],
+                        staticClass:
+                          "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
+                        attrs: {
+                          id: "candidates",
+                          "aria-describedby": "candidates-description",
+                          name: "candidates",
+                          type: "checkbox",
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.form.coc)
+                            ? _vm._i(_vm.form.coc, null) > -1
+                            : _vm.form.coc,
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.form.coc,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(_vm.form, "coc", $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "coc",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.form, "coc", $$c)
+                            }
+                          },
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(4),
+                  ]),
                   _vm._v(" "),
-                  _vm._m(2),
+                  _c("div", { staticClass: "relative flex items-start" }, [
+                    _c("div", { staticClass: "flex items-center h-5" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.psa,
+                            expression: "form.psa",
+                          },
+                        ],
+                        staticClass:
+                          "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
+                        attrs: {
+                          id: "comments",
+                          "aria-describedby": "comments-description",
+                          name: "comments",
+                          type: "checkbox",
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.form.psa)
+                            ? _vm._i(_vm.form.psa, null) > -1
+                            : _vm.form.psa,
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.form.psa,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(_vm.form, "psa", $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "psa",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.form, "psa", $$c)
+                            }
+                          },
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(5),
+                  ]),
                 ])
               : _vm._e(),
             _vm._v(" "),
@@ -38796,13 +39444,221 @@ var render = function () {
                     _vm._v("Transferee"),
                   ]),
                   _vm._v(" "),
-                  _vm._m(3),
+                  _c("div", { staticClass: "relative flex items-start" }, [
+                    _c("div", { staticClass: "flex items-center h-5" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.coc,
+                            expression: "form.coc",
+                          },
+                        ],
+                        staticClass:
+                          "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
+                        attrs: {
+                          id: "candidates",
+                          "aria-describedby": "candidates-description",
+                          name: "candidates",
+                          type: "checkbox",
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.form.coc)
+                            ? _vm._i(_vm.form.coc, null) > -1
+                            : _vm.form.coc,
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.form.coc,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(_vm.form, "coc", $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "coc",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.form, "coc", $$c)
+                            }
+                          },
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(6),
+                  ]),
                   _vm._v(" "),
-                  _vm._m(4),
+                  _c("div", { staticClass: "relative flex items-start" }, [
+                    _c("div", { staticClass: "flex items-center h-5" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.psa,
+                            expression: "form.psa",
+                          },
+                        ],
+                        staticClass:
+                          "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
+                        attrs: {
+                          id: "comments",
+                          "aria-describedby": "comments-description",
+                          name: "comments",
+                          type: "checkbox",
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.form.psa)
+                            ? _vm._i(_vm.form.psa, null) > -1
+                            : _vm.form.psa,
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.form.psa,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(_vm.form, "psa", $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "psa",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.form, "psa", $$c)
+                            }
+                          },
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(7),
+                  ]),
                   _vm._v(" "),
-                  _vm._m(5),
+                  _c("div", { staticClass: "relative flex items-start" }, [
+                    _c("div", { staticClass: "flex items-center h-5" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.eccd,
+                            expression: "form.eccd",
+                          },
+                        ],
+                        staticClass:
+                          "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
+                        attrs: {
+                          id: "candidates",
+                          "aria-describedby": "candidates-description",
+                          name: "candidates",
+                          type: "checkbox",
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.form.eccd)
+                            ? _vm._i(_vm.form.eccd, null) > -1
+                            : _vm.form.eccd,
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.form.eccd,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(_vm.form, "eccd", $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "eccd",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.form, "eccd", $$c)
+                            }
+                          },
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(8),
+                  ]),
                   _vm._v(" "),
-                  _vm._m(6),
+                  _c("div", { staticClass: "relative flex items-start" }, [
+                    _c("div", { staticClass: "flex items-center h-5" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.card,
+                            expression: "form.card",
+                          },
+                        ],
+                        staticClass:
+                          "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
+                        attrs: {
+                          id: "comments",
+                          "aria-describedby": "comments-description",
+                          name: "comments",
+                          type: "checkbox",
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.form.card)
+                            ? _vm._i(_vm.form.card, null) > -1
+                            : _vm.form.card,
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.form.card,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(_vm.form, "card", $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "card",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.form, "card", $$c)
+                            }
+                          },
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(9),
+                  ]),
                 ])
               : _vm._e(),
             _vm._v(" "),
@@ -38812,17 +39668,341 @@ var render = function () {
                     _vm._v("Transferee"),
                   ]),
                   _vm._v(" "),
-                  _vm._m(7),
+                  _c("div", { staticClass: "relative flex items-start" }, [
+                    _c("div", { staticClass: "flex items-center h-5" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.coc,
+                            expression: "form.coc",
+                          },
+                        ],
+                        staticClass:
+                          "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
+                        attrs: {
+                          id: "candidates",
+                          "aria-describedby": "candidates-description",
+                          name: "candidates",
+                          type: "checkbox",
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.form.coc)
+                            ? _vm._i(_vm.form.coc, null) > -1
+                            : _vm.form.coc,
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.form.coc,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(_vm.form, "coc", $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "coc",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.form, "coc", $$c)
+                            }
+                          },
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(10),
+                  ]),
                   _vm._v(" "),
-                  _vm._m(8),
+                  _c("div", { staticClass: "relative flex items-start" }, [
+                    _c("div", { staticClass: "flex items-center h-5" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.picture,
+                            expression: "form.picture",
+                          },
+                        ],
+                        staticClass:
+                          "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
+                        attrs: {
+                          id: "candidates",
+                          "aria-describedby": "candidates-description",
+                          name: "candidates",
+                          type: "checkbox",
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.form.picture)
+                            ? _vm._i(_vm.form.picture, null) > -1
+                            : _vm.form.picture,
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.form.picture,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "picture",
+                                    $$a.concat([$$v])
+                                  )
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "picture",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.form, "picture", $$c)
+                            }
+                          },
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(11),
+                  ]),
                   _vm._v(" "),
-                  _vm._m(9),
+                  _c("div", { staticClass: "relative flex items-start" }, [
+                    _c("div", { staticClass: "flex items-center h-5" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.psa,
+                            expression: "form.psa",
+                          },
+                        ],
+                        staticClass:
+                          "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
+                        attrs: {
+                          id: "comments",
+                          "aria-describedby": "comments-description",
+                          name: "comments",
+                          type: "checkbox",
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.form.psa)
+                            ? _vm._i(_vm.form.psa, null) > -1
+                            : _vm.form.psa,
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.form.psa,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(_vm.form, "psa", $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "psa",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.form, "psa", $$c)
+                            }
+                          },
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(12),
+                  ]),
                   _vm._v(" "),
-                  _vm._m(10),
+                  _c("div", { staticClass: "relative flex items-start" }, [
+                    _c("div", { staticClass: "flex items-center h-5" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.good_moral,
+                            expression: "form.good_moral",
+                          },
+                        ],
+                        staticClass:
+                          "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
+                        attrs: {
+                          id: "candidates",
+                          "aria-describedby": "candidates-description",
+                          name: "candidates",
+                          type: "checkbox",
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.form.good_moral)
+                            ? _vm._i(_vm.form.good_moral, null) > -1
+                            : _vm.form.good_moral,
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.form.good_moral,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "good_moral",
+                                    $$a.concat([$$v])
+                                  )
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "good_moral",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.form, "good_moral", $$c)
+                            }
+                          },
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(13),
+                  ]),
                   _vm._v(" "),
-                  _vm._m(11),
+                  _c("div", { staticClass: "relative flex items-start" }, [
+                    _c("div", { staticClass: "flex items-center h-5" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.card,
+                            expression: "form.card",
+                          },
+                        ],
+                        staticClass:
+                          "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
+                        attrs: {
+                          id: "comments",
+                          "aria-describedby": "comments-description",
+                          name: "comments",
+                          type: "checkbox",
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.form.card)
+                            ? _vm._i(_vm.form.card, null) > -1
+                            : _vm.form.card,
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.form.card,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(_vm.form, "card", $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "card",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.form, "card", $$c)
+                            }
+                          },
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(14),
+                  ]),
                   _vm._v(" "),
-                  _vm._m(12),
+                  _c("div", { staticClass: "relative flex items-start" }, [
+                    _c("div", { staticClass: "flex items-center h-5" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.one_three_seven,
+                            expression: "form.one_three_seven",
+                          },
+                        ],
+                        staticClass:
+                          "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
+                        attrs: {
+                          id: "offers",
+                          "aria-describedby": "offers-description",
+                          name: "offers",
+                          type: "checkbox",
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.form.one_three_seven)
+                            ? _vm._i(_vm.form.one_three_seven, null) > -1
+                            : _vm.form.one_three_seven,
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.form.one_three_seven,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "one_three_seven",
+                                    $$a.concat([$$v])
+                                  )
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "one_three_seven",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.form, "one_three_seven", $$c)
+                            }
+                          },
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(15),
+                  ]),
                 ])
               : _vm._e(),
           ]),
@@ -38868,556 +40048,285 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("fieldset", { staticClass: "space-y-5 ml-5" }, [
-      _c("legend", { staticClass: "sr-only" }, [_vm._v("Transferee")]),
+    return _c("div", { staticClass: "ml-3 text-sm" }, [
+      _c(
+        "label",
+        {
+          staticClass: "font-medium text-gray-700",
+          attrs: { for: "comments" },
+        },
+        [_vm._v("PSA Birth Certificate")]
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "relative flex items-start" }, [
-        _c("div", { staticClass: "flex items-center h-5" }, [
-          _c("input", {
-            staticClass:
-              "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
-            attrs: {
-              id: "comments",
-              "aria-describedby": "comments-description",
-              name: "comments",
-              type: "checkbox",
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "ml-3 text-sm" }, [
-          _c(
-            "label",
-            {
-              staticClass: "font-medium text-gray-700",
-              attrs: { for: "comments" },
-            },
-            [_vm._v("PSA Birth Certificate")]
-          ),
-          _vm._v(" "),
-          _c(
-            "span",
-            {
-              staticClass: "text-gray-500",
-              attrs: { id: "comments-description" },
-            },
-            [_c("span", { staticClass: "sr-only" }), _vm._v("(Original)")]
-          ),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "relative flex items-start" }, [
-        _c("div", { staticClass: "flex items-center h-5" }, [
-          _c("input", {
-            staticClass:
-              "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
-            attrs: {
-              id: "candidates",
-              "aria-describedby": "candidates-description",
-              name: "candidates",
-              type: "checkbox",
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "ml-3 text-sm" }, [
-          _c(
-            "label",
-            {
-              staticClass: "font-medium text-gray-700",
-              attrs: { for: "candidates" },
-            },
-            [_vm._v("Good Moral")]
-          ),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "relative flex items-start" }, [
-        _c("div", { staticClass: "flex items-center h-5" }, [
-          _c("input", {
-            staticClass:
-              "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
-            attrs: {
-              id: "offers",
-              "aria-describedby": "offers-description",
-              name: "offers",
-              type: "checkbox",
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "ml-3 text-sm" }, [
-          _c(
-            "label",
-            {
-              staticClass: "font-medium text-gray-700",
-              attrs: { for: "offers" },
-            },
-            [_vm._v("Card")]
-          ),
-          _vm._v(" "),
-          _c(
-            "span",
-            {
-              staticClass: "text-gray-500",
-              attrs: { id: "offers-description" },
-            },
-            [_c("span", { staticClass: "sr-only" }), _vm._v("(Form 138)")]
-          ),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "relative flex items-start" }, [
-        _c("div", { staticClass: "flex items-center h-5" }, [
-          _c("input", {
-            staticClass:
-              "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
-            attrs: {
-              id: "offers",
-              "aria-describedby": "offers-description",
-              name: "offers",
-              type: "checkbox",
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "ml-3 text-sm" }, [
-          _c(
-            "label",
-            {
-              staticClass: "font-medium text-gray-700",
-              attrs: { for: "offers" },
-            },
-            [_vm._v("Form 137")]
-          ),
-          _vm._v(" "),
-          _c(
-            "span",
-            {
-              staticClass: "text-gray-500",
-              attrs: { id: "offers-description" },
-            },
-            [
-              _c("span", { staticClass: "sr-only" }),
-              _vm._v("(Request in School)"),
-            ]
-          ),
-        ]),
-      ]),
+      _c(
+        "span",
+        { staticClass: "text-gray-500", attrs: { id: "comments-description" } },
+        [_c("span", { staticClass: "sr-only" }), _vm._v("(Original)")]
+      ),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "relative flex items-start" }, [
-      _c("div", { staticClass: "flex items-center h-5" }, [
-        _c("input", {
-          staticClass:
-            "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
-          attrs: {
-            id: "candidates",
-            "aria-describedby": "candidates-description",
-            name: "candidates",
-            type: "checkbox",
-          },
-        }),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "ml-3 text-sm" }, [
-        _c(
-          "label",
-          {
-            staticClass: "font-medium text-gray-700",
-            attrs: { for: "candidates" },
-          },
-          [_vm._v("Certificate of Completion")]
-        ),
-      ]),
+    return _c("div", { staticClass: "ml-3 text-sm" }, [
+      _c(
+        "label",
+        {
+          staticClass: "font-medium text-gray-700",
+          attrs: { for: "candidates" },
+        },
+        [_vm._v("Good Moral")]
+      ),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "relative flex items-start" }, [
-      _c("div", { staticClass: "flex items-center h-5" }, [
-        _c("input", {
-          staticClass:
-            "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
-          attrs: {
-            id: "comments",
-            "aria-describedby": "comments-description",
-            name: "comments",
-            type: "checkbox",
-          },
-        }),
-      ]),
+    return _c("div", { staticClass: "ml-3 text-sm" }, [
+      _c(
+        "label",
+        { staticClass: "font-medium text-gray-700", attrs: { for: "offers" } },
+        [_vm._v("Card")]
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "ml-3 text-sm" }, [
-        _c(
-          "label",
-          {
-            staticClass: "font-medium text-gray-700",
-            attrs: { for: "comments" },
-          },
-          [_vm._v("PSA Birth Certificate")]
-        ),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "text-gray-500",
-            attrs: { id: "comments-description" },
-          },
-          [_c("span", { staticClass: "sr-only" }), _vm._v("(Original)")]
-        ),
-      ]),
+      _c(
+        "span",
+        { staticClass: "text-gray-500", attrs: { id: "offers-description" } },
+        [_c("span", { staticClass: "sr-only" }), _vm._v("(Form 138)")]
+      ),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "relative flex items-start" }, [
-      _c("div", { staticClass: "flex items-center h-5" }, [
-        _c("input", {
-          staticClass:
-            "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
-          attrs: {
-            id: "candidates",
-            "aria-describedby": "candidates-description",
-            name: "candidates",
-            type: "checkbox",
-          },
-        }),
-      ]),
+    return _c("div", { staticClass: "ml-3 text-sm" }, [
+      _c(
+        "label",
+        { staticClass: "font-medium text-gray-700", attrs: { for: "offers" } },
+        [_vm._v("Form 137")]
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "ml-3 text-sm" }, [
-        _c(
-          "label",
-          {
-            staticClass: "font-medium text-gray-700",
-            attrs: { for: "candidates" },
-          },
-          [_vm._v("Certificate of Completion")]
-        ),
-      ]),
+      _c(
+        "span",
+        { staticClass: "text-gray-500", attrs: { id: "offers-description" } },
+        [_c("span", { staticClass: "sr-only" }), _vm._v("(Request in School)")]
+      ),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "relative flex items-start" }, [
-      _c("div", { staticClass: "flex items-center h-5" }, [
-        _c("input", {
-          staticClass:
-            "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
-          attrs: {
-            id: "comments",
-            "aria-describedby": "comments-description",
-            name: "comments",
-            type: "checkbox",
-          },
-        }),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "ml-3 text-sm" }, [
-        _c(
-          "label",
-          {
-            staticClass: "font-medium text-gray-700",
-            attrs: { for: "comments" },
-          },
-          [_vm._v("PSA Birth Certificate")]
-        ),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "text-gray-500",
-            attrs: { id: "comments-description" },
-          },
-          [_c("span", { staticClass: "sr-only" }), _vm._v("(Original)")]
-        ),
-      ]),
+    return _c("div", { staticClass: "ml-3 text-sm" }, [
+      _c(
+        "label",
+        {
+          staticClass: "font-medium text-gray-700",
+          attrs: { for: "candidates" },
+        },
+        [_vm._v("Certificate of Completion")]
+      ),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "relative flex items-start" }, [
-      _c("div", { staticClass: "flex items-center h-5" }, [
-        _c("input", {
-          staticClass:
-            "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
-          attrs: {
-            id: "candidates",
-            "aria-describedby": "candidates-description",
-            name: "candidates",
-            type: "checkbox",
-          },
-        }),
-      ]),
+    return _c("div", { staticClass: "ml-3 text-sm" }, [
+      _c(
+        "label",
+        {
+          staticClass: "font-medium text-gray-700",
+          attrs: { for: "comments" },
+        },
+        [_vm._v("PSA Birth Certificate")]
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "ml-3 text-sm" }, [
-        _c(
-          "label",
-          {
-            staticClass: "font-medium text-gray-700",
-            attrs: { for: "candidates" },
-          },
-          [_vm._v("ECCD Checklist")]
-        ),
-      ]),
+      _c(
+        "span",
+        { staticClass: "text-gray-500", attrs: { id: "comments-description" } },
+        [_c("span", { staticClass: "sr-only" }), _vm._v("(Original)")]
+      ),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "relative flex items-start" }, [
-      _c("div", { staticClass: "flex items-center h-5" }, [
-        _c("input", {
-          staticClass:
-            "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
-          attrs: {
-            id: "comments",
-            "aria-describedby": "comments-description",
-            name: "comments",
-            type: "checkbox",
-          },
-        }),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "ml-3 text-sm" }, [
-        _c(
-          "label",
-          {
-            staticClass: "font-medium text-gray-700",
-            attrs: { for: "comments" },
-          },
-          [_vm._v("Card")]
-        ),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "text-gray-500",
-            attrs: { id: "comments-description" },
-          },
-          [_c("span", { staticClass: "sr-only" }), _vm._v("(Form 138)")]
-        ),
-      ]),
+    return _c("div", { staticClass: "ml-3 text-sm" }, [
+      _c(
+        "label",
+        {
+          staticClass: "font-medium text-gray-700",
+          attrs: { for: "candidates" },
+        },
+        [_vm._v("Certificate of Completion")]
+      ),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "relative flex items-start" }, [
-      _c("div", { staticClass: "flex items-center h-5" }, [
-        _c("input", {
-          staticClass:
-            "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
-          attrs: {
-            id: "candidates",
-            "aria-describedby": "candidates-description",
-            name: "candidates",
-            type: "checkbox",
-          },
-        }),
-      ]),
+    return _c("div", { staticClass: "ml-3 text-sm" }, [
+      _c(
+        "label",
+        {
+          staticClass: "font-medium text-gray-700",
+          attrs: { for: "comments" },
+        },
+        [_vm._v("PSA Birth Certificate")]
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "ml-3 text-sm" }, [
-        _c(
-          "label",
-          {
-            staticClass: "font-medium text-gray-700",
-            attrs: { for: "candidates" },
-          },
-          [_vm._v("Certificate of Completion")]
-        ),
-      ]),
+      _c(
+        "span",
+        { staticClass: "text-gray-500", attrs: { id: "comments-description" } },
+        [_c("span", { staticClass: "sr-only" }), _vm._v("(Original)")]
+      ),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "relative flex items-start" }, [
-      _c("div", { staticClass: "flex items-center h-5" }, [
-        _c("input", {
-          staticClass:
-            "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
-          attrs: {
-            id: "candidates",
-            "aria-describedby": "candidates-description",
-            name: "candidates",
-            type: "checkbox",
-          },
-        }),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "ml-3 text-sm" }, [
-        _c(
-          "label",
-          {
-            staticClass: "font-medium text-gray-700",
-            attrs: { for: "candidates" },
-          },
-          [_vm._v("1x1 Picture")]
-        ),
-      ]),
+    return _c("div", { staticClass: "ml-3 text-sm" }, [
+      _c(
+        "label",
+        {
+          staticClass: "font-medium text-gray-700",
+          attrs: { for: "candidates" },
+        },
+        [_vm._v("ECCD Checklist")]
+      ),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "relative flex items-start" }, [
-      _c("div", { staticClass: "flex items-center h-5" }, [
-        _c("input", {
-          staticClass:
-            "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
-          attrs: {
-            id: "comments",
-            "aria-describedby": "comments-description",
-            name: "comments",
-            type: "checkbox",
-          },
-        }),
-      ]),
+    return _c("div", { staticClass: "ml-3 text-sm" }, [
+      _c(
+        "label",
+        {
+          staticClass: "font-medium text-gray-700",
+          attrs: { for: "comments" },
+        },
+        [_vm._v("Card")]
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "ml-3 text-sm" }, [
-        _c(
-          "label",
-          {
-            staticClass: "font-medium text-gray-700",
-            attrs: { for: "comments" },
-          },
-          [_vm._v("PSA Birth Certificate")]
-        ),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "text-gray-500",
-            attrs: { id: "comments-description" },
-          },
-          [_c("span", { staticClass: "sr-only" }), _vm._v("(Original)")]
-        ),
-      ]),
+      _c(
+        "span",
+        { staticClass: "text-gray-500", attrs: { id: "comments-description" } },
+        [_c("span", { staticClass: "sr-only" }), _vm._v("(Form 138)")]
+      ),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "relative flex items-start" }, [
-      _c("div", { staticClass: "flex items-center h-5" }, [
-        _c("input", {
-          staticClass:
-            "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
-          attrs: {
-            id: "candidates",
-            "aria-describedby": "candidates-description",
-            name: "candidates",
-            type: "checkbox",
-          },
-        }),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "ml-3 text-sm" }, [
-        _c(
-          "label",
-          {
-            staticClass: "font-medium text-gray-700",
-            attrs: { for: "candidates" },
-          },
-          [_vm._v("Good Moral")]
-        ),
-      ]),
+    return _c("div", { staticClass: "ml-3 text-sm" }, [
+      _c(
+        "label",
+        {
+          staticClass: "font-medium text-gray-700",
+          attrs: { for: "candidates" },
+        },
+        [_vm._v("Certificate of Completion")]
+      ),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "relative flex items-start" }, [
-      _c("div", { staticClass: "flex items-center h-5" }, [
-        _c("input", {
-          staticClass:
-            "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
-          attrs: {
-            id: "comments",
-            "aria-describedby": "comments-description",
-            name: "comments",
-            type: "checkbox",
-          },
-        }),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "ml-3 text-sm" }, [
-        _c(
-          "label",
-          {
-            staticClass: "font-medium text-gray-700",
-            attrs: { for: "comments" },
-          },
-          [_vm._v("Card")]
-        ),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "text-gray-500",
-            attrs: { id: "comments-description" },
-          },
-          [_c("span", { staticClass: "sr-only" }), _vm._v("(Form 138)")]
-        ),
-      ]),
+    return _c("div", { staticClass: "ml-3 text-sm" }, [
+      _c(
+        "label",
+        {
+          staticClass: "font-medium text-gray-700",
+          attrs: { for: "candidates" },
+        },
+        [_vm._v("1x1 Picture")]
+      ),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "relative flex items-start" }, [
-      _c("div", { staticClass: "flex items-center h-5" }, [
-        _c("input", {
-          staticClass:
-            "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded",
-          attrs: {
-            id: "offers",
-            "aria-describedby": "offers-description",
-            name: "offers",
-            type: "checkbox",
-          },
-        }),
-      ]),
+    return _c("div", { staticClass: "ml-3 text-sm" }, [
+      _c(
+        "label",
+        {
+          staticClass: "font-medium text-gray-700",
+          attrs: { for: "comments" },
+        },
+        [_vm._v("PSA Birth Certificate")]
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "ml-3 text-sm" }, [
-        _c(
-          "label",
-          {
-            staticClass: "font-medium text-gray-700",
-            attrs: { for: "offers" },
-          },
-          [_vm._v("Form 137")]
-        ),
-        _vm._v(" "),
-        _c(
-          "span",
-          { staticClass: "text-gray-500", attrs: { id: "offers-description" } },
-          [
-            _c("span", { staticClass: "sr-only" }),
-            _vm._v("(Request in School)"),
-          ]
-        ),
-      ]),
+      _c(
+        "span",
+        { staticClass: "text-gray-500", attrs: { id: "comments-description" } },
+        [_c("span", { staticClass: "sr-only" }), _vm._v("(Original)")]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ml-3 text-sm" }, [
+      _c(
+        "label",
+        {
+          staticClass: "font-medium text-gray-700",
+          attrs: { for: "candidates" },
+        },
+        [_vm._v("Good Moral")]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ml-3 text-sm" }, [
+      _c(
+        "label",
+        {
+          staticClass: "font-medium text-gray-700",
+          attrs: { for: "comments" },
+        },
+        [_vm._v("Card")]
+      ),
+      _vm._v(" "),
+      _c(
+        "span",
+        { staticClass: "text-gray-500", attrs: { id: "comments-description" } },
+        [_c("span", { staticClass: "sr-only" }), _vm._v("(Form 138)")]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ml-3 text-sm" }, [
+      _c(
+        "label",
+        { staticClass: "font-medium text-gray-700", attrs: { for: "offers" } },
+        [_vm._v("Form 137")]
+      ),
+      _vm._v(" "),
+      _c(
+        "span",
+        { staticClass: "text-gray-500", attrs: { id: "offers-description" } },
+        [_c("span", { staticClass: "sr-only" }), _vm._v("(Request in School)")]
+      ),
     ])
   },
 ]
@@ -39454,14 +40363,7 @@ var render = function () {
       _c("div", { staticClass: "mx-auto" }, [
         _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-1" }, [
           _c("div", { staticClass: "flex flex-col p-1" }, [
-            _c(
-              "dt",
-              {
-                staticClass:
-                  "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-              },
-              [_vm._v("Name")]
-            ),
+            _vm._m(0),
             _vm._v(" "),
             _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
               _c(
@@ -39502,14 +40404,7 @@ var render = function () {
         _vm._v(" "),
         _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-1" }, [
           _c("div", { staticClass: "flex flex-col p-1" }, [
-            _c(
-              "dt",
-              {
-                staticClass:
-                  "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-              },
-              [_vm._v("Address")]
-            ),
+            _vm._m(1),
             _vm._v(" "),
             _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
               _c(
@@ -39550,14 +40445,7 @@ var render = function () {
         _vm._v(" "),
         _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-2" }, [
           _c("div", { staticClass: "flex flex-col p-2" }, [
-            _c(
-              "dt",
-              {
-                staticClass:
-                  "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-              },
-              [_vm._v("Grade and Section")]
-            ),
+            _vm._m(2),
             _vm._v(" "),
             _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
               _c(
@@ -39596,14 +40484,7 @@ var render = function () {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "flex flex-col p-2" }, [
-            _c(
-              "dt",
-              {
-                staticClass:
-                  "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2",
-              },
-              [_vm._v("School Year")]
-            ),
+            _vm._m(3),
             _vm._v(" "),
             _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
               _c(
@@ -39611,32 +40492,34 @@ var render = function () {
                 { staticClass: "relative inline-block text-gray-700 w-full" },
                 [
                   _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.last_school_school_year,
-                        expression: "form.last_school_school_year",
-                      },
-                    ],
                     staticClass:
                       "w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
                     attrs: { type: "text", placeholder: "School Year" },
-                    domProps: { value: _vm.form.last_school_school_year },
+                  }),
+                  _vm._v(" "),
+                  _c("masked-input", {
+                    staticClass:
+                      "w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                    attrs: {
+                      mask: "1111-1111",
+                      type: "text",
+                      placeholder: "School Year",
+                    },
                     on: {
                       input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.form,
-                          "last_school_school_year",
-                          $event.target.value
-                        )
+                        _vm.rawVal = arguments[1]
                       },
                     },
+                    model: {
+                      value: _vm.form.last_school_school_year,
+                      callback: function ($$v) {
+                        _vm.$set(_vm.form, "last_school_school_year", $$v)
+                      },
+                      expression: "form.last_school_school_year",
+                    },
                   }),
-                ]
+                ],
+                1
               ),
             ]),
           ]),
@@ -39679,7 +40562,60 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("Name"),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("Address"),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("Grade and Section"),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dt",
+      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
+      [
+        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
+        _vm._v("School Year"),
+      ]
+    )
+  },
+]
 render._withStripped = true
 
 
