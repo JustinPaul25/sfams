@@ -34,7 +34,7 @@
                         <div class="mt-7">
                         <div class="relative inline-block text-gray-700 w-full">
                         <select class="px-2 mt-1 block w-full bg-gray-100 h-10 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 focus:outline-none focus:border-blue-500" placeholder="Regular input">
-                        <option selected>All Section</option> 
+                        <option selected>Type of User</option> 
                         <option>Student</option>
                         <option>Admin</option>
                         </select>   
