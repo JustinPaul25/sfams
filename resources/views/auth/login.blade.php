@@ -30,6 +30,15 @@
                                 </span>
                             @enderror                       
                         </div>
+                        <div class="col-span-8 sm:col-span-4 lg:col-span-2">
+                        <div class="relative inline-block text-gray-700 w-full">
+                        <select class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Regular input">
+                        <option selected>All Section</option> 
+                        <option>Student</option>
+                        <option>Admin</option>
+                        </select>   
+                        </div>
+                        </div>
             
                         <div class="mt-7">
                             <button type="submit" class="bg-blue-700 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
