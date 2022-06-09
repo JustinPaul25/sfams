@@ -30,7 +30,8 @@
                                 </span>
                             @enderror                       
                         </div>
-                        <div class="col-span-8 sm:col-span-4 lg:col-span-2">
+
+                        <div class="mt-7">
                         <div class="relative inline-block text-gray-700 w-full">
                         <select class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Regular input">
                         <option selected>All Section</option> 
