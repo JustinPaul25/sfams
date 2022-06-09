@@ -33,7 +33,7 @@
 
                         <div class="mt-7">
                         <div class="relative inline-block text-gray-700 w-full">
-                        <select class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Regular input">
+                        <select class="px-2 mt-1 block w-full bg-gray-100 h-10 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 focus:outline-none focus:border-blue-500ssssssssss" placeholder="Regular input">
                         <option selected>All Section</option> 
                         <option>Student</option>
                         <option>Admin</option>
