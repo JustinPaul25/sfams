@@ -10,7 +10,7 @@
                             <div class="relative inline-block text-gray-700 w-full">
                                 <select v-model="form.branch_id" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Province" disabled>
                                     <option value="">Select Branch</option>
-                                    <option v-for="branch in branches">{{ branch.name }} - {{ branch.address }}</option>
+                                    <option v-for="branch in branches" :value="branch.id">{{ branch.name }} - {{ branch.address }}</option>
                                 </select>
                             </div>
                         </div>

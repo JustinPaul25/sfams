@@ -38916,13 +38916,17 @@ var render = function () {
                             ]),
                             _vm._v(" "),
                             _vm._l(_vm.branches, function (branch) {
-                              return _c("option", [
-                                _vm._v(
-                                  _vm._s(branch.name) +
-                                    " - " +
-                                    _vm._s(branch.address)
-                                ),
-                              ])
+                              return _c(
+                                "option",
+                                { domProps: { value: branch.id } },
+                                [
+                                  _vm._v(
+                                    _vm._s(branch.name) +
+                                      " - " +
+                                      _vm._s(branch.address)
+                                  ),
+                                ]
+                              )
                             }),
                           ],
                           2
