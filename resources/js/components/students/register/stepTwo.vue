@@ -36,7 +36,6 @@
                         <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>School Year</dt>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
                             <div class="relative inline-block text-gray-700 w-full">
-                                <input type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="School Year">
                                 <masked-input v-model="form.last_school_school_year" mask="1111-1111" type="text" placeholder="School Year" @input="rawVal = arguments[1]" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
                             </div>
                         </div>

@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->enum('department', ['ELEM', 'SRH'])->nullable();
+            $table->string('enrollment_id')->nullable();
+            $table->unsignedBigInteger('branch_id')->nullable();
+            $table->string('email')->unique();
+            $table->enum('department', ['KINDER', 'ELEM', 'SRH'])->nullable();
+            $table->enum('status', ['PENDING', 'FAILED', 'ACCEPTED'])->nullable();
             $table->string('first_name')->nullable();
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nulalble();
@@ -26,10 +30,10 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('father_name')->nullable();
             $table->boolean('father_is_deceased')->nullable();
-            $table->boolean('father_phone')->nullable();
+            $table->string('father_phone')->nullable();
             $table->string('mother_name')->nullable();
             $table->boolean('mother_is_deceased')->nullable();
-            $table->boolean('mother_phone')->nullable();
+            $table->string('mother_phone')->nullable();
             $table->string('guardian_name')->nullable();
             $table->boolean('guardian_phone')->nullable();
             $table->string('purok_street')->nullable();
@@ -45,6 +49,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('grade_entered_id')->references('id')->on('grade_levels')->onCascade('delete');
+            $table->foreign('branch_id')->references('id')->on('branches')->onCascade('delete');
         });
     }
 

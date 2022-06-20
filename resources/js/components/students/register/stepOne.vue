@@ -18,26 +18,23 @@
                 </div>
             </div>
         </div>
+        <div class="flex flex-col p-2">
+            <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>Branch</dt>
+            <div class="mt-1 sm:mt-0 sm:col-span-2">
+                <div class="relative inline-block text-gray-700 w-full">
+                    <select v-model="form.branch_id" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Province">
+                        <option value="">Select Branch</option>
+                        <option v-for="branch in branches" :value="branch.id">{{ branch.name }} - {{ branch.address }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
         <p class="text-centered text-2xl text-gray-900 pt-2 font-bold">Personal Details</p>
         <div class="pt-3 sm:pt-2">
             <div role="group" aria-labelledby="label-notifications">
                 <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-baseline">
                     <div>
                         <div class="text-base font-medium text-gray-900 sm:text-sm sm:text-gray-700" id="label-notifications">Student Department</div>
-                    </div>
-                    <div class="sm:col-span-2">
-                        <div class="max-w-lg">
-                            <div class="mt-4 space-y-4">
-                                <div class="flex items-center">
-                                    <input id="push-everything" name="push-notifications" v-model="form.department" value="ELEM" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                    <label for="push-everything" class="ml-3 block text-sm font-medium text-gray-700"> Elementary </label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="push-email" name="push-notifications" v-model="form.department" value="SRH" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                    <label for="push-email" class="ml-3 block text-sm font-medium text-gray-700"> Senior High </label>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -99,7 +96,7 @@
                     </div>
                 </div>
             </dl>
-            <dl class="rounded-lg sm:grid sm:grid-cols-2">
+            <dl class="rounded-lg sm:grid sm:grid-cols-3">
                 <div class="flex flex-col p-2">
                     <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>Grade to Enter</dt>
                     <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -116,6 +113,14 @@
                     <div class="mt-1 sm:mt-0 sm:col-span-2">
                         <div class="relative inline-block text-gray-700 w-full">
                             <masked-input mask="\+\63 (111) 111-1111" v-model="form.phone" placeholder="Phone Number" @input="rawVal = arguments[1]" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col p-2">
+                    <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>Email</dt>
+                    <div class="mt-1 sm:mt-0 sm:col-span-2">
+                        <div class="relative inline-block text-gray-700 w-full">
+                            <input type="email" v-model="form.email" placeholder="Email" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
                         </div>
                     </div>
                 </div>
@@ -267,12 +272,12 @@
 
 <script>
 export default {
-    props: ['levels'],
+    props: ['levels', 'branches'],
     data() {
         return {
             required: [],
             form: {
-                department: '',
+                branch_id: '',
                 first_name: '',
                 middle_name: '',
                 last_name: '',
@@ -281,6 +286,7 @@ export default {
                 gender: '',
                 grade_entered_id: '',
                 phone: '',
+                email: '',
                 father_name: '',
                 father_is_deceased: '',
                 father_phone: '',
@@ -312,6 +318,10 @@ export default {
         },
         checkInputs() {
             var isCleared = true;
+            if(this.form.branch === '') {
+                this.required.push("Branch Is Required.")
+                var isCleared = false;
+            }
             if(this.form.first_name === '') {
                 this.required.push("Student First Name Is Required.")
                 var isCleared = false;
@@ -365,7 +375,7 @@ export default {
                 this.required.push("Contact Person Number is required")
             }
             return isCleared
-        }
+        },
     }
 }
 </script>

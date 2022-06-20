@@ -30,16 +30,6 @@
                                 </span>
                             @enderror                       
                         </div>
-
-                        <div class="mt-7">
-                        <div class="relative inline-block text-gray-700 w-full">
-                        <select class="px-2 mt-1 block w-full bg-gray-100 h-10 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 focus:outline-none focus:border-blue-500" placeholder="Regular input">
-                        <option selected>Type of User</option> 
-                        <option>Student</option>
-                        <option>Admin</option>
-                        </select>   
-                        </div>
-                        </div>
             
                         <div class="mt-7">
                             <button type="submit" class="bg-blue-700 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
@@ -47,6 +37,11 @@
                             </button>
                         </div>
                     </form>
+                    <div class="mt-7 pl-auto w-full">
+                        <a href="{{ route('online-enrollment') }}" class="text-blue-700 font-bold">
+                            Click Here to Enroll Online!
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

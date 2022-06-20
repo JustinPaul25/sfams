@@ -129,21 +129,31 @@
                             <tr>
                                 <th scope="col" class="whitespace-nowrap py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">LRN Number</th>
                                 <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Student Name</th>
-                                <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Grade - Section</th>
-                                <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Paid</th>
-                                <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Remaining Balance</th>
+                                <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Grade</th>
+                                <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Branch</th>
+                                <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Status</th>
                                 <th scope="col" class="relative whitespace-nowrap py-3.5 pl-3 pr-4 sm:pr-6">
                                 <span class="sr-only">Edit</span>
                                 </th>
                             </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-200 bg-white">
-                            <tr>
-                                <td class="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-blue-700 sm:pl-6">AAPS0L</td>
-                                <td class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 hover:text-blue-700"><a href="/students/view">Juaton, Ira A.</a></td>
-                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">1 - A</td>
-                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">₱4.37</td>
-                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">₱3,509.00</td>
+                            <tr v-for="student in students">
+                                <td class="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-blue-700 sm:pl-6">{{ student.enrollment_id }}</td>
+                                <td class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 hover:text-blue-700"><a :href="`/student/${student.id}`">{{ student.last_name }}, {{ student.first_name }}</a></td>
+                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">{{ student.grade_level.level }}</td>
+                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{{ student.branch.name }}</td>
+                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">
+                                    <span v-if="student.status == 'ACCEPTED'" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-blue-200 uppercase last:mr-0 mr-1">
+                                        Enrolled
+                                    </span>
+                                    <span v-if="student.status == 'PENDING'" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200 uppercase last:mr-0 mr-1">
+                                        Waiting for Payment
+                                    </span>
+                                    <span v-if="student.status == 'REJECTED'" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-red-600 bg-red-200 uppercase last:mr-0 mr-1">
+                                        Canceled
+                                    </span>
+                                </td>
                                 <td class="relative whitespace-nowrap py-2 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                     <a href="#" class="text-blue-700 hover:text-blue-700 mr-3">Process Payment<span class="sr-only">, AAPS0L</span></a>
                                     <a href="/students/form" class="text-blue-500 hover:text-blue-700">Edit<span class="sr-only">, AAPS0L</span></a>
@@ -160,3 +170,32 @@
         </div>
     </div>
 </template>
+
+<script>
+    import { mapGetters } from "vuex";
+
+    export default {
+        data() {
+            return {
+
+            }
+        },
+        computed: {
+            ...mapGetters({
+                students: 'student/students',
+            }),
+        },
+        methods: {
+            async getStudents() {
+                await this.$store.dispatch("student/getStudents", {
+                    params: {
+                        name: this.search
+                    }
+                });
+            },
+        },
+        created() {
+            this.getStudents()
+        }
+    }
+</script>

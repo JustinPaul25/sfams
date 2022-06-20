@@ -23,6 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if(auth()->user()) {
+            if(auth()->user()->isStudent()) {
+                return redirect('/my-profile');
+            } else {
+                return view('home');
+            }
+        } else {
+            return view('home');
+        }
     }
 }

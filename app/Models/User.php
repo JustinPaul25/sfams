@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Types\RoleType;
 use App\Filters\UserFilter;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
@@ -44,4 +45,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isAdmin(): bool
+    {
+        return $this->hasRole(RoleType::ADMINISTRATOR);
+    }
+
+    public function isStaff(): bool
+    {
+        return $this->hasRole(RoleType::STAFF);
+    }
+
+    public function isStudent(): bool
+    {
+        return $this->hasRole(RoleType::STUDENT);
+    }
 }

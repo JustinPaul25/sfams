@@ -1,6 +1,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+import { global } from './mixins'
 import store from "./store/store"
 import { SweetModal, SweetModalTab } from 'sweet-modal-vue'
 import MaskedInput from "vue-masked-input";
@@ -29,11 +30,17 @@ Vue.component('user-form', require('./components/users/form.vue').default);
 
 Vue.component('report', require('./components/reports/index.vue').default);
 
+Vue.component('notification', require('./components/notification/index.vue').default);
+
+Vue.component('logs', require('./components/logs.vue').default);
+
 Vue.component('sweet-modal', SweetModal);
 Vue.component('sweet-modal-tab', SweetModalTab);
 Vue.component('masked-input', MaskedInput);
 
 Vue.use(VueSweetalert2, options)
+
+Vue.mixin(global)
 
 const app = new Vue({
     el: '#app',
