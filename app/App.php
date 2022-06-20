@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Models\Notification;
+
 
 class App
 {
@@ -15,6 +17,7 @@ class App
             'is_student' => auth()->check() ? auth()->user()->isStudent() : null,
             'is_staff' => auth()->check() ? auth()->user()->isStaff() : null,
             'is_admin' => auth()->check() ? auth()->user()->isAdmin() : null,
+            'logs' => Notification::with('user')->get()
         ];
     }
 }

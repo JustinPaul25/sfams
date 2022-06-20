@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Types\RoleType;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -35,10 +37,21 @@ class UserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
         ]);
 
-        User::create([
+        $user = User::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'password' => Hash::make('SFAMS2022')
+        ]);
+
+        if(auth()->user()->isAdmin()) {
+            $user->assignRole(RoleType::ADMINISTRATOR);
+        } else {
+            $user->assignRole(RoleType::STAFF);
+        }
+
+        Notification::create([
+            'user_id' => auth()->id(),
+            'action' => 'Created User '.$user->name
         ]);
 
         return 'User Created Successfully';
@@ -65,11 +78,21 @@ class UserController extends Controller
             'email' => $request->input('email')
         ]);
 
+        Notification::create([
+            'user_id' => auth()->id(),
+            'action' => 'Updated User '.$user->name
+        ]);
+
         return 'User Updated Succesfully';
     }
 
     public function destroy(User $user)
     {
+        Notification::create([
+            'user_id' => auth()->id(),
+            'action' => 'Deleted User '.$user->name
+        ]);
+
         $user->delete();
 
         return 'User deleted successfully';

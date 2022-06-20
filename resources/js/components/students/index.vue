@@ -13,7 +13,7 @@
             <div class="grid grid-cols-8 gap-8 mt-8">
                 <div class="col-span-8 sm:col-span-4 lg:col-span-2">
                     <div class="relative inline-block text-gray-700 w-full">
-                        <input type="text" class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Search Student">
+                        <input v-model="search" type="text" class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Search Student">
                         <div class="absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none">
                             <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-blue-500"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                         </div>
@@ -21,20 +21,9 @@
                 </div>
                 <div class="col-span-8 sm:col-span-4 lg:col-span-2">
                     <div class="relative inline-block text-gray-700 w-full">
-                        <select class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Regular input">
-                            <option selected>All Grades</option>
-                            <option>Grade 1</option>
-                            <option>Grade 2</option>
-                            <option>Grade 3</option>
-                            <option>Grade 4</option>
-                            <option>Grade 5</option>
-                            <option>Grade 6</option>
-                            <option>Grade 7</option>
-                            <option>Grade 8</option>
-                            <option>Grade 9</option>
-                            <option>Grade 10</option>
-                            <option>Grade 11</option>
-                            <option>Grade 12</option>
+                        <select v-model="level" class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Regular input">
+                            <option value="" selected>All Grades</option>
+                            <option v-for="level in levels" :value="level.id">{{ level.level }}</option>
                         </select>
                         <div
                             class="absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none"
@@ -58,20 +47,9 @@
                 </div>
                 <div class="col-span-8 sm:col-span-4 lg:col-span-2">
                     <div class="relative inline-block text-gray-700 w-full">
-                        <select class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Regular input">
-                            <option selected>All Section</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
+                        <select v-model="branch" class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Regular input">
+                            <option value="" selected>All Branches</option>
+                            <option v-for="branch in branches" :value="branch.id">{{ branch.name }}</option>
                         </select>
                         <div
                             class="absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none"
@@ -95,9 +73,9 @@
                 </div>
                 <div class="col-span-8 sm:col-span-4 lg:col-span-2">
                     <div class="relative inline-block text-gray-700 w-full">
-                        <select class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Regular input">
-                            <option value="" selected>Sort By: A-Z</option>
-                            <option>Sort By: Z-A</option>
+                        <select v-model="sort_by" class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Regular input">
+                            <option value="asc" selected>Sort By: A-Z</option>
+                            <option value="desc" >Sort By: Z-A</option>
                         </select>
                         <div
                             class="absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none"
@@ -175,9 +153,13 @@
     import { mapGetters } from "vuex";
 
     export default {
+        props: ['levels', 'branches'],
         data() {
             return {
-
+                search: '',
+                level: '',
+                branch: '',
+                sort_by: 'asc'
             }
         },
         computed: {
@@ -185,11 +167,28 @@
                 students: 'student/students',
             }),
         },
+        watch: {
+            search(newSearch, oldSearch) {
+                this.getStudents()
+            },
+            level(newSearch, oldSearch) {
+                this.getStudents()
+            },
+            branch(newSearch, oldSearch) {
+                this.getStudents()
+            },
+            sort_by(newSearch, oldSearch) {
+                this.getStudents()
+            }
+        },
         methods: {
             async getStudents() {
                 await this.$store.dispatch("student/getStudents", {
                     params: {
-                        name: this.search
+                        name: this.search,
+                        level: this.level,
+                        branch: this.branch,
+                        sort_by: this.sort_by
                     }
                 });
             },

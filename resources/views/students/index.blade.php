@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <students></students>
+    <students :levels="{{ json_encode($levels) }}" :branches="{{ json_encode($branches) }}"></students>
 @endsection

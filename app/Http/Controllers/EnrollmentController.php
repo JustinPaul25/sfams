@@ -7,6 +7,7 @@ use App\Models\Branch;
 use App\Models\Student;
 use App\Types\RoleType;
 use App\Models\GradeLevel;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
@@ -87,6 +88,11 @@ class EnrollmentController extends Controller
             ]);
 
             $user->assignRole(RoleType::STUDENT);
+
+            Notification::create([
+                'user_id' => auth()->id(),
+                'action' => 'Enrolled Student '.$student->first_name.' '.$student->last_name
+            ]);
         }
 
         return 'student saved';

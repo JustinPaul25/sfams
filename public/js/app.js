@@ -5484,12 +5484,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
+  data: function data() {
+    return {
+      notifications: []
+    };
+  },
+  created: function created() {
+    this.notifications = this.app.logs;
   }
 });
 
@@ -5536,13 +5538,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
+  props: ['logs']
 });
 
 /***/ }),
@@ -6153,36 +6150,34 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['levels', 'branches'],
   data: function data() {
-    return {};
+    return {
+      search: '',
+      level: '',
+      branch: '',
+      sort_by: 'asc'
+    };
   },
   computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)({
     students: 'student/students'
   })),
+  watch: {
+    search: function search(newSearch, oldSearch) {
+      this.getStudents();
+    },
+    level: function level(newSearch, oldSearch) {
+      this.getStudents();
+    },
+    branch: function branch(newSearch, oldSearch) {
+      this.getStudents();
+    },
+    sort_by: function sort_by(newSearch, oldSearch) {
+      this.getStudents();
+    }
+  },
   methods: {
     getStudents: function getStudents() {
       var _this = this;
@@ -6195,7 +6190,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _context.next = 2;
                 return _this.$store.dispatch("student/getStudents", {
                   params: {
-                    name: _this.search
+                    name: _this.search,
+                    level: _this.level,
+                    branch: _this.branch,
+                    sort_by: _this.sort_by
                   }
                 });
 
@@ -35870,96 +35868,84 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "pt-8 min-h-screen bg-blue-100" }, [
+    _c("div", { staticClass: "px-4 sm:px-6 lg:px-8" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", [
+        _c(
+          "ul",
+          { staticClass: "divide-y divide-gray-200", attrs: { role: "list" } },
+          _vm._l(_vm.notifications, function (notification) {
+            return _c(
+              "li",
+              {
+                staticClass:
+                  "relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600",
+              },
+              [
+                _c("div", { staticClass: "flex justify-between space-x-3" }, [
+                  _c("div", { staticClass: "min-w-0 flex-1" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "block focus:outline-none",
+                        attrs: { href: "#" },
+                      },
+                      [
+                        _c("span", {
+                          staticClass: "absolute inset-0",
+                          attrs: { "aria-hidden": "true" },
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "text-sm font-medium text-gray-900 truncate",
+                          },
+                          [_vm._v(_vm._s(notification.user.name))]
+                        ),
+                      ]
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "time",
+                    {
+                      staticClass:
+                        "flex-shrink-0 whitespace-nowrap text-sm text-gray-500",
+                      attrs: { datetime: "2021-01-27T16:35" },
+                    },
+                    [_vm._v("Time: " + _vm._s(notification.created_at))]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mt-1" }, [
+                  _c(
+                    "p",
+                    { staticClass: "line-clamp-2 text-sm text-gray-600" },
+                    [_vm._v(_vm._s(notification.action))]
+                  ),
+                ]),
+              ]
+            )
+          }),
+          0
+        ),
+      ]),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "pt-8 min-h-screen bg-blue-100" }, [
-      _c("div", { staticClass: "px-4 sm:px-6 lg:px-8" }, [
-        _c("div", { staticClass: "sm:flex sm:items-center" }, [
-          _c("div", { staticClass: "sm:flex-auto" }, [
-            _c("h1", { staticClass: "text-xl font-semibold text-gray-900" }, [
-              _vm._v("System Logs"),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c(
-            "ul",
-            {
-              staticClass: "divide-y divide-gray-200",
-              attrs: { role: "list" },
-            },
-            [
-              _c(
-                "li",
-                {
-                  staticClass:
-                    "relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600",
-                },
-                [
-                  _c("div", { staticClass: "flex justify-between space-x-3" }, [
-                    _c("div", { staticClass: "min-w-0 flex-1" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "block focus:outline-none",
-                          attrs: { href: "#" },
-                        },
-                        [
-                          _c("span", {
-                            staticClass: "absolute inset-0",
-                            attrs: { "aria-hidden": "true" },
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "p",
-                            {
-                              staticClass:
-                                "text-sm font-medium text-gray-900 truncate",
-                            },
-                            [_vm._v("Gloria Roberston")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "p",
-                            { staticClass: "text-sm text-gray-500 truncate" },
-                            [_vm._v("Velit placeat sit ducimus non sed")]
-                          ),
-                        ]
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "time",
-                      {
-                        staticClass:
-                          "flex-shrink-0 whitespace-nowrap text-sm text-gray-500",
-                        attrs: { datetime: "2021-01-27T16:35" },
-                      },
-                      [_vm._v("1d ago")]
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "mt-1" }, [
-                    _c(
-                      "p",
-                      { staticClass: "line-clamp-2 text-sm text-gray-600" },
-                      [
-                        _vm._v(
-                          "Doloremque dolorem maiores assumenda dolorem facilis. Velit vel in a rerum natus facere. Enim rerum eaque qui facilis. Numquam laudantium sed id dolores omnis in. Eos reiciendis deserunt maiores et accusamus quod dolor."
-                        ),
-                      ]
-                    ),
-                  ]),
-                ]
-              ),
-            ]
-          ),
+    return _c("div", { staticClass: "sm:flex sm:items-center" }, [
+      _c("div", { staticClass: "sm:flex-auto" }, [
+        _c("h1", { staticClass: "text-xl font-semibold text-gray-900" }, [
+          _vm._v("System Logs"),
         ]),
       ]),
     ])
@@ -35987,96 +35973,84 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "pt-8 min-h-screen bg-blue-100" }, [
+    _c("div", { staticClass: "px-4 sm:px-6 lg:px-8" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", [
+        _c(
+          "ul",
+          { staticClass: "divide-y divide-gray-200", attrs: { role: "list" } },
+          _vm._l(_vm.notifications, function (nofication) {
+            return _c(
+              "li",
+              {
+                staticClass:
+                  "relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600",
+              },
+              [
+                _c("div", { staticClass: "flex justify-between space-x-3" }, [
+                  _c("div", { staticClass: "min-w-0 flex-1" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "block focus:outline-none",
+                        attrs: { href: "#" },
+                      },
+                      [
+                        _c("span", {
+                          staticClass: "absolute inset-0",
+                          attrs: { "aria-hidden": "true" },
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "text-sm font-medium text-gray-900 truncate",
+                          },
+                          [_vm._v(_vm._s(_vm.notifcation.user.name))]
+                        ),
+                      ]
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "time",
+                    {
+                      staticClass:
+                        "flex-shrink-0 whitespace-nowrap text-sm text-gray-500",
+                      attrs: { datetime: "2021-01-27T16:35" },
+                    },
+                    [_vm._v("Time: " + _vm._s(_vm.notification.created_at))]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mt-1" }, [
+                  _c(
+                    "p",
+                    { staticClass: "line-clamp-2 text-sm text-gray-600" },
+                    [_vm._v(_vm._s(_vm.notification.action))]
+                  ),
+                ]),
+              ]
+            )
+          }),
+          0
+        ),
+      ]),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "pt-8 min-h-screen bg-blue-100" }, [
-      _c("div", { staticClass: "px-4 sm:px-6 lg:px-8" }, [
-        _c("div", { staticClass: "sm:flex sm:items-center" }, [
-          _c("div", { staticClass: "sm:flex-auto" }, [
-            _c("h1", { staticClass: "text-xl font-semibold text-gray-900" }, [
-              _vm._v("Notifications"),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c(
-            "ul",
-            {
-              staticClass: "divide-y divide-gray-200",
-              attrs: { role: "list" },
-            },
-            [
-              _c(
-                "li",
-                {
-                  staticClass:
-                    "relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600",
-                },
-                [
-                  _c("div", { staticClass: "flex justify-between space-x-3" }, [
-                    _c("div", { staticClass: "min-w-0 flex-1" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "block focus:outline-none",
-                          attrs: { href: "#" },
-                        },
-                        [
-                          _c("span", {
-                            staticClass: "absolute inset-0",
-                            attrs: { "aria-hidden": "true" },
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "p",
-                            {
-                              staticClass:
-                                "text-sm font-medium text-gray-900 truncate",
-                            },
-                            [_vm._v("Gloria Roberston")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "p",
-                            { staticClass: "text-sm text-gray-500 truncate" },
-                            [_vm._v("Velit placeat sit ducimus non sed")]
-                          ),
-                        ]
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "time",
-                      {
-                        staticClass:
-                          "flex-shrink-0 whitespace-nowrap text-sm text-gray-500",
-                        attrs: { datetime: "2021-01-27T16:35" },
-                      },
-                      [_vm._v("1d ago")]
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "mt-1" }, [
-                    _c(
-                      "p",
-                      { staticClass: "line-clamp-2 text-sm text-gray-600" },
-                      [
-                        _vm._v(
-                          "Doloremque dolorem maiores assumenda dolorem facilis. Velit vel in a rerum natus facere. Enim rerum eaque qui facilis. Numquam laudantium sed id dolores omnis in. Eos reiciendis deserunt maiores et accusamus quod dolor."
-                        ),
-                      ]
-                    ),
-                  ]),
-                ]
-              ),
-            ]
-          ),
+    return _c("div", { staticClass: "sm:flex sm:items-center" }, [
+      _c("div", { staticClass: "sm:flex-auto" }, [
+        _c("h1", { staticClass: "text-xl font-semibold text-gray-900" }, [
+          _vm._v("Notifications"),
         ]),
       ]),
     ])
@@ -37857,9 +37831,26 @@ var render = function () {
             { staticClass: "relative inline-block text-gray-700 w-full" },
             [
               _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.search,
+                    expression: "search",
+                  },
+                ],
                 staticClass:
                   "w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
                 attrs: { type: "text", placeholder: "Search Student" },
+                domProps: { value: _vm.search },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.search = $event.target.value
+                  },
+                },
               }),
               _vm._v(" "),
               _c(
@@ -37908,7 +37899,49 @@ var render = function () {
             "div",
             { staticClass: "relative inline-block text-gray-700 w-full" },
             [
-              _vm._m(1),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.level,
+                      expression: "level",
+                    },
+                  ],
+                  staticClass:
+                    "w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                  attrs: { placeholder: "Regular input" },
+                  on: {
+                    change: function ($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function (o) {
+                          return o.selected
+                        })
+                        .map(function (o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.level = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    },
+                  },
+                },
+                [
+                  _c("option", { attrs: { value: "", selected: "" } }, [
+                    _vm._v("All Grades"),
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.levels, function (level) {
+                    return _c("option", { domProps: { value: level.id } }, [
+                      _vm._v(_vm._s(level.level)),
+                    ])
+                  }),
+                ],
+                2
+              ),
               _vm._v(" "),
               _c(
                 "div",
@@ -37976,7 +38009,49 @@ var render = function () {
             "div",
             { staticClass: "relative inline-block text-gray-700 w-full" },
             [
-              _vm._m(2),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.branch,
+                      expression: "branch",
+                    },
+                  ],
+                  staticClass:
+                    "w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                  attrs: { placeholder: "Regular input" },
+                  on: {
+                    change: function ($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function (o) {
+                          return o.selected
+                        })
+                        .map(function (o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.branch = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    },
+                  },
+                },
+                [
+                  _c("option", { attrs: { value: "", selected: "" } }, [
+                    _vm._v("All Branches"),
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.branches, function (branch) {
+                    return _c("option", { domProps: { value: branch.id } }, [
+                      _vm._v(_vm._s(branch.name)),
+                    ])
+                  }),
+                ],
+                2
+              ),
               _vm._v(" "),
               _c(
                 "div",
@@ -38044,7 +38119,46 @@ var render = function () {
             "div",
             { staticClass: "relative inline-block text-gray-700 w-full" },
             [
-              _vm._m(3),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.sort_by,
+                      expression: "sort_by",
+                    },
+                  ],
+                  staticClass:
+                    "w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                  attrs: { placeholder: "Regular input" },
+                  on: {
+                    change: function ($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function (o) {
+                          return o.selected
+                        })
+                        .map(function (o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.sort_by = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    },
+                  },
+                },
+                [
+                  _c("option", { attrs: { value: "asc", selected: "" } }, [
+                    _vm._v("Sort By: A-Z"),
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "desc" } }, [
+                    _vm._v("Sort By: Z-A"),
+                  ]),
+                ]
+              ),
               _vm._v(" "),
               _c(
                 "div",
@@ -38131,7 +38245,7 @@ var render = function () {
                       "table",
                       { staticClass: "min-w-full divide-y divide-gray-300" },
                       [
-                        _vm._m(4),
+                        _vm._m(1),
                         _vm._v(" "),
                         _c(
                           "tbody",
@@ -38242,7 +38356,7 @@ var render = function () {
                                 ]
                               ),
                               _vm._v(" "),
-                              _vm._m(5, true),
+                              _vm._m(2, true),
                             ])
                           }),
                           0
@@ -38287,106 +38401,6 @@ var staticRenderFns = [
         ),
       ]),
     ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "select",
-      {
-        staticClass:
-          "w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
-        attrs: { placeholder: "Regular input" },
-      },
-      [
-        _c("option", { attrs: { selected: "" } }, [_vm._v("All Grades")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 1")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 2")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 3")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 4")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 5")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 6")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 7")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 8")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 9")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 10")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 11")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 12")]),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "select",
-      {
-        staticClass:
-          "w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
-        attrs: { placeholder: "Regular input" },
-      },
-      [
-        _c("option", { attrs: { selected: "" } }, [_vm._v("All Section")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("1")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("2")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("3")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("4")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("5")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("6")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("7")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("8")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("9")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("10")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("11")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("12")]),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "select",
-      {
-        staticClass:
-          "w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
-        attrs: { placeholder: "Regular input" },
-      },
-      [
-        _c("option", { attrs: { value: "", selected: "" } }, [
-          _vm._v("Sort By: A-Z"),
-        ]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Sort By: Z-A")]),
-      ]
-    )
   },
   function () {
     var _vm = this
@@ -39227,7 +39241,7 @@ var render = function () {
                   [
                     _vm._v(
                       _vm._s(
-                        _vm.form.father_is_deceased == "0"
+                        _vm.form.father_is_deceased == "1"
                           ? "DECEASED"
                           : "LIVING"
                       )
@@ -39299,7 +39313,7 @@ var render = function () {
                   [
                     _vm._v(
                       _vm._s(
-                        _vm.form.mother_is_deceased == "0"
+                        _vm.form.mother_is_deceased == "1"
                           ? "DECEASED"
                           : "LIVING"
                       )
