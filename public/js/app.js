@@ -6532,30 +6532,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _this.$store.dispatch("student/createStudent", _this.form);
 
               case 4:
-                if (_this.app.is_auth) {
-                  window.location.href = "/students";
-                } else {
-                  _this.$swal.fire({
-                    icon: 'Success',
-                    title: 'Form Submitted',
-                    text: 'You account will be sent via email once enrolled',
-                    footer: '<a href="/login">Back to login Page</a>'
-                  });
-                }
-
-                _context.next = 9;
+                _context.next = 8;
                 break;
 
-              case 7:
-                _context.prev = 7;
+              case 6:
+                _context.prev = 6;
                 _context.t0 = _context["catch"](1);
 
-              case 9:
+              case 8:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[1, 7]]);
+        }, _callee, null, [[1, 6]]);
       }))();
     },
     prevStep: function prevStep() {

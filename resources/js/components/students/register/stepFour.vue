@@ -168,16 +168,16 @@
                 console.log('on submit')
                 try {
                     await this.$store.dispatch("student/createStudent", this.form)
-                    if(this.app.is_auth) {
-                        window.location.href = "/students";
-                    } else {
-                        this.$swal.fire({
-                            icon: 'Success',
-                            title: 'Form Submitted',
-                            text: 'You account will be sent via email once enrolled',
-                            footer: '<a href="/login">Back to login Page</a>'
-                        })
-                    }
+                    // if(this.app.is_auth) {
+                    //     window.location.href = "/students";
+                    // } else {
+                    //     this.$swal.fire({
+                    //         icon: 'Success',
+                    //         title: 'Form Submitted',
+                    //         text: 'You account will be sent via email once enrolled',
+                    //         footer: '<a href="/login">Back to login Page</a>'
+                    //     })
+                    // }
                 } catch (error) {
 
                 }
