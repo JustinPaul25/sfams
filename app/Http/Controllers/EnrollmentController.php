@@ -31,15 +31,15 @@ class EnrollmentController extends Controller
         }
 
         if($request->input('grade_entered_id') < 3) {
-            $depertment = 'KINDER';
+            $department = 'KINDER';
         }
 
         if($request->input('grade_entered_id') > 2 && $request->input('grade_entered_id') < 9) {
-            $depertment = 'ELEM';
+            $department = 'ELEM';
         }
 
         if($request->input('grade_entered_id') > 9 && $request->input('grade_entered_id') < 13) {
-            $depertment = 'SRH';
+            $department = 'SRH';
         }
 
         $id = IdGenerator::generate(['table' => 'students', 'length' => 6, 'prefix' => date('y')]);
@@ -48,7 +48,7 @@ class EnrollmentController extends Controller
             'enrollment_id' => $id,
             'email' => $request->input('email'),
             'branch_id' => $request->input('branch_id'),
-            'department' => $depertment,
+            'department' => 'SRH',
             'status' => $status,
             'first_name' => $request->input('first_name'),
             'last_name' => $request->input('last_name'),
