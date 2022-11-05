@@ -5443,6 +5443,822 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/application.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/application.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['levels', 'branches'],
+  data: function data() {
+    return {
+      search: '',
+      level: '',
+      sort_by: 'asc'
+    };
+  },
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)({
+    applications: 'application/applications'
+  })),
+  watch: {
+    search: function search(newSearch, oldSearch) {
+      this.getApplications();
+    },
+    level: function level(newSearch, oldSearch) {
+      this.getApplications();
+    },
+    sort_by: function sort_by(newSearch, oldSearch) {
+      this.getApplications();
+    }
+  },
+  methods: {
+    getApplications: function getApplications() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return _this.$store.dispatch("application/getApplications", {
+                  params: {
+                    name: _this.search,
+                    level: _this.level,
+                    sort_by: _this.sort_by
+                  }
+                });
+
+              case 2:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  },
+  created: function created() {
+    this.getApplications();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/form.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/form.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/debounce */ "./node_modules/lodash/debounce.js");
+/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['student', 'levels', 'fees', 'requirements'],
+  data: function data() {
+    return {
+      isOpen: false,
+      isOpenInformation: false,
+      form: {
+        requirements: null,
+        student_id: null,
+        fees: null,
+        discount: 0,
+        entrance: 0,
+        misc: 0,
+        tuition: 0,
+        books: 0,
+        handbook: 0,
+        id_fee: 0,
+        ECCD_checklist: true,
+        birth_cert: true,
+        card: true,
+        coc: true,
+        form_137: true,
+        good_moral: true,
+        picture: true
+      }
+    };
+  },
+  watch: {
+    'form.entrance': lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default()(function (newVal, oldVal) {
+      if (newVal > parseInt(this.fees.entrance)) {
+        this.form.entrance = parseInt(this.fees.entrance);
+      }
+    }, 500),
+    'form.misc': lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default()(function (newVal, oldVal) {
+      if (newVal > parseInt(this.fees.misc)) {
+        this.form.misc = parseInt(this.fees.misc);
+      }
+    }, 500),
+    'form.tuition': lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default()(function (newVal, oldVal) {
+      if (newVal > parseInt(this.fees.tuition)) {
+        this.form.tuition = parseInt(this.fees.tuition);
+      }
+    }, 500),
+    'form.books': lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default()(function (newVal, oldVal) {
+      if (newVal > parseInt(this.fees.books)) {
+        this.form.books = parseInt(this.fees.books);
+      }
+    }, 500),
+    'form.handbook': lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default()(function (newVal, oldVal) {
+      if (newVal > parseInt(this.fees.handbook)) {
+        this.form.handbook = parseInt(this.fees.handbook);
+      }
+    }, 500),
+    'form.id_fee': lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default()(function (newVal, oldVal) {
+      if (newVal > parseInt(this.fees.id_fee)) {
+        this.form.id_fee = parseInt(this.fees.id_fee);
+      }
+    }, 500)
+  },
+  methods: {
+    print: function print() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return _this.$htmlToPaper('printMe');
+
+              case 2:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    openStudentModal: function openStudentModal() {
+      this.$refs.studentlistmodal.open();
+    },
+    numberWithCommas: function numberWithCommas(num) {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    },
+    toggleAccordion: function toggleAccordion() {
+      this.isOpen = !this.isOpen;
+    },
+    toggleAccordionInformation: function toggleAccordionInformation() {
+      this.isOpenInformation = !this.isOpenInformation;
+    },
+    totalPayment: function totalPayment(fees) {
+      return this.numberWithCommas(parseInt(fees.entrance) + parseInt(fees.misc) + parseInt(fees.tuition) + parseInt(fees.books) + parseInt(fees.handbook) + parseInt(fees.id_fee) - this.form.discount);
+    },
+    amountTotal: function amountTotal() {
+      return parseInt(this.form.entrance) + parseInt(this.form.misc) + parseInt(this.form.tuition) + parseInt(this.form.books) + parseInt(this.form.handbook) + parseInt(this.form.id_fee);
+    },
+    processPayment: function processPayment() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _this2.form.requirements = _this2.requirements;
+                _this2.form.student_id = _this2.student.id;
+                _this2.form.fees = _this2.fees;
+                _context2.next = 5;
+                return axios.post('/enrollment/new-student', _this2.form);
+
+              case 5:
+                _this2.print();
+
+              case 6:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    },
+    dateNow: function dateNow() {
+      var date = new Date();
+      var day = date.getDate();
+      var month = date.getMonth() + 1;
+      var year = date.getFullYear();
+      return "".concat(day, "-").concat(month, "-").concat(year);
+    }
+  },
+  mounted: function mounted() {}
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/logs.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/logs.vue?vue&type=script&lang=js& ***!
@@ -6122,34 +6938,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['levels', 'branches'],
@@ -6157,7 +6945,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       search: '',
       level: '',
-      branch: '',
       sort_by: 'asc'
     };
   },
@@ -6169,9 +6956,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.getStudents();
     },
     level: function level(newSearch, oldSearch) {
-      this.getStudents();
-    },
-    branch: function branch(newSearch, oldSearch) {
       this.getStudents();
     },
     sort_by: function sort_by(newSearch, oldSearch) {
@@ -6192,7 +6976,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   params: {
                     name: _this.search,
                     level: _this.level,
-                    branch: _this.branch,
                     sort_by: _this.sort_by
                   }
                 });
@@ -6294,7 +7077,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -6306,7 +7088,7 @@ __webpack_require__.r(__webpack_exports__);
     StepThree: _stepThree_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     StepFour: _stepFour_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
-  props: ['levels', 'branches'],
+  props: ['levels'],
   data: function data() {
     return {
       step: 1,
@@ -6314,12 +7096,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    incStep: function incStep() {
-      this.step += 1;
+    incStep: function incStep(inc) {
+      this.step = this.step + inc;
     },
     nextStepTwo: function nextStepTwo(form) {
       this.form = form;
-      this.incStep();
+      this.incStep(1);
     },
     nextStepThree: function nextStepThree(form) {
       this.form.last_school_attended = form.last_school_attended;
@@ -6328,8 +7110,12 @@ __webpack_require__.r(__webpack_exports__);
       this.form.last_school_school_year = form.last_school_school_year;
       this.incStep();
     },
-    nextStepFour: function nextStepFour() {
-      this.incStep();
+    nextStepFour: function nextStepFour(form) {
+      this.form.last_school_attended = form.last_school_attended;
+      this.form.last_school_address = form.last_school_address;
+      this.form.last_school_grade_section = form.last_school_grade_section;
+      this.form.last_school_school_year = form.last_school_school_year;
+      this.incStep(2);
     }
   }
 });
@@ -6499,21 +7285,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['form', 'levels', 'branches'],
+  props: ['form', 'levels'],
   data: function data() {
     return {};
   },
@@ -6529,33 +7302,33 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 console.log('on submit');
                 _context.prev = 1;
                 _context.next = 4;
-                return _this.$store.dispatch("student/createStudent", _this.form);
+                return axios.post('/student', _this.form).then(function (response) {
+                  if (_this.app.is_auth) {
+                    window.location.href = "/enrollment/".concat(response.data.id);
+                  } else {
+                    _this.$swal.fire({
+                      icon: 'Success',
+                      title: 'Form Submitted',
+                      text: 'You account will be sent via email once enrolled',
+                      footer: '<a href="/login">Back to login Page</a>'
+                    });
+                  }
+                });
 
               case 4:
-                if (_this.app.is_auth) {
-                  window.location.href = "/students";
-                } else {
-                  _this.$swal.fire({
-                    icon: 'Success',
-                    title: 'Form Submitted',
-                    text: 'You account will be sent via email once enrolled',
-                    footer: '<a href="/login">Back to login Page</a>'
-                  });
-                }
-
-                _context.next = 9;
+                _context.next = 8;
                 break;
 
-              case 7:
-                _context.prev = 7;
+              case 6:
+                _context.prev = 6;
                 _context.t0 = _context["catch"](1);
 
-              case 9:
+              case 8:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[1, 7]]);
+        }, _callee, null, [[1, 6]]);
       }))();
     },
     prevStep: function prevStep() {
@@ -6846,24 +7619,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['levels', 'branches'],
   data: function data() {
     return {
       required: [],
       form: {
-        branch_id: '',
         first_name: '',
         middle_name: '',
         last_name: '',
@@ -7764,6 +8525,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -7856,6 +8619,264 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/utilities/index.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/utilities/index.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      selectedUtility: 1,
+      form: {
+        id: 0,
+        entrance: 0,
+        misc: 0,
+        tuition: 0,
+        books: 0,
+        handbook: 0,
+        id_fee: 0,
+        closing: 0,
+        graduation: 0
+      }
+    };
+  },
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)({
+    utilities: 'utility/utilities'
+  })),
+  watch: {
+    selectedUtility: function selectedUtility(newSearch, oldSearch) {
+      var result = this.utilities.find(function (_ref) {
+        var id = _ref.id;
+        return id === newSearch;
+      });
+      var newForm = {
+        id: result.id,
+        entrance: result.entrance,
+        misc: result.misc,
+        tuition: result.tuition,
+        books: result.books,
+        handbook: result.handbook,
+        id_fee: result.id_fee,
+        closing: result.closing,
+        graduation: result.graduation
+      };
+      this.form = newForm;
+    }
+  },
+  methods: {
+    updateUtility: function updateUtility() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return _this.$store.dispatch("utility/updateUtility", _this.form);
+
+              case 3:
+                _this.swalAlert();
+
+                _context.next = 10;
+                break;
+
+              case 6:
+                _context.prev = 6;
+                _context.t0 = _context["catch"](0);
+
+                _this.getList();
+
+                _this.$swal.fire({
+                  icon: 'Success',
+                  title: 'Fee Updated'
+                });
+
+              case 10:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[0, 6]]);
+      }))();
+    },
+    getList: function getList() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return _this2.$store.dispatch("utility/getUtilities");
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    }
+  },
+  mounted: function mounted() {
+    this.getList();
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -7871,6 +8892,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_sweetalert2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-sweetalert2 */ "./node_modules/vue-sweetalert2/dist/vue-sweetalert.umd.js");
 /* harmony import */ var vue_sweetalert2__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_sweetalert2__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var sweetalert2_src_sweetalert2_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sweetalert2/src/sweetalert2.scss */ "./node_modules/sweetalert2/src/sweetalert2.scss");
+/* harmony import */ var vue_html_to_paper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-html-to-paper */ "./node_modules/vue-html-to-paper/dist/index.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"]);
@@ -7880,9 +8902,21 @@ window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js
 
 
 
+
 var options = {
   confirmButtonColor: '#2563EB',
   cancelButtonColor: '#EF4444'
+};
+var printoptions = {
+  name: '_blank',
+  specs: ['fullscreen=yes', 'titlebar=yes', 'scrollbars=yes'],
+  styles: ['https://cdn.tailwindcss.com', 'https://unpkg.com/kidlat-css/css/kidlat.css'],
+  timeout: 1000,
+  // default timeout before the print window appears
+  autoClose: true,
+  // if false, the window will not close after printing
+  windowTitle: window.document.title // override the window title
+
 };
 Vue.component('example-component', (__webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]));
 Vue.component('dashboard', (__webpack_require__(/*! ./components/dashboard/index.vue */ "./resources/js/components/dashboard/index.vue")["default"]));
@@ -7897,11 +8931,21 @@ Vue.component('user-form', (__webpack_require__(/*! ./components/users/form.vue 
 Vue.component('report', (__webpack_require__(/*! ./components/reports/index.vue */ "./resources/js/components/reports/index.vue")["default"]));
 Vue.component('notification', (__webpack_require__(/*! ./components/notification/index.vue */ "./resources/js/components/notification/index.vue")["default"]));
 Vue.component('logs', (__webpack_require__(/*! ./components/logs.vue */ "./resources/js/components/logs.vue")["default"]));
+Vue.component('enrollment-application', (__webpack_require__(/*! ./components/enrollment/application.vue */ "./resources/js/components/enrollment/application.vue")["default"]));
+Vue.component('enrollment-payment-form', (__webpack_require__(/*! ./components/enrollment/form.vue */ "./resources/js/components/enrollment/form.vue")["default"]));
 Vue.component('sweet-modal', sweet_modal_vue__WEBPACK_IMPORTED_MODULE_2__.SweetModal);
 Vue.component('sweet-modal-tab', sweet_modal_vue__WEBPACK_IMPORTED_MODULE_2__.SweetModalTab);
 Vue.component('masked-input', vue_masked_input__WEBPACK_IMPORTED_MODULE_3__["default"]);
 Vue.use((vue_sweetalert2__WEBPACK_IMPORTED_MODULE_4___default()), options);
+Vue.use(vue_html_to_paper__WEBPACK_IMPORTED_MODULE_6__["default"], printoptions);
 Vue.mixin(_mixins__WEBPACK_IMPORTED_MODULE_0__.global);
+
+var converter = __webpack_require__(/*! number-to-words */ "./node_modules/number-to-words/numberToWords.min.js");
+
+Vue.filter('toWords', function (value) {
+  if (!value) return '';
+  return converter.toWords(value);
+});
 var app = new Vue({
   el: '#app',
   store: _store_store__WEBPACK_IMPORTED_MODULE_1__["default"]
@@ -7971,6 +9015,79 @@ var global = {
 
 /***/ }),
 
+/***/ "./resources/js/store/modules/application.js":
+/*!***************************************************!*\
+  !*** ./resources/js/store/modules/application.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../types */ "./resources/js/store/types.js");
+/* harmony import */ var _server_application__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../server/application */ "./resources/js/store/server/application.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  namespaced: true,
+  state: {
+    applications: []
+  },
+  getters: {
+    applications: function applications(state) {
+      return state.applications;
+    }
+  },
+  mutations: _defineProperty({}, _types__WEBPACK_IMPORTED_MODULE_1__["default"].mutations.application.setApplications, function (state, payload) {
+    state.applications = payload;
+  }),
+  actions: _defineProperty({}, _types__WEBPACK_IMPORTED_MODULE_1__["default"].actions.application.getApplications, function (_ref) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var commit, res;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              commit = _ref.commit;
+              _context.prev = 1;
+              _context.next = 4;
+              return _server_application__WEBPACK_IMPORTED_MODULE_2__["default"].getUtilities();
+
+            case 4:
+              res = _context.sent;
+              commit(_types__WEBPACK_IMPORTED_MODULE_1__["default"].mutations.application.setApplications, res.data);
+              _context.next = 11;
+              break;
+
+            case 8:
+              _context.prev = 8;
+              _context.t0 = _context["catch"](1);
+              throw new Error(_context.t0);
+
+            case 11:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 8]]);
+    }))();
+  })
+});
+
+/***/ }),
+
 /***/ "./resources/js/store/modules/student.js":
 /*!***********************************************!*\
   !*** ./resources/js/store/modules/student.js ***!
@@ -8012,62 +9129,40 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     state.students = payload;
   }),
   actions: (_actions = {}, _defineProperty(_actions, _types__WEBPACK_IMPORTED_MODULE_1__["default"].actions.student.createStudent, function (_ref, payload) {
+    var commit = _ref.commit;
+
+    try {
+      return new Promise(_server_student__WEBPACK_IMPORTED_MODULE_2__["default"].createStudent(payload));
+    } catch (error) {}
+  }), _defineProperty(_actions, _types__WEBPACK_IMPORTED_MODULE_1__["default"].actions.student.getStudents, function (_ref2, payload) {
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
       var commit, res;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              commit = _ref.commit;
+              commit = _ref2.commit;
               _context.prev = 1;
               _context.next = 4;
-              return _server_student__WEBPACK_IMPORTED_MODULE_2__["default"].createStudent(payload);
+              return _server_student__WEBPACK_IMPORTED_MODULE_2__["default"].getStudents(payload);
 
             case 4:
               res = _context.sent;
-              _context.next = 9;
+              commit(_types__WEBPACK_IMPORTED_MODULE_1__["default"].mutations.student.setStudents, res.data);
+              _context.next = 11;
               break;
 
-            case 7:
-              _context.prev = 7;
+            case 8:
+              _context.prev = 8;
               _context.t0 = _context["catch"](1);
+              throw new Error(_context.t0);
 
-            case 9:
+            case 11:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[1, 7]]);
-    }))();
-  }), _defineProperty(_actions, _types__WEBPACK_IMPORTED_MODULE_1__["default"].actions.student.getStudents, function (_ref2, payload) {
-    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-      var commit, res;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              commit = _ref2.commit;
-              _context2.prev = 1;
-              _context2.next = 4;
-              return _server_student__WEBPACK_IMPORTED_MODULE_2__["default"].getStudents(payload);
-
-            case 4:
-              res = _context2.sent;
-              commit(_types__WEBPACK_IMPORTED_MODULE_1__["default"].mutations.student.setStudents, res.data);
-              _context2.next = 11;
-              break;
-
-            case 8:
-              _context2.prev = 8;
-              _context2.t0 = _context2["catch"](1);
-              throw new Error(_context2.t0);
-
-            case 11:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, _callee2, null, [[1, 8]]);
+      }, _callee, null, [[1, 8]]);
     }))();
   }), _actions)
 });
@@ -8215,6 +9310,131 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./resources/js/store/modules/utility.js":
+/*!***********************************************!*\
+  !*** ./resources/js/store/modules/utility.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../types */ "./resources/js/store/types.js");
+/* harmony import */ var _server_utility__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../server/utility */ "./resources/js/store/server/utility.js");
+var _actions;
+
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  namespaced: true,
+  state: {
+    utilities: []
+  },
+  getters: {
+    utilities: function utilities(state) {
+      return state.utilities;
+    }
+  },
+  mutations: _defineProperty({}, _types__WEBPACK_IMPORTED_MODULE_1__["default"].mutations.utility.setUtilities, function (state, payload) {
+    state.utilities = payload;
+  }),
+  actions: (_actions = {}, _defineProperty(_actions, _types__WEBPACK_IMPORTED_MODULE_1__["default"].actions.utility.getUtilities, function (_ref) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var commit, res;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              commit = _ref.commit;
+              _context.prev = 1;
+              _context.next = 4;
+              return _server_utility__WEBPACK_IMPORTED_MODULE_2__["default"].getUtilities();
+
+            case 4:
+              res = _context.sent;
+              commit(_types__WEBPACK_IMPORTED_MODULE_1__["default"].mutations.utility.setUtilities, res.data);
+              _context.next = 11;
+              break;
+
+            case 8:
+              _context.prev = 8;
+              _context.t0 = _context["catch"](1);
+              throw new Error(_context.t0);
+
+            case 11:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 8]]);
+    }))();
+  }), _defineProperty(_actions, _types__WEBPACK_IMPORTED_MODULE_1__["default"].actions.utility.updateUtility, function (_ref2, payload) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+      var commit;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              commit = _ref2.commit;
+              _context2.prev = 1;
+              _context2.next = 4;
+              return _server_utility__WEBPACK_IMPORTED_MODULE_2__["default"].updateUtility(payload);
+
+            case 4:
+              _context2.next = 9;
+              break;
+
+            case 6:
+              _context2.prev = 6;
+              _context2.t0 = _context2["catch"](1);
+              throw new Error(_context2.t0);
+
+            case 9:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[1, 6]]);
+    }))();
+  }), _actions)
+});
+
+/***/ }),
+
+/***/ "./resources/js/store/server/application.js":
+/*!**************************************************!*\
+  !*** ./resources/js/store/server/application.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  getUtilities: function getUtilities(payload) {
+    return axios__WEBPACK_IMPORTED_MODULE_0___default().get('/enrollment-applications/list', payload);
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/store/server/student.js":
 /*!**********************************************!*\
   !*** ./resources/js/store/server/student.js ***!
@@ -8268,6 +9488,31 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/store/server/utility.js":
+/*!**********************************************!*\
+  !*** ./resources/js/store/server/utility.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  getUtilities: function getUtilities() {
+    return axios__WEBPACK_IMPORTED_MODULE_0___default().get('/utilities/list');
+  },
+  updateUtility: function updateUtility(payload) {
+    return axios__WEBPACK_IMPORTED_MODULE_0___default().put("/utility/".concat(payload.id), payload);
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/store/store.js":
 /*!*************************************!*\
   !*** ./resources/js/store/store.js ***!
@@ -8279,22 +9524,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var vuex_persistedstate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex-persistedstate */ "./node_modules/vuex-persistedstate/dist/vuex-persistedstate.es.js");
 /* harmony import */ var _modules_user__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/user */ "./resources/js/store/modules/user.js");
 /* harmony import */ var _modules_student__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/student */ "./resources/js/store/modules/student.js");
+/* harmony import */ var _modules_utility__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/utility */ "./resources/js/store/modules/utility.js");
+/* harmony import */ var _modules_application__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/application */ "./resources/js/store/modules/application.js");
 
 
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_3__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_4__["default"]);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vuex__WEBPACK_IMPORTED_MODULE_4__["default"].Store({
+
+
+vue__WEBPACK_IMPORTED_MODULE_5__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_6__["default"]);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vuex__WEBPACK_IMPORTED_MODULE_6__["default"].Store({
   plugins: [(0,vuex_persistedstate__WEBPACK_IMPORTED_MODULE_0__["default"])()],
   modules: {
     user: _modules_user__WEBPACK_IMPORTED_MODULE_1__["default"],
-    student: _modules_student__WEBPACK_IMPORTED_MODULE_2__["default"]
+    student: _modules_student__WEBPACK_IMPORTED_MODULE_2__["default"],
+    utility: _modules_utility__WEBPACK_IMPORTED_MODULE_3__["default"],
+    application: _modules_application__WEBPACK_IMPORTED_MODULE_4__["default"]
   }
 }));
 
@@ -8321,6 +9572,13 @@ __webpack_require__.r(__webpack_exports__);
     student: {
       createStudent: "createStudent",
       getStudents: "getStudents"
+    },
+    utility: {
+      getUtilities: "getUtilities",
+      updateUtility: "updateUtility"
+    },
+    application: {
+      getApplications: "getApplications"
     }
   },
   mutations: {
@@ -8330,6 +9588,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     student: {
       setStudents: "setStudents"
+    },
+    utility: {
+      setUtilities: "setUtilities"
+    },
+    application: {
+      setApplications: "setApplications"
     }
   }
 });
@@ -13411,6 +14675,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, "@-webkit-keyframes animateSuccessTip {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/form.vue?vue&type=style&index=0&lang=css&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/form.vue?vue&type=style&index=0&lang=css& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sweet-action-close {\n  margin: auto;\n  padding: 9px;\n}\n.sweet-action-close:hover {\n  background-color: red !important;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/payment/index.vue?vue&type=style&index=0&lang=css&":
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/payment/index.vue?vue&type=style&index=0&lang=css& ***!
@@ -14035,6 +15323,559 @@ InputMask.prototype._resetHistory = function _resetHistory() {
 InputMask.Pattern = Pattern
 
 module.exports = InputMask
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_Symbol.js":
+/*!****************************************!*\
+  !*** ./node_modules/lodash/_Symbol.js ***!
+  \****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/** Built-in value references. */
+var Symbol = root.Symbol;
+
+module.exports = Symbol;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseGetTag.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_baseGetTag.js ***!
+  \********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var Symbol = __webpack_require__(/*! ./_Symbol */ "./node_modules/lodash/_Symbol.js"),
+    getRawTag = __webpack_require__(/*! ./_getRawTag */ "./node_modules/lodash/_getRawTag.js"),
+    objectToString = __webpack_require__(/*! ./_objectToString */ "./node_modules/lodash/_objectToString.js");
+
+/** `Object#toString` result references. */
+var nullTag = '[object Null]',
+    undefinedTag = '[object Undefined]';
+
+/** Built-in value references. */
+var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+/**
+ * The base implementation of `getTag` without fallbacks for buggy environments.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+function baseGetTag(value) {
+  if (value == null) {
+    return value === undefined ? undefinedTag : nullTag;
+  }
+  return (symToStringTag && symToStringTag in Object(value))
+    ? getRawTag(value)
+    : objectToString(value);
+}
+
+module.exports = baseGetTag;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseTrim.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_baseTrim.js ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var trimmedEndIndex = __webpack_require__(/*! ./_trimmedEndIndex */ "./node_modules/lodash/_trimmedEndIndex.js");
+
+/** Used to match leading whitespace. */
+var reTrimStart = /^\s+/;
+
+/**
+ * The base implementation of `_.trim`.
+ *
+ * @private
+ * @param {string} string The string to trim.
+ * @returns {string} Returns the trimmed string.
+ */
+function baseTrim(string) {
+  return string
+    ? string.slice(0, trimmedEndIndex(string) + 1).replace(reTrimStart, '')
+    : string;
+}
+
+module.exports = baseTrim;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_freeGlobal.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_freeGlobal.js ***!
+  \********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof __webpack_require__.g == 'object' && __webpack_require__.g && __webpack_require__.g.Object === Object && __webpack_require__.g;
+
+module.exports = freeGlobal;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getRawTag.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_getRawTag.js ***!
+  \*******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var Symbol = __webpack_require__(/*! ./_Symbol */ "./node_modules/lodash/_Symbol.js");
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/** Built-in value references. */
+var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+/**
+ * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the raw `toStringTag`.
+ */
+function getRawTag(value) {
+  var isOwn = hasOwnProperty.call(value, symToStringTag),
+      tag = value[symToStringTag];
+
+  try {
+    value[symToStringTag] = undefined;
+    var unmasked = true;
+  } catch (e) {}
+
+  var result = nativeObjectToString.call(value);
+  if (unmasked) {
+    if (isOwn) {
+      value[symToStringTag] = tag;
+    } else {
+      delete value[symToStringTag];
+    }
+  }
+  return result;
+}
+
+module.exports = getRawTag;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_objectToString.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_objectToString.js ***!
+  \************************************************/
+/***/ ((module) => {
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/**
+ * Converts `value` to a string using `Object.prototype.toString`.
+ *
+ * @private
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ */
+function objectToString(value) {
+  return nativeObjectToString.call(value);
+}
+
+module.exports = objectToString;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_root.js":
+/*!**************************************!*\
+  !*** ./node_modules/lodash/_root.js ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var freeGlobal = __webpack_require__(/*! ./_freeGlobal */ "./node_modules/lodash/_freeGlobal.js");
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || Function('return this')();
+
+module.exports = root;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_trimmedEndIndex.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash/_trimmedEndIndex.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+/** Used to match a single whitespace character. */
+var reWhitespace = /\s/;
+
+/**
+ * Used by `_.trim` and `_.trimEnd` to get the index of the last non-whitespace
+ * character of `string`.
+ *
+ * @private
+ * @param {string} string The string to inspect.
+ * @returns {number} Returns the index of the last non-whitespace character.
+ */
+function trimmedEndIndex(string) {
+  var index = string.length;
+
+  while (index-- && reWhitespace.test(string.charAt(index))) {}
+  return index;
+}
+
+module.exports = trimmedEndIndex;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/debounce.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/debounce.js ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js"),
+    now = __webpack_require__(/*! ./now */ "./node_modules/lodash/now.js"),
+    toNumber = __webpack_require__(/*! ./toNumber */ "./node_modules/lodash/toNumber.js");
+
+/** Error message constants. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeMax = Math.max,
+    nativeMin = Math.min;
+
+/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * milliseconds have elapsed since the last time the debounced function was
+ * invoked. The debounced function comes with a `cancel` method to cancel
+ * delayed `func` invocations and a `flush` method to immediately invoke them.
+ * Provide `options` to indicate whether `func` should be invoked on the
+ * leading and/or trailing edge of the `wait` timeout. The `func` is invoked
+ * with the last arguments provided to the debounced function. Subsequent
+ * calls to the debounced function return the result of the last `func`
+ * invocation.
+ *
+ * **Note:** If `leading` and `trailing` options are `true`, `func` is
+ * invoked on the trailing edge of the timeout only if the debounced function
+ * is invoked more than once during the `wait` timeout.
+ *
+ * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
+ * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
+ * for details over the differences between `_.debounce` and `_.throttle`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to debounce.
+ * @param {number} [wait=0] The number of milliseconds to delay.
+ * @param {Object} [options={}] The options object.
+ * @param {boolean} [options.leading=false]
+ *  Specify invoking on the leading edge of the timeout.
+ * @param {number} [options.maxWait]
+ *  The maximum time `func` is allowed to be delayed before it's invoked.
+ * @param {boolean} [options.trailing=true]
+ *  Specify invoking on the trailing edge of the timeout.
+ * @returns {Function} Returns the new debounced function.
+ * @example
+ *
+ * // Avoid costly calculations while the window size is in flux.
+ * jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+ *
+ * // Invoke `sendMail` when clicked, debouncing subsequent calls.
+ * jQuery(element).on('click', _.debounce(sendMail, 300, {
+ *   'leading': true,
+ *   'trailing': false
+ * }));
+ *
+ * // Ensure `batchLog` is invoked once after 1 second of debounced calls.
+ * var debounced = _.debounce(batchLog, 250, { 'maxWait': 1000 });
+ * var source = new EventSource('/stream');
+ * jQuery(source).on('message', debounced);
+ *
+ * // Cancel the trailing debounced invocation.
+ * jQuery(window).on('popstate', debounced.cancel);
+ */
+function debounce(func, wait, options) {
+  var lastArgs,
+      lastThis,
+      maxWait,
+      result,
+      timerId,
+      lastCallTime,
+      lastInvokeTime = 0,
+      leading = false,
+      maxing = false,
+      trailing = true;
+
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  wait = toNumber(wait) || 0;
+  if (isObject(options)) {
+    leading = !!options.leading;
+    maxing = 'maxWait' in options;
+    maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
+    trailing = 'trailing' in options ? !!options.trailing : trailing;
+  }
+
+  function invokeFunc(time) {
+    var args = lastArgs,
+        thisArg = lastThis;
+
+    lastArgs = lastThis = undefined;
+    lastInvokeTime = time;
+    result = func.apply(thisArg, args);
+    return result;
+  }
+
+  function leadingEdge(time) {
+    // Reset any `maxWait` timer.
+    lastInvokeTime = time;
+    // Start the timer for the trailing edge.
+    timerId = setTimeout(timerExpired, wait);
+    // Invoke the leading edge.
+    return leading ? invokeFunc(time) : result;
+  }
+
+  function remainingWait(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime,
+        timeWaiting = wait - timeSinceLastCall;
+
+    return maxing
+      ? nativeMin(timeWaiting, maxWait - timeSinceLastInvoke)
+      : timeWaiting;
+  }
+
+  function shouldInvoke(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime;
+
+    // Either this is the first call, activity has stopped and we're at the
+    // trailing edge, the system time has gone backwards and we're treating
+    // it as the trailing edge, or we've hit the `maxWait` limit.
+    return (lastCallTime === undefined || (timeSinceLastCall >= wait) ||
+      (timeSinceLastCall < 0) || (maxing && timeSinceLastInvoke >= maxWait));
+  }
+
+  function timerExpired() {
+    var time = now();
+    if (shouldInvoke(time)) {
+      return trailingEdge(time);
+    }
+    // Restart the timer.
+    timerId = setTimeout(timerExpired, remainingWait(time));
+  }
+
+  function trailingEdge(time) {
+    timerId = undefined;
+
+    // Only invoke if we have `lastArgs` which means `func` has been
+    // debounced at least once.
+    if (trailing && lastArgs) {
+      return invokeFunc(time);
+    }
+    lastArgs = lastThis = undefined;
+    return result;
+  }
+
+  function cancel() {
+    if (timerId !== undefined) {
+      clearTimeout(timerId);
+    }
+    lastInvokeTime = 0;
+    lastArgs = lastCallTime = lastThis = timerId = undefined;
+  }
+
+  function flush() {
+    return timerId === undefined ? result : trailingEdge(now());
+  }
+
+  function debounced() {
+    var time = now(),
+        isInvoking = shouldInvoke(time);
+
+    lastArgs = arguments;
+    lastThis = this;
+    lastCallTime = time;
+
+    if (isInvoking) {
+      if (timerId === undefined) {
+        return leadingEdge(lastCallTime);
+      }
+      if (maxing) {
+        // Handle invocations in a tight loop.
+        clearTimeout(timerId);
+        timerId = setTimeout(timerExpired, wait);
+        return invokeFunc(lastCallTime);
+      }
+    }
+    if (timerId === undefined) {
+      timerId = setTimeout(timerExpired, wait);
+    }
+    return result;
+  }
+  debounced.cancel = cancel;
+  debounced.flush = flush;
+  return debounced;
+}
+
+module.exports = debounce;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isObject.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isObject.js ***!
+  \*****************************************/
+/***/ ((module) => {
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return value != null && (type == 'object' || type == 'function');
+}
+
+module.exports = isObject;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isObjectLike.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/isObjectLike.js ***!
+  \*********************************************/
+/***/ ((module) => {
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return value != null && typeof value == 'object';
+}
+
+module.exports = isObjectLike;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isSymbol.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isSymbol.js ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var baseGetTag = __webpack_require__(/*! ./_baseGetTag */ "./node_modules/lodash/_baseGetTag.js"),
+    isObjectLike = __webpack_require__(/*! ./isObjectLike */ "./node_modules/lodash/isObjectLike.js");
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && baseGetTag(value) == symbolTag);
+}
+
+module.exports = isSymbol;
 
 
 /***/ }),
@@ -31251,6 +33092,113 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./node_modules/lodash/now.js":
+/*!************************************!*\
+  !*** ./node_modules/lodash/now.js ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/**
+ * Gets the timestamp of the number of milliseconds that have elapsed since
+ * the Unix epoch (1 January 1970 00:00:00 UTC).
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Date
+ * @returns {number} Returns the timestamp.
+ * @example
+ *
+ * _.defer(function(stamp) {
+ *   console.log(_.now() - stamp);
+ * }, _.now());
+ * // => Logs the number of milliseconds it took for the deferred invocation.
+ */
+var now = function() {
+  return root.Date.now();
+};
+
+module.exports = now;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/toNumber.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/toNumber.js ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var baseTrim = __webpack_require__(/*! ./_baseTrim */ "./node_modules/lodash/_baseTrim.js"),
+    isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js"),
+    isSymbol = __webpack_require__(/*! ./isSymbol */ "./node_modules/lodash/isSymbol.js");
+
+/** Used as references for various `Number` constants. */
+var NAN = 0 / 0;
+
+/** Used to detect bad signed hexadecimal string values. */
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+/** Used to detect binary string values. */
+var reIsBinary = /^0b[01]+$/i;
+
+/** Used to detect octal string values. */
+var reIsOctal = /^0o[0-7]+$/i;
+
+/** Built-in method references without a dependency on `root`. */
+var freeParseInt = parseInt;
+
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return NAN;
+  }
+  if (isObject(value)) {
+    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+    value = isObject(other) ? (other + '') : other;
+  }
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+  value = baseTrim(value);
+  var isBinary = reIsBinary.test(value);
+  return (isBinary || reIsOctal.test(value))
+    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+    : (reIsBadHex.test(value) ? NAN : +value);
+}
+
+module.exports = toNumber;
+
+
+/***/ }),
+
 /***/ "./resources/css/app.css":
 /*!*******************************!*\
   !*** ./resources/css/app.css ***!
@@ -31261,6 +33209,24 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
+
+/***/ }),
+
+/***/ "./node_modules/number-to-words/numberToWords.min.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/number-to-words/numberToWords.min.js ***!
+  \***********************************************************/
+/***/ ((module, exports, __webpack_require__) => {
+
+/*!
+ * Number-To-Words util
+ * @version v1.2.4
+ * @link https://github.com/marlun78/number-to-words
+ * @author Martin Eneqvist (https://github.com/marlun78)
+ * @contributors Aleksey Pilyugin (https://github.com/pilyugin),Jeremiah Hall (https://github.com/jeremiahrhall),Adriano Melo (https://github.com/adrianomelo),dmrzn (https://github.com/dmrzn)
+ * @license MIT
+ */
+!function(){"use strict";var e="object"==typeof self&&self.self===self&&self||"object"==typeof __webpack_require__.g&&__webpack_require__.g.global===__webpack_require__.g&&__webpack_require__.g||this,t=9007199254740991;function f(e){return!("number"!=typeof e||e!=e||e===1/0||e===-1/0)}function l(e){return"number"==typeof e&&Math.abs(e)<=t}var n=/(hundred|thousand|(m|b|tr|quadr)illion)$/,r=/teen$/,o=/y$/,i=/(zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)$/,s={zero:"zeroth",one:"first",two:"second",three:"third",four:"fourth",five:"fifth",six:"sixth",seven:"seventh",eight:"eighth",nine:"ninth",ten:"tenth",eleven:"eleventh",twelve:"twelfth"};function h(e){return n.test(e)||r.test(e)?e+"th":o.test(e)?e.replace(o,"ieth"):i.test(e)?e.replace(i,a):e}function a(e,t){return s[t]}var u=10,d=100,p=1e3,v=1e6,b=1e9,y=1e12,c=1e15,g=9007199254740992,m=["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"],w=["zero","ten","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];function x(e,t){var n,r=parseInt(e,10);if(!f(r))throw new TypeError("Not a finite number: "+e+" ("+typeof e+")");if(!l(r))throw new RangeError("Input is not a safe number, it’s either too large or too small.");return n=function e(t){var n,r,o=arguments[1];if(0===t)return o?o.join(" ").replace(/,$/,""):"zero";o||(o=[]);t<0&&(o.push("minus"),t=Math.abs(t));t<20?(n=0,r=m[t]):t<d?(n=t%u,r=w[Math.floor(t/u)],n&&(r+="-"+m[n],n=0)):t<p?(n=t%d,r=e(Math.floor(t/d))+" hundred"):t<v?(n=t%p,r=e(Math.floor(t/p))+" thousand,"):t<b?(n=t%v,r=e(Math.floor(t/v))+" million,"):t<y?(n=t%b,r=e(Math.floor(t/b))+" billion,"):t<c?(n=t%y,r=e(Math.floor(t/y))+" trillion,"):t<=g&&(n=t%c,r=e(Math.floor(t/c))+" quadrillion,");o.push(r);return e(n,o)}(r),t?h(n):n}var M={toOrdinal:function(e){var t=parseInt(e,10);if(!f(t))throw new TypeError("Not a finite number: "+e+" ("+typeof e+")");if(!l(t))throw new RangeError("Input is not a safe number, it’s either too large or too small.");var n=String(t),r=Math.abs(t%100),o=11<=r&&r<=13,i=n.charAt(n.length-1);return n+(o?"th":"1"===i?"st":"2"===i?"nd":"3"===i?"rd":"th")},toWords:x,toWordsOrdinal:function(e){return h(x(e))}}; true?( true&&module.exports&&(exports=module.exports=M),exports.numberToWords=M):0}();
 
 /***/ }),
 
@@ -32282,6 +34248,36 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/form.vue?vue&type=style&index=0&lang=css&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/form.vue?vue&type=style&index=0&lang=css& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/form.vue?vue&type=style&index=0&lang=css&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/payment/index.vue?vue&type=style&index=0&lang=css&":
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/payment/index.vue?vue&type=style&index=0&lang=css& ***!
@@ -32609,6 +34605,103 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-html-to-paper/dist/index.js":
+/*!******************************************************!*\
+  !*** ./node_modules/vue-html-to-paper/dist/index.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+
+function addStyles (win, styles) {
+  styles.forEach(style => {
+    let link = win.document.createElement('link');
+    link.setAttribute('rel', 'stylesheet');
+    link.setAttribute('type', 'text/css');
+    link.setAttribute('href', style);
+    win.document.getElementsByTagName('head')[0].appendChild(link);
+  });
+}
+
+function openWindow (url, name, props) {
+  let windowRef = null;
+  windowRef = window.open(url, name, props);
+  if (!windowRef.opener) {
+    windowRef.opener = self;
+  }
+  windowRef.focus();
+  return windowRef;
+}
+  
+const VueHtmlToPaper = {
+  install (Vue, options = {}) {
+    Vue.prototype.$htmlToPaper = (el, localOptions, cb = () => true) => {
+      let defaultName = '_blank', 
+        defaultSpecs = ['fullscreen=yes','titlebar=yes', 'scrollbars=yes'],
+        defaultReplace = true,
+        defaultStyles = [];
+      let {
+        name = defaultName,
+        specs = defaultSpecs,
+        replace = defaultReplace,
+        styles = defaultStyles,
+      } = options;
+
+      // If has localOptions
+      // TODO: improve logic
+      if (!!localOptions) {
+        if (localOptions.name) name = localOptions.name;
+        if (localOptions.specs) specs = localOptions.specs;
+        if (localOptions.replace) replace = localOptions.replace;
+        if (localOptions.styles) styles = localOptions.styles;
+      }
+
+      specs = !!specs.length ? specs.join(',') : '';
+
+      const element = window.document.getElementById(el);
+
+      if (!element) {
+        alert(`Element to print #${el} not found!`);
+        return;
+      }
+      
+      const url = '';
+      const win = openWindow(url, name, specs);
+
+      win.document.write(`
+        <html>
+          <head>
+            <title>${window.document.title}</title>
+          </head>
+          <body>
+            ${element.innerHTML}
+          </body>
+        </html>
+      `);
+
+      addStyles(win, styles);
+      
+      setTimeout(() => {
+        win.document.close();
+        win.focus();
+        win.print();
+        setTimeout(function () {window.close();}, 1);
+        cb();
+      }, 1000);
+        
+      return true;
+    };
+  },
+};
+
+exports["default"] = VueHtmlToPaper;
 
 
 /***/ }),
@@ -33307,6 +35400,86 @@ component.options.__file = "resources/js/components/dashboard/index.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/enrollment/application.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/components/enrollment/application.vue ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _application_vue_vue_type_template_id_57bc0050___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./application.vue?vue&type=template&id=57bc0050& */ "./resources/js/components/enrollment/application.vue?vue&type=template&id=57bc0050&");
+/* harmony import */ var _application_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./application.vue?vue&type=script&lang=js& */ "./resources/js/components/enrollment/application.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _application_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _application_vue_vue_type_template_id_57bc0050___WEBPACK_IMPORTED_MODULE_0__.render,
+  _application_vue_vue_type_template_id_57bc0050___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/enrollment/application.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/enrollment/form.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/enrollment/form.vue ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _form_vue_vue_type_template_id_fa331c18___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form.vue?vue&type=template&id=fa331c18& */ "./resources/js/components/enrollment/form.vue?vue&type=template&id=fa331c18&");
+/* harmony import */ var _form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./form.vue?vue&type=script&lang=js& */ "./resources/js/components/enrollment/form.vue?vue&type=script&lang=js&");
+/* harmony import */ var _form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/enrollment/form.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+;
+
+
+/* normalize component */
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _form_vue_vue_type_template_id_fa331c18___WEBPACK_IMPORTED_MODULE_0__.render,
+  _form_vue_vue_type_template_id_fa331c18___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/enrollment/form.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/logs.vue":
 /*!******************************************!*\
   !*** ./resources/js/components/logs.vue ***!
@@ -33865,15 +36038,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _index_vue_vue_type_template_id_51576b92___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=51576b92& */ "./resources/js/components/utilities/index.vue?vue&type=template&id=51576b92&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.vue?vue&type=script&lang=js& */ "./resources/js/components/utilities/index.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 ;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _index_vue_vue_type_template_id_51576b92___WEBPACK_IMPORTED_MODULE_0__.render,
   _index_vue_vue_type_template_id_51576b92___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
@@ -33919,6 +36094,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_alerts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./alerts.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/alerts.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_alerts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/enrollment/application.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/enrollment/application.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_application_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./application.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/application.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_application_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/enrollment/form.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/enrollment/form.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/form.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -34130,6 +36337,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/utilities/index.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/utilities/index.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/utilities/index.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=style&index=0&lang=scss&":
 /*!******************************************************************************************************!*\
   !*** ./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=style&index=0&lang=scss& ***!
@@ -34139,6 +36362,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_loader_dist_cjs_js_css_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_2_sass_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_3_vue_loader_lib_index_js_vue_loader_options_SweetModal_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../style-loader/dist/cjs.js!../../../css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!../../../vue-loader/lib/loaders/stylePostLoader.js!../../../postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!../../../sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!../../../vue-loader/lib/index.js??vue-loader-options!./SweetModal.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=style&index=0&lang=scss&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/enrollment/form.vue?vue&type=style&index=0&lang=css&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/enrollment/form.vue?vue&type=style&index=0&lang=css& ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/form.vue?vue&type=style&index=0&lang=css&");
 
 
 /***/ }),
@@ -34269,6 +36505,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_0ac03a9c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_0ac03a9c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=template&id=0ac03a9c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/dashboard/index.vue?vue&type=template&id=0ac03a9c&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/enrollment/application.vue?vue&type=template&id=57bc0050&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/enrollment/application.vue?vue&type=template&id=57bc0050& ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_application_vue_vue_type_template_id_57bc0050___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_application_vue_vue_type_template_id_57bc0050___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_application_vue_vue_type_template_id_57bc0050___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./application.vue?vue&type=template&id=57bc0050& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/application.vue?vue&type=template&id=57bc0050&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/enrollment/form.vue?vue&type=template&id=fa331c18&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/enrollment/form.vue?vue&type=template&id=fa331c18& ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_fa331c18___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_fa331c18___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_fa331c18___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=template&id=fa331c18& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/form.vue?vue&type=template&id=fa331c18&");
 
 
 /***/ }),
@@ -35852,6 +38122,3491 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/application.vue?vue&type=template&id=57bc0050&":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/application.vue?vue&type=template&id=57bc0050& ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "pt-8 min-h-screen bg-blue-100" }, [
+    _c("div", { staticClass: "px-4 sm:px-6 lg:px-8" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "grid grid-cols-8 gap-8 mt-8" }, [
+        _c("div", { staticClass: "col-span-8 sm:col-span-4 lg:col-span-2" }, [
+          _c(
+            "div",
+            { staticClass: "relative inline-block text-gray-700 w-full" },
+            [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.search,
+                    expression: "search",
+                  },
+                ],
+                staticClass:
+                  "w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                attrs: { type: "text", placeholder: "Search Student" },
+                domProps: { value: _vm.search },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.search = $event.target.value
+                  },
+                },
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none",
+                },
+                [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "mr-2 text-blue-500",
+                      attrs: {
+                        viewBox: "0 0 24 24",
+                        width: "24",
+                        height: "24",
+                        stroke: "currentColor",
+                        "stroke-width": "2",
+                        fill: "none",
+                        "stroke-linecap": "round",
+                        "stroke-linejoin": "round",
+                      },
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          d: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2",
+                        },
+                      }),
+                      _c("circle", { attrs: { cx: "9", cy: "7", r: "4" } }),
+                      _c("path", {
+                        attrs: { d: "M23 21v-2a4 4 0 0 0-3-3.87" },
+                      }),
+                      _c("path", { attrs: { d: "M16 3.13a4 4 0 0 1 0 7.75" } }),
+                    ]
+                  ),
+                ]
+              ),
+            ]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-span-8 sm:col-span-4 lg:col-span-2" }, [
+          _c(
+            "div",
+            { staticClass: "relative inline-block text-gray-700 w-full" },
+            [
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.level,
+                      expression: "level",
+                    },
+                  ],
+                  staticClass:
+                    "w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                  attrs: { placeholder: "Regular input" },
+                  on: {
+                    change: function ($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function (o) {
+                          return o.selected
+                        })
+                        .map(function (o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.level = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    },
+                  },
+                },
+                [
+                  _c("option", { attrs: { value: "", selected: "" } }, [
+                    _vm._v("All Grades"),
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.levels, function (level) {
+                    return _c("option", { domProps: { value: level.id } }, [
+                      _vm._v(_vm._s(level.level)),
+                    ])
+                  }),
+                ],
+                2
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none",
+                },
+                [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "text-blue-500 h-6 w-6",
+                      attrs: {
+                        xmlns: "http://www.w3.org/2000/svg",
+                        fill: "none",
+                        viewBox: "0 0 24 24",
+                        stroke: "currentColor",
+                        "stroke-width": "2",
+                      },
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          d: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
+                        },
+                      }),
+                    ]
+                  ),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none",
+                },
+                [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "w-4 h-4 fill-current",
+                      attrs: { viewBox: "0 0 20 20" },
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
+                          "clip-rule": "evenodd",
+                          "fill-rule": "evenodd",
+                        },
+                      }),
+                    ]
+                  ),
+                ]
+              ),
+            ]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-span-8 sm:col-span-4 lg:col-span-2" }, [
+          _c(
+            "div",
+            { staticClass: "relative inline-block text-gray-700 w-full" },
+            [
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.sort_by,
+                      expression: "sort_by",
+                    },
+                  ],
+                  staticClass:
+                    "w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                  attrs: { placeholder: "Regular input" },
+                  on: {
+                    change: function ($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function (o) {
+                          return o.selected
+                        })
+                        .map(function (o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.sort_by = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    },
+                  },
+                },
+                [
+                  _c("option", { attrs: { value: "asc", selected: "" } }, [
+                    _vm._v("Sort By: A-Z"),
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "desc" } }, [
+                    _vm._v("Sort By: Z-A"),
+                  ]),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none",
+                },
+                [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "text-blue-500 h-6 w-6",
+                      attrs: {
+                        xmlns: "http://www.w3.org/2000/svg",
+                        fill: "none",
+                        viewBox: "0 0 24 24",
+                        stroke: "currentColor",
+                        "stroke-width": "2",
+                      },
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          d: "M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12",
+                        },
+                      }),
+                    ]
+                  ),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none",
+                },
+                [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "w-4 h-4 fill-current",
+                      attrs: { viewBox: "0 0 20 20" },
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
+                          "clip-rule": "evenodd",
+                          "fill-rule": "evenodd",
+                        },
+                      }),
+                    ]
+                  ),
+                ]
+              ),
+            ]
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mt-2 flex flex-col" }, [
+        _c(
+          "div",
+          { staticClass: "-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8" },
+          [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "inline-block min-w-full py-2 align-middle md:px-6 lg:px-8",
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg",
+                  },
+                  [
+                    _c(
+                      "table",
+                      { staticClass: "min-w-full divide-y divide-gray-300" },
+                      [
+                        _vm._m(1),
+                        _vm._v(" "),
+                        _c(
+                          "tbody",
+                          { staticClass: "divide-y divide-gray-200 bg-white" },
+                          _vm._l(_vm.applications, function (application) {
+                            return _c("tr", [
+                              _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "whitespace-nowrap py-2 pl-4 pr-3 text-sm text-blue-700 sm:pl-6",
+                                },
+                                [_vm._v(_vm._s(application.enrollment_id))]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 hover:text-blue-700",
+                                },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        href: "/student/" + application.id,
+                                      },
+                                    },
+                                    [
+                                      _vm._v(
+                                        _vm._s(application.last_name) +
+                                          ", " +
+                                          _vm._s(application.first_name)
+                                      ),
+                                    ]
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "whitespace-nowrap px-2 py-2 text-sm text-gray-900",
+                                },
+                                [_vm._v(_vm._s(application.grade_level.level))]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "whitespace-nowrap px-2 py-2 text-sm text-gray-500",
+                                },
+                                [_vm._v(_vm._s(application.created_at))]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "relative whitespace-nowrap py-2 pl-3 pr-4 text-right text-sm font-medium sm:pr-6",
+                                },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "text-blue-700 hover:text-blue-700 mr-3",
+                                      attrs: {
+                                        href: "/enrollment/" + application.id,
+                                      },
+                                    },
+                                    [
+                                      _vm._v("Process Enrollment"),
+                                      _c("span", { staticClass: "sr-only" }, [
+                                        _vm._v(", AAPS0L"),
+                                      ]),
+                                    ]
+                                  ),
+                                ]
+                              ),
+                            ])
+                          }),
+                          0
+                        ),
+                      ]
+                    ),
+                  ]
+                ),
+              ]
+            ),
+          ]
+        ),
+      ]),
+    ]),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "sm:flex sm:items-center" }, [
+      _c("div", { staticClass: "sm:flex-auto" }, [
+        _c("h1", { staticClass: "text-xl font-semibold text-gray-900" }, [
+          _vm._v("Students"),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "mt-2 text-sm text-gray-700" }, [
+          _vm._v("A table of recorded students."),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mt-4 sm:mt-0 sm:ml-16 sm:flex-none" }, [
+        _c(
+          "a",
+          {
+            staticClass:
+              "inline-flex items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto",
+            attrs: { href: "/students/form" },
+          },
+          [_vm._v("Record Student")]
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", { staticClass: "bg-gray-50" }, [
+      _c("tr", [
+        _c(
+          "th",
+          {
+            staticClass:
+              "whitespace-nowrap py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6",
+            attrs: { scope: "col" },
+          },
+          [_vm._v("LRN Number")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900",
+            attrs: { scope: "col" },
+          },
+          [_vm._v("Student Name")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900",
+            attrs: { scope: "col" },
+          },
+          [_vm._v("Grade")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900",
+            attrs: { scope: "col" },
+          },
+          [_vm._v("Date Filled")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass: "relative whitespace-nowrap py-3.5 pl-3 pr-4 sm:pr-6",
+            attrs: { scope: "col" },
+          },
+          [_c("span", { staticClass: "sr-only" }, [_vm._v("Edit")])]
+        ),
+      ]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/form.vue?vue&type=template&id=fa331c18&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/enrollment/form.vue?vue&type=template&id=fa331c18& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "bg-blue-100 min-h-screen" },
+    [
+      _c("div", { staticClass: "py-6" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "mt-4 max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8",
+          },
+          [
+            _c("main", { staticClass: "lg:col-span-12 xl:col-span-8" }, [
+              _c("div", { staticClass: "px-4 sm:px-6 lg:px-8" }, [
+                _c("div", { staticClass: "mt-8 mb-10 flex flex-col" }, [
+                  _c("div", { staticClass: "-my-2 -mx-4 sm:-mx-6 lg:-mx-8" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "inline-block min-w-full py-2 align-middle",
+                      },
+                      [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "flex items-center justify-between w-full p-5 font-medium text-left text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 bg-blue-700 hover:opacity-75",
+                            attrs: {
+                              "aria-expanded": _vm.isOpen,
+                              "aria-controls": "collapse" + _vm._uid,
+                            },
+                            on: {
+                              click: function ($event) {
+                                return _vm.toggleAccordion()
+                              },
+                            },
+                          },
+                          [
+                            _vm._v(
+                              "\n                  Student Requirements\n                  "
+                            ),
+                            _c(
+                              "svg",
+                              {
+                                staticClass:
+                                  "w-3 transition-all duration-200 transform",
+                                class: {
+                                  "rotate-180": _vm.isOpen,
+                                  "rotate-0": !_vm.isOpen,
+                                },
+                                attrs: {
+                                  fill: "none",
+                                  stroke: "currentColor",
+                                  xmlns: "http://www.w3.org/2000/svg",
+                                  viewBox: "0 0 16 10",
+                                  "aria-hidden": "true",
+                                },
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    d: "M15 1.2l-7 7-7-7",
+                                    "stroke-width": "2",
+                                    "stroke-linecap": "round",
+                                    "stroke-linejoin": "round",
+                                  },
+                                }),
+                              ]
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.isOpen,
+                                expression: "isOpen",
+                              },
+                            ],
+                            staticClass:
+                              "p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900",
+                            attrs: { id: "collapse" + _vm._uid },
+                          },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
+                              },
+                              [
+                                _vm.requirements.coc
+                                  ? _c("div", [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass:
+                                            "inline-flex items-center mt-3",
+                                        },
+                                        [
+                                          _c("input", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value: _vm.form.coc,
+                                                expression: "form.coc",
+                                              },
+                                            ],
+                                            staticClass:
+                                              "form-checkbox h-5 w-5 text-gray-600",
+                                            attrs: {
+                                              type: "checkbox",
+                                              checked: "",
+                                            },
+                                            domProps: {
+                                              checked: Array.isArray(
+                                                _vm.form.coc
+                                              )
+                                                ? _vm._i(_vm.form.coc, null) >
+                                                  -1
+                                                : _vm.form.coc,
+                                            },
+                                            on: {
+                                              change: function ($event) {
+                                                var $$a = _vm.form.coc,
+                                                  $$el = $event.target,
+                                                  $$c = $$el.checked
+                                                    ? true
+                                                    : false
+                                                if (Array.isArray($$a)) {
+                                                  var $$v = null,
+                                                    $$i = _vm._i($$a, $$v)
+                                                  if ($$el.checked) {
+                                                    $$i < 0 &&
+                                                      _vm.$set(
+                                                        _vm.form,
+                                                        "coc",
+                                                        $$a.concat([$$v])
+                                                      )
+                                                  } else {
+                                                    $$i > -1 &&
+                                                      _vm.$set(
+                                                        _vm.form,
+                                                        "coc",
+                                                        $$a
+                                                          .slice(0, $$i)
+                                                          .concat(
+                                                            $$a.slice($$i + 1)
+                                                          )
+                                                      )
+                                                  }
+                                                } else {
+                                                  _vm.$set(_vm.form, "coc", $$c)
+                                                }
+                                              },
+                                            },
+                                          }),
+                                          _c(
+                                            "span",
+                                            {
+                                              staticClass: "ml-2 text-gray-700",
+                                            },
+                                            [
+                                              _vm._v(
+                                                "Certificate of Completion"
+                                              ),
+                                            ]
+                                          ),
+                                        ]
+                                      ),
+                                    ])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.requirements.birth_cert
+                                  ? _c("div", [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass:
+                                            "inline-flex items-center mt-3",
+                                        },
+                                        [
+                                          _c("input", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value: _vm.form.birth_cert,
+                                                expression: "form.birth_cert",
+                                              },
+                                            ],
+                                            staticClass:
+                                              "form-checkbox h-5 w-5 text-gray-600",
+                                            attrs: {
+                                              type: "checkbox",
+                                              checked: "",
+                                            },
+                                            domProps: {
+                                              checked: Array.isArray(
+                                                _vm.form.birth_cert
+                                              )
+                                                ? _vm._i(
+                                                    _vm.form.birth_cert,
+                                                    null
+                                                  ) > -1
+                                                : _vm.form.birth_cert,
+                                            },
+                                            on: {
+                                              change: function ($event) {
+                                                var $$a = _vm.form.birth_cert,
+                                                  $$el = $event.target,
+                                                  $$c = $$el.checked
+                                                    ? true
+                                                    : false
+                                                if (Array.isArray($$a)) {
+                                                  var $$v = null,
+                                                    $$i = _vm._i($$a, $$v)
+                                                  if ($$el.checked) {
+                                                    $$i < 0 &&
+                                                      _vm.$set(
+                                                        _vm.form,
+                                                        "birth_cert",
+                                                        $$a.concat([$$v])
+                                                      )
+                                                  } else {
+                                                    $$i > -1 &&
+                                                      _vm.$set(
+                                                        _vm.form,
+                                                        "birth_cert",
+                                                        $$a
+                                                          .slice(0, $$i)
+                                                          .concat(
+                                                            $$a.slice($$i + 1)
+                                                          )
+                                                      )
+                                                  }
+                                                } else {
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "birth_cert",
+                                                    $$c
+                                                  )
+                                                }
+                                              },
+                                            },
+                                          }),
+                                          _c(
+                                            "span",
+                                            {
+                                              staticClass: "ml-2 text-gray-700",
+                                            },
+                                            [
+                                              _vm._v(
+                                                "PSA Birth Certificate (Original)"
+                                              ),
+                                            ]
+                                          ),
+                                        ]
+                                      ),
+                                    ])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.requirements.ECCD_checklist
+                                  ? _c("div", [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass:
+                                            "inline-flex items-center mt-3",
+                                        },
+                                        [
+                                          _c("input", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value: _vm.form.ECCD_checklist,
+                                                expression:
+                                                  "form.ECCD_checklist",
+                                              },
+                                            ],
+                                            staticClass:
+                                              "form-checkbox h-5 w-5 text-gray-600",
+                                            attrs: {
+                                              type: "checkbox",
+                                              checked: "",
+                                            },
+                                            domProps: {
+                                              checked: Array.isArray(
+                                                _vm.form.ECCD_checklist
+                                              )
+                                                ? _vm._i(
+                                                    _vm.form.ECCD_checklist,
+                                                    null
+                                                  ) > -1
+                                                : _vm.form.ECCD_checklist,
+                                            },
+                                            on: {
+                                              change: function ($event) {
+                                                var $$a =
+                                                    _vm.form.ECCD_checklist,
+                                                  $$el = $event.target,
+                                                  $$c = $$el.checked
+                                                    ? true
+                                                    : false
+                                                if (Array.isArray($$a)) {
+                                                  var $$v = null,
+                                                    $$i = _vm._i($$a, $$v)
+                                                  if ($$el.checked) {
+                                                    $$i < 0 &&
+                                                      _vm.$set(
+                                                        _vm.form,
+                                                        "ECCD_checklist",
+                                                        $$a.concat([$$v])
+                                                      )
+                                                  } else {
+                                                    $$i > -1 &&
+                                                      _vm.$set(
+                                                        _vm.form,
+                                                        "ECCD_checklist",
+                                                        $$a
+                                                          .slice(0, $$i)
+                                                          .concat(
+                                                            $$a.slice($$i + 1)
+                                                          )
+                                                      )
+                                                  }
+                                                } else {
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "ECCD_checklist",
+                                                    $$c
+                                                  )
+                                                }
+                                              },
+                                            },
+                                          }),
+                                          _c(
+                                            "span",
+                                            {
+                                              staticClass: "ml-2 text-gray-700",
+                                            },
+                                            [_vm._v("ECCD Checklist")]
+                                          ),
+                                        ]
+                                      ),
+                                    ])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.requirements.card
+                                  ? _c("div", [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass:
+                                            "inline-flex items-center mt-3",
+                                        },
+                                        [
+                                          _c("input", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value: _vm.form.card,
+                                                expression: "form.card",
+                                              },
+                                            ],
+                                            staticClass:
+                                              "form-checkbox h-5 w-5 text-gray-600",
+                                            attrs: {
+                                              type: "checkbox",
+                                              checked: "",
+                                            },
+                                            domProps: {
+                                              checked: Array.isArray(
+                                                _vm.form.card
+                                              )
+                                                ? _vm._i(_vm.form.card, null) >
+                                                  -1
+                                                : _vm.form.card,
+                                            },
+                                            on: {
+                                              change: function ($event) {
+                                                var $$a = _vm.form.card,
+                                                  $$el = $event.target,
+                                                  $$c = $$el.checked
+                                                    ? true
+                                                    : false
+                                                if (Array.isArray($$a)) {
+                                                  var $$v = null,
+                                                    $$i = _vm._i($$a, $$v)
+                                                  if ($$el.checked) {
+                                                    $$i < 0 &&
+                                                      _vm.$set(
+                                                        _vm.form,
+                                                        "card",
+                                                        $$a.concat([$$v])
+                                                      )
+                                                  } else {
+                                                    $$i > -1 &&
+                                                      _vm.$set(
+                                                        _vm.form,
+                                                        "card",
+                                                        $$a
+                                                          .slice(0, $$i)
+                                                          .concat(
+                                                            $$a.slice($$i + 1)
+                                                          )
+                                                      )
+                                                  }
+                                                } else {
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "card",
+                                                    $$c
+                                                  )
+                                                }
+                                              },
+                                            },
+                                          }),
+                                          _c(
+                                            "span",
+                                            {
+                                              staticClass: "ml-2 text-gray-700",
+                                            },
+                                            [_vm._v("Card (Form 138)")]
+                                          ),
+                                        ]
+                                      ),
+                                    ])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.requirements.picture
+                                  ? _c("div", [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass:
+                                            "inline-flex items-center mt-3",
+                                        },
+                                        [
+                                          _c("input", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value: _vm.form.picture,
+                                                expression: "form.picture",
+                                              },
+                                            ],
+                                            staticClass:
+                                              "form-checkbox h-5 w-5 text-gray-600",
+                                            attrs: {
+                                              type: "checkbox",
+                                              checked: "",
+                                            },
+                                            domProps: {
+                                              checked: Array.isArray(
+                                                _vm.form.picture
+                                              )
+                                                ? _vm._i(
+                                                    _vm.form.picture,
+                                                    null
+                                                  ) > -1
+                                                : _vm.form.picture,
+                                            },
+                                            on: {
+                                              change: function ($event) {
+                                                var $$a = _vm.form.picture,
+                                                  $$el = $event.target,
+                                                  $$c = $$el.checked
+                                                    ? true
+                                                    : false
+                                                if (Array.isArray($$a)) {
+                                                  var $$v = null,
+                                                    $$i = _vm._i($$a, $$v)
+                                                  if ($$el.checked) {
+                                                    $$i < 0 &&
+                                                      _vm.$set(
+                                                        _vm.form,
+                                                        "picture",
+                                                        $$a.concat([$$v])
+                                                      )
+                                                  } else {
+                                                    $$i > -1 &&
+                                                      _vm.$set(
+                                                        _vm.form,
+                                                        "picture",
+                                                        $$a
+                                                          .slice(0, $$i)
+                                                          .concat(
+                                                            $$a.slice($$i + 1)
+                                                          )
+                                                      )
+                                                  }
+                                                } else {
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "picture",
+                                                    $$c
+                                                  )
+                                                }
+                                              },
+                                            },
+                                          }),
+                                          _c(
+                                            "span",
+                                            {
+                                              staticClass: "ml-2 text-gray-700",
+                                            },
+                                            [_vm._v("1x1 Picture")]
+                                          ),
+                                        ]
+                                      ),
+                                    ])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.requirements.good_moral
+                                  ? _c("div", [_vm._m(1)])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.requirements.form_137
+                                  ? _c("div", [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass:
+                                            "inline-flex items-center mt-3",
+                                        },
+                                        [
+                                          _c("input", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value: _vm.form.form_137,
+                                                expression: "form.form_137",
+                                              },
+                                            ],
+                                            staticClass:
+                                              "form-checkbox h-5 w-5 text-gray-600",
+                                            attrs: {
+                                              type: "checkbox",
+                                              checked: "",
+                                            },
+                                            domProps: {
+                                              checked: Array.isArray(
+                                                _vm.form.form_137
+                                              )
+                                                ? _vm._i(
+                                                    _vm.form.form_137,
+                                                    null
+                                                  ) > -1
+                                                : _vm.form.form_137,
+                                            },
+                                            on: {
+                                              change: function ($event) {
+                                                var $$a = _vm.form.form_137,
+                                                  $$el = $event.target,
+                                                  $$c = $$el.checked
+                                                    ? true
+                                                    : false
+                                                if (Array.isArray($$a)) {
+                                                  var $$v = null,
+                                                    $$i = _vm._i($$a, $$v)
+                                                  if ($$el.checked) {
+                                                    $$i < 0 &&
+                                                      _vm.$set(
+                                                        _vm.form,
+                                                        "form_137",
+                                                        $$a.concat([$$v])
+                                                      )
+                                                  } else {
+                                                    $$i > -1 &&
+                                                      _vm.$set(
+                                                        _vm.form,
+                                                        "form_137",
+                                                        $$a
+                                                          .slice(0, $$i)
+                                                          .concat(
+                                                            $$a.slice($$i + 1)
+                                                          )
+                                                      )
+                                                  }
+                                                } else {
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "form_137",
+                                                    $$c
+                                                  )
+                                                }
+                                              },
+                                            },
+                                          }),
+                                          _c(
+                                            "span",
+                                            {
+                                              staticClass: "ml-2 text-gray-700",
+                                            },
+                                            [_vm._v("Form 137")]
+                                          ),
+                                        ]
+                                      ),
+                                    ])
+                                  : _vm._e(),
+                              ]
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "shadow-sm ring-1 ring-black ring-opacity-5",
+                          },
+                          [
+                            _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "flex items-center justify-between w-full p-5 font-medium text-left text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 bg-blue-700 hover:opacity-75",
+                                attrs: {
+                                  "aria-expanded": _vm.isOpenInformation,
+                                  "aria-controls": "collapse" + _vm._uid,
+                                },
+                                on: {
+                                  click: function ($event) {
+                                    return _vm.toggleAccordionInformation()
+                                  },
+                                },
+                              },
+                              [
+                                _vm._v(
+                                  "\n                  Information\n                  "
+                                ),
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass:
+                                      "w-3 transition-all duration-200 transform",
+                                    class: {
+                                      "rotate-180": _vm.isOpenInformation,
+                                      "rotate-0": !_vm.isOpenInformation,
+                                    },
+                                    attrs: {
+                                      fill: "none",
+                                      stroke: "currentColor",
+                                      xmlns: "http://www.w3.org/2000/svg",
+                                      viewBox: "0 0 16 10",
+                                      "aria-hidden": "true",
+                                    },
+                                  },
+                                  [
+                                    _c("path", {
+                                      attrs: {
+                                        d: "M15 1.2l-7 7-7-7",
+                                        "stroke-width": "2",
+                                        "stroke-linecap": "round",
+                                        "stroke-linejoin": "round",
+                                      },
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.isOpenInformation,
+                                    expression: "isOpenInformation",
+                                  },
+                                ],
+                                attrs: { id: "collapse" + _vm._uid },
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "bg-white shadow overflow-hidden",
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "border-t border-gray-200",
+                                      },
+                                      [
+                                        _c("dl", [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                            },
+                                            [
+                                              _c(
+                                                "dt",
+                                                {
+                                                  staticClass:
+                                                    "text-sm font-medium text-gray-500",
+                                                },
+                                                [_vm._v("Full name")]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "dd",
+                                                {
+                                                  staticClass:
+                                                    "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.student.first_name
+                                                    ) +
+                                                      " " +
+                                                      _vm._s(
+                                                        _vm.student.middle_name
+                                                      ) +
+                                                      " " +
+                                                      _vm._s(
+                                                        _vm.student.last_name
+                                                      )
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                            },
+                                            [
+                                              _c(
+                                                "dt",
+                                                {
+                                                  staticClass:
+                                                    "text-sm font-medium text-gray-500",
+                                                },
+                                                [_vm._v("Date of Birth")]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "dd",
+                                                {
+                                                  staticClass:
+                                                    "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.student.birth_date
+                                                    )
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                            },
+                                            [
+                                              _c(
+                                                "dt",
+                                                {
+                                                  staticClass:
+                                                    "text-sm font-medium text-gray-500",
+                                                },
+                                                [_vm._v("Place of Birth")]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "dd",
+                                                {
+                                                  staticClass:
+                                                    "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.student.birth_place
+                                                    )
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                            },
+                                            [
+                                              _c(
+                                                "dt",
+                                                {
+                                                  staticClass:
+                                                    "text-sm font-medium text-gray-500",
+                                                },
+                                                [_vm._v("Gender")]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "dd",
+                                                {
+                                                  staticClass:
+                                                    "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.student.gender
+                                                        ? "MALE"
+                                                        : "FEMALE"
+                                                    )
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                            },
+                                            [
+                                              _c(
+                                                "dt",
+                                                {
+                                                  staticClass:
+                                                    "text-sm font-medium text-gray-500",
+                                                },
+                                                [_vm._v("Grade Entered")]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "dd",
+                                                {
+                                                  staticClass:
+                                                    "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                                },
+                                                [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "mt-1 sm:mt-0 sm:col-span-2",
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "relative inline-block text-gray-700 w-full",
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "select",
+                                                            {
+                                                              directives: [
+                                                                {
+                                                                  name: "model",
+                                                                  rawName:
+                                                                    "v-model",
+                                                                  value:
+                                                                    _vm.student
+                                                                      .grade_entered_id,
+                                                                  expression:
+                                                                    "student.grade_entered_id",
+                                                                },
+                                                              ],
+                                                              staticClass:
+                                                                "w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                                                              attrs: {
+                                                                type: "date",
+                                                                disabled: "",
+                                                              },
+                                                              on: {
+                                                                change:
+                                                                  function (
+                                                                    $event
+                                                                  ) {
+                                                                    var $$selectedVal =
+                                                                      Array.prototype.filter
+                                                                        .call(
+                                                                          $event
+                                                                            .target
+                                                                            .options,
+                                                                          function (
+                                                                            o
+                                                                          ) {
+                                                                            return o.selected
+                                                                          }
+                                                                        )
+                                                                        .map(
+                                                                          function (
+                                                                            o
+                                                                          ) {
+                                                                            var val =
+                                                                              "_value" in
+                                                                              o
+                                                                                ? o._value
+                                                                                : o.value
+                                                                            return val
+                                                                          }
+                                                                        )
+                                                                    _vm.$set(
+                                                                      _vm.student,
+                                                                      "grade_entered_id",
+                                                                      $event
+                                                                        .target
+                                                                        .multiple
+                                                                        ? $$selectedVal
+                                                                        : $$selectedVal[0]
+                                                                    )
+                                                                  },
+                                                              },
+                                                            },
+                                                            [
+                                                              _c(
+                                                                "option",
+                                                                {
+                                                                  attrs: {
+                                                                    value: "",
+                                                                    disabled:
+                                                                      "",
+                                                                  },
+                                                                },
+                                                                [
+                                                                  _vm._v(
+                                                                    "Select Grade Level"
+                                                                  ),
+                                                                ]
+                                                              ),
+                                                              _vm._v(" "),
+                                                              _vm._l(
+                                                                _vm.levels,
+                                                                function (
+                                                                  level
+                                                                ) {
+                                                                  return _c(
+                                                                    "option",
+                                                                    {
+                                                                      domProps:
+                                                                        {
+                                                                          value:
+                                                                            level.id,
+                                                                        },
+                                                                    },
+                                                                    [
+                                                                      _vm._v(
+                                                                        _vm._s(
+                                                                          level.level
+                                                                        )
+                                                                      ),
+                                                                    ]
+                                                                  )
+                                                                }
+                                                              ),
+                                                            ],
+                                                            2
+                                                          ),
+                                                        ]
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          ),
+                                        ]),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [_vm._v("Mobile Number")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(_vm.student.phone)
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [_vm._v("Mobile Number")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(_vm.student.phone)
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [_vm._v("E-Mail")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(_vm.student.email)
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [_vm._v("Father's Name")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.student.father_name
+                                                  )
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c("dt", {
+                                              staticClass:
+                                                "text-sm font-medium text-gray-500",
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.student
+                                                      .father_is_deceased == "1"
+                                                      ? "DECEASED"
+                                                      : "LIVING"
+                                                  )
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "Father's Contact Number"
+                                                ),
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.student.father_phone
+                                                  )
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [_vm._v("Mother's Name")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.student.mother_name
+                                                  )
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c("dt", {
+                                              staticClass:
+                                                "text-sm font-medium text-gray-500",
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.student
+                                                      .mother_is_deceased == "1"
+                                                      ? "DECEASED"
+                                                      : "LIVING"
+                                                  )
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "Mother's Contact Number"
+                                                ),
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.student.mother_phone
+                                                  )
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [_vm._v("Guardian's Name")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.student.guardian_name
+                                                  )
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "Guardian's Contact Number"
+                                                ),
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.student.guardian_phone
+                                                  )
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [_vm._v("Purok/Street")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.student.purok_street
+                                                  )
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [_vm._v("Barangay")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(_vm.student.barangay)
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [_vm._v("City")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [_vm._v(_vm._s(_vm.student.city))]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [_vm._v("Province")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(_vm.student.province)
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [_vm._v("Contact Person")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.student.contact_person
+                                                  )
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [_vm._v("Contact Person Number")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.student
+                                                      .contact_person_number
+                                                  )
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._m(2),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "border-t border-gray-200",
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [_vm._v("Name")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.student
+                                                      .last_school_attended
+                                                  )
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [_vm._v("Address")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.student
+                                                      .last_school_address
+                                                  )
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [_vm._v("Grade and Section")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.student
+                                                      .last_school_grade_section
+                                                  )
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+                                          },
+                                          [
+                                            _c(
+                                              "dt",
+                                              {
+                                                staticClass:
+                                                  "text-sm font-medium text-gray-500",
+                                              },
+                                              [_vm._v("School Year")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "dd",
+                                              {
+                                                staticClass:
+                                                  "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.student
+                                                      .last_school_school_year
+                                                  )
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("aside", { staticClass: "block xl:col-span-4" }, [
+              _c("div", { staticClass: "sticky top-6 space-y-4" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-white p-4 rounded border border-blue-600",
+                  },
+                  [
+                    _c("div", { staticClass: "sm:flex-auto text-right" }, [
+                      _c(
+                        "h1",
+                        { staticClass: "text-xl font-semibold text-blue-700" },
+                        [
+                          _vm._v(
+                            _vm._s(_vm.student.first_name) +
+                              " " +
+                              _vm._s(_vm.student.middle_name) +
+                              " " +
+                              _vm._s(_vm.student.last_name)
+                          ),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "h1",
+                        {
+                          staticClass:
+                            "text-sm font-semibold text-blue-700 cursor-pointer hover:opacity-75",
+                        },
+                        [_vm._v("Requirements")]
+                      ),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "mt-2 text-sm text-gray-700" }, [
+                        _vm._v(_vm._s(_vm.student.grade_level.level)),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "flow-root mt-6" }, [
+                      _c(
+                        "ul",
+                        {
+                          staticClass: "-my-5 divide-y divide-gray-200",
+                          attrs: { role: "list" },
+                        },
+                        [
+                          _c("li", { staticClass: "py-1" }, [
+                            _c(
+                              "div",
+                              { staticClass: "flex items-center space-x-1" },
+                              [
+                                _c("div", { staticClass: "flex-shrink-0" }, [
+                                  _c("p", { staticClass: "text-gray-500" }, [
+                                    _c(
+                                      "svg",
+                                      {
+                                        staticClass: "h-6 w-6",
+                                        attrs: {
+                                          xmlns: "http://www.w3.org/2000/svg",
+                                          fill: "none",
+                                          viewBox: "0 0 24 24",
+                                          stroke: "currentColor",
+                                          "stroke-width": "2",
+                                        },
+                                      },
+                                      [
+                                        _c("path", {
+                                          attrs: {
+                                            "stroke-linecap": "round",
+                                            "stroke-linejoin": "round",
+                                            d: "M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1",
+                                          },
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(3),
+                                _vm._v(" "),
+                                _c("div", [
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass:
+                                        "text-sm text-blue-700 truncate",
+                                    },
+                                    [
+                                      _vm._v(
+                                        "₱ " +
+                                          _vm._s(
+                                            _vm.numberWithCommas(
+                                              _vm.fees.entrance
+                                            )
+                                          )
+                                      ),
+                                    ]
+                                  ),
+                                ]),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "text-right" }, [
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "text-sm text-blue-700 truncate",
+                                },
+                                [
+                                  _vm._v("₱ "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.form.entrance,
+                                        expression: "form.entrance",
+                                      },
+                                    ],
+                                    staticClass: "text-right",
+                                    attrs: { type: "number" },
+                                    domProps: { value: _vm.form.entrance },
+                                    on: {
+                                      input: function ($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.form,
+                                          "entrance",
+                                          $event.target.value
+                                        )
+                                      },
+                                    },
+                                  }),
+                                ]
+                              ),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "py-1" }, [
+                            _c(
+                              "div",
+                              { staticClass: "flex items-center space-x-1" },
+                              [
+                                _c("div", { staticClass: "flex-shrink-0" }, [
+                                  _c("p", { staticClass: "text-gray-500" }, [
+                                    _c(
+                                      "svg",
+                                      {
+                                        staticClass: "css-i6dzq1",
+                                        attrs: {
+                                          viewBox: "0 0 24 24",
+                                          width: "24",
+                                          height: "24",
+                                          stroke: "currentColor",
+                                          "stroke-width": "2",
+                                          fill: "none",
+                                          "stroke-linecap": "round",
+                                          "stroke-linejoin": "round",
+                                        },
+                                      },
+                                      [
+                                        _c("path", {
+                                          attrs: {
+                                            d: "M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z",
+                                          },
+                                        }),
+                                        _c("polyline", {
+                                          attrs: { points: "13 2 13 9 20 9" },
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(4),
+                                _vm._v(" "),
+                                _c("div", [
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass:
+                                        "text-sm text-blue-700 truncate",
+                                    },
+                                    [
+                                      _vm._v(
+                                        "₱ " +
+                                          _vm._s(
+                                            _vm.numberWithCommas(_vm.fees.misc)
+                                          )
+                                      ),
+                                    ]
+                                  ),
+                                ]),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "text-right" }, [
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "text-sm text-blue-700 truncate",
+                                },
+                                [
+                                  _vm._v("₱ "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.form.misc,
+                                        expression: "form.misc",
+                                      },
+                                    ],
+                                    staticClass: "text-right",
+                                    attrs: { type: "number" },
+                                    domProps: { value: _vm.form.misc },
+                                    on: {
+                                      input: function ($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.form,
+                                          "misc",
+                                          $event.target.value
+                                        )
+                                      },
+                                    },
+                                  }),
+                                ]
+                              ),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "py-1" }, [
+                            _c(
+                              "div",
+                              { staticClass: "flex items-center space-x-1" },
+                              [
+                                _c("div", { staticClass: "flex-shrink-0" }, [
+                                  _c("p", { staticClass: "text-gray-500" }, [
+                                    _c(
+                                      "svg",
+                                      {
+                                        staticClass: "h-6 w-6",
+                                        attrs: {
+                                          xmlns: "http://www.w3.org/2000/svg",
+                                          fill: "none",
+                                          viewBox: "0 0 24 24",
+                                          stroke: "currentColor",
+                                          "stroke-width": "2",
+                                        },
+                                      },
+                                      [
+                                        _c("path", {
+                                          attrs: {
+                                            "stroke-linecap": "round",
+                                            "stroke-linejoin": "round",
+                                            d: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
+                                          },
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(5),
+                                _vm._v(" "),
+                                _c("div", [
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass:
+                                        "text-sm text-blue-700 truncate",
+                                    },
+                                    [
+                                      _vm._v(
+                                        "₱ " +
+                                          _vm._s(
+                                            _vm.numberWithCommas(
+                                              _vm.fees.tuition
+                                            )
+                                          )
+                                      ),
+                                    ]
+                                  ),
+                                ]),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "text-right" }, [
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "text-sm text-blue-700 truncate",
+                                },
+                                [
+                                  _vm._v("₱ "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.form.tuition,
+                                        expression: "form.tuition",
+                                      },
+                                    ],
+                                    staticClass: "text-right",
+                                    attrs: { type: "number" },
+                                    domProps: { value: _vm.form.tuition },
+                                    on: {
+                                      input: function ($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.form,
+                                          "tuition",
+                                          $event.target.value
+                                        )
+                                      },
+                                    },
+                                  }),
+                                ]
+                              ),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "py-1" }, [
+                            _c(
+                              "div",
+                              { staticClass: "flex items-center space-x-1" },
+                              [
+                                _c("div", { staticClass: "flex-shrink-0" }, [
+                                  _c("p", { staticClass: "text-gray-500" }, [
+                                    _c(
+                                      "svg",
+                                      {
+                                        staticClass: "h-6 w-6",
+                                        attrs: {
+                                          xmlns: "http://www.w3.org/2000/svg",
+                                          fill: "none",
+                                          viewBox: "0 0 24 24",
+                                          stroke: "currentColor",
+                                          "stroke-width": "2",
+                                        },
+                                      },
+                                      [
+                                        _c("path", {
+                                          attrs: {
+                                            "stroke-linecap": "round",
+                                            "stroke-linejoin": "round",
+                                            d: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
+                                          },
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(6),
+                                _vm._v(" "),
+                                _c("div", [
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass:
+                                        "text-sm text-blue-700 truncate",
+                                    },
+                                    [
+                                      _vm._v(
+                                        "₱ " +
+                                          _vm._s(
+                                            _vm.numberWithCommas(_vm.fees.books)
+                                          )
+                                      ),
+                                    ]
+                                  ),
+                                ]),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "text-right" }, [
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "text-sm text-blue-700 truncate",
+                                },
+                                [
+                                  _vm._v("₱ "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.form.books,
+                                        expression: "form.books",
+                                      },
+                                    ],
+                                    staticClass: "text-right",
+                                    attrs: { type: "number" },
+                                    domProps: { value: _vm.form.books },
+                                    on: {
+                                      input: function ($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.form,
+                                          "books",
+                                          $event.target.value
+                                        )
+                                      },
+                                    },
+                                  }),
+                                ]
+                              ),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "py-1" }, [
+                            _c(
+                              "div",
+                              { staticClass: "flex items-center space-x-1" },
+                              [
+                                _c("div", { staticClass: "flex-shrink-0" }, [
+                                  _c("p", { staticClass: "text-gray-500" }, [
+                                    _c(
+                                      "svg",
+                                      {
+                                        staticClass: "h-6 w-6",
+                                        attrs: {
+                                          xmlns: "http://www.w3.org/2000/svg",
+                                          fill: "none",
+                                          viewBox: "0 0 24 24",
+                                          stroke: "currentColor",
+                                          "stroke-width": "2",
+                                        },
+                                      },
+                                      [
+                                        _c("path", {
+                                          attrs: {
+                                            "stroke-linecap": "round",
+                                            "stroke-linejoin": "round",
+                                            d: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
+                                          },
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(7),
+                                _vm._v(" "),
+                                _c("div", [
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass:
+                                        "text-sm text-blue-700 truncate",
+                                    },
+                                    [
+                                      _vm._v(
+                                        "₱ " +
+                                          _vm._s(
+                                            _vm.numberWithCommas(
+                                              _vm.fees.handbook
+                                            )
+                                          )
+                                      ),
+                                    ]
+                                  ),
+                                ]),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "text-right" }, [
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "text-sm text-blue-700 truncate",
+                                },
+                                [
+                                  _vm._v("₱ "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.form.handbook,
+                                        expression: "form.handbook",
+                                      },
+                                    ],
+                                    staticClass: "text-right",
+                                    attrs: { type: "number" },
+                                    domProps: { value: _vm.form.handbook },
+                                    on: {
+                                      input: function ($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.form,
+                                          "handbook",
+                                          $event.target.value
+                                        )
+                                      },
+                                    },
+                                  }),
+                                ]
+                              ),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "py-1" }, [
+                            _c(
+                              "div",
+                              { staticClass: "flex items-center space-x-1" },
+                              [
+                                _c("div", { staticClass: "flex-shrink-0" }, [
+                                  _c("p", { staticClass: "text-gray-500" }, [
+                                    _c(
+                                      "svg",
+                                      {
+                                        staticClass: "w-6 h-6",
+                                        attrs: {
+                                          xmlns: "http://www.w3.org/2000/svg",
+                                          fill: "none",
+                                          viewBox: "0 0 24 24",
+                                          "stroke-width": "1.5",
+                                          stroke: "currentColor",
+                                        },
+                                      },
+                                      [
+                                        _c("path", {
+                                          attrs: {
+                                            "stroke-linecap": "round",
+                                            "stroke-linejoin": "round",
+                                            d: "M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z",
+                                          },
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(8),
+                                _vm._v(" "),
+                                _c("div", [
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass:
+                                        "text-sm text-blue-700 truncate",
+                                    },
+                                    [
+                                      _vm._v(
+                                        "₱ " +
+                                          _vm._s(
+                                            _vm.numberWithCommas(
+                                              _vm.fees.id_fee
+                                            )
+                                          )
+                                      ),
+                                    ]
+                                  ),
+                                ]),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "text-right" }, [
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "text-sm text-blue-700 truncate",
+                                },
+                                [
+                                  _vm._v("₱ "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.form.id_fee,
+                                        expression: "form.id_fee",
+                                      },
+                                    ],
+                                    staticClass: "text-right",
+                                    attrs: { type: "number" },
+                                    domProps: { value: _vm.form.id_fee },
+                                    on: {
+                                      input: function ($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.form,
+                                          "id_fee",
+                                          $event.target.value
+                                        )
+                                      },
+                                    },
+                                  }),
+                                ]
+                              ),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "py-1" }, [
+                            _c(
+                              "div",
+                              { staticClass: "flex items-center space-x-1" },
+                              [
+                                _c("div", { staticClass: "flex-shrink-0" }, [
+                                  _c("p", { staticClass: "text-gray-500" }, [
+                                    _c(
+                                      "svg",
+                                      {
+                                        staticClass: "h-6 w-6",
+                                        attrs: {
+                                          xmlns: "http://www.w3.org/2000/svg",
+                                          fill: "none",
+                                          viewBox: "0 0 24 24",
+                                          stroke: "currentColor",
+                                          "stroke-width": "2",
+                                        },
+                                      },
+                                      [
+                                        _c("path", {
+                                          attrs: {
+                                            "stroke-linecap": "round",
+                                            "stroke-linejoin": "round",
+                                            d: "M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+                                          },
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(9),
+                                _vm._v(" "),
+                                _c("div", [
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass:
+                                        "text-sm text-blue-700 truncate",
+                                    },
+                                    [
+                                      _vm._v("₱ "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.discount,
+                                            expression: "form.discount",
+                                          },
+                                        ],
+                                        staticClass: "text-right",
+                                        attrs: { type: "number" },
+                                        domProps: { value: _vm.form.discount },
+                                        on: {
+                                          input: function ($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "discount",
+                                              $event.target.value
+                                            )
+                                          },
+                                        },
+                                      }),
+                                    ]
+                                  ),
+                                ]),
+                              ]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "py-1" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "flex items-center space-x-1 border-t-4 border-blue-700 pt-4",
+                              },
+                              [
+                                _vm._m(10),
+                                _vm._v(" "),
+                                _c("div", [
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass:
+                                        "text-sm text-blue-700 text-2xl font-black truncate",
+                                    },
+                                    [
+                                      _vm._v(
+                                        "₱ " +
+                                          _vm._s(_vm.totalPayment(_vm.fees))
+                                      ),
+                                    ]
+                                  ),
+                                ]),
+                              ]
+                            ),
+                          ]),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mt-6" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "relative inline-block text-gray-700 w-full mb-2",
+                        },
+                        [
+                          _c("input", {
+                            staticClass:
+                              "text-right w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                            attrs: {
+                              disabled: "",
+                              type: "text",
+                              placeholder: "Total",
+                            },
+                            domProps: { value: _vm.amountTotal() },
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none",
+                            },
+                            [
+                              _c(
+                                "svg",
+                                {
+                                  staticClass: "w-5 h-5",
+                                  staticStyle: {
+                                    "enable-background":
+                                      "new 0 0 71.668 71.668",
+                                  },
+                                  attrs: {
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    "xmlns:xlink":
+                                      "http://www.w3.org/1999/xlink",
+                                    version: "1.1",
+                                    id: "Capa_1",
+                                    x: "0px",
+                                    y: "0px",
+                                    width: "71.668px",
+                                    height: "71.668px",
+                                    viewBox: "0 0 71.668 71.668",
+                                    "xml:space": "preserve",
+                                  },
+                                },
+                                [
+                                  _c("g", [
+                                    _c("g", [
+                                      _c("g", [
+                                        _c("path", {
+                                          attrs: {
+                                            d: "M16.935,70.021c-2.158,0-3.926-0.748-5.252-2.225c-1.313-1.455-1.98-3.598-1.98-6.364V31.289H3.5     c-1.93,0-3.5-1.57-3.5-3.5c0-1.93,1.57-3.5,3.5-3.5h6.203v-3.667H3.5c-1.93,0-3.5-1.57-3.5-3.5c0-1.93,1.57-3.5,3.5-3.5h6.203     v-3.25c0-3.085,0.738-5.337,2.194-6.693c1.443-1.348,3.731-2.031,6.8-2.031h17.215c4.984,0,8.499,0.369,11.395,1.197     c3.022,0.839,5.014,2.35,6.715,3.856c2.019,1.787,3.576,4.008,4.627,6.6c0.043,0.105,0.084,0.213,0.123,0.321h9.396     c1.93,0,3.5,1.57,3.5,3.5c0,1.93-1.57,3.5-3.5,3.5h-7.99c0.028,0.488,0.043,0.952,0.043,1.408c0,0.746-0.031,1.494-0.096,2.259     h8.043c1.93,0,3.5,1.57,3.5,3.5c0,1.93-1.57,3.5-3.5,3.5h-9.656c-1.08,2.582-2.66,4.753-4.705,6.466     c-4.41,3.688-9.93,5.334-17.895,5.334h-11.79v18.252c0,2.799-0.683,4.965-2.029,6.438C20.733,69.267,18.998,70.021,16.935,70.021     z M3.499,27.289c-0.275,0-0.5,0.225-0.5,0.5s0.225,0.5,0.5,0.5h7.703c0.828,0,1.5,0.672,1.5,1.5v31.643     c0,2.002,0.407,3.468,1.21,4.356c0.756,0.842,1.716,1.231,3.022,1.231c1.22,0,2.155-0.401,2.943-1.265     c0.825-0.903,1.244-2.389,1.244-4.414V41.589c0-0.828,0.672-1.5,1.5-1.5H35.91c7.211,0,12.137-1.43,15.97-4.635     c1.886-1.58,3.296-3.655,4.188-6.168c0.213-0.598,0.779-0.997,1.414-0.997h10.684c0.275,0,0.5-0.225,0.5-0.5s-0.225-0.5-0.5-0.5     h-9.721c-0.436,0-0.848-0.188-1.133-0.516s-0.414-0.764-0.354-1.193c0.174-1.237,0.259-2.398,0.259-3.55     c0-0.828-0.056-1.698-0.174-2.738c-0.049-0.425,0.087-0.85,0.371-1.169c0.284-0.318,0.69-0.501,1.119-0.501h9.631     c0.274,0,0.5-0.225,0.5-0.5s-0.226-0.5-0.5-0.5H57.686c-0.651,0-1.229-0.42-1.429-1.039l-0.075-0.234     c-0.099-0.313-0.195-0.624-0.316-0.922c-0.875-2.157-2.166-4.002-3.836-5.479c-1.701-1.508-3.221-2.57-5.538-3.214     c-2.627-0.751-5.888-1.085-10.581-1.085H18.696c-2.251,0-3.895,0.424-4.754,1.226c-0.812,0.756-1.24,2.312-1.24,4.499v4.75     c0,0.828-0.672,1.5-1.5,1.5H3.499c-0.275,0-0.5,0.225-0.5,0.5s0.225,0.5,0.5,0.5h7.703c0.828,0,1.5,0.672,1.5,1.5v6.667     c0,0.828-0.672,1.5-1.5,1.5L3.499,27.289L3.499,27.289z M32.659,34.967H22.622c-0.828,0-1.5-0.672-1.5-1.5v-3.679     c0-0.828,0.672-1.5,1.5-1.5h22.767c0.604,0,1.151,0.364,1.385,0.924c0.231,0.559,0.105,1.203-0.32,1.633     c-1.352,1.361-3.072,2.375-5.117,3.015C38.979,34.596,36.06,34.967,32.659,34.967z M24.122,31.967h8.537     c2.588,0,4.841-0.228,6.717-0.679H24.122V31.967z M47.682,27.289h-25.06c-0.828,0-1.5-0.672-1.5-1.5v-6.667     c0-0.828,0.672-1.5,1.5-1.5h25.125c0.69,0,1.291,0.471,1.456,1.141c0.275,1.116,0.415,2.307,0.415,3.538     c0,1.39-0.165,2.696-0.491,3.885C48.948,26.836,48.355,27.289,47.682,27.289z M24.122,24.289h22.349     c0.098-0.627,0.147-1.292,0.147-1.988c0-0.575-0.037-1.137-0.111-1.679H24.122V24.289z M45.814,16.622H22.622     c-0.828,0-1.5-0.672-1.5-1.5v-3.897c0-0.828,0.672-1.5,1.5-1.5h10.037c6.754,0,11.224,1.205,13.664,3.684     c0.254,0.271,0.461,0.522,0.665,0.779c0.359,0.45,0.429,1.066,0.179,1.586C46.917,16.292,46.393,16.622,45.814,16.622z      M24.122,13.622h16.552c-2.027-0.595-4.707-0.897-8.015-0.897h-8.537V13.622z",
+                                          },
+                                        }),
+                                      ]),
+                                    ]),
+                                  ]),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                ]
+                              ),
+                            ]
+                          ),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-white bg-blue-700 hover:bg-blue-500",
+                          on: {
+                            click: function ($event) {
+                              return _vm.processPayment()
+                            },
+                          },
+                        },
+                        [_vm._v(" Enroll Student ")]
+                      ),
+                    ]),
+                  ]
+                ),
+              ]),
+            ]),
+          ]
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "printMe", hidden: "" } }, [
+        _c(
+          "p",
+          {
+            staticStyle: {
+              "text-align": "center",
+              "margin-bottom": "-10px",
+              "font-size": "1.5em",
+              "font-weight": "bold",
+            },
+          },
+          [_vm._v("Philippine Baptist Christian College of Mindanao, Inc.")]
+        ),
+        _vm._v(" "),
+        _c("p", { staticStyle: { "text-align": "center" } }, [
+          _vm._v("Fd. Rd. 2, Tibal-og, Sto Tomas Davao del Norte"),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticStyle: { "text-align": "right" } }, [
+          _vm._v(" Date: " + _vm._s(_vm.dateNow())),
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v("Payer: "),
+          _c(
+            "span",
+            {
+              staticStyle: {
+                "font-size": "1.5em",
+                "font-weight": "bold",
+                "margin-left": "3px",
+              },
+            },
+            [
+              _vm._v(
+                _vm._s(_vm.student.first_name) +
+                  " " +
+                  _vm._s(_vm.student.middle_name) +
+                  " " +
+                  _vm._s(_vm.student.last_name)
+              ),
+            ]
+          ),
+        ]),
+        _vm._v(" "),
+        _c(
+          "table",
+          {
+            staticStyle: {
+              "font-family": "arial, sans-serif",
+              "border-collapse": "collapse",
+              width: "100%",
+            },
+          },
+          [
+            _vm._m(11),
+            _vm._v(" "),
+            _c("tr", [
+              _c(
+                "td",
+                {
+                  staticStyle: {
+                    border: "1px solid #dddddd",
+                    "text-align": "left",
+                    padding: "8px",
+                  },
+                },
+                [_vm._v("Entrance Fee")]
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  staticStyle: {
+                    border: "1px solid #dddddd",
+                    "text-align": "left",
+                    padding: "8px",
+                  },
+                },
+                [_vm._v("₱ " + _vm._s(this.form.entrance))]
+              ),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c(
+                "td",
+                {
+                  staticStyle: {
+                    border: "1px solid #dddddd",
+                    "text-align": "left",
+                    padding: "8px",
+                  },
+                },
+                [_vm._v("Miscellaneous")]
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  staticStyle: {
+                    border: "1px solid #dddddd",
+                    "text-align": "left",
+                    padding: "8px",
+                  },
+                },
+                [_vm._v("₱ " + _vm._s(this.form.misc))]
+              ),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c(
+                "td",
+                {
+                  staticStyle: {
+                    border: "1px solid #dddddd",
+                    "text-align": "left",
+                    padding: "8px",
+                  },
+                },
+                [_vm._v("Tuition Fee")]
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  staticStyle: {
+                    border: "1px solid #dddddd",
+                    "text-align": "left",
+                    padding: "8px",
+                  },
+                },
+                [_vm._v("₱ " + _vm._s(this.form.tuition))]
+              ),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c(
+                "td",
+                {
+                  staticStyle: {
+                    border: "1px solid #dddddd",
+                    "text-align": "left",
+                    padding: "8px",
+                  },
+                },
+                [_vm._v("Books")]
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  staticStyle: {
+                    border: "1px solid #dddddd",
+                    "text-align": "left",
+                    padding: "8px",
+                  },
+                },
+                [_vm._v("₱ " + _vm._s(this.form.books))]
+              ),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c(
+                "td",
+                {
+                  staticStyle: {
+                    border: "1px solid #dddddd",
+                    "text-align": "left",
+                    padding: "8px",
+                  },
+                },
+                [_vm._v("Hand Book")]
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  staticStyle: {
+                    border: "1px solid #dddddd",
+                    "text-align": "left",
+                    padding: "8px",
+                  },
+                },
+                [_vm._v("₱ " + _vm._s(this.form.handbook))]
+              ),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c(
+                "td",
+                {
+                  staticStyle: {
+                    border: "1px solid #dddddd",
+                    "text-align": "left",
+                    padding: "8px",
+                  },
+                },
+                [_vm._v("School ID")]
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  staticStyle: {
+                    border: "1px solid #dddddd",
+                    "text-align": "left",
+                    padding: "8px",
+                  },
+                },
+                [_vm._v("₱ " + _vm._s(this.form.id_fee))]
+              ),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c(
+                "td",
+                {
+                  staticStyle: {
+                    border: "1px solid #dddddd",
+                    "text-align": "left",
+                    padding: "8px",
+                    "font-size": "1rem",
+                    "font-weight": "bold",
+                  },
+                },
+                [_vm._v("Total")]
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  staticStyle: {
+                    border: "1px solid #dddddd",
+                    "text-align": "left",
+                    padding: "8px",
+                  },
+                },
+                [_vm._v("₱ " + _vm._s(_vm.amountTotal()))]
+              ),
+            ]),
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "p",
+          {
+            staticStyle: {
+              "font-size": "1.5em",
+              "font-weight": "bold",
+              "margin-left": "3px",
+            },
+          },
+          [_vm._v("Amount in words:")]
+        ),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(_vm._s(_vm._f("toWords")(_vm.amountTotal())) + " pesos."),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("sweet-modal", { ref: "studentlistmodal" }, [
+        _vm._v("\n    This is "),
+        _c("b", [_vm._v("HTML")]),
+        _vm._v("-"),
+        _c("i", [_vm._v("Content")]),
+        _vm._v(".\n    "),
+        _c("br"),
+        _c("br"),
+        _vm._v(" "),
+        _c("iframe", {
+          attrs: {
+            width: "560",
+            height: "315",
+            src: "https://www.youtube.com/embed/4xgx4k83zzc",
+            frameborder: "0",
+            allowfullscreen: "",
+          },
+        }),
+      ]),
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "sm:flex sm:items-center px-6" }, [
+      _c("div", { staticClass: "sm:flex-auto" }, [
+        _c("h1", { staticClass: "text-2xl font-semibold text-gray-900" }, [
+          _vm._v("Student Information"),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "inline-flex items-center mt-3" }, [
+      _c("input", {
+        staticClass: "form-checkbox h-5 w-5 text-gray-600",
+        attrs: { type: "checkbox", checked: "" },
+      }),
+      _c("span", { staticClass: "ml-2 text-gray-700" }, [_vm._v("Good Moral")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "px-4 py-5 sm:px-6" }, [
+      _c("h3", { staticClass: "text-lg leading-6 font-medium text-gray-900" }, [
+        _vm._v("Last School Information"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-1 min-w-0" }, [
+      _c("p", { staticClass: "text-sm font-medium text-gray-900 truncate" }, [
+        _vm._v("Entrance Fee"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-1 min-w-0" }, [
+      _c("p", { staticClass: "text-sm font-medium text-gray-900 truncate" }, [
+        _vm._v("Miscellaneous"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-1 min-w-0" }, [
+      _c("p", { staticClass: "text-sm font-medium text-gray-900 truncate" }, [
+        _vm._v("Tuition Fee"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-1 min-w-0" }, [
+      _c("p", { staticClass: "text-sm font-medium text-gray-900 truncate" }, [
+        _vm._v("Books Fee"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-1 min-w-0" }, [
+      _c("p", { staticClass: "text-sm font-medium text-gray-900 truncate" }, [
+        _vm._v("Hand Book"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-1 min-w-0" }, [
+      _c("p", { staticClass: "text-sm font-medium text-gray-900 truncate" }, [
+        _vm._v("School ID"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-1 min-w-0" }, [
+      _c("p", { staticClass: "text-sm font-medium text-gray-900 truncate" }, [
+        _vm._v("Discount"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-1 min-w-0" }, [
+      _c("p", { staticClass: "text-sm font-medium text-gray-900 truncate" }, [
+        _vm._v("Whole Year Payment:"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [_c("th"), _vm._v(" "), _c("th")])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/logs.vue?vue&type=template&id=18d768fa&":
 /*!****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/logs.vue?vue&type=template&id=18d768fa& ***!
@@ -36176,7 +41931,7 @@ var render = function () {
                   ),
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "mt-8 flex flex-col" }, [
+                _c("div", { staticClass: "mt-8 mb-10 flex flex-col" }, [
                   _c("div", { staticClass: "-my-2 -mx-4 sm:-mx-6 lg:-mx-8" }, [
                     _c(
                       "div",
@@ -36477,7 +42232,7 @@ var render = function () {
               ]),
             ]),
             _vm._v(" "),
-            _c("aside", { staticClass: "hidden xl:block xl:col-span-4" }, [
+            _c("aside", { staticClass: "block xl:col-span-4" }, [
               _c("div", { staticClass: "sticky top-6 space-y-4" }, [
                 _c(
                   "div",
@@ -38016,116 +43771,6 @@ var render = function () {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.branch,
-                      expression: "branch",
-                    },
-                  ],
-                  staticClass:
-                    "w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
-                  attrs: { placeholder: "Regular input" },
-                  on: {
-                    change: function ($event) {
-                      var $$selectedVal = Array.prototype.filter
-                        .call($event.target.options, function (o) {
-                          return o.selected
-                        })
-                        .map(function (o) {
-                          var val = "_value" in o ? o._value : o.value
-                          return val
-                        })
-                      _vm.branch = $event.target.multiple
-                        ? $$selectedVal
-                        : $$selectedVal[0]
-                    },
-                  },
-                },
-                [
-                  _c("option", { attrs: { value: "", selected: "" } }, [
-                    _vm._v("All Branches"),
-                  ]),
-                  _vm._v(" "),
-                  _vm._l(_vm.branches, function (branch) {
-                    return _c("option", { domProps: { value: branch.id } }, [
-                      _vm._v(_vm._s(branch.name)),
-                    ])
-                  }),
-                ],
-                2
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none",
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "text-blue-500 h-6 w-6",
-                      attrs: {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        fill: "none",
-                        viewBox: "0 0 24 24",
-                        stroke: "currentColor",
-                        "stroke-width": "2",
-                      },
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          "stroke-linecap": "round",
-                          "stroke-linejoin": "round",
-                          d: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01",
-                        },
-                      }),
-                    ]
-                  ),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none",
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "w-4 h-4 fill-current",
-                      attrs: { viewBox: "0 0 20 20" },
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
-                          "clip-rule": "evenodd",
-                          "fill-rule": "evenodd",
-                        },
-                      }),
-                    ]
-                  ),
-                ]
-              ),
-            ]
-          ),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-span-8 sm:col-span-4 lg:col-span-2" }, [
-          _c(
-            "div",
-            { staticClass: "relative inline-block text-gray-700 w-full" },
-            [
-              _c(
-                "select",
-                {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
                       value: _vm.sort_by,
                       expression: "sort_by",
                     },
@@ -38299,15 +43944,6 @@ var render = function () {
                                   staticClass:
                                     "whitespace-nowrap px-2 py-2 text-sm text-gray-500",
                                 },
-                                [_vm._v(_vm._s(student.branch.name))]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "td",
-                                {
-                                  staticClass:
-                                    "whitespace-nowrap px-2 py-2 text-sm text-gray-500",
-                                },
                                 [
                                   student.status == "ACCEPTED"
                                     ? _c(
@@ -38436,16 +44072,6 @@ var staticRenderFns = [
             attrs: { scope: "col" },
           },
           [_vm._v("Grade")]
-        ),
-        _vm._v(" "),
-        _c(
-          "th",
-          {
-            staticClass:
-              "whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900",
-            attrs: { scope: "col" },
-          },
-          [_vm._v("Branch")]
         ),
         _vm._v(" "),
         _c(
@@ -38610,57 +44236,6 @@ var render = function () {
                       ]),
                       _vm._v(" "),
                       _c("li", { staticClass: "md:flex-1" }, [
-                        _vm.step > 2
-                          ? _c(
-                              "a",
-                              {
-                                staticClass:
-                                  "pl-4 py-2 flex flex-col border-l-4 border-blue-600 md:pl-0 md:pt-4 md:pb-0 md:border-l-0 md:border-t-4",
-                                attrs: { "aria-current": "step" },
-                              },
-                              [
-                                _c(
-                                  "span",
-                                  {
-                                    staticClass:
-                                      "text-xs text-blue-600 font-semibold tracking-wide uppercase group-hover:text-gray-700",
-                                  },
-                                  [_vm._v("Step 3")]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "span",
-                                  { staticClass: "text-sm font-medium" },
-                                  [_vm._v("Admission Officer")]
-                                ),
-                              ]
-                            )
-                          : _c(
-                              "a",
-                              {
-                                staticClass:
-                                  "group pl-4 py-2 flex flex-col border-l-4 border-gray-200 hover:border-gray-300 md:pl-0 md:pt-4 md:pb-0 md:border-l-0 md:border-t-4",
-                              },
-                              [
-                                _c(
-                                  "span",
-                                  {
-                                    staticClass:
-                                      "text-xs text-gray-500 font-semibold tracking-wide uppercase group-hover:text-gray-700",
-                                  },
-                                  [_vm._v("Step 3")]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "span",
-                                  { staticClass: "text-sm font-medium" },
-                                  [_vm._v("Admission Officer")]
-                                ),
-                              ]
-                            ),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "md:flex-1" }, [
                         _vm.step > 3
                           ? _c(
                               "a",
@@ -38676,7 +44251,7 @@ var render = function () {
                                     staticClass:
                                       "text-xs text-blue-600 font-semibold tracking-wide uppercase group-hover:text-gray-700",
                                   },
-                                  [_vm._v("Step 4")]
+                                  [_vm._v("Step 3")]
                                 ),
                                 _vm._v(" "),
                                 _c(
@@ -38699,7 +44274,7 @@ var render = function () {
                                     staticClass:
                                       "text-xs text-gray-500 font-semibold tracking-wide uppercase group-hover:text-gray-700",
                                   },
-                                  [_vm._v("Step 4")]
+                                  [_vm._v("Step 3")]
                                 ),
                                 _vm._v(" "),
                                 _c(
@@ -38717,7 +44292,7 @@ var render = function () {
               _vm._v(" "),
               _vm.step == 1
                 ? _c("step-one", {
-                    attrs: { branches: _vm.branches, levels: _vm.levels },
+                    attrs: { levels: _vm.levels },
                     on: { "next-step": _vm.nextStepTwo },
                   })
                 : _vm._e(),
@@ -38728,7 +44303,7 @@ var render = function () {
                       "prev-step": function ($event) {
                         _vm.step -= 1
                       },
-                      "next-step": _vm.nextStepThree,
+                      "next-step": _vm.nextStepFour,
                     },
                   })
                 : _vm._e(),
@@ -38746,11 +44321,7 @@ var render = function () {
               _vm._v(" "),
               _vm.step == 4
                 ? _c("step-four", {
-                    attrs: {
-                      branches: _vm.branches,
-                      levels: _vm.levels,
-                      form: _vm.form,
-                    },
+                    attrs: { levels: _vm.levels, form: _vm.form },
                     on: {
                       "prev-step": function ($event) {
                         _vm.step -= 1
@@ -38846,99 +44417,6 @@ var render = function () {
         "div",
         { staticClass: "bg-white shadow overflow-hidden sm:rounded-lg" },
         [
-          _c(
-            "div",
-            {
-              staticClass:
-                "bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
-            },
-            [
-              _c("dt", { staticClass: "text-sm font-medium text-gray-500" }, [
-                _vm._v("Branch"),
-              ]),
-              _vm._v(" "),
-              _c(
-                "dd",
-                {
-                  staticClass:
-                    "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
-                },
-                [
-                  _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "relative inline-block text-gray-700 w-full",
-                      },
-                      [
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.form.branch_id,
-                                expression: "form.branch_id",
-                              },
-                            ],
-                            staticClass:
-                              "w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
-                            attrs: {
-                              type: "text",
-                              placeholder: "Province",
-                              disabled: "",
-                            },
-                            on: {
-                              change: function ($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function (o) {
-                                    return o.selected
-                                  })
-                                  .map(function (o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.$set(
-                                  _vm.form,
-                                  "branch_id",
-                                  $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                )
-                              },
-                            },
-                          },
-                          [
-                            _c("option", { attrs: { value: "" } }, [
-                              _vm._v("Select Branch"),
-                            ]),
-                            _vm._v(" "),
-                            _vm._l(_vm.branches, function (branch) {
-                              return _c(
-                                "option",
-                                { domProps: { value: branch.id } },
-                                [
-                                  _vm._v(
-                                    _vm._s(branch.name) +
-                                      " - " +
-                                      _vm._s(branch.address)
-                                  ),
-                                ]
-                              )
-                            }),
-                          ],
-                          2
-                        ),
-                      ]
-                    ),
-                  ]),
-                ]
-              ),
-            ]
-          ),
-          _vm._v(" "),
           _vm._m(0),
           _vm._v(" "),
           _c("div", { staticClass: "border-t border-gray-200" }, [
@@ -39773,78 +45251,18 @@ var render = function () {
         ])
       : _vm._e(),
     _vm._v(" "),
-    _c("div", { staticClass: "flex flex-col p-2" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
-        _c(
-          "div",
-          { staticClass: "relative inline-block text-gray-700 w-full" },
-          [
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.branch_id,
-                    expression: "form.branch_id",
-                  },
-                ],
-                staticClass:
-                  "w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
-                attrs: { type: "text", placeholder: "Province" },
-                on: {
-                  change: function ($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function (o) {
-                        return o.selected
-                      })
-                      .map(function (o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.$set(
-                      _vm.form,
-                      "branch_id",
-                      $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-                    )
-                  },
-                },
-              },
-              [
-                _c("option", { attrs: { value: "" } }, [
-                  _vm._v("Select Branch"),
-                ]),
-                _vm._v(" "),
-                _vm._l(_vm.branches, function (branch) {
-                  return _c("option", { domProps: { value: branch.id } }, [
-                    _vm._v(
-                      _vm._s(branch.name) + " - " + _vm._s(branch.address)
-                    ),
-                  ])
-                }),
-              ],
-              2
-            ),
-          ]
-        ),
-      ]),
-    ]),
-    _vm._v(" "),
     _c(
       "p",
       { staticClass: "text-centered text-2xl text-gray-900 pt-2 font-bold" },
       [_vm._v("Personal Details")]
     ),
     _vm._v(" "),
-    _vm._m(1),
+    _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "mx-auto" }, [
       _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-3" }, [
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _vm._m(2),
+          _vm._m(1),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -39921,7 +45339,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _vm._m(3),
+          _vm._m(2),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -39958,7 +45376,7 @@ var render = function () {
       _vm._v(" "),
       _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-3" }, [
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _vm._m(4),
+          _vm._m(3),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -39993,7 +45411,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _vm._m(5),
+          _vm._m(4),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -40028,7 +45446,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _vm._m(6),
+          _vm._m(5),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -40088,7 +45506,7 @@ var render = function () {
       _vm._v(" "),
       _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-3" }, [
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _vm._m(7),
+          _vm._m(6),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -40148,7 +45566,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _vm._m(8),
+          _vm._m(7),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -40182,7 +45600,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _vm._m(9),
+          _vm._m(8),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -40541,7 +45959,7 @@ var render = function () {
       _vm._v(" "),
       _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-2" }, [
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _vm._m(10),
+          _vm._m(9),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -40629,7 +46047,7 @@ var render = function () {
       _vm._v(" "),
       _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-2" }, [
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _vm._m(11),
+          _vm._m(10),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -40664,7 +46082,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _vm._m(12),
+          _vm._m(11),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -40701,7 +46119,7 @@ var render = function () {
       _vm._v(" "),
       _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-2" }, [
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _vm._m(13),
+          _vm._m(12),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -40736,7 +46154,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _vm._m(14),
+          _vm._m(13),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -40777,7 +46195,7 @@ var render = function () {
       _vm._v(" "),
       _c("dl", { staticClass: "rounded-lg sm:grid sm:grid-cols-2" }, [
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _vm._m(15),
+          _vm._m(14),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -40812,7 +46230,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-col p-2" }, [
-          _vm._m(16),
+          _vm._m(15),
           _vm._v(" "),
           _c("div", { staticClass: "mt-1 sm:mt-0 sm:col-span-2" }, [
             _c(
@@ -40879,19 +46297,6 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "dt",
-      { staticClass: "mt-2 text-lg leading-6 font-medium text-gray-700 ml-2" },
-      [
-        _c("span", { staticStyle: { color: "#ff0000" } }, [_vm._v("*")]),
-        _vm._v("Branch"),
-      ]
-    )
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -43727,6 +49132,15 @@ var render = function () {
                                   "td",
                                   {
                                     staticClass:
+                                      "whitespace-nowrap px-2 py-2 text-sm text-gray-900",
+                                  },
+                                  [_vm._v(_vm._s(user.role))]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  {
+                                    staticClass:
                                       "relative whitespace-nowrap py-2 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 flex",
                                   },
                                   [
@@ -43871,6 +49285,16 @@ var staticRenderFns = [
             attrs: { scope: "col" },
           },
           [_vm._v("Email")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900",
+            attrs: { scope: "col" },
+          },
+          [_vm._v("Role")]
         ),
         _vm._v(" "),
         _c(
@@ -44193,149 +49617,747 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "pt-8 min-h-screen bg-blue-100" }, [
-    _c("div", { staticClass: "px-4 sm:px-6 lg:px-8" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "grid grid-cols-8 gap-8 mt-8" }, [
-        _c("div", { staticClass: "col-span-8 sm:col-span-4 lg:col-span-2" }, [
-          _c(
-            "div",
-            { staticClass: "relative inline-block text-gray-700 w-full" },
-            [
-              _vm._m(1),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none",
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "text-blue-500 h-6 w-6",
-                      attrs: {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        fill: "none",
-                        viewBox: "0 0 24 24",
-                        stroke: "currentColor",
-                        "stroke-width": "2",
+    _c(
+      "div",
+      { staticClass: "px-4 sm:px-6 lg:px-8" },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "grid grid-cols-8 gap-8 mt-8" }, [
+          _c("div", { staticClass: "col-span-8 sm:col-span-4 lg:col-span-2" }, [
+            _c(
+              "div",
+              { staticClass: "relative inline-block text-gray-700 w-full" },
+              [
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.selectedUtility,
+                        expression: "selectedUtility",
+                      },
+                    ],
+                    staticClass:
+                      "w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                    attrs: { placeholder: "Regular input" },
+                    on: {
+                      change: function ($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function (o) {
+                            return o.selected
+                          })
+                          .map(function (o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.selectedUtility = $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
                       },
                     },
-                    [
-                      _c("path", {
+                  },
+                  _vm._l(_vm.utilities, function (utility) {
+                    return _c("option", { domProps: { value: utility.id } }, [
+                      _vm._v(_vm._s(utility.type)),
+                    ])
+                  }),
+                  0
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none",
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "text-blue-500 h-6 w-6",
                         attrs: {
-                          "stroke-linecap": "round",
-                          "stroke-linejoin": "round",
-                          d: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
+                          xmlns: "http://www.w3.org/2000/svg",
+                          fill: "none",
+                          viewBox: "0 0 24 24",
+                          stroke: "currentColor",
+                          "stroke-width": "2",
                         },
-                      }),
-                    ]
-                  ),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none",
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "w-4 h-4 fill-current",
-                      attrs: { viewBox: "0 0 20 20" },
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
-                          "clip-rule": "evenodd",
-                          "fill-rule": "evenodd",
-                        },
-                      }),
-                    ]
-                  ),
-                ]
-              ),
-            ]
-          ),
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            "stroke-linecap": "round",
+                            "stroke-linejoin": "round",
+                            d: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
+                          },
+                        }),
+                      ]
+                    ),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none",
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "w-4 h-4 fill-current",
+                        attrs: { viewBox: "0 0 20 20" },
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
+                            "clip-rule": "evenodd",
+                            "fill-rule": "evenodd",
+                          },
+                        }),
+                      ]
+                    ),
+                  ]
+                ),
+              ]
+            ),
+          ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-span-8 sm:col-span-4 lg:col-span-2" }, [
-          _c(
-            "div",
-            { staticClass: "relative inline-block text-gray-700 w-full" },
-            [
-              _vm._m(2),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none",
-                },
-                [
+        _vm._l(_vm.utilities, function (utility) {
+          return _c("div", [
+            utility.id === _vm.selectedUtility
+              ? _c("div", { staticClass: "p-8 bg-blue-100 min-h-screen" }, [
                   _c(
-                    "svg",
+                    "form",
                     {
-                      staticClass: "text-blue-500 h-6 w-6",
-                      attrs: {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        fill: "none",
-                        viewBox: "0 0 24 24",
-                        stroke: "currentColor",
-                        "stroke-width": "2",
+                      staticClass: "space-y-8 divide-y divide-gray-200",
+                      on: {
+                        submit: function ($event) {
+                          $event.preventDefault()
+                          return _vm.updateUtility.apply(null, arguments)
+                        },
                       },
                     },
                     [
-                      _c("path", {
-                        attrs: {
-                          "stroke-linecap": "round",
-                          "stroke-linejoin": "round",
-                          d: "M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12",
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "space-y-8 divide-y divide-gray-200 sm:space-y-5",
                         },
-                      }),
+                        [
+                          _c("div", [
+                            _c("div", [
+                              _c(
+                                "h3",
+                                {
+                                  staticClass:
+                                    "text-xl leading-6 font-medium text-gray-900",
+                                },
+                                [
+                                  _vm._v(
+                                    "Fee for " +
+                                      _vm._s(utility.type) +
+                                      " department."
+                                  ),
+                                ]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "space-y-6 sm:space-y-5" },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5",
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      {
+                                        staticClass:
+                                          "block text-sm font-medium text-blue-700 sm:mt-px sm:pt-2",
+                                        attrs: { for: "username" },
+                                      },
+                                      [_vm._v(" Entrance Fee ")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "mt-1 sm:mt-0 sm:col-span-2",
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "relative inline-block text-gray-700 w-full",
+                                          },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.entrance,
+                                                  expression: "form.entrance",
+                                                },
+                                              ],
+                                              staticClass:
+                                                "w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                                              attrs: {
+                                                type: "number",
+                                                min: "0",
+                                                step: "1",
+                                                value: "2016",
+                                                required: "",
+                                              },
+                                              domProps: {
+                                                value: _vm.form.entrance,
+                                              },
+                                              on: {
+                                                input: function ($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "entrance",
+                                                    $event.target.value
+                                                  )
+                                                },
+                                              },
+                                            }),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5",
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      {
+                                        staticClass:
+                                          "block text-sm font-medium text-blue-700 sm:mt-px sm:pt-2",
+                                        attrs: { for: "username" },
+                                      },
+                                      [_vm._v(" Miscellaneous Fee ")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "mt-1 sm:mt-0 sm:col-span-2",
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "relative inline-block text-gray-700 w-full",
+                                          },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.misc,
+                                                  expression: "form.misc",
+                                                },
+                                              ],
+                                              staticClass:
+                                                "w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                                              attrs: {
+                                                type: "number",
+                                                min: "0",
+                                                step: "1",
+                                                required: "",
+                                              },
+                                              domProps: {
+                                                value: _vm.form.misc,
+                                              },
+                                              on: {
+                                                input: function ($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "misc",
+                                                    $event.target.value
+                                                  )
+                                                },
+                                              },
+                                            }),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5",
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      {
+                                        staticClass:
+                                          "block text-sm font-medium text-blue-700 sm:mt-px sm:pt-2",
+                                        attrs: { for: "username" },
+                                      },
+                                      [_vm._v(" Tuition Fee(whole year) ")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "mt-1 sm:mt-0 sm:col-span-2",
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "relative inline-block text-gray-700 w-full",
+                                          },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.tuition,
+                                                  expression: "form.tuition",
+                                                },
+                                              ],
+                                              staticClass:
+                                                "w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                                              attrs: {
+                                                type: "number",
+                                                min: "0",
+                                                step: "1",
+                                                required: "",
+                                              },
+                                              domProps: {
+                                                value: _vm.form.tuition,
+                                              },
+                                              on: {
+                                                input: function ($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "tuition",
+                                                    $event.target.value
+                                                  )
+                                                },
+                                              },
+                                            }),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5",
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      {
+                                        staticClass:
+                                          "block text-sm font-medium text-blue-700 sm:mt-px sm:pt-2",
+                                        attrs: { for: "username" },
+                                      },
+                                      [_vm._v(" Books ")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "mt-1 sm:mt-0 sm:col-span-2",
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "relative inline-block text-gray-700 w-full",
+                                          },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.books,
+                                                  expression: "form.books",
+                                                },
+                                              ],
+                                              staticClass:
+                                                "w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                                              attrs: {
+                                                type: "number",
+                                                min: "0",
+                                                step: "1",
+                                                required: "",
+                                              },
+                                              domProps: {
+                                                value: _vm.form.books,
+                                              },
+                                              on: {
+                                                input: function ($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "books",
+                                                    $event.target.value
+                                                  )
+                                                },
+                                              },
+                                            }),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5",
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      {
+                                        staticClass:
+                                          "block text-sm font-medium text-blue-700 sm:mt-px sm:pt-2",
+                                        attrs: { for: "username" },
+                                      },
+                                      [_vm._v(" Handbook ")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "mt-1 sm:mt-0 sm:col-span-2",
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "relative inline-block text-gray-700 w-full",
+                                          },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.handbook,
+                                                  expression: "form.handbook",
+                                                },
+                                              ],
+                                              staticClass:
+                                                "w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                                              attrs: {
+                                                type: "number",
+                                                min: "0",
+                                                step: "1",
+                                                required: "",
+                                              },
+                                              domProps: {
+                                                value: _vm.form.handbook,
+                                              },
+                                              on: {
+                                                input: function ($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "handbook",
+                                                    $event.target.value
+                                                  )
+                                                },
+                                              },
+                                            }),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5",
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      {
+                                        staticClass:
+                                          "block text-sm font-medium text-blue-700 sm:mt-px sm:pt-2",
+                                        attrs: { for: "username" },
+                                      },
+                                      [_vm._v(" ID ")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "mt-1 sm:mt-0 sm:col-span-2",
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "relative inline-block text-gray-700 w-full",
+                                          },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.id_fee,
+                                                  expression: "form.id_fee",
+                                                },
+                                              ],
+                                              staticClass:
+                                                "w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                                              attrs: {
+                                                type: "number",
+                                                min: "0",
+                                                step: "1",
+                                                required: "",
+                                              },
+                                              domProps: {
+                                                value: _vm.form.id_fee,
+                                              },
+                                              on: {
+                                                input: function ($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "id_fee",
+                                                    $event.target.value
+                                                  )
+                                                },
+                                              },
+                                            }),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5",
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      {
+                                        staticClass:
+                                          "block text-sm font-medium text-blue-700 sm:mt-px sm:pt-2",
+                                        attrs: { for: "username" },
+                                      },
+                                      [_vm._v(" Closing ")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "mt-1 sm:mt-0 sm:col-span-2",
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "relative inline-block text-gray-700 w-full",
+                                          },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.closing,
+                                                  expression: "form.closing",
+                                                },
+                                              ],
+                                              staticClass:
+                                                "w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                                              attrs: {
+                                                type: "number",
+                                                min: "0",
+                                                step: "1",
+                                                required: "",
+                                              },
+                                              domProps: {
+                                                value: _vm.form.closing,
+                                              },
+                                              on: {
+                                                input: function ($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "closing",
+                                                    $event.target.value
+                                                  )
+                                                },
+                                              },
+                                            }),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5",
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      {
+                                        staticClass:
+                                          "block text-sm font-medium text-blue-700 sm:mt-px sm:pt-2",
+                                        attrs: { for: "username" },
+                                      },
+                                      [_vm._v(" Graduation ")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "mt-1 sm:mt-0 sm:col-span-2",
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "relative inline-block text-gray-700 w-full",
+                                          },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.graduation,
+                                                  expression: "form.graduation",
+                                                },
+                                              ],
+                                              staticClass:
+                                                "w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                                              attrs: {
+                                                type: "number",
+                                                min: "0",
+                                                step: "1",
+                                                required: "",
+                                              },
+                                              domProps: {
+                                                value: _vm.form.graduation,
+                                              },
+                                              on: {
+                                                input: function ($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "graduation",
+                                                    $event.target.value
+                                                  )
+                                                },
+                                              },
+                                            }),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(1, true),
                     ]
                   ),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none",
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "w-4 h-4 fill-current",
-                      attrs: { viewBox: "0 0 20 20" },
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
-                          "clip-rule": "evenodd",
-                          "fill-rule": "evenodd",
-                        },
-                      }),
-                    ]
-                  ),
-                ]
-              ),
-            ]
-          ),
-        ]),
-      ]),
-      _vm._v(" "),
-      _vm._m(3),
-    ]),
+                ])
+              : _vm._e(),
+          ])
+        }),
+      ],
+      2
+    ),
   ])
 }
 var staticRenderFns = [
@@ -44353,240 +50375,24 @@ var staticRenderFns = [
           _vm._v("A table of fee record and school year adjustments."),
         ]),
       ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mt-4 sm:mt-0 sm:ml-16 sm:flex-none" }, [
-        _c(
-          "a",
-          {
-            staticClass:
-              "inline-flex items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto",
-            attrs: { href: "/utilities/form" },
-          },
-          [_vm._v("Record New S.Y.")]
-        ),
-      ]),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "select",
-      {
-        staticClass:
-          "w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
-        attrs: { placeholder: "Regular input" },
-      },
-      [
-        _c("option", { attrs: { selected: "" } }, [_vm._v("School Year")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 1")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 2")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 3")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 4")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 5")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 6")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 7")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 8")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 9")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 10")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 11")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Grade 12")]),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "select",
-      {
-        staticClass:
-          "w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
-        attrs: { placeholder: "Regular input" },
-      },
-      [
-        _c("option", { attrs: { value: "", selected: "" } }, [
-          _vm._v("Sort By: A-Z"),
-        ]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Sort By: Z-A")]),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-2 flex flex-col" }, [
-      _c(
-        "div",
-        { staticClass: "-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8" },
-        [
-          _c(
-            "div",
-            {
-              staticClass:
-                "inline-block min-w-full py-2 align-middle md:px-6 lg:px-8",
-            },
-            [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg",
-                },
-                [
-                  _c(
-                    "table",
-                    { staticClass: "min-w-full divide-y divide-gray-300" },
-                    [
-                      _c("thead", { staticClass: "bg-gray-50" }, [
-                        _c("tr", [
-                          _c(
-                            "th",
-                            {
-                              staticClass:
-                                "whitespace-nowrap py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6",
-                              attrs: { scope: "col" },
-                            },
-                            [_vm._v("School Year")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "th",
-                            {
-                              staticClass:
-                                "whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900",
-                              attrs: { scope: "col" },
-                            },
-                            [_vm._v("Enrollment Fee")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "th",
-                            {
-                              staticClass:
-                                "whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900",
-                              attrs: { scope: "col" },
-                            },
-                            [_vm._v("Tuition Fee")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "th",
-                            {
-                              staticClass:
-                                "whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900",
-                              attrs: { scope: "col" },
-                            },
-                            [_vm._v("Books")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "th",
-                            {
-                              staticClass:
-                                "relative whitespace-nowrap py-3.5 pl-3 pr-4 sm:pr-6",
-                              attrs: { scope: "col" },
-                            },
-                            [
-                              _c("span", { staticClass: "sr-only" }, [
-                                _vm._v("Edit"),
-                              ]),
-                            ]
-                          ),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "tbody",
-                        { staticClass: "divide-y divide-gray-200 bg-white" },
-                        [
-                          _c("tr", [
-                            _c(
-                              "td",
-                              {
-                                staticClass:
-                                  "whitespace-nowrap py-2 pl-4 pr-3 text-sm text-blue-700 sm:pl-6",
-                              },
-                              [_vm._v("2022-2023")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              {
-                                staticClass:
-                                  "whitespace-nowrap px-2 py-2 text-sm text-gray-900",
-                              },
-                              [_vm._v("10,000")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              {
-                                staticClass:
-                                  "whitespace-nowrap px-2 py-2 text-sm text-gray-900",
-                              },
-                              [_vm._v("10,000")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              {
-                                staticClass:
-                                  "whitespace-nowrap px-2 py-2 text-sm text-gray-500",
-                              },
-                              [_vm._v("10,000")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              {
-                                staticClass:
-                                  "relative whitespace-nowrap py-2 pl-3 pr-4 text-right text-sm font-medium sm:pr-6",
-                              },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass:
-                                      "text-blue-500 hover:text-blue-700",
-                                    attrs: { href: "/utilities/form" },
-                                  },
-                                  [
-                                    _vm._v("Adjust Fees or S.Y."),
-                                    _c("span", { staticClass: "sr-only" }, [
-                                      _vm._v(", AAPS0L"),
-                                    ]),
-                                  ]
-                                ),
-                              ]
-                            ),
-                          ]),
-                        ]
-                      ),
-                    ]
-                  ),
-                ]
-              ),
-            ]
-          ),
-        ]
-      ),
+    return _c("div", { staticClass: "pt-5" }, [
+      _c("div", { staticClass: "flex justify-end" }, [
+        _c(
+          "button",
+          {
+            staticClass:
+              "ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
+            attrs: { type: "submit" },
+          },
+          [_vm._v("Update Fees")]
+        ),
+      ]),
     ])
   },
 ]

@@ -7,7 +7,14 @@ export default {
         },
         student: {
             createStudent: "createStudent",
-            getStudents: "getStudents"
+            getStudents: "getStudents",
+        },
+        utility: {
+            getUtilities: "getUtilities",
+            updateUtility: "updateUtility",
+        },
+        application: {
+            getApplications: "getApplications",
         }
     },
     mutations: {
@@ -17,6 +24,12 @@ export default {
         },
         student: {
             setStudents: "setStudents"
+        },
+        utility: {
+            setUtilities: "setUtilities"
+        },
+        application: {
+            setApplications: "setApplications"
         }
     }
 }

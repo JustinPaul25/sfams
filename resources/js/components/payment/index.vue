@@ -25,7 +25,7 @@
                   </div>
                 </div>
               </div>
-              <div class="mt-8 flex flex-col">
+              <div class="mt-8 mb-10 flex flex-col">
                 <div class="-my-2 -mx-4 sm:-mx-6 lg:-mx-8">
                   <div class="inline-block min-w-full py-2 align-middle">
                     <div class="shadow-sm ring-1 ring-black ring-opacity-5">
@@ -92,7 +92,7 @@
               </div>
             </div>
           </main>
-          <aside class="hidden xl:block xl:col-span-4">
+          <aside class="block xl:col-span-4">
             <div class="sticky top-6 space-y-4">
               <div class="bg-white p-4 rounded border border-blue-600">
                 <div class="sm:flex-auto text-right">

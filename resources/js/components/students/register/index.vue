@@ -30,8 +30,7 @@
                             </a>
                         </li>
 
-                        <li class="md:flex-1">
-                        <!-- Upcoming Step -->
+                        <!-- <li class="md:flex-1">
                             <a v-if="step > 2" class="pl-4 py-2 flex flex-col border-l-4 border-blue-600 md:pl-0 md:pt-4 md:pb-0 md:border-l-0 md:border-t-4" aria-current="step">
                                 <span class="text-xs text-blue-600 font-semibold tracking-wide uppercase group-hover:text-gray-700">Step 3</span>
                                 <span class="text-sm font-medium">Admission Officer</span>
@@ -40,25 +39,25 @@
                                 <span class="text-xs text-gray-500 font-semibold tracking-wide uppercase group-hover:text-gray-700">Step 3</span>
                                 <span class="text-sm font-medium">Admission Officer</span>
                             </a>
-                        </li>
+                        </li> -->
 
                         <li class="md:flex-1">
                         <!-- Upcoming Step -->
                             <a v-if="step > 3" class="pl-4 py-2 flex flex-col border-l-4 border-blue-600 md:pl-0 md:pt-4 md:pb-0 md:border-l-0 md:border-t-4" aria-current="step">
-                                <span class="text-xs text-blue-600 font-semibold tracking-wide uppercase group-hover:text-gray-700">Step 4</span>
+                                <span class="text-xs text-blue-600 font-semibold tracking-wide uppercase group-hover:text-gray-700">Step 3</span>
                                 <span class="text-sm font-medium">Preview</span>
                             </a>
                             <a v-else class="group pl-4 py-2 flex flex-col border-l-4 border-gray-200 hover:border-gray-300 md:pl-0 md:pt-4 md:pb-0 md:border-l-0 md:border-t-4">
-                                <span class="text-xs text-gray-500 font-semibold tracking-wide uppercase group-hover:text-gray-700">Step 4</span>
+                                <span class="text-xs text-gray-500 font-semibold tracking-wide uppercase group-hover:text-gray-700">Step 3</span>
                                 <span class="text-sm font-medium">Preview</span>
                             </a>
                         </li>
                     </ol>
                 </nav>
-                <step-one v-if="step == 1" :branches="branches" :levels="levels" @next-step="nextStepTwo"></step-one>
-                <step-two v-if="step == 2" @prev-step="step -= 1" @next-step="nextStepThree"></step-two>
+                <step-one v-if="step == 1" :levels="levels" @next-step="nextStepTwo"></step-one>
+                <step-two v-if="step == 2" @prev-step="step -= 1" @next-step="nextStepFour"></step-two>
                 <step-three v-if="step == 3" @prev-step="step -= 1" @next-step="nextStepFour"></step-three>
-                <step-four v-if="step == 4" :branches="branches" :levels="levels" @prev-step="step -= 1" :form="form"></step-four>
+                <step-four v-if="step == 4" :levels="levels" @prev-step="step -= 1" :form="form"></step-four>
             </div>
         </div>
         </form>
@@ -74,7 +73,7 @@ import StepFour from './stepFour.vue'
 
 export default {
     components: { StepOne, StepTwo, StepThree, StepFour },
-    props: ['levels', 'branches'],
+    props: ['levels'],
     data() {
         return {
             step: 1,
@@ -82,12 +81,12 @@ export default {
         };
     },
     methods: {
-        incStep() {
-            this.step += 1
+        incStep(inc) {
+            this.step = this.step + inc
         },
         nextStepTwo(form) {
             this.form = form
-            this.incStep()
+            this.incStep(1)
         },
         nextStepThree(form) {
             this.form.last_school_attended = form.last_school_attended
@@ -96,8 +95,12 @@ export default {
             this.form.last_school_school_year = form.last_school_school_year
             this.incStep()
         },
-        nextStepFour() {
-            this.incStep()
+        nextStepFour(form) {
+            this.form.last_school_attended = form.last_school_attended
+            this.form.last_school_address = form.last_school_address
+            this.form.last_school_grade_section = form.last_school_grade_section
+            this.form.last_school_school_year = form.last_school_school_year
+            this.incStep(2)
         }
     }
 }

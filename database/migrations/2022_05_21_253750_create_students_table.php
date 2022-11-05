@@ -16,16 +16,16 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string('enrollment_id')->nullable();
-            $table->unsignedBigInteger('branch_id')->nullable();
             $table->string('email')->unique();
             $table->enum('department', ['KINDER', 'ELEM', 'SRH'])->nullable();
-            $table->enum('status', ['PENDING', 'FAILED', 'ACCEPTED'])->nullable();
+            $table->enum('status', ['PENDING', 'FAILED', 'ACCEPTED', 'REENROLL'])->nullable();
             $table->string('first_name')->nullable();
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nulalble();
             $table->date('birth_date')->nullable();
             $table->string('birth_place')->nullable();
             $table->unsignedBigInteger('grade_entered_id')->nullable();
+            $table->unsignedBigInteger('grade_level_id')->nullable();
             $table->boolean('gender')->nullable();
             $table->string('phone')->nullable();
             $table->string('father_name')->nullable();
@@ -35,7 +35,7 @@ return new class extends Migration
             $table->boolean('mother_is_deceased')->nullable();
             $table->string('mother_phone')->nullable();
             $table->string('guardian_name')->nullable();
-            $table->boolean('guardian_phone')->nullable();
+            $table->string('guardian_phone')->nullable();
             $table->string('purok_street')->nullable();
             $table->string('barangay')->nullable();
             $table->string('city')->nullable();
@@ -49,7 +49,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('grade_entered_id')->references('id')->on('grade_levels')->onCascade('delete');
-            $table->foreign('branch_id')->references('id')->on('branches')->onCascade('delete');
+            $table->foreign('grade_level_id')->references('id')->on('grade_levels')->onCascade('delete');
         });
     }
 

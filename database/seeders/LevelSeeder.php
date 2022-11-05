@@ -16,10 +16,6 @@ class LevelSeeder extends Seeder
     public function run()
     {
         GradeLevel::Create([
-            'level' => 'nursery'
-        ]);
-
-        GradeLevel::Create([
             'level' => 'kinder'
         ]);
 

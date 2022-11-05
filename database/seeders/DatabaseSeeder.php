@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             LevelSeeder::class,
             UserSeeder::class,
+            PaymentUtilitiesSeeder::class,
+            RequirementsSeeder::class,
         ]);
     }
 }

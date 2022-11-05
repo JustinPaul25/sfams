@@ -14,18 +14,23 @@ class StudentController extends Controller
         $query = Student::query();
 
         if($request->filled('name')) {
-            $query = $query->where('last_name', 'LIKE', '%'.$request->input('name').'%');
+            $search = $request->input('name');
+            $query = $query->where(function($q) use ($search){
+                $q->where('first_name', 'LIKE', '%'.$search.'%')
+                ->orWhere('last_name', 'LIKE', '%'.$search.'%')
+                ->orWhere('email', 'LIKE', '%'.$search.'%');
+            });
         }
 
         if($request->filled('level')) {
-            $query = $query->where('grade_entered_id', $request->input('level'));
+            $query = $query->where('grade_level_id', $request->input('level'));
         }
 
-        if($request->filled('branch')) {
-            $query = $query->where('branch_id', $request->input('branch'));
-        }
+        $query = $query->where(function ($query) {
+            $query->where('status', '!=', 'PENDING');
+        });
         
-        $query = $query->with(['branch', 'gradeLevel'])->get();
+        $query = $query->with(['gradeLevel'])->get();
 
         return response()->json($query);
     }
@@ -55,6 +60,7 @@ class StudentController extends Controller
     public function studentProfile()
     {
         $student = Student::where('id', auth()->user()->student_id)->with(['branch', 'gradeLevel'])->first();
+
         return view('students.profile', ['student' => $student]);
     }
 }

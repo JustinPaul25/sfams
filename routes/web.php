@@ -31,15 +31,24 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::group(['middleware' => ['role:Administrator|staff']], function () {
     Route::get('/process-payment', [PaymentController::class, 'index']);
+
     Route::get('/reports', [ReportController::class, 'index']);
+
     Route::get('/students', [StudentController::class, 'index'])->name('students');
     Route::get('/students-list', [StudentController::class, 'list']);
     Route::get('/students/form', [StudentController::class, 'create']);
     Route::get('/student/{student}', [StudentController::class, 'show']);
+
+    Route::get('/enrollment/{student}', [EnrollmentController::class, 'paymentForm']);
+    Route::get('/enrollment-applications', [EnrollmentController::class, 'applications'])->name('application-list');
+    Route::get('/enrollment-applications/list', [EnrollmentController::class, 'applicationList']);
+    Route::post('/enrollment/new-student', [EnrollmentController::class, 'enrollNewStudent']);
 });
 
 Route::group(['middleware' => ['role:Administrator']], function () {
     Route::get('/utilities', [UtilitiesController::class, 'index']);
+    Route::get('/utilities/list', [UtilitiesController::class, 'list']);
+    Route::put('/utility/{paymentUtility}', [UtilitiesController::class, 'update']);
     Route::get('/utilities/form', function () {
         return view('utility.form');
     });

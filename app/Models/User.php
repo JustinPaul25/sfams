@@ -5,16 +5,21 @@ namespace App\Models;
 use App\Types\RoleType;
 use App\Filters\UserFilter;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\MediaLibrary\HasMedia;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Spatie\MediaLibrary\MediaCollections\File;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements HasMedia
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use InteractsWithMedia;
 
     /**
      * The attributes that are mass assignable.
@@ -46,6 +51,35 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $appends = ['role'];
+
+    public function getRoleAttribute()
+    {
+        $roles = $this->getRoleNames();
+        return $roles[0];
+    }
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('profile')
+        ->useFallbackUrl('/default_profile.jpg')
+        ->useFallbackUrl('/default_profile_thumb.jpg', 'thumb')
+        ->useFallbackPath(public_path('/default_profile.jpg'))
+        ->useFallbackPath(public_path('/default_profile_thumb.jpg'), 'thumb')
+        ->registerMediaConversions(function (Media $media) {
+            $this
+                ->addMediaConversion('thumb')
+                ->width(150)
+                ->height(150);
+                
+            $this
+                ->addMediaConversion('thumb_2')
+                ->width(100)
+                ->height(100);
+        })
+        ->singleFile();
+    }
+
     public function isAdmin(): bool
     {
         return $this->hasRole(RoleType::ADMINISTRATOR);
@@ -59,5 +93,10 @@ class User extends Authenticatable
     public function isStudent(): bool
     {
         return $this->hasRole(RoleType::STUDENT);
+    }
+
+    public function student()
+    {
+        return $this->hasOne(Student::class);
     }
 }

@@ -15,9 +15,9 @@ export default {
         },
     },
     actions: {
-        async [types.actions.student.createStudent] ({commit}, payload) {
+        [types.actions.student.createStudent] ({commit}, payload) {
             try {
-                const res = await api.createStudent(payload)
+                return new Promise(api.createStudent(payload))
             } catch (error) {
 
             }

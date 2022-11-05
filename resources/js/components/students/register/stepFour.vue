@@ -3,19 +3,6 @@
         <p class="text-centered text-2xl text-gray-900 pt-2 font-bold">Preview</p>
         <div class="pt-3 sm:pt-2">
             <div class="bg-white shadow overflow-hidden sm:rounded-lg">
-                <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt class="text-sm font-medium text-gray-500">Branch</dt>
-                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        <div class="mt-1 sm:mt-0 sm:col-span-2">
-                            <div class="relative inline-block text-gray-700 w-full">
-                                <select v-model="form.branch_id" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Province" disabled>
-                                    <option value="">Select Branch</option>
-                                    <option v-for="branch in branches" :value="branch.id">{{ branch.name }} - {{ branch.address }}</option>
-                                </select>
-                            </div>
-                        </div>
-                    </dd>
-                </div>
                 <div class="px-4 py-5 sm:px-6">
                     <h3 class="text-lg leading-6 font-medium text-gray-900">Student Information</h3>
                     <p class="mt-1 max-w-2xl text-sm text-gray-500">Personal details</p>
@@ -157,7 +144,7 @@
 </template>
 <script>
     export default {
-        props: ['form', 'levels', 'branches'],
+        props: ['form', 'levels'],
         data() {
             return {
                 
@@ -167,17 +154,19 @@
             async nextStep() {
                 console.log('on submit')
                 try {
-                    await this.$store.dispatch("student/createStudent", this.form)
-                    if(this.app.is_auth) {
-                        window.location.href = "/students";
-                    } else {
-                        this.$swal.fire({
-                            icon: 'Success',
-                            title: 'Form Submitted',
-                            text: 'You account will be sent via email once enrolled',
-                            footer: '<a href="/login">Back to login Page</a>'
-                        })
-                    }
+                    await axios.post('/student', this.form)
+                    .then( response => {
+                        if(this.app.is_auth) {
+                            window.location.href = `/enrollment/${response.data.id}`
+                        } else {
+                            this.$swal.fire({
+                                icon: 'Success',
+                                title: 'Form Submitted',
+                                text: 'You account will be sent via email once enrolled',
+                                footer: '<a href="/login">Back to login Page</a>'
+                            })
+                        }
+                    })
                 } catch (error) {
 
                 }

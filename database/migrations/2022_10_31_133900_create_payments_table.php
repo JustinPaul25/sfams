@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('requirements', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['TRANSFEREE', 'FRESH_GRAD'])->nullable();
-            $table->string('grade_level')->nullable();
-            $table->string('name')->nullable();
+            $table->unsignedBigInteger('student_id')->nullable();
+            $table->string('description')->nullable();
+            $table->decimal('amount', 10, 2)->nullable();
             $table->timestamps();
+
+            $table->foreign('student_id')->references('id')->on('students')->onCascade('delete');
         });
     }
 
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('requirements');
+        Schema::dropIfExists('payments');
     }
 };

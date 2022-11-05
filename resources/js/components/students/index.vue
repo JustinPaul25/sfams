@@ -47,32 +47,6 @@
                 </div>
                 <div class="col-span-8 sm:col-span-4 lg:col-span-2">
                     <div class="relative inline-block text-gray-700 w-full">
-                        <select v-model="branch" class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Regular input">
-                            <option value="" selected>All Branches</option>
-                            <option v-for="branch in branches" :value="branch.id">{{ branch.name }}</option>
-                        </select>
-                        <div
-                            class="absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" class="text-blue-500 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-                            </svg>
-                        </div>
-                        <div
-                            class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"
-                        >
-                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                            <path
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd"
-                                fill-rule="evenodd"
-                            ></path>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-span-8 sm:col-span-4 lg:col-span-2">
-                    <div class="relative inline-block text-gray-700 w-full">
                         <select v-model="sort_by" class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Regular input">
                             <option value="asc" selected>Sort By: A-Z</option>
                             <option value="desc" >Sort By: Z-A</option>
@@ -108,7 +82,6 @@
                                 <th scope="col" class="whitespace-nowrap py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">LRN Number</th>
                                 <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Student Name</th>
                                 <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Grade</th>
-                                <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Branch</th>
                                 <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Status</th>
                                 <th scope="col" class="relative whitespace-nowrap py-3.5 pl-3 pr-4 sm:pr-6">
                                 <span class="sr-only">Edit</span>
@@ -120,7 +93,6 @@
                                 <td class="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-blue-700 sm:pl-6">{{ student.enrollment_id }}</td>
                                 <td class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 hover:text-blue-700"><a :href="`/student/${student.id}`">{{ student.last_name }}, {{ student.first_name }}</a></td>
                                 <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">{{ student.grade_level.level }}</td>
-                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{{ student.branch.name }}</td>
                                 <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">
                                     <span v-if="student.status == 'ACCEPTED'" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-blue-200 uppercase last:mr-0 mr-1">
                                         Enrolled
@@ -158,7 +130,6 @@
             return {
                 search: '',
                 level: '',
-                branch: '',
                 sort_by: 'asc'
             }
         },
@@ -174,9 +145,6 @@
             level(newSearch, oldSearch) {
                 this.getStudents()
             },
-            branch(newSearch, oldSearch) {
-                this.getStudents()
-            },
             sort_by(newSearch, oldSearch) {
                 this.getStudents()
             }
@@ -187,7 +155,6 @@
                     params: {
                         name: this.search,
                         level: this.level,
-                        branch: this.branch,
                         sort_by: this.sort_by
                     }
                 });

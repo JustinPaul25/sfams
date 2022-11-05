@@ -29,6 +29,7 @@
                             <tr>
                                 <th scope="col" class="whitespace-nowrap py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Full Name</th>
                                 <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Email</th>
+                                <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Role</th>
                                 <th scope="col" class="relative whitespace-nowrap py-3.5 pl-3 pr-4 sm:pr-6">
                                 <span class="sr-only">Edit</span>
                                 </th>
@@ -38,6 +39,7 @@
                             <tr v-for="user in users" class="hover:bg-blue-200">
                                 <td class="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-blue-700 sm:pl-6">{{ user.name }}</td>
                                 <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">{{ user.email }}</td>
+                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">{{ user.role }}</td>
                                 <td class="relative whitespace-nowrap py-2 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 flex">
                                     <a :href="`users/${user.id}/edit`" class="text-blue-500 hover:text-blue-700 ml-auto">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

@@ -18,17 +18,6 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col p-2">
-            <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>Branch</dt>
-            <div class="mt-1 sm:mt-0 sm:col-span-2">
-                <div class="relative inline-block text-gray-700 w-full">
-                    <select v-model="form.branch_id" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Province">
-                        <option value="">Select Branch</option>
-                        <option v-for="branch in branches" :value="branch.id">{{ branch.name }} - {{ branch.address }}</option>
-                    </select>
-                </div>
-            </div>
-        </div>
         <p class="text-centered text-2xl text-gray-900 pt-2 font-bold">Personal Details</p>
         <div class="pt-3 sm:pt-2">
             <div role="group" aria-labelledby="label-notifications">
@@ -277,7 +266,6 @@ export default {
         return {
             required: [],
             form: {
-                branch_id: '',
                 first_name: '',
                 middle_name: '',
                 last_name: '',
