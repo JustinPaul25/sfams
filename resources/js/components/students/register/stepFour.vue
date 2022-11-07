@@ -164,6 +164,8 @@
                                 title: 'Form Submitted',
                                 text: 'You account will be sent via email once enrolled',
                                 footer: '<a href="/login">Back to login Page</a>'
+                            }).then((result) => {
+                                window.location.href = `/login`
                             })
                         }
                     })

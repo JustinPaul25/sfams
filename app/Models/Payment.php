@@ -11,6 +11,10 @@ class Payment extends Model
 
     protected $guarded = [];
 
+    protected $casts = [
+        'created_at'  => 'date:m-d-Y',
+    ];
+
     public function student()
     {
         return $this->belongsTo(Student::class);

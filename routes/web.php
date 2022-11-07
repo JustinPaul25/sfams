@@ -30,19 +30,25 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['role:Administrator|staff']], function () {
-    Route::get('/process-payment', [PaymentController::class, 'index']);
-
     Route::get('/reports', [ReportController::class, 'index']);
 
     Route::get('/students', [StudentController::class, 'index'])->name('students');
     Route::get('/students-list', [StudentController::class, 'list']);
     Route::get('/students/form', [StudentController::class, 'create']);
     Route::get('/student/{student}', [StudentController::class, 'show']);
+    Route::get('/student/{student}/edit', [StudentController::class, 'edit']);
+    Route::put('/student/{student}/update', [StudentController::class, 'update']);
+    Route::put('/student/{student}/update-requirements', [StudentController::class, 'updateRequirements']);
+    Route::get('/student/{student}/pay-tuition', [StudentController::class, 'payTuition']);
+    Route::get('/student/{student}/transactions', [StudentController::class, 'transactions']);
+    Route::get('/student/{student}/account', [StudentController::class, 'account']);
 
     Route::get('/enrollment/{student}', [EnrollmentController::class, 'paymentForm']);
     Route::get('/enrollment-applications', [EnrollmentController::class, 'applications'])->name('application-list');
     Route::get('/enrollment-applications/list', [EnrollmentController::class, 'applicationList']);
     Route::post('/enrollment/new-student', [EnrollmentController::class, 'enrollNewStudent']);
+
+    Route::post('/pay-tuition', [PaymentController::class, 'tuition']);
 });
 
 Route::group(['middleware' => ['role:Administrator']], function () {

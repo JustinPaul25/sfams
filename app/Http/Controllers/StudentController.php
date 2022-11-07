@@ -30,7 +30,7 @@ class StudentController extends Controller
             $query->where('status', '!=', 'PENDING');
         });
         
-        $query = $query->with(['gradeLevel'])->get();
+        $query = $query->with(['gradeLevel', 'studentRequirement'])->get();
 
         return response()->json($query);
     }
@@ -53,7 +53,7 @@ class StudentController extends Controller
 
     public function show(Student $student)
     {
-        $student = Student::where('id', $student->id)->with(['branch', 'gradeLevel'])->first();
+        $student = Student::where('id', $student->id)->with(['gradeLevel', 'payments', 'account', 'studentRequirement', 'grades'])->first();
         return view('students.view', ['student' => $student]);
     }
 
@@ -62,5 +62,60 @@ class StudentController extends Controller
         $student = Student::where('id', auth()->user()->student_id)->with(['branch', 'gradeLevel'])->first();
 
         return view('students.profile', ['student' => $student]);
+    }
+
+    public function edit(Student $student)
+    {
+        return view('students.edit', ['student' => $student]);
+    }
+
+    public function update(Student $student, Request $request)
+    {
+        return $student->update([
+            'email' => $request->input('email'),
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
+            'middle_name' => $request->input('middle_name'),
+            'birth_date' => $request->input('birth_date'),
+            'birth_place' => $request->input('birth_place'),
+            'gender' => $request->input('gender'),
+            'phone' => $request->input('phone'),
+            'purok_street' => $request->input('purok_street'),
+            'barangay' => $request->input('barangay'),
+            'city' => $request->input('city'),
+            'province' => $request->input('province'),
+            'contact_person' => $request->input('contact_person'),
+            'contact_person_number' => $request->input('contact_person_number'),
+        ]);
+    }
+
+    public function updateRequirements(Student $student, Request $request)
+    {
+        return $student->studentRequirement()->update([
+            'coc' => $request->input('coc'),
+            'birth_cert' => $request->input('birth_cert'),
+            'ECCD_checklist' => $request->input('ECCD_checklist'),
+            'card' => $request->input('card'),
+            'picture' => $request->input('picture'),
+            'good_moral' => $request->input('good_moral'),
+            'form_137' => $request->input('form_137'),
+        ]);
+    }
+
+    public function payTuition(Student $student)
+    {
+        $student->with(['gradeLevel']);
+
+        return view('students.pay-tuition', ['student' => $student]);
+    }
+
+    public function transactions(Student $student)
+    {
+        return $student->payments;
+    }
+
+    public function account(Student $student)
+    {
+        return $student->account;
     }
 }

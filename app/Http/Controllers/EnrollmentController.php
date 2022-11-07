@@ -215,10 +215,23 @@ class EnrollmentController extends Controller
             'form_137' => $request->input('form_137'),
         ]);
 
+        User::create([
+            'name' => $student->first_name.' '.$student->middle_name.' '.$student->last_name,
+            'email' => $student->email,
+            'password' => Hash::make('sfams_password_'.$student->id),
+        ]);
+
+        $student->grades()->create([
+            'grade_level_id' => $student->grade_entered_id,
+            'average' => 0,
+        ]);
+
+        $student->update([
+            'status' => 'ENROLLED'
+        ]);
+
         Mail::to($student->email)->send(new StudentEnrolled($student));
 
-        // $student->account()->create([
-
-        // ]);
+        return 'enrolled successfully';
     }
 }

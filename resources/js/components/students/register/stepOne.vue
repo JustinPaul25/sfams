@@ -362,6 +362,9 @@ export default {
             if(this.form.contact_person_number === '') {
                 this.required.push("Contact Person Number is required")
             }
+            if(this.form.email === '') {
+                this.required.push("Email is required")
+            }
             return isCleared
         },
     }

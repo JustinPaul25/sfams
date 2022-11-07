@@ -94,7 +94,7 @@
                                 <td class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 hover:text-blue-700"><a :href="`/student/${student.id}`">{{ student.last_name }}, {{ student.first_name }}</a></td>
                                 <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">{{ student.grade_level.level }}</td>
                                 <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">
-                                    <span v-if="student.status == 'ACCEPTED'" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-blue-200 uppercase last:mr-0 mr-1">
+                                    <span v-if="student.status == 'ENROLLED'" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-blue-200 uppercase last:mr-0 mr-1">
                                         Enrolled
                                     </span>
                                     <span v-if="student.status == 'PENDING'" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200 uppercase last:mr-0 mr-1">
@@ -105,8 +105,9 @@
                                     </span>
                                 </td>
                                 <td class="relative whitespace-nowrap py-2 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                    <a href="#" class="text-blue-700 hover:text-blue-700 mr-3">Process Payment<span class="sr-only">, AAPS0L</span></a>
-                                    <a href="/students/form" class="text-blue-500 hover:text-blue-700">Edit<span class="sr-only">, AAPS0L</span></a>
+                                    <button v-if="checkRequirements(student.student_requirement) > 0" @click="openRequirementsModal(student.student_requirement)" class="text-green-500 hover:opacity-75 mr-3">Submit Requirement<span class="sr-only">, AAPS0L</span></button>
+                                    <a :href="`/student/${student.id}/pay-tuition`" class="text-blue-700 hover:opacity-75 mr-3">Pay Tuition<span class="sr-only">, AAPS0L</span></a>
+                                    <a :href="`/student/${student.id}`" class="text-blue-500 hover:opacity-75">View<span class="sr-only">, AAPS0L</span></a>
                                 </td>
                             </tr>
 
@@ -118,6 +119,49 @@
                 </div>
             </div>
         </div>
+        <sweet-modal ref="requirementsModal">
+            <div>
+                <p class="font-bold text-lg">Requirements Left</p>
+                <div v-if="requirements">
+                    <div v-if="requirements.coc === 0">
+                        <label class="inline-flex items-center mt-3">
+                            <input v-model="form.coc" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" checked><span class="ml-2 text-gray-700">Certificate of Completion</span>
+                        </label>
+                    </div>
+                    <div v-if="requirements.birth_cert === 0">
+                        <label class="inline-flex items-center mt-3">
+                            <input v-model="form.birth_cert" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" checked><span class="ml-2 text-gray-700">PSA Birth Certificate (Original)</span>
+                        </label>
+                    </div>
+                    <div v-if="requirements.ECCD_checklist === 0">
+                        <label class="inline-flex items-center mt-3">
+                            <input v-model="form.ECCD_checklist" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" checked><span class="ml-2 text-gray-700">ECCD Checklist</span>
+                        </label>
+                    </div>
+                    <div v-if="requirements.card === 0">
+                        <label class="inline-flex items-center mt-3">
+                            <input v-model="form.card" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" checked><span class="ml-2 text-gray-700">Card (Form 138)</span>
+                        </label>
+                    </div>
+                    <div v-if="requirements.picture === 0">
+                        <label class="inline-flex items-center mt-3">
+                            <input v-model="form.picture" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" checked><span class="ml-2 text-gray-700">1x1 Picture</span>
+                        </label>
+                    </div>
+                    <div v-if="requirements.good_moral === 0">
+                        <label class="inline-flex items-center mt-3">
+                            <input v-model="form.good_moral" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" checked><span class="ml-2 text-gray-700">Good Moral</span>
+                        </label>
+                    </div>
+                    <div v-if="requirements.form_137 === 0">
+                        <label class="inline-flex items-center mt-3">
+                            <input v-model="form.form_137" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" checked><span class="ml-2 text-gray-700">Form 137</span>
+                        </label>
+                    </div>
+                    <button @click="updateRequirements()" class="mt-2 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Update Requirements</button>
+                </div>
+            </div>
+        </sweet-modal>
     </div>
 </template>
 
@@ -128,9 +172,19 @@
         props: ['levels', 'branches'],
         data() {
             return {
+                requirements: null,
                 search: '',
                 level: '',
-                sort_by: 'asc'
+                sort_by: 'asc',
+                form: {
+                    ECCD_checklist: false,
+                    birth_cert: false,
+                    card: false,
+                    coc: false,
+                    form_137: false,
+                    good_moral: false,
+                    picture: false,
+                }
             }
         },
         computed: {
@@ -158,6 +212,38 @@
                         sort_by: this.sort_by
                     }
                 });
+            },
+            openRequirementsModal(requirements) {
+                const reqData = {
+                    ECCD_checklist: requirements.ECCD_checklist === 1 ? true : false,
+                    birth_cert: requirements.birth_cert === 1 ? true : false,
+                    card: requirements.card === 1 ? true : false,
+                    coc: requirements.coc === 1 ? true : false,
+                    form_137: requirements.form_137 === 1 ? true : false,
+                    good_moral: requirements.good_moral === 1 ? true : false,
+                    picture: requirements.picture === 1 ? true : false,
+                }
+                this.form = reqData
+                this.requirements = requirements
+                this.$refs.requirementsModal.open()
+            },
+            async updateRequirements() {
+                await axios.put(`/student/${this.requirements.student_id}/update-requirements`, this.form)
+                .then(response => {
+                    this.$refs.requirementsModal.close()
+                    this.getStudents()
+                })
+            },
+            checkRequirements(requirements) {
+                let reqCount = 0;
+
+                for(let key in requirements) {
+                    if(requirements[key] === 0) {
+                        reqCount++
+                    }
+                }
+
+                return reqCount
             },
         },
         created() {

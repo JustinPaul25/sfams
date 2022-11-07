@@ -11,6 +11,7 @@
                 <div class="col-span-8 sm:col-span-4 lg:col-span-2">
                     <div class="relative inline-block text-gray-700 w-full">
                         <select v-model="selectedUtility" class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Regular input">
+                            <option disabled value="">Select Department</option>
                             <option v-for="utility in utilities" :value="utility.id">{{ utility.type }}</option>
                         </select>
                         <div
@@ -130,7 +131,7 @@ import { mapGetters } from "vuex";
 export default {
     data() {
         return {
-            selectedUtility: 1,
+            selectedUtility: '',
             form: {
                 id: 0,
                 entrance: 0,

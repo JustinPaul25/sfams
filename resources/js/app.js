@@ -36,6 +36,8 @@ Vue.component('dashboard', require('./components/dashboard/index.vue').default);
 Vue.component('students', require('./components/students/index.vue').default);
 Vue.component('student-form', require('./components/students/register/index.vue').default);
 Vue.component('student-view', require('./components/students/view.vue').default);
+Vue.component('student-edit', require('./components/students/edit.vue').default);
+Vue.component('student-pay-tuition', require('./components/students/paytuition.vue').default);
 
 Vue.component('utility', require('./components/utilities/index.vue').default);
 Vue.component('utility-form', require('./components/utilities/form.vue').default);
