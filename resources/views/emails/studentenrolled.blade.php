@@ -3,12 +3,13 @@
 
 Welcome to Philippine Baptist Christian College of Mindanao, Inc.
 
-This is your credentials to login in our we application.
+This is your credentials to login in our web portal.
 
 Email: {{$student->email}}<br>
 Password: sfams_password_{{ $student->id }}
 
 Note: Please be careful with this informations.
+Since the password is default please login and reset password immediately.
 
 <x-mail::button :url="$url" color="primary">
 Go to SFAMS
