@@ -155,10 +155,16 @@
 				@hasanyrole('Administrator|staff')
 					<li>
 						<a href="/students" class="{{ (request()->is('students*')) ? 'bg-blue-800 text-white' : 'hover:bg-blue-800 hover:opacity-75' }} block text-sm px-2 py-2 font-semibold flex items-center">
-							<svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6 text-indigo-300 " viewBox="0 0 20 20" fill="currentColor">
+							<svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6 text-indigo-300" viewBox="0 0 20 20" fill="currentColor">
 								<path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 4h3a3 3 0 006 0h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm2.45 4a2.5 2.5 0 10-4.9 0h4.9zM12 9a1 1 0 100 2h3a1 1 0 100-2h-3zm-1 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z" clip-rule="evenodd" />
 							</svg>
 							<span class="flex-1"> Students </span>
+						</a>
+					</li>
+					<li>
+						<a href="/branches" class="{{ (request()->is('branches*')) ? 'bg-blue-800 text-white' : 'hover:bg-blue-800 hover:opacity-75' }} block text-sm px-2 py-2 font-semibold flex items-center">
+							<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-3 flex-shrink-0 h-6 w-6 text-indigo-300"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+							<span class="flex-1"> Branches </span>
 						</a>
 					</li>
 					<li>
@@ -174,7 +180,7 @@
 							<svg class="mr-3 flex-shrink-0 h-6 w-6 text-indigo-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
 							</svg>
-							<span class="flex-1"> Reports </span>
+							<span class="flex-1"> Transactions </span>
 						</a>
 					</li>
 				@endhasanyrole
@@ -184,7 +190,7 @@
 							<svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6 text-indigo-300" viewBox="0 0 20 20" fill="currentColor">
 								<path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
 							</svg>
-							<span class="flex-1"> Fees Utilities </span>
+							<span class="flex-1"> Fee Utilities </span>
 						</a>
 					</li>
 					<li>

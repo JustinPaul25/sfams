@@ -56,6 +56,9 @@ Vue.component('logs', require('./components/logs.vue').default);
 Vue.component('enrollment-application', require('./components/enrollment/application.vue').default);
 Vue.component('enrollment-payment-form', require('./components/enrollment/form.vue').default);
 
+Vue.component('branches', require('./components/branch/index.vue').default);
+Vue.component('branch-form', require('./components/branch/form.vue').default);
+
 Vue.component('sweet-modal', SweetModal);
 Vue.component('sweet-modal-tab', SweetModalTab);
 Vue.component('masked-input', MaskedInput);

@@ -4,12 +4,14 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LogsController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BranchController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UtilitiesController;
 use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\TransactionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +51,9 @@ Route::group(['middleware' => ['role:Administrator|staff']], function () {
     Route::post('/enrollment/new-student', [EnrollmentController::class, 'enrollNewStudent']);
 
     Route::post('/pay-tuition', [PaymentController::class, 'tuition']);
+
+    Route::get('/branches', [BranchController::class, 'index']);
+    Route::get('/branch-list', [BranchController::class, 'list']);
 });
 
 Route::group(['middleware' => ['role:Administrator']], function () {
@@ -59,6 +64,11 @@ Route::group(['middleware' => ['role:Administrator']], function () {
         return view('utility.form');
     });
 
+    Route::get('/branch-utlity/{branchUtility}', [UtilitiesController::class, 'branch']);
+    Route::put('/branch-utility/{branchUtility}', [UtilitiesController::class, 'branchUpdate']);
+    Route::get('/branches/form', [BranchController::class, 'create']);
+    Route::post('/branch', [BranchController::class, 'store']);
+
     Route::group(['prefix' => 'users', 'namespace' => 'User'], function () {
         Route::get('/', [UserController::class, 'index']);
         Route::get('/list', [UserController::class, 'list']);
@@ -68,6 +78,8 @@ Route::group(['middleware' => ['role:Administrator']], function () {
         Route::get('/form', [UserController::class, 'create']);
         Route::put('/{user}', [UserController::class, 'update']);
     });
+
+    Route::get('/transactions', [TransactionsController::class, 'list']);
 
     Route::get('/logs', [LogsController::class, 'index']);
 });

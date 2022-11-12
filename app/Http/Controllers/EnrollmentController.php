@@ -203,6 +203,7 @@ class EnrollmentController extends Controller
         $student->payments()->create([
             'description' => $desc,
             'amount' => $request->input('entrance') + $request->input('misc') + $request->input('tuition') + $request->input('books') + $request->input('handbook') + $request->input('id_fee'),
+            'type' => 'STUDENT',
         ]);
         
         $student->studentRequirement()->create([

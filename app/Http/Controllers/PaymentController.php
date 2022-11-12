@@ -33,6 +33,7 @@ class PaymentController extends Controller
         $student->payments()->create([
             'description' => $desc,
             'amount' => $request->input('entrance') + $request->input('misc') + $request->input('tuition') + $request->input('books') + $request->input('handbook') + $request->input('id_fee') + $request->input('back_account') + $request->input('closing') + $request->input('graduation'),
+            'type' => 'STUDENT',
         ]);
 
         Mail::to($student->email)->send(new PayTuition($student, $desc));
