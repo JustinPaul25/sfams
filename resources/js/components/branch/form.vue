@@ -54,7 +54,7 @@
                 <div class="pt-5">
                     <div class="flex justify-end">
                         <a href="/branches" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Back to list</a>
-                        <button v-if="!isSending" type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Update Fees</button>
+                        <button v-if="!isSending" type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Create Branch</button>
                         <button v-else disabled class="ml-3 cursor-not-allowed flex justify-center items-center rounded-lg px-4 py-2 text-white text-sm bg-blue-700 opacity-75">Saving...</button>
                     </div>
                 </div>

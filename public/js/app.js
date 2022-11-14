@@ -5641,6 +5641,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -5673,6 +5676,463 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   created: function created() {
     this.getBranches();
   }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/branch/pay.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/branch/pay.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/debounce */ "./node_modules/lodash/debounce.js");
+/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['branch'],
+  data: function data() {
+    return {
+      description: '',
+      transactions: [],
+      account: null,
+      isSending: false,
+      form: {
+        branch_id: 0,
+        back_account: 0,
+        renewal: 0,
+        royalty: 0,
+        per_student_total: 0
+      }
+    };
+  },
+  watch: {
+    'form.back_account': lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default()(function (newVal, oldVal) {
+      if (newVal > parseInt(this.account.back_account)) {
+        this.form.back_account = parseInt(this.account.back_account);
+      }
+    }, 500),
+    'form.renewal': lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default()(function (newVal, oldVal) {
+      if (newVal > parseInt(this.account.renewal)) {
+        this.form.renewal = parseInt(this.account.renewal);
+      }
+    }, 500),
+    'form.royalty': lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default()(function (newVal, oldVal) {
+      if (newVal > parseInt(this.account.royalty)) {
+        this.form.royalty = parseInt(this.account.royalty);
+      }
+    }, 500),
+    'form.per_student_total': lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default()(function (newVal, oldVal) {
+      if (newVal > parseInt(this.account.per_student_total)) {
+        this.form.per_student_total = parseInt(this.account.per_student_total);
+      }
+    }, 500)
+  },
+  methods: {
+    print: function print() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return _this.$htmlToPaper('printMe');
+
+              case 2:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    dateNow: function dateNow() {
+      var date = new Date();
+      var day = date.getDate();
+      var month = date.getMonth() + 1;
+      var year = date.getFullYear();
+      return "".concat(day, "-").concat(month, "-").concat(year);
+    },
+    amountTotal: function amountTotal() {
+      return parseInt(this.form.back_account) + parseInt(this.form.renewal) + parseInt(this.form.royalty) + parseInt(this.form.per_student_total);
+    },
+    getTransactions: function getTransactions() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios.get("/branch/".concat(_this2.branch.id, "/transactions")).then(function (response) {
+                  _this2.transactions = response.data;
+                });
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    },
+    getAccount: function getAccount() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return axios.get("/branch/".concat(_this3.branch.id, "/account")).then(function (response) {
+                  _this3.account = response.data;
+                });
+
+              case 2:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
+    },
+    numberWithCommas: function numberWithCommas(num) {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    },
+    displayDescription: function displayDescription(description) {
+      this.description = description;
+      this.$refs.descriptionModal.open();
+    },
+    processPayment: function processPayment() {
+      var _this4 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _this4.form.branch_id = _this4.branch.id;
+                _this4.isSending = true;
+
+                if (!(_this4.amountTotal() === 0)) {
+                  _context4.next = 7;
+                  break;
+                }
+
+                _this4.$swal.fire({
+                  icon: 'Error',
+                  title: 'Cannot proceed empty amount.',
+                  text: ''
+                });
+
+                _this4.isSending = false;
+                _context4.next = 9;
+                break;
+
+              case 7:
+                _context4.next = 9;
+                return axios.post('/pay-branch', _this4.form).then(function (response) {
+                  _this4.isSending = false;
+
+                  _this4.print();
+
+                  _this4.getTransactions();
+
+                  _this4.getAccount();
+
+                  _this4.form = {
+                    branch_id: null,
+                    back_account: 0,
+                    renewal: 0,
+                    royalty: 0,
+                    per_student_total: 0
+                  };
+
+                  _this4.$swal.fire({
+                    icon: 'Success',
+                    title: 'Payment Successfully Saved.',
+                    text: ''
+                  });
+                });
+
+              case 9:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }))();
+    }
+  },
+  created: function created() {
+    this.getTransactions();
+    this.getAccount();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/branch/view.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/branch/view.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['branch']
 });
 
 /***/ }),
@@ -8199,7 +8659,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                   _this4.$swal.fire({
                     icon: 'Success',
-                    title: 'Paid tuition Successfully.',
+                    title: 'Payment Successfully Saved.',
                     text: ''
                   });
                 });
@@ -10534,6 +10994,8 @@ Vue.component('enrollment-application', (__webpack_require__(/*! ./components/en
 Vue.component('enrollment-payment-form', (__webpack_require__(/*! ./components/enrollment/form.vue */ "./resources/js/components/enrollment/form.vue")["default"]));
 Vue.component('branches', (__webpack_require__(/*! ./components/branch/index.vue */ "./resources/js/components/branch/index.vue")["default"]));
 Vue.component('branch-form', (__webpack_require__(/*! ./components/branch/form.vue */ "./resources/js/components/branch/form.vue")["default"]));
+Vue.component('branch-view', (__webpack_require__(/*! ./components/branch/view.vue */ "./resources/js/components/branch/view.vue")["default"]));
+Vue.component('branch-pay', (__webpack_require__(/*! ./components/branch/pay.vue */ "./resources/js/components/branch/pay.vue")["default"]));
 Vue.component('sweet-modal', sweet_modal_vue__WEBPACK_IMPORTED_MODULE_2__.SweetModal);
 Vue.component('sweet-modal-tab', sweet_modal_vue__WEBPACK_IMPORTED_MODULE_2__.SweetModalTab);
 Vue.component('masked-input', vue_masked_input__WEBPACK_IMPORTED_MODULE_3__["default"]);
@@ -37096,6 +37558,84 @@ component.options.__file = "resources/js/components/branch/index.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/branch/pay.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/branch/pay.vue ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _pay_vue_vue_type_template_id_1e68c474___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pay.vue?vue&type=template&id=1e68c474& */ "./resources/js/components/branch/pay.vue?vue&type=template&id=1e68c474&");
+/* harmony import */ var _pay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pay.vue?vue&type=script&lang=js& */ "./resources/js/components/branch/pay.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _pay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _pay_vue_vue_type_template_id_1e68c474___WEBPACK_IMPORTED_MODULE_0__.render,
+  _pay_vue_vue_type_template_id_1e68c474___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/branch/pay.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/branch/view.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/components/branch/view.vue ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _view_vue_vue_type_template_id_20e414f7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./view.vue?vue&type=template&id=20e414f7& */ "./resources/js/components/branch/view.vue?vue&type=template&id=20e414f7&");
+/* harmony import */ var _view_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view.vue?vue&type=script&lang=js& */ "./resources/js/components/branch/view.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _view_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _view_vue_vue_type_template_id_20e414f7___WEBPACK_IMPORTED_MODULE_0__.render,
+  _view_vue_vue_type_template_id_20e414f7___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/branch/view.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/dashboard/index.vue":
 /*!*****************************************************!*\
   !*** ./resources/js/components/dashboard/index.vue ***!
@@ -38020,6 +38560,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/branch/pay.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/branch/pay.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_pay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./pay.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/branch/pay.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_pay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/branch/view.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/branch/view.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_view_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./view.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/branch/view.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_view_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/enrollment/application.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************!*\
   !*** ./resources/js/components/enrollment/application.vue?vue&type=script&lang=js& ***!
@@ -38522,6 +39094,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_2bdf6770___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_2bdf6770___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=template&id=2bdf6770& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/branch/index.vue?vue&type=template&id=2bdf6770&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/branch/pay.vue?vue&type=template&id=1e68c474&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/branch/pay.vue?vue&type=template&id=1e68c474& ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_pay_vue_vue_type_template_id_1e68c474___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_pay_vue_vue_type_template_id_1e68c474___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_pay_vue_vue_type_template_id_1e68c474___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./pay.vue?vue&type=template&id=1e68c474& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/branch/pay.vue?vue&type=template&id=1e68c474&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/branch/view.vue?vue&type=template&id=20e414f7&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/branch/view.vue?vue&type=template&id=20e414f7& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_view_vue_vue_type_template_id_20e414f7___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_view_vue_vue_type_template_id_20e414f7___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_view_vue_vue_type_template_id_20e414f7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./view.vue?vue&type=template&id=20e414f7& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/branch/view.vue?vue&type=template&id=20e414f7&");
 
 
 /***/ }),
@@ -39675,7 +40281,7 @@ var render = function () {
                         "ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
                       attrs: { type: "submit" },
                     },
-                    [_vm._v("Update Fees")]
+                    [_vm._v("Create Branch")]
                   )
                 : _c(
                     "button",
@@ -39780,10 +40386,21 @@ var render = function () {
                                     "whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 hover:text-blue-700",
                                 },
                                 [
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _vm._v(_vm._s(branch.name)),
-                                  ]),
+                                  _c(
+                                    "a",
+                                    { attrs: { href: "/branch/" + branch.id } },
+                                    [_vm._v(_vm._s(branch.name))]
+                                  ),
                                 ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "whitespace-nowrap py-2 pl-4 pr-3 text-sm text-blue-700 sm:pl-6",
+                                },
+                                [_vm._v(_vm._s(branch.student_count))]
                               ),
                               _vm._v(" "),
                               _c(
@@ -39797,8 +40414,25 @@ var render = function () {
                                     "a",
                                     {
                                       staticClass:
+                                        "text-blue-500 hover:opacity-75 mr-3",
+                                      attrs: {
+                                        href: "/branch/" + branch.id + "/pay",
+                                      },
+                                    },
+                                    [
+                                      _vm._v("Pay"),
+                                      _c("span", { staticClass: "sr-only" }, [
+                                        _vm._v(", AAPS0L"),
+                                      ]),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass:
                                         "text-blue-500 hover:opacity-75",
-                                      attrs: { href: "/student/" + branch.id },
+                                      attrs: { href: "/branch/" + branch.id },
                                     },
                                     [
                                       _vm._v("View"),
@@ -39883,6 +40517,16 @@ var staticRenderFns = [
         _c(
           "th",
           {
+            staticClass:
+              "whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900",
+            attrs: { scope: "col" },
+          },
+          [_vm._v("Students")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
             staticClass: "relative whitespace-nowrap py-3.5 pl-3 pr-4 sm:pr-6",
             attrs: { scope: "col" },
           },
@@ -39890,6 +40534,1283 @@ var staticRenderFns = [
         ),
       ]),
     ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/branch/pay.vue?vue&type=template&id=1e68c474&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/branch/pay.vue?vue&type=template&id=1e68c474& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "bg-blue-100 min-h-screen" },
+    [
+      _c("div", { staticClass: "py-6" }, [
+        _c("div", { staticClass: "sm:flex sm:items-center px-6" }, [
+          _c("div", { staticClass: "sm:flex-auto" }, [
+            _c("h1", { staticClass: "text-2xl font-semibold text-gray-900" }, [
+              _vm._v(_vm._s(_vm.branch.name)),
+            ]),
+          ]),
+          _vm._v(" "),
+          _vm._m(0),
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "mt-4 max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8",
+          },
+          [
+            _c("main", { staticClass: "lg:col-span-12 xl:col-span-8" }, [
+              _c("div", { staticClass: "px-4 sm:px-6 lg:px-8" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("div", { staticClass: "px-4 sm:px-6 lg:px-8" }, [
+                  _c("div", { staticClass: "mt-8 flex flex-col" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8",
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "inline-block min-w-full py-2 align-middle md:px-6 lg:px-8",
+                          },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg",
+                              },
+                              [
+                                _c(
+                                  "table",
+                                  {
+                                    staticClass:
+                                      "min-w-full divide-y divide-gray-300",
+                                  },
+                                  [
+                                    _vm._m(2),
+                                    _vm._v(" "),
+                                    _c(
+                                      "tbody",
+                                      {
+                                        staticClass:
+                                          "divide-y divide-gray-200 bg-white",
+                                      },
+                                      _vm._l(
+                                        _vm.transactions,
+                                        function (transaction) {
+                                          return _c("tr", [
+                                            _c(
+                                              "td",
+                                              {
+                                                staticClass:
+                                                  "whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-blue-700 sm:pl-6",
+                                              },
+                                              [_vm._v(_vm._s(transaction.id))]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              {
+                                                staticClass:
+                                                  "whitespace-nowrap px-3 py-4 text-xs text-gray-500",
+                                              },
+                                              [
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "text-blue-700 font-bold hover:opacity-75 cursor-pointer",
+                                                    on: {
+                                                      click: function ($event) {
+                                                        return _vm.displayDescription(
+                                                          transaction.description
+                                                        )
+                                                      },
+                                                    },
+                                                  },
+                                                  [_vm._v("View Description")]
+                                                ),
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              {
+                                                staticClass:
+                                                  "whitespace-nowrap px-3 py-4 text-sm text-gray-500",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "₱ " +
+                                                    _vm._s(transaction.amount)
+                                                ),
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              {
+                                                staticClass:
+                                                  "whitespace-nowrap px-3 py-4 text-sm text-gray-500",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(transaction.created_at)
+                                                ),
+                                              ]
+                                            ),
+                                          ])
+                                        }
+                                      ),
+                                      0
+                                    ),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("aside", { staticClass: "block xl:col-span-4" }, [
+              _c("div", { staticClass: "sticky top-6 space-y-4" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-white p-4 rounded border border-blue-600",
+                  },
+                  [
+                    _c("div", { staticClass: "sm:flex-auto text-right" }, [
+                      _c(
+                        "h1",
+                        { staticClass: "text-xl font-semibold text-blue-700" },
+                        [_vm._v(_vm._s(_vm.branch.name))]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _vm.account
+                      ? _c("div", { staticClass: "flow-root mt-6" }, [
+                          _c(
+                            "ul",
+                            {
+                              staticClass: "-my-5 divide-y divide-gray-200",
+                              attrs: { role: "list" },
+                            },
+                            [
+                              _c("li", { staticClass: "py-1" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "flex items-center space-x-1",
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "flex-shrink-0" },
+                                      [
+                                        _c(
+                                          "p",
+                                          { staticClass: "text-gray-500" },
+                                          [
+                                            _c(
+                                              "svg",
+                                              {
+                                                staticClass: "w-6 h-6",
+                                                attrs: {
+                                                  xmlns:
+                                                    "http://www.w3.org/2000/svg",
+                                                  fill: "none",
+                                                  viewBox: "0 0 24 24",
+                                                  "stroke-width": "1.5",
+                                                  stroke: "currentColor",
+                                                },
+                                              },
+                                              [
+                                                _c("path", {
+                                                  attrs: {
+                                                    "stroke-linecap": "round",
+                                                    "stroke-linejoin": "round",
+                                                    d: "M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5",
+                                                  },
+                                                }),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._m(3),
+                                    _vm._v(" "),
+                                    _c("div", [
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass:
+                                            "text-sm text-blue-700 truncate",
+                                        },
+                                        [
+                                          _vm._v(
+                                            "₱ " +
+                                              _vm._s(
+                                                _vm.numberWithCommas(
+                                                  _vm.account.back_account
+                                                )
+                                              )
+                                          ),
+                                        ]
+                                      ),
+                                    ]),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "text-right" }, [
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass:
+                                        "text-sm text-blue-700 truncate",
+                                    },
+                                    [
+                                      _vm._v("₱ "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.back_account,
+                                            expression: "form.back_account",
+                                          },
+                                        ],
+                                        staticClass: "text-right",
+                                        attrs: { type: "number" },
+                                        domProps: {
+                                          value: _vm.form.back_account,
+                                        },
+                                        on: {
+                                          input: function ($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "back_account",
+                                              $event.target.value
+                                            )
+                                          },
+                                        },
+                                      }),
+                                    ]
+                                  ),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("li", { staticClass: "py-1" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "flex items-center space-x-1",
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "flex-shrink-0" },
+                                      [
+                                        _c(
+                                          "p",
+                                          { staticClass: "text-gray-500" },
+                                          [
+                                            _c(
+                                              "svg",
+                                              {
+                                                staticClass: "w-6 h-6",
+                                                attrs: {
+                                                  viewBox: "0 0 24 24",
+                                                  stroke: "currentColor",
+                                                  "stroke-width": "2",
+                                                  fill: "none",
+                                                  "stroke-linecap": "round",
+                                                  "stroke-linejoin": "round",
+                                                },
+                                              },
+                                              [
+                                                _c("polyline", {
+                                                  attrs: {
+                                                    points: "23 4 23 10 17 10",
+                                                  },
+                                                }),
+                                                _c("polyline", {
+                                                  attrs: {
+                                                    points: "1 20 1 14 7 14",
+                                                  },
+                                                }),
+                                                _c("path", {
+                                                  attrs: {
+                                                    d: "M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15",
+                                                  },
+                                                }),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._m(4),
+                                    _vm._v(" "),
+                                    _c("div", [
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass:
+                                            "text-sm text-blue-700 truncate",
+                                        },
+                                        [
+                                          _vm._v(
+                                            "₱ " +
+                                              _vm._s(
+                                                _vm.numberWithCommas(
+                                                  _vm.account.renewal
+                                                )
+                                              )
+                                          ),
+                                        ]
+                                      ),
+                                    ]),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "text-right" }, [
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass:
+                                        "text-sm text-blue-700 truncate",
+                                    },
+                                    [
+                                      _vm._v("₱ "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.renewal,
+                                            expression: "form.renewal",
+                                          },
+                                        ],
+                                        staticClass: "text-right",
+                                        attrs: { type: "number" },
+                                        domProps: { value: _vm.form.renewal },
+                                        on: {
+                                          input: function ($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "renewal",
+                                              $event.target.value
+                                            )
+                                          },
+                                        },
+                                      }),
+                                    ]
+                                  ),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("li", { staticClass: "py-1" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "flex items-center space-x-1",
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "flex-shrink-0" },
+                                      [
+                                        _c(
+                                          "p",
+                                          { staticClass: "text-gray-500" },
+                                          [
+                                            _c(
+                                              "svg",
+                                              {
+                                                staticClass: "w-6 h-6",
+                                                attrs: {
+                                                  xmlns:
+                                                    "http://www.w3.org/2000/svg",
+                                                  fill: "none",
+                                                  viewBox: "0 0 24 24",
+                                                  "stroke-width": "1.5",
+                                                  stroke: "currentColor",
+                                                },
+                                              },
+                                              [
+                                                _c("path", {
+                                                  attrs: {
+                                                    "stroke-linecap": "round",
+                                                    "stroke-linejoin": "round",
+                                                    d: "M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z",
+                                                  },
+                                                }),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._m(5),
+                                    _vm._v(" "),
+                                    _c("div", [
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass:
+                                            "text-sm text-blue-700 truncate",
+                                        },
+                                        [
+                                          _vm._v(
+                                            "₱ " +
+                                              _vm._s(
+                                                _vm.numberWithCommas(
+                                                  _vm.account.royalty
+                                                )
+                                              )
+                                          ),
+                                        ]
+                                      ),
+                                    ]),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "text-right" }, [
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass:
+                                        "text-sm text-blue-700 truncate",
+                                    },
+                                    [
+                                      _vm._v("₱ "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.royalty,
+                                            expression: "form.royalty",
+                                          },
+                                        ],
+                                        staticClass: "text-right",
+                                        attrs: { type: "number" },
+                                        domProps: { value: _vm.form.royalty },
+                                        on: {
+                                          input: function ($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "royalty",
+                                              $event.target.value
+                                            )
+                                          },
+                                        },
+                                      }),
+                                    ]
+                                  ),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("li", { staticClass: "py-1" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "flex items-center space-x-1",
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "flex-shrink-0" },
+                                      [
+                                        _c(
+                                          "p",
+                                          { staticClass: "text-gray-500" },
+                                          [
+                                            _c(
+                                              "svg",
+                                              {
+                                                staticClass: "w-6 h-6",
+                                                attrs: {
+                                                  xmlns:
+                                                    "http://www.w3.org/2000/svg",
+                                                  fill: "none",
+                                                  viewBox: "0 0 24 24",
+                                                  "stroke-width": "1.5",
+                                                  stroke: "currentColor",
+                                                },
+                                              },
+                                              [
+                                                _c("path", {
+                                                  attrs: {
+                                                    "stroke-linecap": "round",
+                                                    "stroke-linejoin": "round",
+                                                    d: "M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z",
+                                                  },
+                                                }),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._m(6),
+                                    _vm._v(" "),
+                                    _c("div", [
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass:
+                                            "text-sm text-blue-700 truncate",
+                                        },
+                                        [
+                                          _vm._v(
+                                            "₱ " +
+                                              _vm._s(
+                                                _vm.numberWithCommas(
+                                                  _vm.account.per_student_total
+                                                )
+                                              )
+                                          ),
+                                        ]
+                                      ),
+                                    ]),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "text-right" }, [
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass:
+                                        "text-sm text-blue-700 truncate",
+                                    },
+                                    [
+                                      _vm._v("₱ "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.per_student_total,
+                                            expression:
+                                              "form.per_student_total",
+                                          },
+                                        ],
+                                        staticClass: "text-right",
+                                        attrs: { type: "number" },
+                                        domProps: {
+                                          value: _vm.form.per_student_total,
+                                        },
+                                        on: {
+                                          input: function ($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "per_student_total",
+                                              $event.target.value
+                                            )
+                                          },
+                                        },
+                                      }),
+                                    ]
+                                  ),
+                                ]),
+                              ]),
+                            ]
+                          ),
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mt-6" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "relative inline-block text-gray-700 w-full mb-2",
+                        },
+                        [
+                          _c("input", {
+                            staticClass:
+                              "text-right w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                            attrs: {
+                              disabled: "",
+                              type: "text",
+                              placeholder: "Total",
+                            },
+                            domProps: { value: _vm.amountTotal() },
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none",
+                            },
+                            [
+                              _c(
+                                "svg",
+                                {
+                                  staticClass: "w-5 h-5",
+                                  staticStyle: {
+                                    "enable-background":
+                                      "new 0 0 71.668 71.668",
+                                  },
+                                  attrs: {
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    "xmlns:xlink":
+                                      "http://www.w3.org/1999/xlink",
+                                    version: "1.1",
+                                    id: "Capa_1",
+                                    x: "0px",
+                                    y: "0px",
+                                    width: "71.668px",
+                                    height: "71.668px",
+                                    viewBox: "0 0 71.668 71.668",
+                                    "xml:space": "preserve",
+                                  },
+                                },
+                                [
+                                  _c("g", [
+                                    _c("g", [
+                                      _c("g", [
+                                        _c("path", {
+                                          attrs: {
+                                            d: "M16.935,70.021c-2.158,0-3.926-0.748-5.252-2.225c-1.313-1.455-1.98-3.598-1.98-6.364V31.289H3.5     c-1.93,0-3.5-1.57-3.5-3.5c0-1.93,1.57-3.5,3.5-3.5h6.203v-3.667H3.5c-1.93,0-3.5-1.57-3.5-3.5c0-1.93,1.57-3.5,3.5-3.5h6.203     v-3.25c0-3.085,0.738-5.337,2.194-6.693c1.443-1.348,3.731-2.031,6.8-2.031h17.215c4.984,0,8.499,0.369,11.395,1.197     c3.022,0.839,5.014,2.35,6.715,3.856c2.019,1.787,3.576,4.008,4.627,6.6c0.043,0.105,0.084,0.213,0.123,0.321h9.396     c1.93,0,3.5,1.57,3.5,3.5c0,1.93-1.57,3.5-3.5,3.5h-7.99c0.028,0.488,0.043,0.952,0.043,1.408c0,0.746-0.031,1.494-0.096,2.259     h8.043c1.93,0,3.5,1.57,3.5,3.5c0,1.93-1.57,3.5-3.5,3.5h-9.656c-1.08,2.582-2.66,4.753-4.705,6.466     c-4.41,3.688-9.93,5.334-17.895,5.334h-11.79v18.252c0,2.799-0.683,4.965-2.029,6.438C20.733,69.267,18.998,70.021,16.935,70.021     z M3.499,27.289c-0.275,0-0.5,0.225-0.5,0.5s0.225,0.5,0.5,0.5h7.703c0.828,0,1.5,0.672,1.5,1.5v31.643     c0,2.002,0.407,3.468,1.21,4.356c0.756,0.842,1.716,1.231,3.022,1.231c1.22,0,2.155-0.401,2.943-1.265     c0.825-0.903,1.244-2.389,1.244-4.414V41.589c0-0.828,0.672-1.5,1.5-1.5H35.91c7.211,0,12.137-1.43,15.97-4.635     c1.886-1.58,3.296-3.655,4.188-6.168c0.213-0.598,0.779-0.997,1.414-0.997h10.684c0.275,0,0.5-0.225,0.5-0.5s-0.225-0.5-0.5-0.5     h-9.721c-0.436,0-0.848-0.188-1.133-0.516s-0.414-0.764-0.354-1.193c0.174-1.237,0.259-2.398,0.259-3.55     c0-0.828-0.056-1.698-0.174-2.738c-0.049-0.425,0.087-0.85,0.371-1.169c0.284-0.318,0.69-0.501,1.119-0.501h9.631     c0.274,0,0.5-0.225,0.5-0.5s-0.226-0.5-0.5-0.5H57.686c-0.651,0-1.229-0.42-1.429-1.039l-0.075-0.234     c-0.099-0.313-0.195-0.624-0.316-0.922c-0.875-2.157-2.166-4.002-3.836-5.479c-1.701-1.508-3.221-2.57-5.538-3.214     c-2.627-0.751-5.888-1.085-10.581-1.085H18.696c-2.251,0-3.895,0.424-4.754,1.226c-0.812,0.756-1.24,2.312-1.24,4.499v4.75     c0,0.828-0.672,1.5-1.5,1.5H3.499c-0.275,0-0.5,0.225-0.5,0.5s0.225,0.5,0.5,0.5h7.703c0.828,0,1.5,0.672,1.5,1.5v6.667     c0,0.828-0.672,1.5-1.5,1.5L3.499,27.289L3.499,27.289z M32.659,34.967H22.622c-0.828,0-1.5-0.672-1.5-1.5v-3.679     c0-0.828,0.672-1.5,1.5-1.5h22.767c0.604,0,1.151,0.364,1.385,0.924c0.231,0.559,0.105,1.203-0.32,1.633     c-1.352,1.361-3.072,2.375-5.117,3.015C38.979,34.596,36.06,34.967,32.659,34.967z M24.122,31.967h8.537     c2.588,0,4.841-0.228,6.717-0.679H24.122V31.967z M47.682,27.289h-25.06c-0.828,0-1.5-0.672-1.5-1.5v-6.667     c0-0.828,0.672-1.5,1.5-1.5h25.125c0.69,0,1.291,0.471,1.456,1.141c0.275,1.116,0.415,2.307,0.415,3.538     c0,1.39-0.165,2.696-0.491,3.885C48.948,26.836,48.355,27.289,47.682,27.289z M24.122,24.289h22.349     c0.098-0.627,0.147-1.292,0.147-1.988c0-0.575-0.037-1.137-0.111-1.679H24.122V24.289z M45.814,16.622H22.622     c-0.828,0-1.5-0.672-1.5-1.5v-3.897c0-0.828,0.672-1.5,1.5-1.5h10.037c6.754,0,11.224,1.205,13.664,3.684     c0.254,0.271,0.461,0.522,0.665,0.779c0.359,0.45,0.429,1.066,0.179,1.586C46.917,16.292,46.393,16.622,45.814,16.622z      M24.122,13.622h16.552c-2.027-0.595-4.707-0.897-8.015-0.897h-8.537V13.622z",
+                                          },
+                                        }),
+                                      ]),
+                                    ]),
+                                  ]),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                  _c("g"),
+                                ]
+                              ),
+                            ]
+                          ),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      !_vm.isSending
+                        ? _c(
+                            "button",
+                            {
+                              staticClass:
+                                "w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-white bg-blue-700 hover:bg-blue-500",
+                              on: {
+                                click: function ($event) {
+                                  return _vm.processPayment()
+                                },
+                              },
+                            },
+                            [_vm._v(" Pay ")]
+                          )
+                        : _c(
+                            "button",
+                            {
+                              staticClass:
+                                "cursor-not-allowed w-full flex justify-center items-center rounded-lg px-4 py-2 text-white text-sm bg-blue-700 opacity-75",
+                              attrs: { disabled: "", type: "button" },
+                            },
+                            [
+                              _c(
+                                "svg",
+                                {
+                                  staticClass:
+                                    "mr-3 h-5 w-5 animate-spin text-white",
+                                  attrs: {
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    fill: "none",
+                                    viewBox: "0 0 24 24",
+                                  },
+                                },
+                                [
+                                  _c("circle", {
+                                    staticClass: "opacity-25",
+                                    attrs: {
+                                      cx: "12",
+                                      cy: "12",
+                                      r: "10",
+                                      stroke: "currentColor",
+                                      "stroke-width": "4",
+                                    },
+                                  }),
+                                  _vm._v(" "),
+                                  _c("path", {
+                                    staticClass: "opacity-75",
+                                    attrs: {
+                                      fill: "currentColor",
+                                      d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z",
+                                    },
+                                  }),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "font-medium" }, [
+                                _vm._v(" Processing... "),
+                              ]),
+                            ]
+                          ),
+                    ]),
+                  ]
+                ),
+              ]),
+            ]),
+          ]
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "printMe", hidden: "" } }, [
+        _c(
+          "p",
+          {
+            staticStyle: {
+              "text-align": "center",
+              "margin-bottom": "-10px",
+              "font-size": "1.5em",
+              "font-weight": "bold",
+            },
+          },
+          [_vm._v("Philippine Baptist Christian College of Mindanao, Inc.")]
+        ),
+        _vm._v(" "),
+        _c("p", { staticStyle: { "text-align": "center" } }, [
+          _vm._v("Fd. Rd. 2, Tibal-og, Sto Tomas Davao del Norte"),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticStyle: { "text-align": "right" } }, [
+          _vm._v(" Date: " + _vm._s(_vm.dateNow())),
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v("Payer: "),
+          _c(
+            "span",
+            {
+              staticStyle: {
+                "font-size": "1.5em",
+                "font-weight": "bold",
+                "margin-left": "3px",
+              },
+            },
+            [_vm._v(_vm._s(_vm.branch.name))]
+          ),
+        ]),
+        _vm._v(" "),
+        _c(
+          "table",
+          {
+            staticStyle: {
+              "font-family": "arial, sans-serif",
+              "border-collapse": "collapse",
+              width: "100%",
+            },
+          },
+          [
+            _vm._m(7),
+            _vm._v(" "),
+            this.form.back_account !== 0
+              ? _c("tr", [
+                  _c(
+                    "td",
+                    {
+                      staticStyle: {
+                        border: "1px solid #dddddd",
+                        "text-align": "left",
+                        padding: "8px",
+                      },
+                    },
+                    [_vm._v("Back Account")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    {
+                      staticStyle: {
+                        border: "1px solid #dddddd",
+                        "text-align": "left",
+                        padding: "8px",
+                      },
+                    },
+                    [_vm._v("₱ " + _vm._s(this.form.back_account))]
+                  ),
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            this.form.renewal !== 0
+              ? _c("tr", [
+                  _c(
+                    "td",
+                    {
+                      staticStyle: {
+                        border: "1px solid #dddddd",
+                        "text-align": "left",
+                        padding: "8px",
+                      },
+                    },
+                    [_vm._v("Renewal")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    {
+                      staticStyle: {
+                        border: "1px solid #dddddd",
+                        "text-align": "left",
+                        padding: "8px",
+                      },
+                    },
+                    [_vm._v("₱ " + _vm._s(this.form.renewal))]
+                  ),
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            this.form.royalty !== 0
+              ? _c("tr", [
+                  _c(
+                    "td",
+                    {
+                      staticStyle: {
+                        border: "1px solid #dddddd",
+                        "text-align": "left",
+                        padding: "8px",
+                      },
+                    },
+                    [_vm._v("Royalty")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    {
+                      staticStyle: {
+                        border: "1px solid #dddddd",
+                        "text-align": "left",
+                        padding: "8px",
+                      },
+                    },
+                    [_vm._v("₱ " + _vm._s(this.form.royalty))]
+                  ),
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            this.form.per_student_total !== 0
+              ? _c("tr", [
+                  _c(
+                    "td",
+                    {
+                      staticStyle: {
+                        border: "1px solid #dddddd",
+                        "text-align": "left",
+                        padding: "8px",
+                      },
+                    },
+                    [_vm._v("Student Fee")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    {
+                      staticStyle: {
+                        border: "1px solid #dddddd",
+                        "text-align": "left",
+                        padding: "8px",
+                      },
+                    },
+                    [_vm._v("₱ " + _vm._s(this.form.per_student_total))]
+                  ),
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c("tr", [
+              _c(
+                "td",
+                {
+                  staticStyle: {
+                    border: "1px solid #dddddd",
+                    "text-align": "left",
+                    padding: "8px",
+                    "font-size": "1rem",
+                    "font-weight": "bold",
+                  },
+                },
+                [_vm._v("Total")]
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  staticStyle: {
+                    border: "1px solid #dddddd",
+                    "text-align": "left",
+                    padding: "8px",
+                  },
+                },
+                [_vm._v("₱ " + _vm._s(_vm.amountTotal()))]
+              ),
+            ]),
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "p",
+          {
+            staticStyle: {
+              "font-size": "1.5em",
+              "font-weight": "bold",
+              "margin-left": "3px",
+            },
+          },
+          [_vm._v("Amount in words:")]
+        ),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(_vm._s(_vm._f("toWords")(_vm.amountTotal())) + " pesos."),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("sweet-modal", { ref: "descriptionModal" }, [
+        _c("p", { staticClass: "font-bold text-lg" }, [
+          _vm._v("Payment Description"),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-lg mt-2" }, [
+          _vm._v(_vm._s(_vm.description)),
+        ]),
+      ]),
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "sm:flex-auto" }, [
+      _c(
+        "a",
+        {
+          staticClass:
+            "ml-auto w-1/2 flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-white bg-blue-700 hover:bg-blue-500",
+          attrs: { href: "/branches" },
+        },
+        [_vm._v(" Back to branch list ")]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "sm:flex sm:items-center" }, [
+      _c("div", { staticClass: "sm:flex-auto" }, [
+        _c("h1", { staticClass: "text-xl font-semibold text-blue-700" }, [
+          _vm._v("Previous Transactions"),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", { staticClass: "bg-gray-50" }, [
+      _c("tr", [
+        _c(
+          "th",
+          {
+            staticClass:
+              "py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6",
+            attrs: { scope: "col" },
+          },
+          [_vm._v("Transaction Number")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-3 py-3.5 text-left text-sm font-semibold text-gray-900",
+            attrs: { scope: "col" },
+          },
+          [_vm._v("Description")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-3 py-3.5 text-left text-sm font-semibold text-gray-900",
+            attrs: { scope: "col" },
+          },
+          [_vm._v("Amount")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-3 py-3.5 text-left text-sm font-semibold text-gray-900",
+            attrs: { scope: "col" },
+          },
+          [_vm._v("Date")]
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-1 min-w-0" }, [
+      _c("p", { staticClass: "text-sm font-medium text-gray-900 truncate" }, [
+        _vm._v("Back Account"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-1 min-w-0" }, [
+      _c("p", { staticClass: "text-sm font-medium text-gray-900 truncate" }, [
+        _vm._v("Renewal"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-1 min-w-0" }, [
+      _c("p", { staticClass: "text-sm font-medium text-gray-900 truncate" }, [
+        _vm._v("Royalty"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-1 min-w-0" }, [
+      _c("p", { staticClass: "text-sm font-medium text-gray-900 truncate" }, [
+        _vm._v("Students Fees"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [_c("th"), _vm._v(" "), _c("th")])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/branch/view.vue?vue&type=template&id=20e414f7&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/branch/view.vue?vue&type=template&id=20e414f7& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "pt-8 min-h-screen bg-blue-100" }, [
+    _c(
+      "div",
+      { staticClass: "bg-white shadow overflow-hidden sm:rounded-lg" },
+      [
+        _c("div", { staticClass: "px-4 py-5 sm:px-6 flex" }, [
+          _c("div", [
+            _c(
+              "h3",
+              {
+                staticClass:
+                  "text-2xl leading-6 font-medium text-blue-700 flex place-self-center",
+              },
+              [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "h-6 w-6 mr-2",
+                    attrs: {
+                      xmlns: "http://www.w3.org/2000/svg",
+                      viewBox: "0 0 20 20",
+                      fill: "currentColor",
+                    },
+                  },
+                  [
+                    _c("path", {
+                      attrs: {
+                        "fill-rule": "evenodd",
+                        d: "M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z",
+                        "clip-rule": "evenodd",
+                      },
+                    }),
+                  ]
+                ),
+                _vm._v(_vm._s(_vm.branch.name)),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "p",
+              { staticClass: "mt-1 max-w-2xl text-sm text-gray-500 ml-8" },
+              [_vm._v(_vm._s(_vm.branch.address))]
+            ),
+          ]),
+        ]),
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "flex flex-wrap pb-3 mx-4 md:mx-24 lg:mx-0" }, [
+      _c("div", { staticClass: "w-full p-2 lg:w-1/4 md:w-1/2" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "flex flex-col px-6 py-10 overflow-hidden bg-white hover:bg-gradient-to-br hover:from-purple-400 hover:via-blue-400 hover:to-blue-500 rounded-xl shadow-lg duration-300 hover:shadow-2xl group",
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "flex flex-row justify-between items-center" },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30",
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "h-6 w-6 group-hover:text-gray-50",
+                        attrs: {
+                          xmlns: "http://www.w3.org/2000/svg",
+                          fill: "none",
+                          viewBox: "0 0 24 24",
+                          "stroke-width": "1.5",
+                          stroke: "currentColor",
+                        },
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            "stroke-linecap": "round",
+                            "stroke-linejoin": "round",
+                            d: "M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6",
+                          },
+                        }),
+                      ]
+                    ),
+                  ]
+                ),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "h1",
+              {
+                staticClass:
+                  "text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 group-hover:text-gray-50",
+              },
+              [_vm._v(_vm._s(_vm.student.grades[0].average))]
+            ),
+            _vm._v(" "),
+            _vm._m(0),
+          ]
+        ),
+      ]),
+    ]),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "flex flex-row justify-between group-hover:text-gray-200",
+      },
+      [_c("p", [_vm._v("Number of Students")])]
+    )
   },
 ]
 render._withStripped = true

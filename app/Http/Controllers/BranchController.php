@@ -62,4 +62,24 @@ class BranchController extends Controller
 
         return 'Branch Created';
     }
+
+    public function view(Branch $branch)
+    {
+        return view('branch.view', ['branch' => $branch]);
+    }
+
+    public function pay(Branch $branch)
+    {
+        return view('branch.pay', ['branch' => $branch]);
+    }
+
+    public function transactions(Branch $branch)
+    {
+        return $branch->payments;
+    }
+
+    public function account(Branch $branch)
+    {
+        return $branch->branchAccount;
+    }
 }

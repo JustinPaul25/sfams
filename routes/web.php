@@ -51,9 +51,14 @@ Route::group(['middleware' => ['role:Administrator|staff']], function () {
     Route::post('/enrollment/new-student', [EnrollmentController::class, 'enrollNewStudent']);
 
     Route::post('/pay-tuition', [PaymentController::class, 'tuition']);
+    Route::post('/pay-branch', [PaymentController::class, 'branch']);
 
     Route::get('/branches', [BranchController::class, 'index']);
     Route::get('/branch-list', [BranchController::class, 'list']);
+    Route::get('/branch/{branch}', [BranchController::class, 'view']);
+    Route::get('/branch/{branch}/pay', [BranchController::class, 'pay']);
+    Route::get('/branch/{branch}/transactions', [BranchController::class, 'transactions']);
+    Route::get('/branch/{branch}/account', [BranchController::class, 'account']);
 });
 
 Route::group(['middleware' => ['role:Administrator']], function () {

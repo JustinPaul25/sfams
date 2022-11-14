@@ -455,7 +455,7 @@
                 }
                 this.$swal.fire({
                   icon: 'Success',
-                  title: 'Paid tuition Successfully.',
+                  title: 'Payment Successfully Saved.',
                   text: '',
                 })
               })

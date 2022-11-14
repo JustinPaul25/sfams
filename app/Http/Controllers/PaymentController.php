@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\PayBranch;
+use App\Models\Branch;
 use App\Models\Student;
 use App\Mail\PayTuition;
 use Illuminate\Http\Request;
@@ -37,6 +39,33 @@ class PaymentController extends Controller
         ]);
 
         Mail::to($student->email)->send(new PayTuition($student, $desc));
+
+        return 'Successfully Paid';
+    }
+
+    public function branch(Request $request)
+    {
+        $branch = Branch::find($request->input('branch_id'));
+        $account = $branch->branchAccount;
+        $user = $branch->user;
+
+        $desc = 'Branch Payment';
+        $desc = $desc.' [Back Account: ₱ '.$request->input('back_account').', Renewal: ₱ '.$request->input('renewal').', Royalty: ₱ '.$request->input('royalty').', Students Fee: ₱ '.$request->input('per_student_total').'].';
+
+        $branch->branchAccount()->update([
+            'back_account' => $account->back_account - $request->input('back_account'),
+            'renewal' => $account->renewal - $request->input('renewal'),
+            'royalty' => $account->royalty - $request->input('royalty'),
+            'per_student_total' => $account->per_student_total - $request->input('per_student_total'),
+        ]);
+
+        $branch->payments()->create([
+            'description' => $desc,
+            'amount' => $request->input('back_account') + $request->input('renewal') + $request->input('royalty') + $request->input('per_student_total'),
+            'type' => 'BRANCH',
+        ]);
+
+        Mail::to($user->email)->send(new PayBranch($branch, $desc));
 
         return 'Successfully Paid';
     }
