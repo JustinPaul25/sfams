@@ -61,6 +61,8 @@ Vue.component('branch-form', require('./components/branch/form.vue').default);
 Vue.component('branch-view', require('./components/branch/view.vue').default);
 Vue.component('branch-pay', require('./components/branch/pay.vue').default);
 
+Vue.component('reset-password', require('./components/resetpassword.vue').default);
+
 Vue.component('sweet-modal', SweetModal);
 Vue.component('sweet-modal-tab', SweetModalTab);
 Vue.component('masked-input', MaskedInput);

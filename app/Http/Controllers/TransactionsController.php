@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Branch;
 use App\Models\Payment;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class TransactionsController extends Controller
@@ -40,5 +42,18 @@ class TransactionsController extends Controller
         $payments = $payments->with(['branch', 'student'])->get();
 
         return $payments;
+    }
+
+    public function fullTransactions()
+    {
+        $transactions = Payment::with('student', 'branch')->take(10)->get();
+
+        $income = Payment::sum('amount');
+
+        $studentCount = Student::where('status', '!=', 'PENDING')->count();
+
+        $branchCount = Branch::count();
+
+        return response()->json(['transactions' => $transactions, 'income' => $income, 'student_count' => $studentCount, 'branch_count' => $branchCount]);
     }
 }

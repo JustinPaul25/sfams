@@ -8,10 +8,10 @@
                     <div class="flex-1 min-w-0">
                     <!-- Profile -->
                     <div class="flex items-center">
-                        <img class="hidden h-16 w-16 rounded-full sm:block" src="https://scontent-xsp1-3.xx.fbcdn.net/v/t1.6435-9/120167119_3184922811646472_8629084615087030851_n.png?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfICNTZOqcTSHXbAD4omEdEQzjZXF8gS0RDONlcXyBLanEabTepvnzsJEM7DrwTMmWuOpxeJAjmwXztGFWxZpy&_nc_ohc=DVi6lKcXvHMAX9jS5NM&_nc_ht=scontent-xsp1-3.xx&oh=00_AT_S5LGjPlFHTKPM1K7RdR0qqVtA1Kky0paN2o7CzIIWEQ&oe=62C0AEF9" alt="">
+                        <img class="hidden h-16 w-16 rounded-full sm:block" :src="app.app_logo" alt="">
                         <div>
                         <div class="flex items-center">
-                            <img class="h-16 w-16 rounded-full sm:hidden" src="https://scontent-xsp1-3.xx.fbcdn.net/v/t1.6435-9/120167119_3184922811646472_8629084615087030851_n.png?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfICNTZOqcTSHXbAD4omEdEQzjZXF8gS0RDONlcXyBLanEabTepvnzsJEM7DrwTMmWuOpxeJAjmwXztGFWxZpy&_nc_ohc=DVi6lKcXvHMAX9jS5NM&_nc_ht=scontent-xsp1-3.xx&oh=00_AT_S5LGjPlFHTKPM1K7RdR0qqVtA1Kky0paN2o7CzIIWEQ&oe=62C0AEF9" alt="">
+                            <img class="h-16 w-16 rounded-full sm:hidden" :src="app.app_logo" alt="">
                             <h1 class="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:leading-9 sm:truncate">PBCCMI</h1>
                         </div>
                         <dl class="mt-6 flex flex-col sm:ml-3 sm:mt-1 sm:flex-row sm:flex-wrap">
@@ -21,19 +21,11 @@
                             <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd" />
                             </svg>
-                            Celina ADMIN
+                            {{ app.current_user.name }} ADMIN
                             </dd>
                         </dl>
                         </div>
                     </div>
-                    </div>
-                    <div class="mt-6 flex space-x-3 md:mt-0 md:ml-4">
-                    <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
-                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 mr-2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-                        Account Settings</button>
-                    <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
-                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 mr-2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-                        Logout</button>
                     </div>
                 </div>
                 </div>
@@ -51,9 +43,9 @@
                                 </div>
                                 <div class="ml-5 w-0 flex-1">
                                     <dl>
-                                    <dt class="text-sm font-medium text-gray-500 truncate">Total Amount Paid</dt>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">Total Income</dt>
                                     <dd>
-                                        <div class="text-lg font-medium text-gray-900">₱3,000.45</div>
+                                        <div class="text-lg font-medium text-gray-900">₱ {{income}}</div>
                                     </dd>
                                     </dl>
                                 </div>
@@ -61,7 +53,7 @@
                         </div>
                         <div class="bg-blue-200 px-5 py-3">
                             <div class="text-sm">
-                                <a href="#" class="font-medium text-blue-700 hover:text-blue-800"> View all </a>
+                                <a href="/reports" class="font-medium text-blue-700 hover:text-blue-800"> View all </a>
                             </div>
                         </div>
                     </div>
@@ -71,13 +63,15 @@
                             <div class="flex items-center">
                                 <div class="flex-shrink-0">
                                     <!-- Heroicon name: outline/scale -->
-                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-gray-400"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-gray-400">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                                    </svg>
                                 </div>
                                 <div class="ml-5 w-0 flex-1">
                                     <dl>
-                                    <dt class="text-sm font-medium text-gray-500 truncate">Total Unpaid Amount</dt>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">Enrolled Student</dt>
                                     <dd>
-                                        <div class="text-lg font-medium text-gray-900">₱1,000.45</div>
+                                        <div class="text-lg font-medium text-gray-900">{{ students }}</div>
                                     </dd>
                                     </dl>
                                 </div>
@@ -85,7 +79,7 @@
                         </div>
                         <div class="bg-blue-200 px-5 py-3">
                             <div class="text-sm">
-                                <a href="#" class="font-medium text-blue-700 hover:text-blue-800"> View all </a>
+                                <a href="/students" class="font-medium text-blue-700 hover:text-blue-800"> View all </a>
                             </div>
                         </div>
                     </div>
@@ -95,15 +89,15 @@
                             <div class="flex items-center">
                                 <div class="flex-shrink-0">
                                     <!-- Heroicon name: outline/scale -->
-                                    <svg class="h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-gray-400">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
                                     </svg>
                                 </div>
                                 <div class="ml-5 w-0 flex-1">
                                     <dl>
-                                    <dt class="text-sm font-medium text-gray-500 truncate">Total Amount Paid</dt>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">Branches</dt>
                                     <dd>
-                                        <div class="text-lg font-medium text-gray-900">₱3,000.45</div>
+                                        <div class="text-lg font-medium text-gray-900">{{ branches }}</div>
                                     </dd>
                                     </dl>
                                 </div>
@@ -111,7 +105,7 @@
                         </div>
                         <div class="bg-blue-200 px-5 py-3">
                             <div class="text-sm">
-                                <a href="#" class="font-medium text-blue-700 hover:text-blue-800"> View all </a>
+                                <a href="/branches" class="font-medium text-blue-700 hover:text-blue-800"> View all </a>
                             </div>
                         </div>
                     </div>
@@ -119,12 +113,14 @@
                 </div>
                 </div>
 
-                <h2 class="max-w-6xl mx-auto mt-8 px-4 text-lg leading-6 font-medium text-blue-700 sm:px-6 lg:px-8">Recent Payments</h2>
-
                 <!-- Activity list (smallest breakpoint only) -->
                 <div class="shadow sm:hidden">
+                    <div class="flex">
+                        <h2 class="max-w-6xl mt-8 px-4 text-lg leading-6 font-medium text-blue-700 sm:px-6 lg:px-8 mr-auto">Recent Payments</h2>
+                        <a href="/reports" class="max-w-6xl mt-8 px-4 leading-6 hover:opacity-75 text-blue-700 sm:px-6 lg:px-8 ml-auto cursor-pointer">View more</a>
+                    </div>
                 <ul role="list" class="mt-2 divide-y divide-gray-200 overflow-hidden shadow sm:hidden">
-                    <li>
+                    <li v-for="transaction in transactions">
                     <a href="#" class="block px-4 py-4 bg-white hover:bg-gray-50">
                         <span class="flex items-center space-x-4">
                         <span class="flex-1 flex space-x-2 truncate">
@@ -133,9 +129,9 @@
                             <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
                             </svg>
                             <span class="flex flex-col text-gray-500 text-sm truncate">
-                            <span class="truncate">Payment from Ira Juaton</span>
-                            <span><span class="text-gray-900 font-medium">₱2,000</span>PESO</span>
-                            <time datetime="2020-07-11">July 11, 2020</time>
+                            <span class="truncate">{{ transaction.type === 'STUDENT' ? transaction.student.first_name+' '+transaction.student.last_name : transaction.branch.name }}</span>
+                            <span class="text-gray-900 font-medium">₱ {{transaction.amount}}</span>
+                            <time datetime="2020-07-11">{{ transaction.created_at }}</time>
                             </span>
                         </span>
                         <!-- Heroicon name: solid/chevron-right -->
@@ -148,75 +144,54 @@
 
                     <!-- More transactions... -->
                 </ul>
-
-                <nav class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200" aria-label="Pagination">
-                    <div class="flex-1 flex justify-between">
-                    <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:text-gray-500"> Previous </a>
-                    <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:text-gray-500"> Next </a>
-                    </div>
-                </nav>
                 </div>
 
                 <!-- Activity table (small breakpoint and up) -->
                 <div class="hidden sm:block">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex">
+                        <h2 class="max-w-6xl mt-8 px-4 text-lg leading-6 font-medium text-blue-700 sm:px-6 lg:px-8 mr-auto">Recent Payments</h2>
+                        <a href="/reports" class="max-w-6xl mt-8 px-4 cursor-pointer leading-6 hover:opacity-75 text-blue-700 sm:px-6 lg:px-8 ml-auto">View more</a>
+                    </div>
                     <div class="flex flex-col mt-2">
                     <div class="align-middle min-w-full overflow-x-auto shadow overflow-hidden sm:rounded-lg">
                         <table class="min-w-full divide-y divide-gray-200">
                         <thead>
                             <tr>
-                            <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Transaction</th>
+                            <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Payer</th>
                             <th class="px-6 py-3 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Amount</th>
-                            <th class="hidden px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider md:block" scope="col">Status</th>
+                            <th class="hidden px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider md:block" scope="col">Type</th>
                             <th class="px-6 py-3 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Date</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
-                            <tr class="bg-white">
-                            <td class="max-w-0 w-full px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                <div class="flex">
-                                <a href="#" class="group inline-flex space-x-2 truncate text-sm">
-                                    <!-- Heroicon name: solid/cash -->
-                                    <svg class="flex-shrink-0 h-5 w-5 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-                                    </svg>
-                                    <p class="text-gray-500 truncate group-hover:text-gray-900">Payment to Ira Juaton</p>
-                                </a>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500">
-                                <span class="text-gray-900 font-medium">₱2,000 </span>
-                                USD
-                            </td>
-                            <td class="hidden px-6 py-4 whitespace-nowrap text-sm text-gray-500 md:block">
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 capitalize"> success </span>
-                            </td>
-                            <td class="px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500">
-                                <time datetime="2020-07-11">July 11, 2020</time>
-                            </td>
+                            <tr v-for="transaction in transactions" class="bg-white">
+                                <td class="max-w-0 w-full px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                    <div class="flex">
+                                    <a href="#" class="group inline-flex space-x-2 truncate text-sm">
+                                        <!-- Heroicon name: solid/cash -->
+                                        <svg class="flex-shrink-0 h-5 w-5 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                        </svg>
+                                        <p class="text-gray-500 truncate group-hover:text-gray-900">{{ transaction.type === 'STUDENT' ? transaction.student.first_name+' '+transaction.student.last_name : transaction.branch.name }}</p>
+                                    </a>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500">
+                                    <span class="text-gray-900 font-medium">₱ {{transaction.amount}} </span>
+                                </td>
+                                <td class="hidden px-6 py-4 whitespace-nowrap text-sm text-gray-500 md:block">
+                                    <span v-if="transaction.type === 'STUDENT'" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 capitalize"> {{ transaction.type }} </span>
+                                    <span v-else class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 capitalize"> {{ transaction.type }} </span>
+                                </td>
+                                <td class="px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500">
+                                    <time datetime="2020-07-11">{{ transaction.created_at }}</time>
+                                </td>
                             </tr>
 
                             <!-- More transactions... -->
                         </tbody>
                         </table>
-                        <!-- Pagination -->
-                        <nav class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6" aria-label="Pagination">
-                        <div class="hidden sm:block">
-                            <p class="text-sm text-gray-700">
-                            Showing
-                            <span class="font-medium">1</span>
-                            to
-                            <span class="font-medium">10</span>
-                            of
-                            <span class="font-medium">20</span>
-                            results
-                            </p>
-                        </div>
-                        <div class="flex-1 flex justify-between sm:justify-end">
-                            <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"> Previous </a>
-                            <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"> Next </a>
-                        </div>
-                        </nav>
                     </div>
                     </div>
                 </div>
@@ -225,3 +200,30 @@
         </main>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            transactions: [],
+            income: 0,
+            students: 0,
+            branches: 0,
+        }
+    },
+    methods: {
+        async getTransactions() {
+            await axios.get('/full-transactions')
+            .then(response => {
+                this.transactions = response.data.transactions
+                this.income = response.data.income
+                this.students = response.data.student_count
+                this.branches = response.data.branch_count
+            })
+        }
+    },
+    created() {
+        this.getTransactions()
+    }
+}
+</script>

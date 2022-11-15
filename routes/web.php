@@ -31,6 +31,12 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/password-reset', function() {
+    return view('password-reset');
+});
+
+Route::post('/password-reset', [UserController::class, 'resetPassword']);
+
 Route::group(['middleware' => ['role:Administrator|staff']], function () {
     Route::get('/reports', [ReportController::class, 'index']);
 
@@ -85,6 +91,7 @@ Route::group(['middleware' => ['role:Administrator']], function () {
     });
 
     Route::get('/transactions', [TransactionsController::class, 'list']);
+    Route::get('/full-transactions', [TransactionsController::class, 'fullTransactions']);
 
     Route::get('/logs', [LogsController::class, 'index']);
 });

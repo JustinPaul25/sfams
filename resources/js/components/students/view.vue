@@ -169,7 +169,7 @@
                                 <tr>
                                     <td class="text-sm font-medium text-gray-900">Back Account</td>
                                     <td class="text-sm text-gray-900 font-light">
-                                        ₱ {{ student.account.entrance }}
+                                        ₱ {{ student.account.back_account }}
                                     </td>
                                 </tr>
                                 <tr>

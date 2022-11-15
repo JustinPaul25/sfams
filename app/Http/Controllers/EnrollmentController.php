@@ -216,11 +216,13 @@ class EnrollmentController extends Controller
             'form_137' => $request->input('form_137'),
         ]);
 
-        User::create([
+        $user = User::create([
             'name' => $student->first_name.' '.$student->middle_name.' '.$student->last_name,
             'email' => $student->email,
             'password' => Hash::make('sfams_password_'.$student->id),
         ]);
+
+        $user->assignRole(RoleType::STUDENT);
 
         $student->grades()->create([
             'grade_level_id' => $student->grade_entered_id,

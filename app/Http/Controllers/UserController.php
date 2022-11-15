@@ -97,4 +97,13 @@ class UserController extends Controller
 
         return 'User deleted successfully';
     }
+
+    public function resetPassword(Request $request)
+    {
+        $user = Auth()->user();
+
+        return $user->update([
+            'password' => $request->input('password'),
+        ]);
+    }
 }

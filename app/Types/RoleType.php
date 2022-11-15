@@ -7,6 +7,7 @@ final class RoleType
     const ADMINISTRATOR = 'Administrator';
     const STAFF = 'Staff';
     const STUDENT = 'Student';
+    const BRANCH = 'Branch';
 
     public static function toArray(): array
     {
@@ -14,6 +15,7 @@ final class RoleType
             self::ADMINISTRATOR,
             self::STAFF,
             self::STUDENT,
+            self::BRANCH,
         ];
     }
 }

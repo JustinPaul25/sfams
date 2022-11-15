@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Branch;
+use App\Types\RoleType;
 use App\Mail\CreateBranch;
 use Illuminate\Http\Request;
 use App\Models\BranchAccount;
@@ -58,6 +59,8 @@ class BranchController extends Controller
             'per_student_total' => $request->input('students') * $utility->per_student,
         ]);
 
+        $user->assignRole(RoleType::BRANCH);
+
         Mail::to($user->email)->send(new CreateBranch($branch));
 
         return 'Branch Created';
@@ -65,7 +68,7 @@ class BranchController extends Controller
 
     public function view(Branch $branch)
     {
-        return view('branch.view', ['branch' => $branch]);
+        return view('branch.view', ['branch' => $branch, 'account' => $branch->branchAccount, 'transactions' => $branch->payments]);
     }
 
     public function pay(Branch $branch)
