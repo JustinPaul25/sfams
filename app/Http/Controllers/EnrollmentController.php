@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Branch;
+use App\Models\Enroll;
+use App\Models\Section;
 use App\Models\Student;
 use App\Types\RoleType;
 use App\Models\GradeLevel;
+use App\Models\SchoolYear;
 use App\Models\Requirement;
 use App\Models\Notification;
 use Illuminate\Http\Request;
@@ -150,7 +153,9 @@ class EnrollmentController extends Controller
 
         $fees = PaymentUtility::where('type', $department)->first();
 
-        return view('enrollment.payment-form', ['student' => $student, 'levels' => $levels, 'fees' => $fees, 'requirements' => $departmentReq]);
+        $sections = Section::all();
+
+        return view('enrollment.payment-form', ['student' => $student, 'levels' => $levels, 'fees' => $fees, 'requirements' => $departmentReq, 'sections' => $sections]);
     }
 
     public function enrollNewStudent(Request $request)
@@ -200,7 +205,16 @@ class EnrollmentController extends Controller
             ]);
         }
 
+        $current_sy = SchoolYear::where('status', 'active')->first();
+
+        $enroll = Enroll::Where('school_year_id', $current_sy->id)->first();
+
+        $enroll->update([
+            'students' => $enroll->students + 1,
+        ]);
+
         $student->payments()->create([
+            'school_year_id' => $current_sy->id,
             'description' => $desc,
             'amount' => $request->input('entrance') + $request->input('misc') + $request->input('tuition') + $request->input('books') + $request->input('handbook') + $request->input('id_fee'),
             'type' => 'STUDENT',
@@ -225,11 +239,13 @@ class EnrollmentController extends Controller
         $user->assignRole(RoleType::STUDENT);
 
         $student->grades()->create([
+            'section_id' => $request->input('section'),
             'grade_level_id' => $student->grade_entered_id,
             'average' => 0,
         ]);
 
         $student->update([
+            'section_id' => $request->input('section'),
             'status' => 'ENROLLED'
         ]);
 

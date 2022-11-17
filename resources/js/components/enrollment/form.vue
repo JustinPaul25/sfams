@@ -244,8 +244,11 @@
               <div class="bg-white p-4 rounded border border-blue-600">
                 <div class="sm:flex-auto text-right">
                   <h1 class="text-xl font-semibold text-blue-700">{{ student.first_name }} {{ student.middle_name }} {{ student.last_name }}</h1>
-                  <h1 class="text-sm font-semibold text-blue-700 cursor-pointer hover:opacity-75">Requirements</h1>
-                  <p class="mt-2 text-sm text-gray-700">{{ student.grade_level.level }}</p>
+                  <h1 class="text-sm font-semibold text-blue-700 cursor-pointer hover:opacity-75">{{ student.grade_level.level }}</h1>
+                  <select v-model="form.section" class="text-right w-1/2 h-8 p-2 text-xs placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Total">
+                    <option value="" disabled>Select Section</option>
+                    <option v-for="section in sections" :value="section.id">{{ section.section }}</option>
+                  </select>
                 </div>
                 <div class="flow-root mt-6">
                   <ul role="list" class="-my-5 divide-y divide-gray-200">
@@ -476,7 +479,7 @@
   import _debounce from "lodash/debounce";
 
     export default {
-        props: ['student', 'levels', 'fees', 'requirements'],
+        props: ['student', 'levels', 'fees', 'requirements', 'sections'],
         components: {
 
         },
@@ -486,6 +489,7 @@
             isOpen: false,
             isOpenInformation: false,
             form: {
+              section: '',
               requirements: null,
               student_id: null,
               fees: null,
@@ -563,15 +567,23 @@
           },
           async processPayment() {
             this.isSending = true
-            this.form.requirements = this.requirements
-            this.form.student_id = this.student.id
-            this.form.fees = this.fees
-            this.print()
-            await axios.post('/enrollment/new-student', this.form)
-            .then(response => {
-              this.isSending = false
-            })
-            window.location.href = '/enrollment-applications';
+            if(this.form.section !== '') {
+              this.form.requirements = this.requirements
+              this.form.student_id = this.student.id
+              this.form.fees = this.fees
+              this.print()
+              await axios.post('/enrollment/new-student', this.form)
+              .then(response => {
+                this.isSending = false
+              })
+              window.location.href = '/enrollment-applications';
+            } else {
+              this.$swal.fire({
+                  icon: 'Error',
+                  title: 'Please select section',
+                  text: 'Select before registering a student.',
+              })
+            }
           },
           dateNow() {
             const date = new Date();

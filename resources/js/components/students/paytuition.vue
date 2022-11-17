@@ -52,7 +52,7 @@
               <div class="bg-white p-4 rounded border border-blue-600">
                 <div class="sm:flex-auto text-right">
                   <h1 class="text-xl font-semibold text-blue-700">{{ student.first_name }} {{ student.last_name }}</h1>
-                  <p class="mt-2 text-sm text-gray-700">{{ student.grade_level.level }}</p>
+                  <p class="mt-2 text-sm text-gray-700">{{ student.grade_level.level }} - {{ student.section.section }}</p>
                 </div>
                 <div v-if="account" class="flow-root mt-6">
                   <ul role="list" class="-my-5 divide-y divide-gray-200">

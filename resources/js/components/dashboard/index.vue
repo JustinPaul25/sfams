@@ -34,7 +34,7 @@
             <div class="mt-8">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-lg leading-6 font-medium text-blue-700">Overview</h2>
-                <div class="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-3">
                     <div class="bg-blue-200 overflow-hidden shadow rounded-lg">
                         <div class="p-5">
                             <div class="flex items-center">
@@ -198,11 +198,17 @@
                 </div>
             </div>
         </main>
+        <chart-component></chart-component>
     </div>
 </template>
 
 <script>
+import ChartComponent from '../incomechart.vue'
+
 export default {
+    components: {
+        ChartComponent
+    },
     data() {
         return {
             transactions: [],

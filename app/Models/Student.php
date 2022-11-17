@@ -11,7 +11,7 @@ class Student extends Model
 
     protected $guarded = [];
 
-    protected $appends = ['name', 'grade_level'];
+    protected $appends = ['name', 'grade_level', 'section'];
 
     protected $casts = [
         'created_at'  => 'date:m-d-Y',
@@ -25,6 +25,16 @@ class Student extends Model
     public function getGradeLevelAttribute()
     {
         return GradeLevel::find($this->grade_level_id);
+    }
+
+    public function getSectionAttribute()
+    {
+        return Section::find($this->section_id);
+    }
+
+    public function section()
+    {
+        return $this->belongsTo(Section::class);
     }
     
     public function gradeEntered()
