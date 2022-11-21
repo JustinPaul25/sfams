@@ -8,6 +8,10 @@ import MaskedInput from "vue-masked-input";
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/src/sweetalert2.scss';
 import VueHtmlToPaper from 'vue-html-to-paper';
+import VueFusionCharts from 'vue-fusioncharts';
+import FusionCharts from 'fusioncharts';
+import Charts from 'fusioncharts/fusioncharts.charts';
+import Vue from 'vue';
 
 const options = {
     confirmButtonColor: '#2563EB',
@@ -67,8 +71,17 @@ Vue.component('sweet-modal', SweetModal);
 Vue.component('sweet-modal-tab', SweetModalTab);
 Vue.component('masked-input', MaskedInput);
 
+//portal
+Vue.component('student-dashboard', require('./components/portal/student/dashboard').default);
+Vue.component('student-profile', require('./components/portal/student/profile').default);
+Vue.component('student-account', require('./components/portal/student/account').default);
+Vue.component('branch-dashboard', require('./components/portal/branch/dashboard').default);
+Vue.component('branch-account', require('./components/portal/branch/account').default);
+
+
 Vue.use(VueSweetalert2, options)
 Vue.use(VueHtmlToPaper, printoptions);
+Vue.use(VueFusionCharts, FusionCharts, Charts);
 
 Vue.mixin(global)
 

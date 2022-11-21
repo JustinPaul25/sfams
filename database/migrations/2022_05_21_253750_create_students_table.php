@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('enrollment_id')->nullable();
             $table->string('email')->unique();
             $table->enum('department', ['KINDER', 'ELEM', 'SRH'])->nullable();
-            $table->enum('status', ['PENDING', 'FAILED', 'ENROLLED', 'REENROLL'])->nullable();
+            $table->enum('status', ['PENDING', 'ENROLLED', 'REENROLL','GRADUATED', 'TRANSFERED'])->nullable();
             $table->string('first_name')->nullable();
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nulalble();

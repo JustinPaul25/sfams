@@ -26,13 +26,17 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "@tensorflow/tfjs": "^4.1.0",
+        "@tensorflow/tfjs-vis": "^1.5.1",
         "@types/regression": "^2.0.2",
-        "chart.js": "^4.0.1",
+        "chart.js": "^3.9.1",
         "es6-promise": "^4.2.8",
         "number-to-words": "^1.2.4",
         "regression": "^2.0.1",
         "sweet-modal-vue": "^2.0.0",
         "sweetalert2": "^11.4.14",
+        "vue-chartjs": "^4.1.2",
+        "vue-fusioncharts": "^3.2.0",
         "vue-html-to-paper": "^1.4.4",
         "vue-masked-input": "^0.5.2",
         "vue-sweetalert2": "^5.0.5",

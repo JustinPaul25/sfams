@@ -7,10 +7,10 @@
             <div class="flex-1 min-w-0">
             <!-- Profile -->
             <div class="flex items-center">
-                <img class="hidden h-16 w-16 rounded-full sm:block" src="https://scontent-xsp1-3.xx.fbcdn.net/v/t1.6435-9/120167119_3184922811646472_8629084615087030851_n.png?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfICNTZOqcTSHXbAD4omEdEQzjZXF8gS0RDONlcXyBLanEabTepvnzsJEM7DrwTMmWuOpxeJAjmwXztGFWxZpy&_nc_ohc=DVi6lKcXvHMAX9jS5NM&_nc_ht=scontent-xsp1-3.xx&oh=00_AT_S5LGjPlFHTKPM1K7RdR0qqVtA1Kky0paN2o7CzIIWEQ&oe=62C0AEF9" alt="">
+                <img class="hidden h-16 w-16 rounded-full sm:block" src="{{ asset('/img/logo.jpg') }}" alt="">
                 <div>
                 <div class="flex items-center">
-                    <img class="h-16 w-16 rounded-full sm:hidden" src="https://scontent-xsp1-3.xx.fbcdn.net/v/t1.6435-9/120167119_3184922811646472_8629084615087030851_n.png?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfICNTZOqcTSHXbAD4omEdEQzjZXF8gS0RDONlcXyBLanEabTepvnzsJEM7DrwTMmWuOpxeJAjmwXztGFWxZpy&_nc_ohc=DVi6lKcXvHMAX9jS5NM&_nc_ht=scontent-xsp1-3.xx&oh=00_AT_S5LGjPlFHTKPM1K7RdR0qqVtA1Kky0paN2o7CzIIWEQ&oe=62C0AEF9" alt="">
+                    <img class="h-16 w-16 rounded-full sm:hidden" src="{{ asset('/img/logo.jpg') }}" alt="">
                     <h1 class="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:leading-9 sm:truncate">PBCCMI</h1>
                 </div>
                 <dl class="mt-6 flex flex-col sm:ml-3 sm:mt-1 sm:flex-row sm:flex-wrap">

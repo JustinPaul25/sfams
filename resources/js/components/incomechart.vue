@@ -1,5 +1,5 @@
 <template>
-    <canvas id="incChart" width="400" height="400"></canvas>
+    <canvas id="myChart" width="400" height="400"></canvas>
 </template>
 
 <script>
@@ -9,20 +9,7 @@
     export default {
         data() {
             return {
-                rawData: [
-                    [10, 2.1],
-                    [23, 2.4],
-                    [38, 2.6],
-                    [46, 2.8],
-                    [59, 3]
-                ],
-                result: regression.linear([
-                    [10, 2.1],
-                    [23, 2.4],
-                    [38, 2.6],
-                    [46, 2.8],
-                    [59, 3]
-                ])
+                rawData: []
             }
         },
         methods: {
@@ -56,37 +43,49 @@
                 });
 
                 return dataArr
-            }
-        },
-        mounted() {
-            const ctx = document.getElementById('incChart');
+            },
+            async getDatas() {
+                axios.get('/enroll-data')
+                .then(response => {
+                    response.data.enroll.forEach((val, key, arr) => {
+                        this.rawData.push([val.students, parseInt(val.school_year.from)])
+                        if (Object.is(arr.length - 1, key)) {
+                            this.rawData.push([(parseFloat(val.students) * parseFloat(response.data.rate)) +  parseFloat(val.students), parseInt(val.school_year.to)])
+                        }
+                    });
+                    return
+                })
+            },
+            constructDatas() {
+                const ctx = document.getElementById('myChart');
 
-            const myChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    datasets: [{
-                        type: 'line',
-                        label: 'Sample Data',
-                        data: this.convertRawData(),
-                        backgroundColor: '#23408E',
-                        showLine: false
+                const myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        datasets: [{
+                            type: 'line',
+                            label: 'Sample Data',
+                            data: this.convertRawData(),
+                            backgroundColor: '#23408E'
+                        }],
                     },
-                    {
-                        type: 'line',
-                        label: 'Theoretically calculated data',
-                        data: this.setTheoryData(),
-                        backgroundColor: '#2DAAE2'
-                    }],
-                },
-                options: {
-                    scales: {
-                        x: {
-                            type: 'linear',
-                            position: 'bottom'
+                    options: {
+                        scales: {
+                            x: {
+                                type: 'linear',
+                                position: 'bottom',
+                                ticks: {
+                                    stepSize: 1
+                                }
+                            }
                         }
                     }
-                }
-            });
+                });
+            }
+        },
+        async mounted() {
+            await this.getDatas()
+            this.constructDatas();
         }
     }
 </script>

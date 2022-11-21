@@ -55,13 +55,13 @@ class BranchController extends Controller
             'branch_id' => $branch->id,
             'back_account' => 0,
             'renewal' => $utility->renewal,
-            'royalty' => $utility->royalty,
-            'per_student_total' => $request->input('students') * $utility->per_student,
+            'royalty' => $request->input('students') * $utility->per_student,
+            'per_student_total' => 0,
         ]);
 
         $user->assignRole(RoleType::BRANCH);
 
-        Mail::to($user->email)->send(new CreateBranch($branch));
+        Mail::to($user->email)->send(new CreateBranch($branch, $user));
 
         return 'Branch Created';
     }

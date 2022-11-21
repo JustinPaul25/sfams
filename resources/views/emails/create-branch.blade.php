@@ -3,7 +3,7 @@
 
 This is your credentials to login in our web portal.
 
-Email: {{ $branch->email }}<br>
+Email: {{ $user->email }}<br>
 Password: branchpassword
 
 Since the password is default please login and reset password immediately.

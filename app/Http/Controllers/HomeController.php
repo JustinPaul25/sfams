@@ -25,8 +25,14 @@ class HomeController extends Controller
     {
         if(auth()->user()) {
             if(auth()->user()->isStudent()) {
-                return redirect('/my-profile');
-            } else {
+                $user = auth()->user();
+
+                return view('home', ['student' => $user->student]);
+            } if(auth()->user()->isBranch()) {
+                $user = auth()->user();
+
+                return view('home', ['branch' => $user->branch]);
+            }else {
                 return view('home');
             }
         } else {

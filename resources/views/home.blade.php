@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <dashboard></dashboard>
+    @if (auth()->user()->isStudent())
+        <student-dashboard :student="{{ json_encode($student) }}"></student-dashboard>
+    @elseif (auth()->user()->isBranch())
+    <branch-dashboard :branch="{{ json_encode($branch) }}"></branch-dashboard>
+    @else
+        <dashboard></dashboard>
+    @endif
 @endsection

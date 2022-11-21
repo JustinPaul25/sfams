@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\PayBranch;
 use App\Models\Branch;
+use App\Mail\PayBranch;
 use App\Models\Student;
 use App\Mail\PayTuition;
+use App\Models\SchoolYear;
 use Illuminate\Http\Request;
 use App\Models\PaymentUtility;
 use Illuminate\Support\Facades\Mail;
@@ -32,13 +33,24 @@ class PaymentController extends Controller
             'graduation' => $account->graduation - $request->input('graduation'),
         ]);
 
+        $current_sy = SchoolYear::where('status', 'active')->first();
+
         $student->payments()->create([
+            'school_year_id' => $current_sy->id,
             'description' => $desc,
             'amount' => $request->input('entrance') + $request->input('misc') + $request->input('tuition') + $request->input('books') + $request->input('handbook') + $request->input('id_fee') + $request->input('back_account') + $request->input('closing') + $request->input('graduation'),
             'type' => 'STUDENT',
+            'section_id' => $request->section_id,
+            'grade_level_id' => $student->grade_entered_id,
         ]);
 
         Mail::to($student->email)->send(new PayTuition($student, $desc));
+
+        activity()
+            ->performedOn($student)
+            ->causedBy(auth()->user())
+            ->withProperties(['action' => 'Recieve payment on student.'])
+            ->log($desc);
 
         return 'Successfully Paid';
     }
@@ -59,13 +71,22 @@ class PaymentController extends Controller
             'per_student_total' => $account->per_student_total - $request->input('per_student_total'),
         ]);
 
+        $current_sy = SchoolYear::where('status', 'active')->first();
+
         $branch->payments()->create([
+            'school_year_id' => $current_sy->id,
             'description' => $desc,
             'amount' => $request->input('back_account') + $request->input('renewal') + $request->input('royalty') + $request->input('per_student_total'),
             'type' => 'BRANCH',
         ]);
 
         Mail::to($user->email)->send(new PayBranch($branch, $desc));
+
+        activity()
+            ->performedOn($branch)
+            ->causedBy(auth()->user())
+            ->withProperties(['action' => 'Recieve Payment on branch.'])
+            ->log($desc);
 
         return 'Successfully Paid';
     }

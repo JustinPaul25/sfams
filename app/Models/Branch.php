@@ -11,6 +11,18 @@ class Branch extends Model
 
     protected $guarded = [];
 
+    protected $appends = ['account', 'payments'];
+
+    public function getAccountAttribute()
+    {
+        return BranchAccount::where('branch_id', $this->id)->first();
+    }
+
+    public function getPaymentsAttribute()
+    {
+        return Payment::where('branch_id', $this->id)->get();
+    }
+
     public function payments()
     {
         return $this->hasMany(Payment::class);
@@ -24,5 +36,10 @@ class Branch extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function account()
+    {
+        return $this->hasOne(Account::class);
     }
 }

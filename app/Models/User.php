@@ -11,15 +11,17 @@ use Illuminate\Notifications\Notifiable;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Spatie\MediaLibrary\MediaCollections\File;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Rappasoft\LaravelAuthenticationLog\Traits\AuthenticationLoggable;
 
 class User extends Authenticatable implements HasMedia
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
-    use InteractsWithMedia;
+    use InteractsWithMedia, AuthenticationLoggable;
 
     /**
      * The attributes that are mass assignable.
@@ -59,6 +61,13 @@ class User extends Authenticatable implements HasMedia
         return $roles[0];
     }
 
+    protected function name(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => ucwords($value),
+        );
+    }
+
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('profile')
@@ -95,8 +104,18 @@ class User extends Authenticatable implements HasMedia
         return $this->hasRole(RoleType::STUDENT);
     }
 
+    public function isBranch(): bool
+    {
+        return $this->hasRole(RoleType::BRANCH);
+    }
+
     public function student()
     {
-        return $this->hasOne(Student::class);
+        return $this->belongsTo(Student::class);
+    }
+
+    public function branch()
+    {
+        return $this->hasOne(Branch::class);
     }
 }

@@ -3,7 +3,7 @@
 namespace App;
 
 use App\Models\Notification;
-
+use App\Models\SchoolYear;
 
 class App
 {
@@ -19,6 +19,7 @@ class App
             'is_admin' => auth()->check() ? auth()->user()->isAdmin() : null,
             'logs' => Notification::with('user')->get(),
             'app_logo' => url('img/logo.jpg'),
+            'school_year' => SchoolYear::where('status', 'active')->first(),
         ];
     }
 }

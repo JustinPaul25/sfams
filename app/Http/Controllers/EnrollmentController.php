@@ -218,6 +218,8 @@ class EnrollmentController extends Controller
             'description' => $desc,
             'amount' => $request->input('entrance') + $request->input('misc') + $request->input('tuition') + $request->input('books') + $request->input('handbook') + $request->input('id_fee'),
             'type' => 'STUDENT',
+            'section_id' => $request->input('section'),
+            'grade_level_id' => $student->grade_entered_id,
         ]);
         
         $student->studentRequirement()->create([
@@ -233,6 +235,7 @@ class EnrollmentController extends Controller
         $user = User::create([
             'name' => $student->first_name.' '.$student->middle_name.' '.$student->last_name,
             'email' => $student->email,
+            'student_id' => $student->id,
             'password' => Hash::make('sfams_password_'.$student->id),
         ]);
 
@@ -242,6 +245,7 @@ class EnrollmentController extends Controller
             'section_id' => $request->input('section'),
             'grade_level_id' => $student->grade_entered_id,
             'average' => 0,
+            'school_year_id' => $current_sy->id,
         ]);
 
         $student->update([

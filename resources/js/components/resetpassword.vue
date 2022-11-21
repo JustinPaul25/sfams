@@ -2,7 +2,7 @@
     <div class="pt-8 min-h-screen bg-blue-100">
         <div class="max-w-2xl mx-auto mt-20 p-20 border rounded-md bg-white">
             <div class="sm:flex-auto">
-                <h1 class="text-2xl font-semibold text-gray-900 mb-4">Reset/Update Password</h1>
+                <h1 class="text-2xl font-semibold text-gray-900 mb-4">Reset Password</h1>
             </div>
             <form @submit.prevent="updatePassword()">
                 <label for="input-group-1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password</label>
@@ -24,7 +24,7 @@
                     <input v-model="form.retype_password" type="password" id="input-group-1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 </div>
                 <div class="px-4 py-3 text-right sm:px-6">
-                    <button v-if="!updating" type="submit" class="cursor-pointer ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Update</button>
+                    <button v-if="!updating" type="submit" class="cursor-pointer ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Update Password</button>
                     <button v-else disabled class="cursor-not-allowed ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Saving...</button>
                 </div>
             </form>

@@ -10,4 +10,11 @@ class Enroll extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    protected $appends = ['school_year'];
+
+    public function getSchoolYearAttribute()
+    {
+        return SchoolYear::find($this->school_year_id);
+    }
 }

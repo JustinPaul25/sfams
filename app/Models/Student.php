@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Student extends Model
 {
@@ -11,7 +12,7 @@ class Student extends Model
 
     protected $guarded = [];
 
-    protected $appends = ['name', 'grade_level', 'section'];
+    protected $appends = ['name', 'grade_level', 'section', 'grade', 'account', 'requirements', 'payments', 'grades'];
 
     protected $casts = [
         'created_at'  => 'date:m-d-Y',
@@ -30,6 +31,49 @@ class Student extends Model
     public function getSectionAttribute()
     {
         return Section::find($this->section_id);
+    }
+
+    public function getAccountAttribute()
+    {
+        return Account::where('student_id', $this->id)->first();
+    }
+
+    public function getRequirementsAttribute()
+    {
+        return StudentRequirement::where('student_id', $this->id)->first();
+    }
+
+    public function getGradeAttribute()
+    {
+        $sy = SchoolYear::where('status', 'active')->first();
+
+        $grade = Grade::where('student_id', $this->id)->where('school_year_id', $sy->id)->first();
+
+        return $grade;
+    }
+
+    public function getGradesAttribute()
+    {
+        return Grade::where('student_id', $this->id)->get();
+    }
+
+    public function getPaymentsAttribute()
+    {
+        return Payment::where('student_id', $this->id)->get();
+    }
+
+    protected function firstName(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => ucwords($value),
+        );
+    }
+
+    protected function lastName(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => ucwords($value),
+        );
     }
 
     public function section()

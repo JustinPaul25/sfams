@@ -583,6 +583,7 @@
                   title: 'Please select section',
                   text: 'Select before registering a student.',
               })
+              this.isSending = false
             }
           },
           dateNow() {

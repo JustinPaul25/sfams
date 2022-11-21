@@ -10,8 +10,11 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UtilitiesController;
 use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\BranchPortalController;
+use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\TransactionsController;
+use App\Http\Controllers\StudentPortalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +68,8 @@ Route::group(['middleware' => ['role:Administrator|staff']], function () {
     Route::get('/branch/{branch}/pay', [BranchController::class, 'pay']);
     Route::get('/branch/{branch}/transactions', [BranchController::class, 'transactions']);
     Route::get('/branch/{branch}/account', [BranchController::class, 'account']);
+
+    Route::get('/enroll-data', [EnrollController::class, 'datas']);
 });
 
 Route::group(['middleware' => ['role:Administrator']], function () {
@@ -101,6 +106,11 @@ Route::group(['middleware' => ['role:Staff']], function () {
 });
 
 Route::group(['middleware' => ['role:Student']], function () {
-    Route::get('/my-profile', [StudentController::class, 'studentProfile']);
+    Route::get('/my-profile', [StudentPortalController::class, 'profile']);
+    Route::get('/student-account', [StudentPortalController::class, 'account']);
     Route::get('/notifications', [NotificationController::class, 'index']);
+});
+
+Route::group(['middleware' => ['role:Branch']], function () {
+    Route::get('/branch-account', [BranchPortalController::class, 'account']);
 });
