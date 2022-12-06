@@ -71,6 +71,31 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-span-8 sm:col-span-4 lg:col-span-2">
+                    <div class="relative inline-block text-gray-700 w-full">
+                        <select v-model="status" class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Regular input">
+                            <option value="">Status: Enrolled & Non-Enrolled</option>
+                            <option value="ENROLLED" selected>Status: Enrolled</option>
+                            <option value="REENROLL" >Status: Non-Enrolled</option>
+                        </select>
+                        <div
+                            class="absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none"
+                        >
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500 h-6 w-6"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        </div>
+                        <div
+                            class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"
+                        >
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"
+                                fill-rule="evenodd"
+                            ></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="mt-2 flex flex-col">
                 <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -94,20 +119,18 @@
                                 <td class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 hover:text-blue-700"><a :href="`/student/${student.id}`">{{ student.last_name }}, {{ student.first_name }}</a></td>
                                 <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">{{ student.grade_level.level }} - {{ student.section.section }}</td>
                                 <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">
-                                    <span v-if="student.status == 'ENROLLED'" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-blue-200 uppercase last:mr-0 mr-1">
+                                    <span v-if="student.status == 'ENROLLED'" class="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blue-600 bg-blue-200 uppercase last:mr-0 mr-1">
                                         Enrolled
                                     </span>
-                                    <span v-if="student.status == 'PENDING'" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200 uppercase last:mr-0 mr-1">
-                                        Waiting for Payment
-                                    </span>
-                                    <span v-if="student.status == 'REJECTED'" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-red-600 bg-red-200 uppercase last:mr-0 mr-1">
-                                        Canceled
+                                    <span v-if="student.status == 'REENROLL'" class="text-xs font-semibold inline-block py-1 px-2 rounded-full text-yellow-600 bg-yellow-200 uppercase last:mr-0 mr-1">
+                                        Non-Enrolled / Old Student
                                     </span>
                                 </td>
                                 <td class="relative whitespace-nowrap py-2 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                    <button v-if="checkRequirements(student.student_requirement) > 0" @click="openRequirementsModal(student.student_requirement)" class="text-green-500 hover:opacity-75 mr-3">Submit Requirement<span class="sr-only">, AAPS0L</span></button>
-                                    <a :href="`/student/${student.id}/pay-tuition`" class="text-blue-700 hover:opacity-75 mr-3">Pay Tuition<span class="sr-only">, AAPS0L</span></a>
-                                    <a :href="`/student/${student.id}`" class="text-blue-500 hover:opacity-75">View<span class="sr-only">, AAPS0L</span></a>
+                                    <button v-if="checkRequirements(student.student_requirement) > 0" @click="openRequirementsModal(student.student_requirement)" class="text-green-500 hover:opacity-75 mr-3 font-semibold">Submit Requirement<span class="sr-only">, AAPS0L</span></button>
+                                    <a v-if="student.status == 'REENROLL'" :href="`/student/${student.id}/pay-tuition`" class="text-yellow-500 hover:opacity-75 mr-3">Enroll<span class="sr-only">, AAPS0L</span></a>
+                                    <button @click="openGradesModal(student)" class="text-blue-700 hover:opacity-75 mr-3 font-semibold">Grades<span class="sr-only">, AAPS0L</span></button>
+                                    <a :href="`/student/${student.id}/pay-tuition`" class="text-orange-500 hover:opacity-75 mr-3">Pay Tuition<span class="sr-only">, AAPS0L</span></a>
                                 </td>
                             </tr>
 
@@ -162,11 +185,26 @@
                 </div>
             </div>
         </sweet-modal>
+        <sweet-modal ref="gradesModal">
+            <div>
+                <p class="font-bold text-lg" v-if="selectedStudent">{{ selectedStudent.last_name }}, {{ selectedStudent.first_name }} Grades</p>
+                <div>
+                    <div class="mt-2" v-for="(grade, index) in grades" :key="index">
+                        <div class="flex items-center">
+                            <label class="font-bold">{{ grade.grade_level.level }} (S.Y.{{grade.school_year.from}} - {{grade.school_year.to}})</label>
+                            <input @change="() => { if(grade.average > 101 || grade.average < 0) { grade.average = 0 }}" v-model="grade.average" :name="`grades[${index}][average]`" type="number" max="100" min="0" step="0.1" class="ml-auto h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-right" placeholder="Grades">
+                        </div>
+                    </div>
+                </div>
+                <button @click="updateGrade()" class="mt-2 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Update Grades</button>
+            </div>
+        </sweet-modal>
     </div>
 </template>
 
 <script>
     import { mapGetters } from "vuex";
+    import _ from 'lodash';
 
     export default {
         props: ['levels', 'branches'],
@@ -176,6 +214,9 @@
                 search: '',
                 level: '',
                 sort_by: 'asc',
+                status: '',
+                grades: [],
+                selectedStudent: null,
                 form: {
                     ECCD_checklist: false,
                     birth_cert: false,
@@ -201,6 +242,9 @@
             },
             sort_by(newSearch, oldSearch) {
                 this.getStudents()
+            },
+            status(newSearch, oldSearch) {
+                this.getStudents()
             }
         },
         methods: {
@@ -209,8 +253,22 @@
                     params: {
                         name: this.search,
                         level: this.level,
-                        sort_by: this.sort_by
+                        sort_by: this.sort_by,
+                        status: this.status
                     }
+                });
+            },
+            openGradesModal(student) {
+                this.grades = student.grades
+                this.selectedStudent = student
+                this.$refs.gradesModal.open()
+            },
+            async updateGrade() {
+                await axios.put(`/update-grades/${this.selectedStudent.id}`, {
+                    grades: this.grades
+                }).then(response => {
+                    this.$refs.gradesModal.close()
+                    this.getStudents()
                 });
             },
             openRequirementsModal(requirements) {

@@ -6834,10 +6834,15 @@
   "resolved" "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@*", "vue@^2", "vue@^2.0.0", "vue@^2.2.6", "vue@^2.6.12", "vue@^3.0.0-0 || ^2.6.0", "vue@2.x":
+"vue@*", "vue@^2", "vue@^2.0.0", "vue@^2.2.6", "vue@^2.6.12", "vue@^2.6.14", "vue@^3.0.0-0 || ^2.6.0", "vue@2.x":
   "integrity" "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz"
   "version" "2.6.14"
+
+"vuejs-loading-screen@^1.10.2":
+  "integrity" "sha512-b/g5JnZuLuxpTDT9LSimHXQcMdsjAlYY8Mbbxqe5RQPH2ZtuVjGSF1F9BEMmnvOeCvgeKYCCgSsqP+fdLhWvOQ=="
+  "resolved" "https://registry.npmjs.org/vuejs-loading-screen/-/vuejs-loading-screen-1.10.2.tgz"
+  "version" "1.10.2"
 
 "vuex-persistedstate@^4.1.0":
   "integrity" "sha512-3SkEj4NqwM69ikJdFVw6gObeB0NHyspRYMYkR/EbhR0hbvAKyR5gksVhtAfY1UYuWUOCCA0QNGwv9pOwdj+XUQ=="

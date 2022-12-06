@@ -10,4 +10,8 @@ class SchoolYear extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    protected $casts = [
+        'created_at'  => 'date:m-d-Y',
+    ];
 }

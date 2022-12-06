@@ -11,6 +11,7 @@ import VueHtmlToPaper from 'vue-html-to-paper';
 import VueFusionCharts from 'vue-fusioncharts';
 import FusionCharts from 'fusioncharts';
 import Charts from 'fusioncharts/fusioncharts.charts';
+import loading from 'vuejs-loading-screen'
 import Vue from 'vue';
 
 const options = {
@@ -34,7 +35,6 @@ const printoptions = {
     windowTitle: window.document.title, // override the window title
 }
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('dashboard', require('./components/dashboard/index.vue').default);
 
 Vue.component('students', require('./components/students/index.vue').default);
@@ -66,6 +66,7 @@ Vue.component('branch-view', require('./components/branch/view.vue').default);
 Vue.component('branch-pay', require('./components/branch/pay.vue').default);
 
 Vue.component('reset-password', require('./components/resetpassword.vue').default);
+Vue.component('settings', require('./components/Settings.vue').default);
 
 Vue.component('sweet-modal', SweetModal);
 Vue.component('sweet-modal-tab', SweetModalTab);
@@ -82,6 +83,17 @@ Vue.component('branch-account', require('./components/portal/branch/account').de
 Vue.use(VueSweetalert2, options)
 Vue.use(VueHtmlToPaper, printoptions);
 Vue.use(VueFusionCharts, FusionCharts, Charts);
+Vue.use(loading, {
+  bg: 'rgba(60, 131, 246, 0.7)',
+  icon: 'refresh',
+  slot: `
+    <div class="px-5 py-3 bg-red-500 rounded">
+      <h3 class="text-3xl text-white text-center"><i class="fas fa-spinner fa-spin"></i>Do not close this tab and make sure you have stable internet connection.<br>We are processing your request...</h3>
+    </div>
+  `,
+  size: 3,
+  icon_color: 'white',
+})
 
 Vue.mixin(global)
 

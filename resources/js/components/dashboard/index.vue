@@ -2,32 +2,35 @@
     <div>
         <main class="flex-1 pb-8">
             <!-- Page header -->
-            <div class="bg-white shadow">
-                <div class="px-4 sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
-                <div class="py-6 md:flex md:items-center md:justify-between lg:border-t lg:border-gray-200">
-                    <div class="flex-1 min-w-0">
-                    <!-- Profile -->
-                    <div class="flex items-center">
-                        <img class="hidden h-16 w-16 rounded-full sm:block" :src="app.app_logo" alt="">
-                        <div>
-                        <div class="flex items-center">
-                            <img class="h-16 w-16 rounded-full sm:hidden" :src="app.app_logo" alt="">
-                            <h1 class="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:leading-9 sm:truncate">PBCCMI</h1>
+            <div class="bg-white shadow flex items-center">
+                <div class="px-4 sm:px-6 lg:max-w-6xl lg:px-8 mr-auto">
+                    <div class="py-6 md:flex md:items-center md:justify-between lg:border-t lg:border-gray-200">
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center">
+                                <img class="hidden h-16 w-16 rounded-full sm:block" :src="app.app_logo" alt="">
+                                <div>
+                                    <div class="flex items-center">
+                                        <img class="h-16 w-16 rounded-full sm:hidden" :src="app.app_logo" alt="">
+                                        <h1 class="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:leading-9 sm:truncate">PBCCMI</h1>
+                                    </div>
+                                    <dl class="mt-6 flex flex-col sm:ml-3 sm:mt-1 sm:flex-row sm:flex-wrap">
+                                        <dt class="sr-only">Company</dt>
+                                        <dd class="flex items-center text-sm text-gray-500 font-medium capitalize sm:mr-6">
+                                        <!-- Heroicon name: solid/office-building -->
+                                        <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd" />
+                                        </svg>
+                                        {{ app.current_user.name }} ADMIN
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
                         </div>
-                        <dl class="mt-6 flex flex-col sm:ml-3 sm:mt-1 sm:flex-row sm:flex-wrap">
-                            <dt class="sr-only">Company</dt>
-                            <dd class="flex items-center text-sm text-gray-500 font-medium capitalize sm:mr-6">
-                            <!-- Heroicon name: solid/office-building -->
-                            <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd" />
-                            </svg>
-                            {{ app.current_user.name }} ADMIN
-                            </dd>
-                        </dl>
-                        </div>
-                    </div>
                     </div>
                 </div>
+                <div class="p-8 text-right">
+                    <p class="font-bold">School Year:</p>
+                    <p class="text-blue-700 text-xl">{{ app.school_year.from }} - {{ app.school_year.to }}</p>
                 </div>
             </div>
 

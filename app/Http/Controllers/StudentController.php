@@ -26,9 +26,13 @@ class StudentController extends Controller
             $query = $query->where('grade_level_id', $request->input('level'));
         }
 
-        $query = $query->where(function ($query) {
-            $query->where('status', '!=', 'PENDING');
-        });
+        if($request->filled('status')) {
+            $query = $query->where('status', $request->input('status'));
+        } else {
+            $query = $query->where(function ($query) {
+                $query->where('status', '!=', 'PENDING');
+            });
+        }
         
         $query = $query->with(['gradeLevel', 'studentRequirement'])->get();
 

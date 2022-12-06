@@ -4,14 +4,16 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LogsController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\GradeController;
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UtilitiesController;
 use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\SchoolYearController;
 use App\Http\Controllers\BranchPortalController;
-use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\TransactionsController;
 use App\Http\Controllers\StudentPortalController;
@@ -79,6 +81,9 @@ Route::group(['middleware' => ['role:Administrator']], function () {
     Route::get('/utilities/form', function () {
         return view('utility.form');
     });
+    Route::get('/settings', function() {
+        return view('settings');
+    });
 
     Route::get('/branch-utlity/{branchUtility}', [UtilitiesController::class, 'branch']);
     Route::put('/branch-utility/{branchUtility}', [UtilitiesController::class, 'branchUpdate']);
@@ -98,7 +103,12 @@ Route::group(['middleware' => ['role:Administrator']], function () {
     Route::get('/transactions', [TransactionsController::class, 'list']);
     Route::get('/full-transactions', [TransactionsController::class, 'fullTransactions']);
 
+    Route::get('/school-years', [SchoolYearController::class, 'list']);
+    Route::post('/new-school-year', [SchoolYearController::class, 'newSchoolYear']);
+
     Route::get('/logs', [LogsController::class, 'index']);
+
+    Route::put('/update-grades/{student}', [GradeController::class, 'update']);
 });
 
 Route::group(['middleware' => ['role:Staff']], function () {
