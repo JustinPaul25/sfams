@@ -286,11 +286,19 @@ class EnrollmentController extends Controller
 
         $desc = $desc.' [Entrance: ₱ '.$request->input('entrance').', Miscellaneous: ₱ '.$request->input('misc').', Tuition: ₱ '.$request->input('tuition').', Books: ₱ '.$request->input('books').', Hand Book: ₱ '.$request->input('handbook').', Student ID: ₱ '.$request->input('id_fee').'] Discount: ₱'.$request->input('discount').'.';
 
+        if($request->tuition_discount == 50) {
+            $tuition = $request->input('fees')['tuition'] * .5;
+        } else if($request->tuition_discount == 100) {
+            $tuition = 0;
+        } else {
+            $tuition = $request->input('fees')['tuition'];
+        }
+
         $student->account()->update([
             'back_account' => $student->account->back_account - $request->input('back_account'),
             'entrance' => $request->input('fees')['entrance'] - $request->input('entrance'),
             'misc' => $request->input('fees')['misc'] - $request->input('misc'),
-            'tuition' => $request->input('fees')['tuition'] - $request->input('tuition'),
+            'tuition' => $tuition - $request->input('tuition'),
             'books' => $request->input('fees')['books'] - $request->input('books'),
             'handbook' => $request->input('fees')['handbook'] - $request->input('handbook'),
             'id_fee' => $request->input('fees')['id_fee'] - $request->input('id_fee'),
@@ -300,7 +308,7 @@ class EnrollmentController extends Controller
         ]);
 
         if($request->input('discount') !== 0) {
-            $fees = ['back_account' => $student->account->back_account, 'entrance' => $student->account->entrance, 'misc' => $student->account->misc, 'tuition' => $student->account->tuition, 'books' => $student->account->books, 'handbook' => $student->account->handbook, 'id_fee' => $student->account->id_fee];
+            $fees = ['back_account' => $student->account->back_account, 'entrance' => $student->account->entrance, 'misc' => $student->account->misc, 'books' => $student->account->books, 'handbook' => $student->account->handbook, 'id_fee' => $student->account->id_fee];
 
             $dc = $request->input('discount');
             foreach($fees as $id => $fee) {

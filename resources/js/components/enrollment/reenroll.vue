@@ -232,9 +232,11 @@
                                 </div>
                                 <div class="flex-1 min-w-0">
                                 <p class="text-sm font-medium text-gray-900 truncate">Tuition Fee</p>
+                                    <p class="text-yellow-500 text-xs font-bold" v-if="form.tuition_discount === 100">100% dc</p>
+                                    <p class="text-yellow-500 text-xs font-bold" v-if="form.tuition_discount === 50">50% dc</p>
                                 </div>
                                 <div>
-                                <p class="text-sm text-blue-700 truncate">₱ {{ numberWithCommas(fees.tuition) }}</p>
+                                <p class="text-sm text-blue-700 truncate">₱ {{ numberWithCommas(renderTuition()) }}</p>
                                 </div>
                             </div>
                             <div class="text-right">
@@ -409,6 +411,7 @@ export default {
             isSending: false,
             isOpen: false,
             isOpenInformation: false,
+            discount: 0,
             form: {
                 section: '',
                 back_account: 0,
@@ -429,6 +432,7 @@ export default {
                 form_137: true,
                 good_moral: true,
                 picture: true,
+                tuition_discount: Number(0),
             }
         }
     },
@@ -449,13 +453,13 @@ export default {
             }
         }, 500),
         'form.tuition': _debounce(function(newVal, oldVal) {
-            if(newVal > parseInt(this.fees.tuition)) {
-            this.form.tuition = parseInt(this.fees.tuition)
+            if(newVal > this.renderTuition()) {
+                this.form.tuition = this.renderTuition()
             }
         }, 500),
         'form.books': _debounce(function(newVal, oldVal) {
             if(newVal > parseInt(this.fees.books)) {
-            this.form.books = parseInt(this.fees.books)
+                this.form.books = parseInt(this.fees.books)
             }
         }, 500),
         'form.handbook': _debounce(function(newVal, oldVal) {
@@ -470,6 +474,28 @@ export default {
         }, 500)
     },
     methods: {
+        checkGrade() {
+            const grade = this.student.grades[this.student.grades.length - 1]
+            if(grade.average > 89 && grade.average < 96) {
+                this.form.tuition_discount = Number(50)
+            }
+
+            if(grade.average > 95) {
+                this.form.tuition_discount = Number(100)
+            }
+        },
+        renderTuition() {
+            const tuition = this.fees.tuition
+            if(50 === Number(this.form.tuition_discount)) {
+                return Number(tuition) * .5;
+            }
+            if(100 === Number(this.form.tuition_discount)) {
+                return 0;
+            }
+            if(0 === Number(this.form.tuition_discount)) {
+                return Number(tuition);
+            }
+        },
         dateNow() {
             const date = new Date();
 
@@ -515,7 +541,7 @@ export default {
             return this.levels[selectedLevel+1].level
         },
         totalPayment(fees) {
-            return this.numberWithCommas((parseInt(this.student.account.back_account) + parseInt(fees.entrance) + parseInt(fees.misc) + parseInt(fees.tuition) + parseInt(fees.books) + parseInt(fees.handbook) + parseInt(fees.id_fee)) - this.form.discount)
+            return this.numberWithCommas((parseInt(this.student.account.back_account) + parseInt(fees.entrance) + parseInt(fees.misc) + this.renderTuition() + parseInt(fees.books) + parseInt(fees.handbook) + parseInt(fees.id_fee)) - this.form.discount)
         },
         amountTotal() {
             return parseInt(this.form.back_account) + parseInt(this.form.entrance) + parseInt(this.form.misc) + parseInt(this.form.tuition) + parseInt(this.form.books) + parseInt(this.form.handbook) + parseInt(this.form.id_fee);
@@ -523,6 +549,9 @@ export default {
         numberWithCommas(num) {
             return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
         },
+    },
+    mounted() {
+        this.checkGrade()
     }
 }
 </script>
