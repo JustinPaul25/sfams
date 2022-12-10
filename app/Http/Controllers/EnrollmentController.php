@@ -287,7 +287,7 @@ class EnrollmentController extends Controller
         $desc = $desc.' [Entrance: ₱ '.$request->input('entrance').', Miscellaneous: ₱ '.$request->input('misc').', Tuition: ₱ '.$request->input('tuition').', Books: ₱ '.$request->input('books').', Hand Book: ₱ '.$request->input('handbook').', Student ID: ₱ '.$request->input('id_fee').'] Discount: ₱'.$request->input('discount').'.';
 
         $student->account()->update([
-            'back_account' => $request->account->back_account - $request->input('back_account'),
+            'back_account' => $student->account->back_account - $request->input('back_account'),
             'entrance' => $request->input('fees')['entrance'] - $request->input('entrance'),
             'misc' => $request->input('fees')['misc'] - $request->input('misc'),
             'tuition' => $request->input('fees')['tuition'] - $request->input('tuition'),
@@ -340,7 +340,7 @@ class EnrollmentController extends Controller
             'amount' => $request->input('entrance') + $request->input('misc') + $request->input('tuition') + $request->input('books') + $request->input('handbook') + $request->input('id_fee'),
             'type' => 'STUDENT',
             'section_id' => $request->input('section'),
-            'grade_level_id' => $student->grade_entered_id,
+            'grade_level_id' => $student->grade_entered_id + 1,
         ]);
 
         $student->grades()->create([

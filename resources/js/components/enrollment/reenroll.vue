@@ -350,10 +350,58 @@
                     </div>
             </aside>
         </div>
+        <div id="printMe" hidden>
+        <p style="text-align: center; margin-bottom: -10px; font-size: 1.5em; font-weight: bold;">Philippine Baptist Christian College of Mindanao, Inc.</p>
+        <p style="text-align: center;">Fd. Rd. 2, Tibal-og, Sto Tomas Davao del Norte</p>
+        <p style="text-align: right;"> Date: {{ dateNow() }}</p>
+        <p>Payer: <span style="font-size: 1.5em; font-weight: bold; margin-left: 3px">{{ student.first_name }} {{ student.middle_name }} {{ student.last_name }}</span></p>
+        <table style="font-family: arial, sans-serif; border-collapse: collapse; width: 100%;">
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Entrance Fee</td>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">₱ {{ this.form.back_account }}</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Entrance Fee</td>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">₱ {{ this.form.entrance }}</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Miscellaneous</td>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">₱ {{ this.form.misc }}</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Tuition Fee</td>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">₱ {{ this.form.tuition }}</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Books</td>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">₱ {{ this.form.books }}</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Hand Book</td>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">₱ {{ this.form.handbook }}</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">School ID</td>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">₱ {{ this.form.id_fee }}</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px; font-size: 1rem; font-weight: bold;">Total</td>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">₱ {{ amountTotal() }}</td>
+          </tr>
+        </table>
+        <p style="font-size: 1.5em; font-weight: bold; margin-left: 3px">Amount in words:</p>
+        <p>{{ amountTotal() | toWords }} pesos.</p>
+      </div>
     </div>
 </template>
 
 <script>
+import _debounce from "lodash/debounce";
+
 export default {
     props: ['student', 'sections', 'fees', 'levels'],
     data() {
@@ -384,7 +432,56 @@ export default {
             }
         }
     },
+    watch: {
+        'form.back_account': _debounce(function(newVal, oldVal) {
+            if(newVal > parseInt(this.fees.back_account)) {
+            this.form.back_account = parseInt(this.fees.back_account)
+            }
+        }, 500),
+        'form.entrance': _debounce(function(newVal, oldVal) {
+            if(newVal > parseInt(this.fees.entrance)) {
+            this.form.entrance = parseInt(this.fees.entrance)
+            }
+        }, 500),
+        'form.misc': _debounce(function(newVal, oldVal) {
+            if(newVal > parseInt(this.fees.misc)) {
+            this.form.misc = parseInt(this.fees.misc)
+            }
+        }, 500),
+        'form.tuition': _debounce(function(newVal, oldVal) {
+            if(newVal > parseInt(this.fees.tuition)) {
+            this.form.tuition = parseInt(this.fees.tuition)
+            }
+        }, 500),
+        'form.books': _debounce(function(newVal, oldVal) {
+            if(newVal > parseInt(this.fees.books)) {
+            this.form.books = parseInt(this.fees.books)
+            }
+        }, 500),
+        'form.handbook': _debounce(function(newVal, oldVal) {
+            if(newVal > parseInt(this.fees.handbook)) {
+            this.form.handbook = parseInt(this.fees.handbook)
+            }
+        }, 500),
+        'form.id_fee': _debounce(function(newVal, oldVal) {
+            if(newVal > parseInt(this.fees.id_fee)) {
+            this.form.id_fee = parseInt(this.fees.id_fee)
+            }
+        }, 500)
+    },
     methods: {
+        dateNow() {
+            const date = new Date();
+
+            let day = date.getDate();
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+
+            return `${day}-${month}-${year}`;
+        },
+        async print() {
+            await this.$htmlToPaper('printMe');
+        },
         async processPayment() {
             this.isSending = true
             if(this.form.section !== '') {
@@ -421,7 +518,7 @@ export default {
             return this.numberWithCommas((parseInt(this.student.account.back_account) + parseInt(fees.entrance) + parseInt(fees.misc) + parseInt(fees.tuition) + parseInt(fees.books) + parseInt(fees.handbook) + parseInt(fees.id_fee)) - this.form.discount)
         },
         amountTotal() {
-            return parseInt(this.form.entrance) + parseInt(this.form.misc) + parseInt(this.form.tuition) + parseInt(this.form.books) + parseInt(this.form.handbook) + parseInt(this.form.id_fee);
+            return parseInt(this.form.back_account) + parseInt(this.form.entrance) + parseInt(this.form.misc) + parseInt(this.form.tuition) + parseInt(this.form.books) + parseInt(this.form.handbook) + parseInt(this.form.id_fee);
         },
         numberWithCommas(num) {
             return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
