@@ -340,12 +340,12 @@ class EnrollmentController extends Controller
             'amount' => $request->input('entrance') + $request->input('misc') + $request->input('tuition') + $request->input('books') + $request->input('handbook') + $request->input('id_fee'),
             'type' => 'STUDENT',
             'section_id' => $request->input('section'),
-            'grade_level_id' => $student->grade_entered_id + 1,
+            'grade_level_id' => $student->grade_level_id + 1,
         ]);
 
         $student->grades()->create([
             'section_id' => $request->input('section'),
-            'grade_level_id' => $student->grade_entered_id,
+            'grade_level_id' => $student->grade_level_id+1,
             'average' => 0,
             'school_year_id' => $current_sy->id,
         ]);
