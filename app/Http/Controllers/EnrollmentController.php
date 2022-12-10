@@ -257,4 +257,104 @@ class EnrollmentController extends Controller
 
         return 'enrolled successfully';
     }
+
+    public function reenroll(Student $student)
+    {
+        $levels = GradeLevel::all();
+
+        $department = '';
+
+        if($student->grade_level_id + 1 < 8) {
+            $department = 'Elementary';
+        } else if ( $student->grade_level_id + 1 < 12 ) {
+            $department = 'Junior High';
+        } else {
+            $department = 'Senior High';
+        }
+
+        $sections = Section::all();
+
+        $fees = PaymentUtility::where('type', $department)->first();
+
+        return view('enrollment/reenroll-form', ['student' => $student, 'levels' => $levels, 'fees' => $fees, 'sections' => $sections]);
+    }
+
+    public function enrollOldStudent(Request $request)
+    {
+        $student = Student::find($request->input('student_id'));
+        $desc = 'Enrollment Payment';
+
+        $desc = $desc.' [Entrance: ₱ '.$request->input('entrance').', Miscellaneous: ₱ '.$request->input('misc').', Tuition: ₱ '.$request->input('tuition').', Books: ₱ '.$request->input('books').', Hand Book: ₱ '.$request->input('handbook').', Student ID: ₱ '.$request->input('id_fee').'] Discount: ₱'.$request->input('discount').'.';
+
+        $student->account()->update([
+            'back_account' => $request->account->back_account - $request->input('back_account'),
+            'entrance' => $request->input('fees')['entrance'] - $request->input('entrance'),
+            'misc' => $request->input('fees')['misc'] - $request->input('misc'),
+            'tuition' => $request->input('fees')['tuition'] - $request->input('tuition'),
+            'books' => $request->input('fees')['books'] - $request->input('books'),
+            'handbook' => $request->input('fees')['handbook'] - $request->input('handbook'),
+            'id_fee' => $request->input('fees')['id_fee'] - $request->input('id_fee'),
+            'closing' => $request->input('fees')['closing'] - $request->input('closing'),
+            'graduation' => $request->input('fees')['graduation'] - $request->input('graduation'),
+            'discount' => $request->input('discount'),
+        ]);
+
+        if($request->input('discount') !== 0) {
+            $fees = ['back_account' => $student->account->back_account, 'entrance' => $student->account->entrance, 'misc' => $student->account->misc, 'tuition' => $student->account->tuition, 'books' => $student->account->books, 'handbook' => $student->account->handbook, 'id_fee' => $student->account->id_fee];
+
+            $dc = $request->input('discount');
+            foreach($fees as $id => $fee) {
+                if($fee < $dc) {
+                    $dc = $dc - $fee;
+                    $fees[$id] = 0;
+                } else {
+                    $fees[$id] = $fee - $dc;
+                    $dc = 0;
+                }
+                if($dc === 0) {
+                    break;
+                }
+            }
+
+            $student->account()->update([
+                'entrance' => $fees['entrance'],
+                'misc' => $fees['misc'],
+                'tuition' => $fees['tuition'],
+                'books' => $fees['books'],
+                'handbook' => $fees['handbook'],
+                'id_fee' => $fees['id_fee'],
+            ]);
+        }
+
+        $current_sy = SchoolYear::where('status', 'active')->first();
+
+        $enroll = Enroll::Where('school_year_id', $current_sy->id)->first();
+
+        $enroll->update([
+            'students' => $enroll->students + 1,
+        ]);
+
+        $student->payments()->create([
+            'school_year_id' => $current_sy->id,
+            'description' => $desc,
+            'amount' => $request->input('entrance') + $request->input('misc') + $request->input('tuition') + $request->input('books') + $request->input('handbook') + $request->input('id_fee'),
+            'type' => 'STUDENT',
+            'section_id' => $request->input('section'),
+            'grade_level_id' => $student->grade_entered_id,
+        ]);
+
+        $student->grades()->create([
+            'section_id' => $request->input('section'),
+            'grade_level_id' => $student->grade_entered_id,
+            'average' => 0,
+            'school_year_id' => $current_sy->id,
+        ]);
+
+        $student->update([
+            'section_id' => $request->input('section'),
+            'status' => 'ENROLLED'
+        ]);
+
+        Mail::to($student->email)->send(new StudentEnrolled($student));
+    }
 }

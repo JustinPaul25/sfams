@@ -128,7 +128,7 @@
                                 </td>
                                 <td class="relative whitespace-nowrap py-2 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                     <button v-if="checkRequirements(student.student_requirement) > 0" @click="openRequirementsModal(student.student_requirement)" class="text-green-500 hover:opacity-75 mr-3 font-semibold">Submit Requirement<span class="sr-only">, AAPS0L</span></button>
-                                    <a v-if="student.status == 'REENROLL'" :href="`/student/${student.id}/pay-tuition`" class="text-yellow-500 hover:opacity-75 mr-3">Enroll<span class="sr-only">, AAPS0L</span></a>
+                                    <a v-if="student.status == 'REENROLL'" :href="`/reenroll/${student.id}`" class="text-yellow-500 hover:opacity-75 mr-3">Enroll<span class="sr-only">, AAPS0L</span></a>
                                     <button @click="openGradesModal(student)" class="text-blue-700 hover:opacity-75 mr-3 font-semibold">Grades<span class="sr-only">, AAPS0L</span></button>
                                     <a :href="`/student/${student.id}/pay-tuition`" class="text-orange-500 hover:opacity-75 mr-3">Pay Tuition<span class="sr-only">, AAPS0L</span></a>
                                 </td>

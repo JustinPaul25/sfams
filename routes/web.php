@@ -60,6 +60,7 @@ Route::group(['middleware' => ['role:Administrator|staff']], function () {
     Route::get('/enrollment-applications', [EnrollmentController::class, 'applications'])->name('application-list');
     Route::get('/enrollment-applications/list', [EnrollmentController::class, 'applicationList']);
     Route::post('/enrollment/new-student', [EnrollmentController::class, 'enrollNewStudent']);
+    Route::post('/enrollment/old-student', [EnrollmentController::class, 'enrollOldStudent']);
 
     Route::post('/pay-tuition', [PaymentController::class, 'tuition']);
     Route::post('/pay-branch', [PaymentController::class, 'branch']);
@@ -109,6 +110,7 @@ Route::group(['middleware' => ['role:Administrator']], function () {
     Route::get('/logs', [LogsController::class, 'index']);
 
     Route::put('/update-grades/{student}', [GradeController::class, 'update']);
+    Route::get('/reenroll/{student}', [EnrollmentController::class, 'reenroll']);
 });
 
 Route::group(['middleware' => ['role:Staff']], function () {

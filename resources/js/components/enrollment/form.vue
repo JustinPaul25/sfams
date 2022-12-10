@@ -393,7 +393,7 @@
                           <p class="text-sm font-medium text-gray-900 truncate">Whole Year Payment:</p>
                         </div>
                         <div>
-                          <p class="text-sm text-blue-700 text-2xl font-black truncate">₱ {{totalPayment(fees)}}</p>
+                          <p class="text-sm text-blue-700 font-black truncate">₱ {{totalPayment(fees)}}</p>
                         </div>
                       </div>
                     </li>

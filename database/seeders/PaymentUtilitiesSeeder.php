@@ -17,38 +17,38 @@ class PaymentUtilitiesSeeder extends Seeder
     {
         PaymentUtility::create([
             'type' => 'Elementary',
-            'entrance' => 0.00,
-            'misc' => 0.00,
-            'tuition' => 0.00,
-            'books' => 0.00,
-            'handbook' => 0.00,
-            'id_fee' => 0.00,
-            'closing' => 0.00,
-            'graduation' => 0.00
+            'entrance' => 1000.00,
+            'misc' => 200.00,
+            'tuition' => 9000.00,
+            'books' => 4000.00,
+            'handbook' => 100.00,
+            'id_fee' => 100.00,
+            'closing' => 300.00,
+            'graduation' => 700.00
         ]);
 
         PaymentUtility::create([
             'type' => 'Junior High',
-            'entrance' => 0.00,
-            'misc' => 0.00,
-            'tuition' => 0.00,
-            'books' => 0.00,
-            'handbook' => 0.00,
-            'id_fee' => 0.00,
-            'closing' => 0.00,
-            'graduation' => 0.00
+            'entrance' => 2000.00,
+            'misc' => 300.00,
+            'tuition' => 10000.00,
+            'books' => 5000.00,
+            'handbook' => 200.00,
+            'id_fee' => 200.00,
+            'closing' => 400.00,
+            'graduation' => 800.00
         ]);
 
         PaymentUtility::create([
             'type' => 'Senior High',
-            'entrance' => 0.00,
-            'misc' => 0.00,
-            'tuition' => 0.00,
-            'books' => 0.00,
-            'handbook' => 0.00,
-            'id_fee' => 0.00,
-            'closing' => 0.00,
-            'graduation' => 0.00
+            'entrance' => 3000.00,
+            'misc' => 400.00,
+            'tuition' => 11000.00,
+            'books' => 6000.00,
+            'handbook' => 300.00,
+            'id_fee' => 300.00,
+            'closing' => 500.00,
+            'graduation' => 900.00
         ]);
     }
 }
