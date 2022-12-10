@@ -18,7 +18,12 @@ mix.js('resources/js/app.js', 'public/js')
       ]);
 
 mix.webpackConfig({
-    stats: {
+    stats:{
+        hash: true,
         children: true,
-    },
+        errors: true,
+        errorDetails: true,
+        warnings: true,
+        publicPath: true,
+    }
 });
