@@ -69,7 +69,7 @@
                         </div>
                         <div v-if="requirements.good_moral">
                           <label class="inline-flex items-center mt-3">
-                              <input v-model="good_moral" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" checked><span class="ml-2 text-gray-700">Good Moral</span>
+                              <input v-model="form.good_moral" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" checked><span class="ml-2 text-gray-700">Good Moral</span>
                           </label>
                         </div>
                         <div v-if="requirements.form_137">

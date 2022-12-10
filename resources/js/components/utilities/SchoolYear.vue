@@ -54,7 +54,7 @@ export default {
                     this.$isLoading(true)
                     axios.post('/new-school-year', {password: password})
                     .then(response => {
-                        console.log(response.data.data);
+                        this.getSchoolYear()
                         if(response.data == 'Not Matched!') {
                             this.$swal.fire({
                                 icon: 'Error',

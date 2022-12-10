@@ -345,14 +345,15 @@ class EnrollmentController extends Controller
 
         $student->grades()->create([
             'section_id' => $request->input('section'),
-            'grade_level_id' => $student->grade_level_id+1,
+            'grade_level_id' => $student->grade_level_id + 1,
             'average' => 0,
             'school_year_id' => $current_sy->id,
         ]);
 
         $student->update([
             'section_id' => $request->input('section'),
-            'status' => 'ENROLLED'
+            'status' => 'ENROLLED',
+            'grade_level_id' => $student->grade_level_id + 1,
         ]);
 
         Mail::to($student->email)->send(new StudentEnrolled($student));
