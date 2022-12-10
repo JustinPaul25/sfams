@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\User;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LogsController;
 use App\Http\Controllers\UserController;
@@ -28,6 +30,10 @@ use App\Http\Controllers\StudentPortalController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+if (App::environment('production')) {
+    URL::forceScheme('https'); 
+}
 
 Route::get('/online-enrollment', [EnrollmentController::class, 'index'])->name('online-enrollment');
 Route::post('/student', [EnrollmentController::class, 'store']);
