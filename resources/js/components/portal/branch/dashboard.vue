@@ -43,7 +43,7 @@
                                         <dl>
                                         <dt class="text-sm font-medium text-gray-500 truncate">Number of Students</dt>
                                         <dd>
-                                            <div class="text-3xl font-medium text-gray-900">{{ branch.student_count }}</div>
+                                            <div class="text-3xl font-medium text-gray-900">{{ students }}</div>
                                         </dd>
                                         </dl>
                                     </div>
@@ -161,7 +161,7 @@
 
 <script>
     export default {
-        props: ['branch'],
+        props: ['branch', 'students'],
         methods: {
             remainingBalance() {
                 const account = this.branch.account;

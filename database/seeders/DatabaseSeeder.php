@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             PaymentUtilitiesSeeder::class,
             RequirementsSeeder::class,
             BranchUtilitySeeder::class,
+            BranchSeeder::class,
         ]);
     }
 }

@@ -125,7 +125,7 @@
 
 <script>
 export default {
-    props: ['branch'],
+    props: ['branch', 'students'],
     data() {
         return {
             description: ''

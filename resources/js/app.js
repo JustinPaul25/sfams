@@ -74,11 +74,13 @@ Vue.component('sweet-modal-tab', SweetModalTab);
 Vue.component('masked-input', MaskedInput);
 
 //portal
-Vue.component('student-dashboard', require('./components/portal/student/dashboard').default);
-Vue.component('student-profile', require('./components/portal/student/profile').default);
-Vue.component('student-account', require('./components/portal/student/account').default);
-Vue.component('branch-dashboard', require('./components/portal/branch/dashboard').default);
-Vue.component('branch-account', require('./components/portal/branch/account').default);
+Vue.component('student-dashboard', require('./components/portal/student/dashboard.vue').default);
+Vue.component('student-profile', require('./components/portal/student/profile.vue').default);
+Vue.component('student-account', require('./components/portal/student/account.vue').default);
+Vue.component('branch-dashboard', require('./components/portal/branch/dashboard.vue').default);
+Vue.component('branch-account', require('./components/portal/branch/account.vue').default);
+Vue.component('branch-student', require('./components/portal/branch/student/index.vue').default);
+Vue.component('branch-student-create', require('./components/portal/branch/student/create.vue').default);
 
 
 Vue.use(VueSweetalert2, options)

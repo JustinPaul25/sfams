@@ -2,9 +2,14 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use App\Models\Branch;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Types\RoleType;
+use App\Models\BranchAccount;
+use App\Models\BranchUtility;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class BranchSeeder extends Seeder
 {
@@ -15,89 +20,61 @@ class BranchSeeder extends Seeder
      */
     public function run()
     {
-        Branch::create([
-            'name' => 'Philippine Baptist Christian College of Mindanao, Inc.',
-            'address' => 'Ulas Branch, Km 8, Davao Bukidnon Rd., Upper Ulas, Talomo, Davao City'
-        ]);
+        $branches = [
+            'Smyrna Christian Academy of Sto. Tomas, Inc.',
+            'Jeremiah Christian Learning Center',
+            'Philippine Baptist Christian College of Mindanao, Inc.',
+            'Philippine Baptist Christian College of Mindanao, Inc.',
+            'Proverbs School of Wisdom Academy',
+            'Philippine Baptist Christian College of Mindanao, Inc.',
+            'Grace Pre-School Learning Center',
+        ];
 
-        Branch::create([
-            'name' => 'Philippine Baptist Christian College of Mindanao, Inc.',
-            'address' => 'Luna Branch, Purok 10, Luna, Kapalong, Davao del Norte'
-        ]);
+        $address = [
+            'Purok 6B, Feeder Road #2, Tibal-og, Sto. Tomas, Davao del Norte',
+            'Purok 10, Feeder Road #3, Sto. Tomas, Davao del Norte',
+            'Marscon Branch, Purok 20, Marscon, Sto. Tomas, Davao del Norte',
+            'Puerto Azul Branch, Block 15, Lot 10, Puerto Azul Subdivision, Sto. Tomas, Davao del Norte',
+            'Purok 2B, Feeder Road #1, Tibal-og, Sto. Tomas, Davao del Norte',
+            'Bobongon Branch, Purok 1, Bobongon, Sto. Tomas, Davao del Norte',
+            'Purok 1, New Katipunan, Sto. Tomas, Davao del Norte',
+        ];
 
-        Branch::create([
-            'name' => 'Smyrna Christian Academy of Sto. Tomas, Inc.',
-            'address' => 'Purok 6B, Feeder Road #2, Tibal-og, Sto. Tomas, Davao del Norte'
-        ]);
+        $email = [
+            'branch1@mail.com',
+            'branch2@mail.com',
+            'branch3@mail.com',
+            'branch4@mail.com',
+            'branch5@mail.com',
+            'branch6@mail.com',
+            'branch7@mail.com',
+        ];
 
-        Branch::create([
-            'name' => 'Kids Learning Cove',
-            'address' => 'Purok 17, Tan Compound, Poblacion Nabunturan, Davao de Oro'
-        ]);
+        $utility = BranchUtility::find(1);
 
-        Branch::create([
-            'name' => 'Jeremiah Christian Learning Center',
-            'address' => 'Purok 10, Feeder Road #3, Sto. Tomas, Davao del Norte'
-        ]);
+        foreach($branches as $key=>$branch){
+            $user = User::create([
+                'name' => $branch,
+                'email' => $email[$key],
+                'password' => Hash::make('branchpassword'),
+            ]);
 
-        Branch::create([
-            'name' => 'Philippine Baptist Christian College of Mindanao, Inc.',
-            'address' => 'Philippine Baptist Christian College of Mindanao, Inc.'
-        ]);
+            $branch = Branch::create([
+                'name' => $branch,
+                'address' => $address[$key],
+                'user_id' => $user->id,
+                'student_count' => 0,
+            ]);
 
-        Branch::create([
-            'name' => 'Philippine Baptist Christian College of Mindanao, Inc.',
-            'address' => 'Marscon Branch, Purok 20, Marscon, Sto. Tomas, Davao del Norte'
-        ]);
+            BranchAccount::create([
+                'branch_id' => $branch->id,
+                'back_account' => 0,
+                'renewal' => $utility->renewal,
+                'royalty' => 0,
+                'per_student_total' => 0,
+            ]);
 
-        Branch::create([
-            'name' => 'Philippine Baptist Christian College of Mindanao, Inc.',
-            'address' => 'Puerto Azul Branch, Block 15, Lot 10, Puerto Azul Subdivision, Sto. Tomas, Davao del Norte'
-        ]);
-
-        Branch::create([
-            'name' => 'Philippine Baptist Christian College of Mindanao, Inc.',
-            'address' => 'Ilang Branch, Block 9, Lot 3, Eagles View Village, Ilang, Davao City'
-        ]);
-
-        Branch::create([
-            'name' => 'Proverbs School of Wisdom Academy',
-            'address' => 'Purok 2B, Feeder Road #1, Tibal-og, Sto. Tomas, Davao del Norte'
-        ]);
-        
-        Branch::create([
-            'name' => 'Philippine Baptist Christian College of Mindanao, Inc.',
-            'address' => 'Toril Branch, 2360 Durian St., Daliao Toril, Davao City'
-        ]);
-
-        Branch::create([
-            'name' => 'Philippine Baptist Christian College of Mindanao, Inc.',
-            'address' => 'Tubod Branch, Purok 3, Brgy. Tubod, Carmen, Davao del Norte'
-        ]);
-
-        Branch::create([
-            'name' => 'Philippine Baptist Christian College of Mindanao, Inc.',
-            'address' => 'Bobongon Branch, Purok 1, Bobongon, Sto. Tomas, Davao del Norte'
-        ]);
-
-        Branch::create([
-            'name' => 'Philippine Baptist Christian College of Mindanao, Inc.',
-            'address' => 'Sawata Branch, Sawata, Davao del Norte'
-        ]);
-
-        Branch::create([
-            'name' => 'Grace Pre-School Learning Center',
-            'address' => 'Purok 1, New Katipunan, Sto. Tomas, Davao del Norte'
-        ]);
-
-        Branch::create([
-            'name' => 'Philippine Baptist Christian College of Mindanao, Inc.',
-            'address' => 'Carmen Branch, Purok 6, Mangalcal, Carmen, Davao del Norte'
-        ]);
-
-        Branch::create([
-            'name' => 'Philippine Baptist Christian College of Mindanao, Inc.',
-            'address' => 'Feeder Road #3 Branch, Waling-waling St., Feeder Road #3, Tibal-og, Sto. Tomas, Davao del Norte'
-        ]);
+            $user->assignRole(RoleType::BRANCH);
+        }
     }
 }

@@ -17,6 +17,7 @@ use App\Http\Controllers\UtilitiesController;
 use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\SchoolYearController;
 use App\Http\Controllers\BranchPortalController;
+use App\Http\Controllers\BranchStudentController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\TransactionsController;
 use App\Http\Controllers\StudentPortalController;
@@ -132,4 +133,10 @@ Route::group(['middleware' => ['role:Student']], function () {
 
 Route::group(['middleware' => ['role:Branch']], function () {
     Route::get('/branch-account', [BranchPortalController::class, 'account']);
+    Route::get('/branch-student', [BranchStudentController::class, 'index']);
+    Route::get('/branch-student-list', [BranchStudentController::class, 'list']);
+    Route::get('/branch-student/create', [BranchStudentController::class, 'create']);
+    Route::get('/branch-student/edit', [BranchStudentController::class, 'edit']);
+    Route::post('/branch-student', [BranchStudentController::class, 'store']);
+    Route::put('/branch-student/{branchStudent}', [BranchStudentController::class, 'update']);
 });
