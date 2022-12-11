@@ -105,12 +105,6 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-sm font-medium text-gray-900">Students Fee</td>
-                                    <td class="text-sm text-gray-900 font-light">
-                                        ₱ {{ account.per_student_total }}
-                                    </td>
-                                </tr>
-                                <tr>
                                     <td class="text-sm font-medium text-gray-900">Royalty</td>
                                     <td class="text-sm text-gray-900 font-light">
                                         ₱ {{ account.royalty }}
@@ -124,7 +118,7 @@
                                 </tr>
                                 <tr>
                                     <td class="text-sm font-medium text-gray-900">Total:</td>
-                                    <td class="text-sm font-medium text-gray-900 text-xl">₱ {{ remainingBalance() }}</td>
+                                    <td class="text-sm font-medium text-gray-900">₱ {{ remainingBalance() }}</td>
                                 </tr>
                             </tbody>
                         </table>

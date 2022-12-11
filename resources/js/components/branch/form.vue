@@ -39,14 +39,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                                <label for="username" class="block text-sm font-medium text-blue-700 sm:mt-px sm:pt-2"> No. of students </label>
-                                <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                    <div class="relative inline-block text-gray-700 w-full">
-                                        <input v-model="form.students" type="number" min="0" step="1" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" required>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
