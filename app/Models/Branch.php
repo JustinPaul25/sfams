@@ -11,7 +11,7 @@ class Branch extends Model
 
     protected $guarded = [];
 
-    protected $appends = ['account', 'payments'];
+    protected $appends = ['account', 'payments', 'students'];
 
     public function getAccountAttribute()
     {
@@ -21,6 +21,11 @@ class Branch extends Model
     public function getPaymentsAttribute()
     {
         return Payment::where('branch_id', $this->id)->get();
+    }
+
+    public function getStudentsAttribute()
+    {
+        return BranchStudent::where('branch_id', $this->id)->count();
     }
 
     public function payments()

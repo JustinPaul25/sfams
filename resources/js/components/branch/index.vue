@@ -39,7 +39,7 @@
                                     <tr v-for="branch in branches">
                                         <td class="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-blue-700 sm:pl-6">{{ branch.id }}</td>
                                         <td class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 hover:text-blue-700"><a :href="`/branch/${branch.id}`">{{ branch.name }}</a></td>
-                                        <td class="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-blue-700 sm:pl-6">{{ branch.student_count }}</td>
+                                        <td class="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-blue-700 sm:pl-6">{{ branch.students }}</td>
                                         <td class="relative whitespace-nowrap py-2 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                             <a :href="`/branch/${branch.id}/pay`" class="text-blue-500 hover:opacity-75 mr-3">Pay<span class="sr-only">, AAPS0L</span></a>
                                             <a :href="`/branch/${branch.id}`" class="text-blue-500 hover:opacity-75">View<span class="sr-only">, AAPS0L</span></a>
