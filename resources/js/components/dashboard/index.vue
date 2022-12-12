@@ -201,7 +201,11 @@
                 </div>
             </div>
         </main>
-        <chart-component></chart-component>
+        <div class="w-full flex items-center">
+            <div class="w-1/2 mx-auto">
+                <chart-component v-if="showChart" :labels="labels" :studdata="rawData"></chart-component>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -214,10 +218,13 @@ export default {
     },
     data() {
         return {
+            showChart: false,
             transactions: [],
             income: 0,
             students: 0,
             branches: 0,
+            rawData: [],
+            labels: []
         }
     },
     methods: {
@@ -229,9 +236,26 @@ export default {
                 this.students = response.data.student_count
                 this.branches = response.data.branch_count
             })
-        }
+        },
+        async getDatas() {
+            axios.get('/enroll-data')
+            .then(response => {
+                response.data.enroll.forEach((val, key, arr) => {
+                    console.log(val)
+                    this.rawData.push(val.students)
+                    this.labels.push(parseInt(val.school_year.to));
+                    if (Object.is(arr.length - 1, key)) {
+                        this.rawData.push(((val.students) * parseFloat(response.data.rate)) +  parseFloat(val.students))
+                        this.labels.push(parseInt(val.school_year.to) + 1);
+                        this.showChart = true
+                    }
+                });
+                return
+            })
+        },
     },
     created() {
+        this.getDatas();
         this.getTransactions()
     }
 }

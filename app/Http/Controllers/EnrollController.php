@@ -9,13 +9,34 @@ class EnrollController extends Controller
 {
     public function datas()
     {
-        $enroll = Enroll::get();
+        $enrolls = Enroll::get();
         $yearsCount = Enroll::count();
 
-        $devidend = (($enroll[$yearsCount-1]->students/$enroll[0]->students)/$enroll[0]->students)*100;
+        if($enrolls[0]->students) {
+            $rates = [];
+            $devidend = (($enrolls[$yearsCount-1]->students/$enrolls[0]->students)/$enrolls[0]->students)*100;
 
-        $rate = $devidend/$yearsCount;
+            foreach($enrolls as $key => $enroll) {
+                if($key === 0) {
+                    array_push($rates, null);
+                } else {
+                    $devidend = (($enroll->students/$enrolls[$key-1]->students)/$enrolls[$key-1]->students)*100;
+                    array_push($rates, $devidend);
+                }
+            }
 
-        return response()->json(['enroll' => Enroll::get(), 'rate' => round($rate,2)]);
+            $total = 0;
+            foreach($rates as $rate) {
+                $total = $total + $rate;
+            }
+ 
+            $rate = $total/(count($rates)-1);
+
+            $rate = $rate/(10 ** 2);
+
+            return response()->json(['enroll' => Enroll::get(), 'rate' => round($rate,5)]);
+        }
+
+        return 'No Data';
     }
 }
