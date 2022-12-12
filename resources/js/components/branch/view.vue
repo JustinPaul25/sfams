@@ -22,7 +22,7 @@
                             </svg>
                         </div>
                     </div>
-                    <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 group-hover:text-gray-50">{{ branch.student_count}}</h1>
+                    <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 group-hover:text-gray-50">{{ branch.students}}</h1>
                     <div class="flex flex-row justify-between group-hover:text-gray-200">
                         <p>Number of Students</p>
                     </div>
