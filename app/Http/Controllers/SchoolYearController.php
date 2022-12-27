@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Branch;
+use App\Models\BranchStudent;
 use App\Models\Enroll;
 use App\Models\Student;
 use App\Models\SchoolYear;
@@ -25,6 +26,7 @@ class SchoolYearController extends Controller
         } else {
             $branches = Branch::get();
             $students = Student::where('status', 'ENROLLED')->get();
+            $branchStudents = BranchStudent::where('status', 'ENROLLED')->get();
 
             foreach ($students as $student) {
                 $student->update([
@@ -44,6 +46,12 @@ class SchoolYearController extends Controller
                     'closing' => 0,
                     'graduation' => 0,
                     'discount' => 0,
+                ]);
+            }
+
+            foreach($branchStudents as $student) {
+                $student->update([
+                    'status' => 'OLD'
                 ]);
             }
 

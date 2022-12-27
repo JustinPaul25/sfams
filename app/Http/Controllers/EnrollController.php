@@ -29,7 +29,7 @@ class EnrollController extends Controller
             foreach($rates as $rate) {
                 $total = $total + $rate;
             }
- 
+
             $rate = $total/(count($rates)-1);
 
             $rate = $rate/(10 ** 2);

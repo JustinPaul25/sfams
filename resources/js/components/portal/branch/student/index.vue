@@ -107,6 +107,7 @@
                                 <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Student Name</th>
                                 <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Grade</th>
                                 <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Status</th>
+                                <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900"></th>
                             </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-200 bg-white">
@@ -119,6 +120,11 @@
                                     </span>
                                     <span v-if="student.status == 'OLD'" class="text-xs font-semibold inline-block py-1 px-2 rounded-full text-yellow-600 bg-yellow-200 uppercase last:mr-0 mr-1">
                                         Non-Enrolled / Old Student
+                                    </span>
+                                </td>
+                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">
+                                    <span v-if="student.status == 'ENROLLED'" class="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blue-600 bg-blue-200 uppercase last:mr-0 mr-1">
+                                        Reenroll
                                     </span>
                                 </td>
                             </tr>

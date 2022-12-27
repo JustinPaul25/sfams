@@ -37,7 +37,7 @@
                 <main class="w-full">
                     @yield('content')
                 </main>
-            </div> 
+            </div>
         @endguest
     </div>
     <script>

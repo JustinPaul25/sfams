@@ -139,4 +139,5 @@ Route::group(['middleware' => ['role:Branch']], function () {
     Route::get('/branch-student/edit', [BranchStudentController::class, 'edit']);
     Route::post('/branch-student', [BranchStudentController::class, 'store']);
     Route::put('/branch-student/{branchStudent}', [BranchStudentController::class, 'update']);
+    Route::get('/branch-student-reenroll/{branchStudent}', [BranchStudentController::class, 'reenroll']);
 });

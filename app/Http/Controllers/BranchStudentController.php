@@ -6,7 +6,10 @@ use App\Models\Branch;
 use App\Models\GradeLevel;
 use App\Models\SchoolYear;
 use Illuminate\Http\Request;
+use App\Models\BranchAccount;
 use App\Models\BranchStudent;
+use App\Models\BranchUtility;
+use Torann\GeoIP\Console\Update;
 
 class BranchStudentController extends Controller
 {
@@ -56,6 +59,7 @@ class BranchStudentController extends Controller
     {
         $branch = auth()->user()->branch;
         $current_sy = SchoolYear::where('status', 'active')->first();
+        $utility = BranchUtility::find(1);
 
         BranchStudent::create([
             'first_name' => $request->input('first_name'),
@@ -66,7 +70,29 @@ class BranchStudentController extends Controller
             'status' => 'ENROLLED',
             'school_year_id' => $current_sy->id,
         ]);
+
+        $account = BranchAccount::where('branch_id', $branch->id)->first();
+
+        $account->update([
+            'royalty' => $account->royalty + $utility->per_student
+        ]);
         
         return;
+    }
+
+    public function reenroll(BranchStudent $branchStudent)
+    {   
+        $utility = BranchUtility::find(1);
+
+        $account = BranchAccount::where('branch_id', $branchStudent->branch_id)->first();
+
+        $account->update([
+            'royalty' => $account->royalty + $utility->per_student,
+        ]);
+
+        return $branchStudent->update([
+            'status' => 'ENROLLED',
+            'grade_level_id' => $branchStudent->grade_level_id + 1
+        ]);
     }
 }

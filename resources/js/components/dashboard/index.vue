@@ -60,7 +60,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="bg-blue-200 overflow-hidden shadow rounded-lg">
                         <div class="p-5">
                             <div class="flex items-center">
