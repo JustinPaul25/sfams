@@ -33,7 +33,7 @@
                                     <select v-model="form.grade_entered_id" type="date" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" disabled>
                                         <option value="" disabled>Select Grade Level</option>
                                         <option v-for="level in levels" :value="level.id">{{ level.level }}</option>
-                                    </select>   
+                                    </select>
                                 </div>
                             </div>
                         </dd>
@@ -74,14 +74,6 @@
                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt class="text-sm font-medium text-gray-500">Mother's Contact Number</dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ form.mother_phone }}</dd>
-                    </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">Guardian's Name</dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ form.guardian_name }}</dd>
-                    </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">Guardian's Contact Number</dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ form.guardian_phone }}</dd>
                     </div>
                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt class="text-sm font-medium text-gray-500">Purok/Street</dt>
@@ -131,7 +123,7 @@
                 </div>
                 <div class="px-4 py-5 sm:px-6">
                     <p class="mt-1 max-w-2xl text-sm text-gray-500">Please Follow up Requirements you may Email or Over the window</p>
-                </div>  
+                </div>
             </div>
         </div>
         <div class="pt-5">
@@ -147,7 +139,7 @@
         props: ['form', 'levels'],
         data() {
             return {
-                
+
             }
         },
         methods: {

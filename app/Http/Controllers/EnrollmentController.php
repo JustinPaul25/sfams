@@ -45,7 +45,7 @@ class EnrollmentController extends Controller
         if($request->filled('level')) {
             $query = $query->where('grade_level_id', $request->input('level'));
         }
-        
+
         $query = $query->where('status', 'PENDING')->with(['gradeLevel'])->get();
 
 
@@ -92,12 +92,12 @@ class EnrollmentController extends Controller
             'gender' => $request->input('gender'),
             'phone' => $request->input('phone'),
             'father_name' => $request->input('father_name'),
-            'father_is_deceased' => $request->input('father_is_deceased'),
+            'father_is_deceased' => false,
             'father_phone' => $request->input('father_phone'),
             'mother_name' => $request->input('mother_name'),
-            'mother_is_deceased' => $request->input('mother_is_deceased'),
-            'mother_phone' => $request->input('mother_phone'),
-            'guardian_name' => $request->input('guardian_name'),
+            'mother_is_deceased' => false,
+            'mother_phone' => 'N/A',
+            'guardian_name' => 'N/A',
             'guardian_phone' => $request->input('guardian_phone'),
             'purok_street' => $request->input('purok_street'),
             'barangay' => $request->input('barangay'),
@@ -221,7 +221,7 @@ class EnrollmentController extends Controller
             'section_id' => $request->input('section'),
             'grade_level_id' => $student->grade_entered_id,
         ]);
-        
+
         $student->studentRequirement()->create([
             'coc' => $request->input('coc'),
             'birth_cert' => $request->input('birth_cert'),

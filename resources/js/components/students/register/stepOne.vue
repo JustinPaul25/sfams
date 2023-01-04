@@ -93,7 +93,7 @@
                             <select v-model="form.grade_entered_id" type="date" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
                                 <option value="" disabled>Select Grade Level</option>
                                 <option v-for="level in levels" :value="level.id">{{ level.level }}</option>
-                            </select>   
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -114,24 +114,12 @@
                     </div>
                 </div>
             </dl>
-            <dl class="rounded-lg sm:grid sm:grid-cols-3">
+            <dl class="rounded-lg sm:grid sm:grid-cols-2">
                 <div class="flex flex-col p-2">
-                    <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2">Father's Name</dt>
+                    <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2">Father First Name</dt>
                     <div class="mt-1 sm:mt-0 sm:col-span-2">
                         <div class="relative inline-block text-gray-700 w-full">
                             <input v-model="form.father_name" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Father's Full Name">
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col p-2 items-stretch">
-                    <div class="flex self-center mt-auto mb-4">
-                        <div class="flex items-center">
-                            <input id="father_living" name="father_deceased" v-model="form.father_is_deceased" value="0" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                            <label for="push-everything" class="ml-3 block text-sm font-medium text-gray-700"> Living </label>
-                        </div>
-                        <div class="flex items-center ml-5">
-                            <input id="father_deceased" name="father_deceased" v-model="form.father_is_deceased" value="1" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                            <label for="push-email" class="ml-3 block text-sm font-medium text-gray-700"> Deceased </label>
                         </div>
                     </div>
                 </div>
@@ -144,24 +132,12 @@
                     </div>
                 </div>
             </dl>
-            <dl class="rounded-lg sm:grid sm:grid-cols-3">
+            <dl class="rounded-lg sm:grid sm:grid-cols-2">
                 <div class="flex flex-col p-2">
-                    <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2">Mother's Name</dt>
+                    <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2">Mother First Name</dt>
                     <div class="mt-1 sm:mt-0 sm:col-span-2">
                         <div class="relative inline-block text-gray-700 w-full">
                             <input v-model="form.mother_name" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Mother's Full Name">
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col p-2 items-stretch">
-                    <div class="flex self-center mt-auto mb-4">
-                        <div class="flex items-center">
-                            <input id="mother_living" name="mother_deceased" v-model="form.mother_is_deceased" value="0" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                            <label for="push-everything" class="ml-3 block text-sm font-medium text-gray-700"> Living </label>
-                        </div>
-                        <div class="flex items-center ml-5">
-                            <input id="mother_deceased" name="mother_deceased" v-model="form.mother_is_deceased" value="1" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                            <label for="push-email" class="ml-3 block text-sm font-medium text-gray-700"> Deceased </label>
                         </div>
                     </div>
                 </div>
@@ -174,20 +150,21 @@
                     </div>
                 </div>
             </dl>
+            <p class="text-gray-900 text-xl pt-2">Contact Person</p>
             <dl class="rounded-lg sm:grid sm:grid-cols-2">
                 <div class="flex flex-col p-2">
-                    <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2">Guardians's Name <span class="text-sm" style="color:#ff0000">(If not living with parents/Required if no Mother or Father input)</span></dt>
+                    <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>Name</dt>
                     <div class="mt-1 sm:mt-0 sm:col-span-2">
                         <div class="relative inline-block text-gray-700 w-full">
-                            <input v-model="form.guardian_name" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Guardians's Full Name">
+                            <input v-model="form.contact_person" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Full Name">
                         </div>
                     </div>
                 </div>
                 <div class="flex flex-col p-2">
-                    <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2">Guardians's Contact Number</dt>
+                    <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>Phone Number</dt>
                     <div class="mt-1 sm:mt-0 sm:col-span-2">
                         <div class="relative inline-block text-gray-700 w-full">
-                            <masked-input mask="\+\63 (111) 111-1111" v-model="form.guardian_phone" placeholder="Guardian's Phone Number" @input="rawVal = arguments[1]" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"/>
+                            <masked-input v-model="form.contact_person_number" mask="\+\63 (111) 111-1111" type="text" placeholder="Phone Number" @input="rawVal = arguments[1]" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
                         </div>
                     </div>
                 </div>
@@ -226,25 +203,6 @@
                     <div class="mt-1 sm:mt-0 sm:col-span-2">
                         <div class="relative inline-block text-gray-700 w-full">
                             <input v-model="form.province" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Province">
-                        </div>
-                    </div>
-                </div>
-            </dl>
-            <p class="text-gray-900 text-xl pt-2">Contact Person</p>
-            <dl class="rounded-lg sm:grid sm:grid-cols-2">
-                <div class="flex flex-col p-2">
-                    <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>Name</dt>
-                    <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <div class="relative inline-block text-gray-700 w-full">
-                            <input v-model="form.contact_person" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Full Name">
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col p-2">
-                    <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>Phone Number</dt>
-                    <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <div class="relative inline-block text-gray-700 w-full">
-                            <masked-input v-model="form.contact_person_number" mask="\+\63 (111) 111-1111" type="text" placeholder="Phone Number" @input="rawVal = arguments[1]" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
                         </div>
                     </div>
                 </div>
@@ -338,11 +296,11 @@ export default {
                 this.required.push("Student Phone Is Required.")
                 var isCleared = false;
             }
-            if(this.form.mother_name === '' && this.form.father_name === '' && this.form.guardian_name === '') {
-                this.required.push("Please add guardian information if no Mother and Father.")
+            if(this.form.mother_name === '' && this.form.father_name === '') {
+                this.required.push("Please add Mother and Father first names. Or type N/A if none")
             }
-            if(this.form.mother_phone === '' && this.form.father_phone === '' && this.form.guardian_phone === '') {
-                this.required.push("Please add guardian contact number if no Mother and Father. Or type N/A if none")
+            if(this.form.mother_phone === '' && this.form.father_phone === '') {
+                this.required.push("Please add Mother and Father contact number. Or type N/A if none")
             }
             if(this.form.purok_street === '') {
                 this.required.push("Purok or Street is empty please add N/A or None")

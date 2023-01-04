@@ -34,7 +34,7 @@ use App\Http\Controllers\StudentPortalController;
 */
 
 if (App::environment('production')) {
-    URL::forceScheme('https'); 
+    URL::forceScheme('https');
 }
 
 Route::get('/online-enrollment', [EnrollmentController::class, 'index'])->name('online-enrollment');
@@ -122,7 +122,7 @@ Route::group(['middleware' => ['role:Administrator']], function () {
 });
 
 Route::group(['middleware' => ['role:Staff']], function () {
-    
+
 });
 
 Route::group(['middleware' => ['role:Student']], function () {
