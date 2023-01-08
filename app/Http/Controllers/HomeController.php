@@ -31,7 +31,7 @@ class HomeController extends Controller
                 return view('home', ['student' => $user->student]);
             } if(auth()->user()->isBranch()) {
                 $user = auth()->user();
-                $branch = auth()->user()->branch; 
+                $branch = auth()->user()->branch;
                 $students = BranchStudent::where('branch_id', $branch->id)->where('status', 'ENROLLED')->count();
 
                 return view('home', ['branch' => $user->branch, 'students' => $students]);

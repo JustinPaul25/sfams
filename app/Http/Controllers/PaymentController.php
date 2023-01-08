@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NotifyStudent;
 use App\Models\Branch;
 use App\Mail\PayBranch;
 use App\Models\Student;
@@ -45,6 +46,7 @@ class PaymentController extends Controller
         ]);
 
         Mail::to($student->email)->send(new PayTuition($student, $desc));
+        broadcast(new NotifyStudent($student))->toOthers();
 
         activity()
             ->performedOn($student)

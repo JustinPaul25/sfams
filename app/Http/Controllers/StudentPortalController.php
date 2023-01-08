@@ -18,4 +18,9 @@ class StudentPortalController extends Controller
 
         return view('portal.student.account', ['account' => $student->account, 'student' => $student]);
     }
+
+    public function notifications()
+    {
+        return view('portal.student.notifications');
+    }
 }

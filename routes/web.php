@@ -128,7 +128,7 @@ Route::group(['middleware' => ['role:Staff']], function () {
 Route::group(['middleware' => ['role:Student']], function () {
     Route::get('/my-profile', [StudentPortalController::class, 'profile']);
     Route::get('/student-account', [StudentPortalController::class, 'account']);
-    Route::get('/notifications', [NotificationController::class, 'index']);
+    Route::get('/student-notifications', [StudentPortalController::class, 'notifications']);
 });
 
 Route::group(['middleware' => ['role:Branch']], function () {

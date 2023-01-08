@@ -31,6 +31,7 @@ class User extends Authenticatable implements HasMedia
     protected $fillable = [
         'name',
         'email',
+        'student_id',
         'password',
     ];
 
@@ -80,7 +81,7 @@ class User extends Authenticatable implements HasMedia
                 ->addMediaConversion('thumb')
                 ->width(150)
                 ->height(150);
-                
+
             $this
                 ->addMediaConversion('thumb_2')
                 ->width(100)

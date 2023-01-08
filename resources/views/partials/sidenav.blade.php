@@ -69,6 +69,7 @@
                         </svg>
                         <span class="flex-1">Statement of Account</span>
                     </a>
+                    <student-notification />
                 @endhasanyrole
                 @hasrole('Branch')
                     <a href="/branch-student" class="{{ (request()->is('branch-student')) ? 'bg-blue-800 text-white' : 'text-indigo-100 hover:bg-indigo-600 hover:bg-opacity-75' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md">

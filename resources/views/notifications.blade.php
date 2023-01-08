@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <notification :logs="{{ 'asdasd' }}"/>
+    <notification :logs="{{}}"/>
 @endsection

@@ -210,7 +210,6 @@ export default {
             axios.get('/enroll-data')
             .then(response => {
                 response.data.enroll.forEach((val, key, arr) => {
-                    console.log(val)
                     this.rawData.push(val.students)
                     this.labels.push(parseInt(val.school_year.to));
                     if (Object.is(arr.length - 1, key)) {

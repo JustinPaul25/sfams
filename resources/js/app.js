@@ -77,6 +77,8 @@ Vue.component('masked-input', MaskedInput);
 Vue.component('student-dashboard', require('./components/portal/student/dashboard.vue').default);
 Vue.component('student-profile', require('./components/portal/student/profile.vue').default);
 Vue.component('student-account', require('./components/portal/student/account.vue').default);
+Vue.component('student-notification', require('./components/portal/student/notification.vue').default);
+Vue.component('student-notification-log', require('./components/portal/student/notificationLog.vue').default);
 Vue.component('branch-dashboard', require('./components/portal/branch/dashboard.vue').default);
 Vue.component('branch-account', require('./components/portal/branch/account.vue').default);
 Vue.component('branch-student', require('./components/portal/branch/student/index.vue').default);
