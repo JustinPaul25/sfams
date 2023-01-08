@@ -30,9 +30,10 @@ class EnrollController extends Controller
                 $total = $total + $rate;
             }
 
-            $rate = $total/(count($rates)-1);
-
-            $rate = $rate/(10 ** 2);
+            if(count($rates) > 1) {
+                $rate = $total/(count($rates)-1);
+                $rate = $rate/(10 ** 2);
+            }
 
             return response()->json(['enroll' => Enroll::get(), 'rate' => round($rate,5)]);
         }
