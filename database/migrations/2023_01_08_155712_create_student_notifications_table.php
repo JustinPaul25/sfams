@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('student_notifications', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('student_id')->nullable();
-            $table->unsignedBigInteger('message')->nullable();
+            $table->string('message')->nullable();
             $table->timestamps();
 
             $table->foreign('student_id')->references('id')->on('students')->onCascade('delete');

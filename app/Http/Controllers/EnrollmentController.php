@@ -15,6 +15,7 @@ use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Mail\StudentEnrolled;
 use App\Models\PaymentUtility;
+use App\Models\StudentNotification;
 use App\Models\StudentRequirements;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -246,6 +247,11 @@ class EnrollmentController extends Controller
             'grade_level_id' => $student->grade_entered_id,
             'average' => 0,
             'school_year_id' => $current_sy->id,
+        ]);
+
+        StudentNotification::create([
+            'student_id' => $student->id,
+            'message' => "successfully paid the enrollment amount of " . ($request->input('entrance') + $request->input('misc') + $request->input('tuition') + $request->input('books') + $request->input('handbook') + $request->input('id_fee')),
         ]);
 
         $student->update([

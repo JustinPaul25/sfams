@@ -16,7 +16,7 @@ export default {
     },
     created() {
         this.currentUrl = window.location.href;
-        window.Echo.private('chat')
+        window.Echo.private('notifyStud')
         .listen('NotifyStudent', (e) => {
             console.log(e)
         });
