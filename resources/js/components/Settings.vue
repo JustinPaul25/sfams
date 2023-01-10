@@ -6,7 +6,7 @@
             </button>
 
             <button @click="selected = 2" :class="selected === 2 ? 'border-current text-blue-500' : 'hover:text-blue-500 border-transparent text-gray-800'" class="-mb-px border-b p-4 font-semibold">
-                Student Fee Utility
+                Branch Fee Utility
             </button>
 
             <button @click="selected = 3" :class="selected === 3 ? 'border-current text-blue-500' : 'hover:text-blue-500 border-transparent text-gray-800'" class="-mb-px border-b p-4 font-semibold">
