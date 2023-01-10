@@ -17,6 +17,7 @@ class NotifyStudent implements ShouldBroadcast
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $user;
+    public $userId;
     /**
      * Create a new event instance.
      *
@@ -24,7 +25,9 @@ class NotifyStudent implements ShouldBroadcast
      */
     public function __construct(Student $student)
     {
-        $this->user = User::where('student_id', $student->id)->first();
+        $user = User::where('student_id', $student->id)->first();
+        $this->user = $user;
+        $this->userId = $user->id;
     }
 
     /**
@@ -34,6 +37,6 @@ class NotifyStudent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('notifyStud');
+        return new PresenceChannel('notifyStud'.'.'.$this->user->id);
     }
 }

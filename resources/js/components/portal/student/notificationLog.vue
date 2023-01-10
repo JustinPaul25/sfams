@@ -8,7 +8,7 @@
             </div>
             <div>
                 <ul role="list" class="divide-y divide-gray-200">
-                    <li v-for="nofication in notifications" class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
+                    <li v-for="notification in notifications" class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
                         <div class="flex justify-between space-x-3">
                         <div class="min-w-0 flex-1">
                             <a href="#" class="block focus:outline-none">
@@ -27,6 +27,27 @@
 
 <script>
 export default {
-    props: ['notifications']
+    data() {
+        return {
+            currentUrl: '',
+            notifications: [],
+        }
+    },
+    methods: {
+        async getNotifications() {
+            await axios.get(`/student-notifications/${this.app.current_user.student_id}`)
+            .then(response => {
+                this.notifications = response.data
+            })
+        }
+    },
+    created() {
+        this.currentUrl = window.location.href;
+        window.Echo.join(`notifyStud.${this.app.current_user.id}`)
+        .listen('NotifyStudent', (e) => {
+            this.getNotifications()
+        });
+        this.getNotifications()
+    },
 }
 </script>

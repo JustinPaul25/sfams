@@ -129,6 +129,7 @@ Route::group(['middleware' => ['role:Student']], function () {
     Route::get('/my-profile', [StudentPortalController::class, 'profile']);
     Route::get('/student-account', [StudentPortalController::class, 'account']);
     Route::get('/student-notifications', [StudentPortalController::class, 'notifications']);
+    Route::get('/student-notifications/{id}', [StudentPortalController::class, 'notificationsList']);
 });
 
 Route::group(['middleware' => ['role:Branch']], function () {

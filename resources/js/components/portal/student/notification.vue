@@ -11,15 +11,25 @@
 export default {
     data() {
         return {
-            currentUrl: ''
+            currentUrl: '',
+            notifications: {},
+        }
+    },
+    methods: {
+        async getNotifications() {
+            await axios.get(`/student-notifications/${this.app.current_user.student_id}`)
+            .then(response => {
+                this.notifications = response.data
+            })
         }
     },
     created() {
         this.currentUrl = window.location.href;
-        window.Echo.private('notifyStud')
+        window.Echo.join(`notifyStud.${this.app.current_user.id}`)
         .listen('NotifyStudent', (e) => {
-            console.log(e)
+            this.getNotifications()
         });
+        this.getNotifications()
     },
 }
 </script>

@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Broadcast;
 |
 */
 
-Broadcast::channel('notifyStud', function ($user) {
-    return Auth::check();
+Broadcast::channel('notifyStud.{userId}', function ($user, $userId) {
+    if(Auth::check()) {
+        return $user;
+    }
 });

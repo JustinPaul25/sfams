@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\NotifyStudent;
 use App\Models\Branch;
 use App\Mail\PayBranch;
 use App\Models\Student;
 use App\Mail\PayTuition;
 use App\Models\SchoolYear;
 use Illuminate\Http\Request;
+use App\Events\NotifyStudent;
 use App\Models\PaymentUtility;
+use App\Models\StudentNotification;
 use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
@@ -43,6 +44,11 @@ class PaymentController extends Controller
             'type' => 'STUDENT',
             'section_id' => $request->section_id,
             'grade_level_id' => $student->grade_entered_id,
+        ]);
+
+        StudentNotification::create([
+            'student_id' => $student->id,
+            'message' => "successfully paid the tuition amount of ₱" . $request->input('entrance') + $request->input('misc') + $request->input('tuition') + $request->input('books') + $request->input('handbook') + $request->input('id_fee') + $request->input('back_account') + $request->input('closing') + $request->input('graduation'),
         ]);
 
         Mail::to($student->email)->send(new PayTuition($student, $desc));

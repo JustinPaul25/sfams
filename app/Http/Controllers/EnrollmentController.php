@@ -251,7 +251,7 @@ class EnrollmentController extends Controller
 
         StudentNotification::create([
             'student_id' => $student->id,
-            'message' => "successfully paid the enrollment amount of " . ($request->input('entrance') + $request->input('misc') + $request->input('tuition') + $request->input('books') + $request->input('handbook') + $request->input('id_fee')),
+            'message' => "successfully paid the enrollment amount of ₱" . ($request->input('entrance') + $request->input('misc') + $request->input('tuition') + $request->input('books') + $request->input('handbook') + $request->input('id_fee')),
         ]);
 
         $student->update([
@@ -368,6 +368,11 @@ class EnrollmentController extends Controller
             'section_id' => $request->input('section'),
             'status' => 'ENROLLED',
             'grade_level_id' => $student->grade_level_id + 1,
+        ]);
+
+        StudentNotification::create([
+            'student_id' => $student->id,
+            'message' => "successfully paid the enrollment amount of ₱" . $request->input('entrance') + $request->input('misc') + $request->input('tuition') + $request->input('books') + $request->input('handbook') + $request->input('id_fee'),
         ]);
 
         Mail::to($student->email)->send(new StudentEnrolled($student));
