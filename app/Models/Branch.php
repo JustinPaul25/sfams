@@ -13,6 +13,8 @@ class Branch extends Model
 
     protected $appends = ['account', 'payments', 'students'];
 
+    protected $hidden = ['created_at', 'updated_at'];
+
     public function getAccountAttribute()
     {
         return BranchAccount::where('branch_id', $this->id)->first();

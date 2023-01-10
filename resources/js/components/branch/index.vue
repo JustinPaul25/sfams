@@ -24,29 +24,44 @@
                 <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                         <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
-                            <table class="min-w-full divide-y divide-gray-300">
-                                <thead class="bg-gray-50">
-                                    <tr>
-                                        <th scope="col" class="whitespace-nowrap py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Branch ID</th>
-                                        <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Name</th>
-                                        <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Students</th>
-                                        <th scope="col" class="relative whitespace-nowrap py-3.5 pl-3 pr-4 sm:pr-6">
-                                        <span class="sr-only">Actions</span>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr v-for="branch in branches">
-                                        <td class="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-blue-700 sm:pl-6">{{ branch.id }}</td>
-                                        <td class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 hover:text-blue-700"><a :href="`/branch/${branch.id}`">{{ branch.name }}</a></td>
-                                        <td class="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-blue-700 sm:pl-6">{{ branch.students }}</td>
-                                        <td class="relative whitespace-nowrap py-2 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                            <a :href="`/branch/${branch.id}/pay`" class="text-blue-500 hover:opacity-75 mr-3">Pay<span class="sr-only">, AAPS0L</span></a>
-                                            <a :href="`/branch/${branch.id}`" class="text-blue-500 hover:opacity-75">View<span class="sr-only">, AAPS0L</span></a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div v-for="(branch, index) in branches">
+                                <div class="grid grid-cols-3 gap-4 py-2 px-2">
+                                    <div>
+                                        <a class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 hover:text-blue-700" :href="`/branch/${branch.id}`">{{ branch.name }}</a>
+                                    </div>
+                                    <div class="ml-2">
+                                        Students: {{ branch.students }}
+                                    </div>
+                                    <div class="flex">
+                                        <a :href="`/branch/${branch.id}/pay`" class="text-blue-500 hover:opacity-75 mr-3">Pay<span class="sr-only">, AAPS0L</span></a>
+                                        <p v-if="viewIndex !== index" @click="viewDropdown(index)" class="text-blue-500 hover:opacity-75 cursor-pointer">View<span class="sr-only">, AAPS0L</span></p>
+                                        <p v-else @click="hideDropDown(index)" class="text-blue-500 hover:opacity-75 cursor-pointer">Hide<span class="sr-only">, AAPS0L</span></p>
+                                    </div>
+                                </div>
+                                <div v-if="viewIndex === index" class="p-8 bg-white">
+                                    <p class="text-center text-xl font-bold">Remaining Balance</p>
+                                    <div class="w-full">
+                                        <div class="w-1/2 mx-auto">
+                                            <div class="flex my-2">
+                                                <p class="font-bold">Back Account:</p>
+                                                <p class="ml-auto">₱ {{ branch.account.back_account }}</p>
+                                            </div>
+                                            <div class="flex my-2">
+                                                <p class="font-bold">Royalty:</p>
+                                                <p class="ml-auto">₱ {{ branch.account.royalty }}</p>
+                                            </div>
+                                            <div class="flex my-2">
+                                                <p class="font-bold">Renewal:</p>
+                                                <p class="ml-auto">₱ {{ branch.account.renewal }}</p>
+                                            </div>
+                                            <div class="flex my-2">
+                                                <p class="font-bold text-lg">Total:</p>
+                                                <p class="ml-auto text-lg">₱ {{ Number(branch.account.back_account) + Number(branch.account.royalty) + Number(branch.account.renewal) }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -59,7 +74,8 @@
     export default {
         data() {
             return {
-                branches: []
+                branches: [],
+                viewIndex: null,
             }
         },
         methods: {
@@ -68,6 +84,12 @@
                 .then(response => {
                     this.branches = response.data
                 })
+            },
+            viewDropdown(id) {
+                this.viewIndex = id
+            },
+            hideDropDown(id) {
+                this.viewIndex = null
             }
         },
         created() {

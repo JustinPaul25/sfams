@@ -19,7 +19,7 @@ class BranchController extends Controller
     {
         $branch = Branch::query();
 
-        $branch = $branch->get();
+        $branch = $branch->orderBy('name', 'asc')->get();
 
         return $branch;
     }
