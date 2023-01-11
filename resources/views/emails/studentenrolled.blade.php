@@ -8,6 +8,9 @@ This is your credentials to login in our web portal.
 Email: {{$student->email}}<br>
 Password: sfams_password_{{ $student->id }}
 
+You may also pay using our Gcash
+<b>09098171640</b>
+
 Note: Please be careful with this informations.
 Since the password is default please login and reset password immediately.
 

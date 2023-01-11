@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Branch;
-use App\Models\BranchStudent;
 use App\Models\Enroll;
 use App\Models\Student;
 use App\Models\SchoolYear;
 use Illuminate\Http\Request;
+use App\Models\BranchStudent;
+use App\Models\BranchUtility;
 use Illuminate\Support\Facades\Hash;
 
 class SchoolYearController extends Controller
@@ -55,19 +56,23 @@ class SchoolYearController extends Controller
                 ]);
             }
 
+            $branch_payables = BranchUtility::find(1);
+
             foreach ($branches as $branch) {
                 $account = $branch->branchAccount;
 
+                $students = BranchStudent::where('branch_id', $branch->id)->count();
+
                 $account->update([
                     'back_account' => $account->back_account + $account->renewal + $account->royalty,
-                    'renewal' => 0,
-                    'royalty' => 0,
+                    'renewal' => $branch_payables->renewal,
+                    'royalty' => $students * $branch_payables->royalty,
                     'per_student_total' => 0,
                 ]);
             }
 
             $sy = SchoolYear::latest()->first();
-            
+
             SchoolYear::query()->update(['status' => 'in-active']);
 
             $school = SchoolYear::create([
@@ -75,7 +80,7 @@ class SchoolYearController extends Controller
                 'to' => $sy->to + 1,
                 'status' => 'active'
             ]);
-    
+
             Enroll::create([
                 'school_year_id' => $school->id,
                 'students' => 0
