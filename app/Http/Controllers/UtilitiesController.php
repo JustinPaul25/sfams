@@ -11,7 +11,8 @@ class UtilitiesController extends Controller
 {
     public function list()
     {
-        return PaymentUtility::all();
+        $user = auth()->user();
+        return PaymentUtility::where('branch_id', $user->branch->id)->get();
     }
 
     public function index()

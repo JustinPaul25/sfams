@@ -83,7 +83,7 @@ Route::group(['middleware' => ['role:Administrator|staff|Branch']], function () 
     Route::get('/enroll-data', [EnrollController::class, 'datas']);
 });
 
-Route::group(['middleware' => ['role:Administrator']], function () {
+Route::group(['middleware' => ['role:Administrator|Branch']], function () {
     Route::get('/utilities', [UtilitiesController::class, 'index']);
     Route::get('/utilities/list', [UtilitiesController::class, 'list']);
     Route::put('/utility/{paymentUtility}', [UtilitiesController::class, 'update']);

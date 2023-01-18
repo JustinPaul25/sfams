@@ -183,7 +183,7 @@ class EnrollmentController extends Controller
             }
         }
 
-        $fees = PaymentUtility::where('type', $department)->first();
+        $fees = PaymentUtility::where('type', $department)->where('branch_id', $student->branch_id)->first();
 
         $sections = Section::all();
 
