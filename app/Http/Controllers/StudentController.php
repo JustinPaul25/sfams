@@ -11,6 +11,7 @@ class StudentController extends Controller
 {
     public function list(Request $request)
     {
+        $user = auth()->user();
         $query = Student::query();
 
         if($request->filled('name')) {
@@ -33,7 +34,11 @@ class StudentController extends Controller
                 $query->where('status', '!=', 'PENDING');
             });
         }
-        
+
+        if(!$user->isAdmin()) {
+            $query->where('branch_id', $user->branch->id);
+        }
+
         $query = $query->with(['gradeLevel', 'studentRequirement'])->get();
 
         return response()->json($query);

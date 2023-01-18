@@ -14,7 +14,10 @@ use App\Models\Requirement;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Mail\StudentEnrolled;
+use App\Models\BranchAccount;
+use App\Models\BranchUtility;
 use App\Models\PaymentUtility;
+use App\Models\GradeLevelSubject;
 use App\Models\StudentNotification;
 use App\Models\StudentRequirements;
 use Illuminate\Support\Facades\Hash;
@@ -193,6 +196,15 @@ class EnrollmentController extends Controller
     public function enrollNewStudent(Request $request)
     {
         $student = Student::find($request->input('student_id'));
+        $subjects = GradeLevelSubject::where('branch_id', $student->branch_id)->where('grade_level_id', $student->grade_level_id)->get();
+
+        $grades = [];
+        $branch = Branch::find($student->branch_id);
+
+        foreach($subjects as $subject) {
+            $grades[$subject->subject->name] = 0;
+        }
+
         $desc = 'Enrollment Payment';
 
         $desc = $desc.' [Entrance: ₱ '.$request->input('entrance').', Miscellaneous: ₱ '.$request->input('misc').', Tuition: ₱ '.$request->input('tuition').', Books: ₱ '.$request->input('books').', Hand Book: ₱ '.$request->input('handbook').', Student ID: ₱ '.$request->input('id_fee').'] Discount: ₱'.$request->input('discount').'.';
@@ -276,6 +288,7 @@ class EnrollmentController extends Controller
         $student->grades()->create([
             'section_id' => $request->input('section'),
             'grade_level_id' => $student->grade_entered_id,
+            'grade' => json_encode($grades),
             'average' => 0,
             'school_year_id' => $current_sy->id,
         ]);
@@ -291,6 +304,14 @@ class EnrollmentController extends Controller
         ]);
 
         Mail::to($student->email)->send(new StudentEnrolled($student));
+
+        $utility = BranchUtility::find(1);
+
+        $account = BranchAccount::where('branch_id', $branch->id)->first();
+
+        $account->update([
+            'royalty' => $account->royalty + $utility->per_student
+        ]);
 
         return 'enrolled successfully';
     }

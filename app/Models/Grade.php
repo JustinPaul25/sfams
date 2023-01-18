@@ -11,6 +11,10 @@ class Grade extends Model
 
     protected $guarded = [];
 
+    protected $casts = [
+        'grade' => 'array'
+    ];
+
     protected $appends = ['school_year', 'grade_level'];
 
     public function getSchoolYearAttribute()
