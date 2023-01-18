@@ -202,7 +202,10 @@ class EnrollmentController extends Controller
         $branch = Branch::find($student->branch_id);
 
         foreach($subjects as $subject) {
-            $grades[$subject->subject->name] = 0;
+            $grades[] = [
+                'label' => $subject->subject->name,
+                'value' => 0
+            ];
         }
 
         $desc = 'Enrollment Payment';
@@ -288,7 +291,7 @@ class EnrollmentController extends Controller
         $student->grades()->create([
             'section_id' => $request->input('section'),
             'grade_level_id' => $student->grade_entered_id,
-            'grade' => json_encode($grades),
+            'grade' => $grades,
             'average' => 0,
             'school_year_id' => $current_sy->id,
         ]);

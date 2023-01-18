@@ -191,14 +191,22 @@
         <sweet-modal ref="gradesModal">
             <div>
                 <p class="font-bold text-lg" v-if="selectedStudent">{{ selectedStudent.last_name }}, {{ selectedStudent.first_name }} Grades</p>
-                <div>
-                    <div class="mt-2" v-for="(grade, index) in grades" :key="index">
-                        <div class="flex items-center">
-                            <label class="font-bold">{{ grade.grade_level.level }} (S.Y.{{grade.school_year.from}} - {{grade.school_year.to}})</label>
-                            <input @change="() => { if(grade.average > 101 || grade.average < 0) { grade.average = 0 }}" v-model="grade.average" :name="`grades[${index}][average]`" type="number" max="100" min="0" step="0.1" class="ml-auto h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-right" placeholder="Grades">
-                        </div>
-                    </div>
-                </div>
+                <table class="table-auto w-full mt-2 border border-current">
+                    <thead>
+                        <tr>
+                            <th class="border border-current">Subject</th>
+                            <th class="border border-current">Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(value, name, index) in grades">
+                            <td class="border border-current">{{ value.label }}</td>
+                            <td class="border border-current">
+                                <input v-model="value.value" type="number" min="1" max="100" class="w-full text-center">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
                 <button @click="updateGrade()" class="mt-2 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Update Grades</button>
             </div>
         </sweet-modal>
@@ -262,7 +270,7 @@
                 });
             },
             openGradesModal(student) {
-                this.grades = student.grades
+                this.grades = student.grade.grade
                 this.selectedStudent = student
                 this.$refs.gradesModal.open()
             },
