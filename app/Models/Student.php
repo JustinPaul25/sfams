@@ -18,6 +18,10 @@ class Student extends Model
         'created_at'  => 'date:m-d-Y',
     ];
 
+    protected $with = [
+        'branch'
+    ];
+
     public function getNameAttribute()
     {
         return $this->last_name.', '.$this->first_name;
@@ -80,7 +84,7 @@ class Student extends Model
     {
         return $this->belongsTo(Section::class);
     }
-    
+
     public function gradeEntered()
     {
         return $this->belongsTo(GradeLevel::class, 'grade_entered_id', 'id');
@@ -94,6 +98,11 @@ class Student extends Model
     public function grades()
     {
         return $this->hasMany(Grade::class);
+    }
+
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class);
     }
 
     public function account()

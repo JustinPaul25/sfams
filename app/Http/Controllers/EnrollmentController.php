@@ -26,28 +26,37 @@ class EnrollmentController extends Controller
     public function applications()
     {
         $levels = GradeLevel::all();
+        $branches = Branch::all();
 
-        return view('enrollment.application', ['levels' => $levels]);
+        return view('enrollment.application', ['levels' => $levels, 'branches' => $branches]);
     }
 
     public function applicationList(Request $request)
     {
-        $query = Student::query();
+        $user = auth()->user();
 
-        if($request->filled('name')) {
-            $search = $request->input('name');
-            $query = $query->where(function($q) use ($search){
-                $q->where('first_name', 'LIKE', '%'.$search.'%')
-                ->orWhere('last_name', 'LIKE', '%'.$search.'%')
-                ->orWhere('email', 'LIKE', '%'.$search.'%');
-            });
+        if($user->isAdmin()) {
+            $query = Student::query();
+
+            if($request->filled('name')) {
+                $search = $request->input('name');
+                $query = $query->where(function($q) use ($search){
+                    $q->where('first_name', 'LIKE', '%'.$search.'%')
+                    ->orWhere('last_name', 'LIKE', '%'.$search.'%')
+                    ->orWhere('email', 'LIKE', '%'.$search.'%');
+                });
+            }
+
+            if($request->filled('level')) {
+                $query = $query->where('grade_level_id', $request->input('level'));
+            }
+
+            if($request->filled('branch')) {
+                $query = $query->where('branch_id', $request->input('branch'));
+            }
+
+            $query = $query->where('status', 'PENDING')->with(['gradeLevel'])->get();
         }
-
-        if($request->filled('level')) {
-            $query = $query->where('grade_level_id', $request->input('level'));
-        }
-
-        $query = $query->where('status', 'PENDING')->with(['gradeLevel'])->get();
 
 
         return response()->json($query);
@@ -56,8 +65,9 @@ class EnrollmentController extends Controller
     public function index()
     {
         $levels = GradeLevel::all();
+        $branches = Branch::orderBy('name', 'asc')->get();
 
-        return view('online-enrollment', ['levels' => $levels]);
+        return view('online-enrollment', ['levels' => $levels, 'branches' => $branches]);
     }
 
     public function store(Request $request)
@@ -81,6 +91,7 @@ class EnrollmentController extends Controller
         $student = Student::create([
             'enrollment_id' => $id,
             'email' => $request->input('email'),
+            'branch_id' => $request->input('branch'),
             'department' => $department,
             'status' => $status,
             'first_name' => $request->input('first_name'),

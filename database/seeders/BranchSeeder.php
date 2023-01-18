@@ -28,6 +28,7 @@ class BranchSeeder extends Seeder
             'Proverbs School of Wisdom Academy',
             'Philippine Baptist Christian College of Mindanao, Inc.',
             'Grace Pre-School Learning Center',
+            'Philippine Baptist Christian College of Mindanao, Inc.',
         ];
 
         $address = [
@@ -38,6 +39,7 @@ class BranchSeeder extends Seeder
             'Purok 2B, Feeder Road #1, Tibal-og, Sto. Tomas, Davao del Norte',
             'Bobongon Branch, Purok 1, Bobongon, Sto. Tomas, Davao del Norte',
             'Purok 1, New Katipunan, Sto. Tomas, Davao del Norte',
+            'Feeder Road #3 Branch, Waling-waling St., Feeder Road #3, Tibal-og, Sto. Tomas, Davao del Norte',
         ];
 
         $email = [
@@ -48,6 +50,7 @@ class BranchSeeder extends Seeder
             'branch5@mail.com',
             'branch6@mail.com',
             'branch7@mail.com',
+            'branch8@mail.com'
         ];
 
         $utility = BranchUtility::find(1);

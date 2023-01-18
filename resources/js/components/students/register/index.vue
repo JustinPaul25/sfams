@@ -54,7 +54,7 @@
                         </li>
                     </ol>
                 </nav>
-                <step-one v-if="step == 1" :levels="levels" @next-step="nextStepTwo"></step-one>
+                <step-one v-if="step == 1" :levels="levels" :branches="branches" @next-step="nextStepTwo"></step-one>
                 <step-two v-if="step == 2" @prev-step="step -= 1" @next-step="nextStepFour"></step-two>
                 <step-three v-if="step == 3" @prev-step="step -= 1" @next-step="nextStepFour"></step-three>
                 <step-four v-if="step == 4" :levels="levels" @prev-step="step -= 1" :form="form"></step-four>
@@ -73,7 +73,7 @@ import StepFour from './stepFour.vue'
 
 export default {
     components: { StepOne, StepTwo, StepThree, StepFour },
-    props: ['levels'],
+    props: ['levels', 'branches'],
     data() {
         return {
             step: 1,
