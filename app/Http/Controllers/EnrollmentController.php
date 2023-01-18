@@ -56,10 +56,30 @@ class EnrollmentController extends Controller
             }
 
             $query = $query->where('status', 'PENDING')->with(['gradeLevel'])->get();
+
+            return response()->json($query);
+        } else {
+            $query = Student::query();
+
+            if($request->filled('name')) {
+                $search = $request->input('name');
+                $query = $query->where(function($q) use ($search){
+                    $q->where('first_name', 'LIKE', '%'.$search.'%')
+                    ->orWhere('last_name', 'LIKE', '%'.$search.'%')
+                    ->orWhere('email', 'LIKE', '%'.$search.'%');
+                });
+            }
+
+            if($request->filled('level')) {
+                $query = $query->where('grade_level_id', $request->input('level'));
+            }
+
+            $query = $query->where('branch_id', $user->branch->id);
+
+            $query = $query->where('status', 'PENDING')->with(['gradeLevel'])->get();
+
+            return response()->json($query);
         }
-
-
-        return response()->json($query);
     }
 
     public function index()

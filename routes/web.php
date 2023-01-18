@@ -50,7 +50,7 @@ Route::get('/password-reset', function() {
 
 Route::post('/password-reset', [UserController::class, 'resetPassword']);
 
-Route::group(['middleware' => ['role:Administrator|staff']], function () {
+Route::group(['middleware' => ['role:Administrator|staff|Branch']], function () {
     Route::get('/reports', [ReportController::class, 'index']);
 
     Route::get('/students', [StudentController::class, 'index'])->name('students');
