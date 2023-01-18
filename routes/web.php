@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Models\GradeLevel;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Route;
@@ -13,14 +14,16 @@ use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\UtilitiesController;
 use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\SchoolYearController;
 use App\Http\Controllers\BranchPortalController;
-use App\Http\Controllers\BranchStudentController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\TransactionsController;
+use App\Http\Controllers\BranchStudentController;
 use App\Http\Controllers\StudentPortalController;
+use App\Http\Controllers\GradeLevelSubjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +42,9 @@ if (App::environment('production')) {
 
 Route::get('/online-enrollment', [EnrollmentController::class, 'index'])->name('online-enrollment');
 Route::post('/student', [EnrollmentController::class, 'store']);
+Route::get('/grade-levels', function () {
+    return GradeLevel::all();
+});
 
 Auth::routes();
 
@@ -141,4 +147,13 @@ Route::group(['middleware' => ['role:Branch']], function () {
     Route::post('/branch-student', [BranchStudentController::class, 'store']);
     Route::put('/branch-student/{branchStudent}', [BranchStudentController::class, 'update']);
     Route::get('/branch-student-reenroll/{branchStudent}', [BranchStudentController::class, 'reenroll']);
+
+    Route::get('/subjects', [SubjectController::class, 'subjects']);
+    Route::post('/subjects', [SubjectController::class, 'store']);
+    Route::get('/subjects/{subject}/delete', [SubjectController::class, 'destroy']);
+    Route::put('/subjects/{subject}/update', [SubjectController::class, 'update']);
+
+    Route::get('/grade-level/{gradeLevel}/subjects', [GradeLevelSubjectController::class, 'subjects']);
+    Route::post('/grade-level/{gradeLevel}/subjects', [GradeLevelSubjectController::class, 'store']);
+    Route::delete('/grade-level-subject/{gradeLevelSubject}/delete', [GradeLevelSubjectController::class, 'destroy']);
 });

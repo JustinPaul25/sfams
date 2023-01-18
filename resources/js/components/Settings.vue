@@ -5,6 +5,14 @@
                 Student Fee Utility
             </button>
 
+            <button v-if="!checkRole()" @click="selected = 4" :class="selected === 4 ? 'border-current text-blue-500' : 'hover:text-blue-500 border-transparent text-gray-800'" class="-mb-px border-b p-4 font-semibold">
+                Subjects
+            </button>
+
+            <button v-if="!checkRole()" @click="selected = 5" :class="selected === 5 ? 'border-current text-blue-500' : 'hover:text-blue-500 border-transparent text-gray-800'" class="-mb-px border-b p-4 font-semibold">
+                Subjects Per Level
+            </button>
+
             <button v-if="checkRole()" @click="selected = 2" :class="selected === 2 ? 'border-current text-blue-500' : 'hover:text-blue-500 border-transparent text-gray-800'" class="-mb-px border-b p-4 font-semibold">
                 Branch Fee Utility
             </button>
@@ -17,6 +25,8 @@
             <Student v-if="selected === 1"></Student>
             <Branch v-if="selected === 2"></Branch>
             <SchoolYear v-if="selected === 3"></SchoolYear>
+            <Subject v-if="selected === 4"></Subject>
+            <GradeLevelSubject v-if="selected === 5"></GradeLevelSubject>
         </div>
     </div>
 </template>
@@ -25,12 +35,16 @@
 import Student from "./utilities/student.vue";
 import Branch from "./utilities/branch.vue";
 import SchoolYear from "./utilities/SchoolYear.vue";
+import Subject from "./utilities/subject.vue";
+import GradeLevelSubject from "./utilities/gradeLevelSubject.vue";
 
 export default {
     components: {
         Student,
         Branch,
-        SchoolYear
+        SchoolYear,
+        Subject,
+        GradeLevelSubject
     },
     data() {
         return {

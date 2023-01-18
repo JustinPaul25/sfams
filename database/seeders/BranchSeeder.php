@@ -50,7 +50,7 @@ class BranchSeeder extends Seeder
             'branch5@mail.com',
             'branch6@mail.com',
             'branch7@mail.com',
-            'branch8@mail.com'
+            'branch8@mail.com',
         ];
 
         $utility = BranchUtility::find(1);
