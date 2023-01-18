@@ -47,10 +47,7 @@
                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                                     Subject Title
                                 </label>
-                                <input v-model="form.name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Subject Title" list="subject_list">
-                                <datalist id="subject_list">
-                                    <option v-for="subject in subjects" :value="subject.name" />
-                                </datalist>
+                                <input v-model="form.name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Subject Title">
                             </div>
                             <div class="w-full flex">
                                 <button v-if="!isEdit" @click="storeSubject()" :disabled="isSending || form.name === ''" :class="isSending || form.name === '' ? 'cursor-not-allowed' : ''" class="bg-blue-700 text-white hover:opacity-75 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mb-1 ease-linear transition-all duration-150 ml-auto" type="button">Add Subject</button>
