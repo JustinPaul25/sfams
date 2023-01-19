@@ -11,7 +11,7 @@
                         <div>
                         <div class="flex items-center">
                             <img class="h-16 w-16 rounded-full sm:hidden" :src="app.app_logo" alt="">
-                            <h1 class="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:leading-9 sm:truncate">{{ app.current_user.name }} | {{ student.grade_level.level }} - {{ student.section.section }}</h1>
+                            <h1 class="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:leading-9 sm:truncate">{{ app.current_user.name }} | {{ student.grade_level.level }}</h1>
                         </div>
                         <dl class="mt-6 flex flex-col sm:ml-3 sm:mt-1 sm:flex-row sm:flex-wrap">
                             <dt class="sr-only">Company</dt>
