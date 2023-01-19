@@ -308,12 +308,12 @@ class EnrollmentController extends Controller
 
         Mail::to($student->email)->send(new StudentEnrolled($student));
 
-        $utility = BranchUtility::find(1);
+        $branch_utility = BranchUtility::find(1);
 
         $account = BranchAccount::where('branch_id', $branch->id)->first();
 
         $account->update([
-            'royalty' => $account->royalty + $utility->per_student
+            'royalty' => $account->royalty + $branch_utility->per_student
         ]);
 
         return 'enrolled successfully';
@@ -443,5 +443,15 @@ class EnrollmentController extends Controller
         ]);
 
         Mail::to($student->email)->send(new StudentEnrolled($student));
+
+        $branch_utility = BranchUtility::find(1);
+
+        $account = BranchAccount::where('branch_id', $student->branch->id)->first();
+
+        $account->update([
+            'royalty' => $account->royalty + $branch_utility->per_student
+        ]);
+
+        return 'student reenrolled';
     }
 }
