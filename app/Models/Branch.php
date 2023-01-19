@@ -27,7 +27,7 @@ class Branch extends Model
 
     public function getStudentsAttribute()
     {
-        return BranchStudent::where('branch_id', $this->id)->count();
+        return Student::where('branch_id', $this->id)->where('status', 'ACTIVE')->count();
     }
 
     public function payments()
