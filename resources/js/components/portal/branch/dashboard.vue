@@ -43,7 +43,7 @@
                                         <dl>
                                         <dt class="text-sm font-medium text-gray-500 truncate">Number of Students</dt>
                                         <dd>
-                                            <div class="text-3xl font-medium text-gray-900">{{ students }}</div>
+                                            <div class="text-3xl font-medium text-gray-900">{{ branch.students }}</div>
                                         </dd>
                                         </dl>
                                     </div>
@@ -51,7 +51,7 @@
                             </div>
                             <div class="bg-blue-200 px-5 py-3">
                                 <div class="text-sm">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
-                                        
+
                                     </th>
                                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
                                         Remaining Balance
@@ -160,6 +160,8 @@
 </template>
 
 <script>
+    import ChartComponent from '../../incomeChart.vue'
+
     export default {
         props: ['branch', 'students'],
         methods: {
