@@ -412,9 +412,21 @@ class EnrollmentController extends Controller
             'grade_level_id' => $student->grade_level_id + 1,
         ]);
 
+        $subjects = GradeLevelSubject::where('branch_id', $student->branch_id)->where('grade_level_id', $student->grade_level_id + 1)->get();
+
+        $grades = [];
+
+        foreach($subjects as $subject) {
+            $grades[] = [
+                'label' => $subject->subject->name,
+                'value' => 0
+            ];
+        }
+
         $student->grades()->create([
             'section_id' => $request->input('section'),
             'grade_level_id' => $student->grade_level_id + 1,
+            'grade' => $grades,
             'average' => 0,
             'school_year_id' => $current_sy->id,
         ]);
