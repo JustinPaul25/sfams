@@ -81,10 +81,15 @@ class SchoolYearController extends Controller
                 'status' => 'active'
             ]);
 
-            Enroll::create([
-                'school_year_id' => $school->id,
-                'students' => 0
-            ]);
+            $branches = Branch::all();
+
+            foreach($branches as $branch) {
+                Enroll::create([
+                    'school_year_id' => $school->id,
+                    'students' => 0,
+                    'branch_id' => $branch->id
+                ]);
+            }
 
             return;
         }
