@@ -13,11 +13,19 @@ class GradeController extends Controller
     {
         $sy = SchoolYear::where('status', 'active')->first();
 
-        $grade = Grade::where('student_id', $student->id)->where('school_year_id', $sy->id)->first();
+        $student_grade = Grade::where('student_id', $student->id)->where('school_year_id', $sy->id)->first();
         $grades = $request->input('grades');
+        $total = 0;
 
-        $grade->update([
-            'grade' => $grades
+        foreach($grades as $grade) {
+            $total = $total + $grade['value'];
+        }
+
+        $average = $total/count($grades);
+
+        $student_grade->update([
+            'grade' => $grades,
+            'average' => $average,
         ]);
 
         return 'Updated Successfully';

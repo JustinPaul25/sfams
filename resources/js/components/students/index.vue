@@ -207,6 +207,9 @@
                         </tr>
                     </tbody>
                 </table>
+                <div v-if="showError" class="text-xs font-bold text-red-500">
+                    Grades must not be negative integer or greater than 100!
+                </div>
                 <button @click="updateGrade()" class="mt-2 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Update Grades</button>
             </div>
         </sweet-modal>
@@ -228,6 +231,7 @@
                 status: '',
                 grades: [],
                 selectedStudent: null,
+                showError: false,
                 form: {
                     ECCD_checklist: false,
                     birth_cert: false,
@@ -274,13 +278,36 @@
                 this.selectedStudent = student
                 this.$refs.gradesModal.open()
             },
-            async updateGrade() {
-                await axios.put(`/update-grades/${this.selectedStudent.id}`, {
-                    grades: this.grades
-                }).then(response => {
-                    this.$refs.gradesModal.close()
-                    this.getStudents()
+            checkInputs() {
+                let check = true
+                this.grades.every(function(grade) {
+                    Number(grade.value) > 100 || Number(grade.value) < 0  ? check = false : check = true
+                    if(check === false) {
+                        return false;
+                    } else {
+                        return true;
+                    }
                 });
+                return check
+            },
+            async updateGrade() {
+                const check = this.checkInputs()
+                if(check) {
+                    await axios.put(`/update-grades/${this.selectedStudent.id}`, {
+                    grades: this.grades
+                    }).then(response => {
+                        this.showError = false
+                        this.$refs.gradesModal.close()
+                        this.getStudents()
+                        this.$swal.fire({
+                            icon: 'Success',
+                            title: 'Grades updated.',
+                            text: '',
+                        })
+                    });
+                } else {
+                    this.showError = true
+                }
             },
             openRequirementsModal(requirements) {
                 const reqData = {
