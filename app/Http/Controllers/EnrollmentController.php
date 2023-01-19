@@ -445,8 +445,9 @@ class EnrollmentController extends Controller
         Mail::to($student->email)->send(new StudentEnrolled($student));
 
         $branch_utility = BranchUtility::find(1);
+        $branch = Branch::find($student->branch_id);
 
-        $account = BranchAccount::where('branch_id', $student->branch->id)->first();
+        $account = BranchAccount::where('branch_id', $branch->id)->first();
 
         $account->update([
             'royalty' => $account->royalty + $branch_utility->per_student
