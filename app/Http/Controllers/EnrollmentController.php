@@ -254,12 +254,6 @@ class EnrollmentController extends Controller
 
         $current_sy = SchoolYear::where('status', 'active')->first();
 
-        $enroll = Enroll::Where('school_year_id', $current_sy->id)->first();
-
-        $enroll->update([
-            'students' => $enroll->students + 1,
-        ]);
-
         $student->payments()->create([
             'school_year_id' => $current_sy->id,
             'description' => $desc,
@@ -314,6 +308,12 @@ class EnrollmentController extends Controller
 
         $account->update([
             'royalty' => $account->royalty + $branch_utility->per_student
+        ]);
+
+        $enroll = Enroll::Where('school_year_id', $current_sy->id)->where('branch_id', $branch->id)->first();
+
+        $enroll->update([
+            'students' => $enroll->students + 1,
         ]);
 
         return 'enrolled successfully';
@@ -397,12 +397,6 @@ class EnrollmentController extends Controller
 
         $current_sy = SchoolYear::where('status', 'active')->first();
 
-        $enroll = Enroll::Where('school_year_id', $current_sy->id)->first();
-
-        $enroll->update([
-            'students' => $enroll->students + 1,
-        ]);
-
         $student->payments()->create([
             'school_year_id' => $current_sy->id,
             'description' => $desc,
@@ -451,6 +445,12 @@ class EnrollmentController extends Controller
 
         $account->update([
             'royalty' => $account->royalty + $branch_utility->per_student
+        ]);
+
+        $enroll = Enroll::Where('school_year_id', $current_sy->id)->where('branch_id', $branch->id)->first();
+
+        $enroll->update([
+            'students' => $enroll->students + 1,
         ]);
 
         return 'student reenrolled';

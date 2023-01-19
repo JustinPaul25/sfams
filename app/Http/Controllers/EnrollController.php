@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Branch;
 use App\Models\Enroll;
 use Illuminate\Http\Request;
 
@@ -9,8 +10,10 @@ class EnrollController extends Controller
 {
     public function datas()
     {
-        $enrolls = Enroll::get();
-        $yearsCount = Enroll::count();
+        $user = auth()->user();
+        $branch = Branch::where('user_id', $user->id)->first();
+        $enrolls = Enroll::where('branch_id', $branch->id)->get();
+        $yearsCount = Enroll::where('branch_id', $branch->id)->count();
 
         if($enrolls[0]->students) {
             $rates = [];
@@ -35,7 +38,7 @@ class EnrollController extends Controller
                 $rate = $rate/(10 ** 2);
             }
 
-            return response()->json(['enroll' => Enroll::get(), 'rate' => round($rate,5)]);
+            return response()->json(['enroll' => Enroll::where('branch_id', $branch->id)->get(), 'rate' => round($rate,5)]);
         }
 
         return 'No Data';

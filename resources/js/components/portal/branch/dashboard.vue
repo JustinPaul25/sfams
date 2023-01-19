@@ -108,6 +108,11 @@
                     </div>
                 </div>
             </div>
+            <div class="w-full lg:flex items-center">
+                <div class="w-full mx-auto mb-8 px-8">
+                    <chart-component v-if="showChart" :labels="labels" :studdata="rawData"></chart-component>
+                </div>
+            </div>
         </main>
         <sweet-modal ref="accountModal">
             <p class="font-bold text-lg">Remaining Account Balance</p>
@@ -164,7 +169,32 @@
 
     export default {
         props: ['branch', 'students'],
+        components: {
+            ChartComponent
+        },
+        data() {
+            return {
+                rawData: [],
+                labels: [],
+                showChart: false
+            }
+        },
         methods: {
+            async getDatas() {
+                axios.get('/enroll-data')
+                .then(response => {
+                    response.data.enroll.forEach((val, key, arr) => {
+                        this.rawData.push(val.students)
+                        this.labels.push(parseInt(val.school_year.to));
+                        if (Object.is(arr.length - 1, key)) {
+                            this.rawData.push(((val.students) * parseFloat(response.data.rate)) +  parseFloat(val.students))
+                            this.labels.push(parseInt(val.school_year.to) + 1);
+                            this.showChart = true
+                        }
+                    });
+                    return
+                })
+            },
             remainingBalance() {
                 const account = this.branch.account;
 
@@ -173,6 +203,9 @@
             openAccountModal() {
                 this.$refs.accountModal.open()
             },
+        },
+        mounted() {
+            this.getDatas()
         }
     }
 </script>

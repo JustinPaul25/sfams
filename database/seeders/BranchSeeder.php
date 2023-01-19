@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\Branch;
+use App\Models\Enroll;
 use App\Types\RoleType;
 use App\Models\BranchAccount;
 use App\Models\BranchUtility;
@@ -75,6 +76,12 @@ class BranchSeeder extends Seeder
                 'renewal' => $utility->renewal,
                 'royalty' => 0,
                 'per_student_total' => 0,
+            ]);
+
+            Enroll::create([
+                'school_year_id' => 1,
+                'students' => 0,
+                'branch_id' => $branch->id,
             ]);
 
             $user->assignRole(RoleType::BRANCH);
