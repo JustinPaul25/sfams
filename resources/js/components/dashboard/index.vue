@@ -170,16 +170,23 @@
                 </div>
             </div>
         </main>
-        <div class="w-full flex items-center">
-            <div class="w-1/2 mx-auto">
-                <chart-component v-if="showChart" :labels="labels" :studdata="rawData"></chart-component>
+        <div class="w-full lg:flex items-center">
+            <div class="lg:w-8/12 w-full mx-auto mb-8 px-8">
+                <chart-component v-if="labels.length !== 0" :labels="labels" :datas="datas"></chart-component>
+            </div>
+            <div class="lg:w-4/12 w-full mx-auto mb-8 px-8">
+                <ol class="list-decimal">
+                    <li class="text-xs text-blue-700 font-bold" v-for="branch in branchData">
+                        {{ branch.name }} - <span class="font-semibold text-gray-800">{{ branch.address }}</span>
+                    </li>
+                </ol>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import ChartComponent from '../incomechart.vue'
+import ChartComponent from '../branchesChart.vue'
 
 export default {
     components: {
@@ -193,7 +200,9 @@ export default {
             students: 0,
             branches: 0,
             rawData: [],
-            labels: []
+            labels: [],
+            datas: [],
+            branchData: [],
         }
     },
     methods: {
@@ -209,22 +218,33 @@ export default {
         async getDatas() {
             axios.get('/enroll-data')
             .then(response => {
-                response.data.enroll.forEach((val, key, arr) => {
-                    this.rawData.push(val.students)
-                    this.labels.push(parseInt(val.school_year.to));
-                    if (Object.is(arr.length - 1, key)) {
-                        this.rawData.push(((val.students) * parseFloat(response.data.rate)) +  parseFloat(val.students))
-                        this.labels.push(parseInt(val.school_year.to) + 1);
-                        this.showChart = true
-                    }
-                });
+                // response.data.enroll.forEach((val, key, arr) => {
+                //     this.rawData.push(val.students)
+                //     this.labels.push(parseInt(val.school_year.to));
+                //     if (Object.is(arr.length - 1, key)) {
+                //         this.rawData.push(((val.students) * parseFloat(response.data.rate)) +  parseFloat(val.students))
+                //         this.labels.push(parseInt(val.school_year.to) + 1);
+                //         this.showChart = true
+                //     }
+                // });
                 return
             })
         },
+        async getBranches() {
+            axios.get('/branch-list')
+            .then(response => {
+                response.data.forEach((val, key, arr) => {
+                    this.labels.push(key+1);
+                    this.datas.push(val.students)
+                })
+                this.branchData = response.data
+            })
+        }
     },
     created() {
-        this.getDatas();
-        this.getTransactions()
+        //this.getDatas();
+        this.getTransactions();
+        this.getBranches();
     }
 }
 </script>
