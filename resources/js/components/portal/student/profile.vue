@@ -4,7 +4,7 @@
             <div class="w-full md:w-3/12 md:mx-2">
                 <div class="bg-white p-3 border-t-4 border-blue-700">
                     <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">{{ app.current_user.name }}</h1>
-                    <h3 class="text-gray-600 font-lg text-semibold leading-6">{{ student.grade_level.level }} - {{ student.section.section }}</h3>
+                    <h3 class="text-gray-600 font-lg text-semibold leading-6">{{ student.grade_level.level }}</h3>
                     <p class="text-sm text-gray-500 hover:text-gray-600 leading-6 mt-4">ADDRESS: </p>
                     <p class="text-base text-gray-500 hover:text-gray-600 leading-6 mb-4">{{ student.purok_street }}, {{ student.barangay }}, {{ student.city }}</p>
                     <ul
@@ -35,6 +35,22 @@
             </div>
             <div class="w-full md:w-9/12 h-64 bg-blue-100">
                 <div class="bg-white p-3 shadow-sm rounded-sm">
+                    <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+                        </svg>
+                        <span class="tracking-wide">My School</span>
+                    </div>
+                    <div class="text-gray-700">
+                        <div>
+                            <div class="px-4 font-bold">{{ student.branch.name }}</div>
+                        </div>
+                        <div>
+                            <div class="px-4 text-xs">{{ student.branch.address }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-3 shadow-sm rounded-sm mt-4">
                     <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
                         <span clas="text-green-500">
                             <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="h-5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
