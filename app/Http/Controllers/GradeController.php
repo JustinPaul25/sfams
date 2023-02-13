@@ -25,8 +25,6 @@ class GradeController extends Controller
 
         $average = $total/(count($grades)*4);
 
-        dd($average);
-
         $student_grade->update([
             'grade' => $grades,
             'average' => $average,
