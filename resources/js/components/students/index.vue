@@ -195,14 +195,17 @@
                     <thead>
                         <tr>
                             <th class="border border-current">Subject</th>
-                            <th class="border border-current">Grade</th>
+                            <th class="border border-current">1st</th>
+                            <th class="border border-current">2nd</th>
+                            <th class="border border-current">3rd</th>
+                            <th class="border border-current">4th</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr v-for="(value, name, index) in grades">
                             <td class="border border-current">{{ value.label }}</td>
-                            <td class="border border-current">
-                                <input v-model="value.value" type="number" min="1" max="100" class="w-full text-center">
+                            <td  v-for="(grade, name, index) in value.value" class="border border-current">
+                                <input v-model="grade.value" type="number" min="1" max="100" class="w-full text-center">
                             </td>
                         </tr>
                     </tbody>
@@ -218,7 +221,6 @@
 
 <script>
     import { mapGetters } from "vuex";
-    import _ from 'lodash';
 
     export default {
         props: ['levels', 'branches'],
@@ -281,12 +283,14 @@
             checkInputs() {
                 let check = true
                 this.grades.every(function(grade) {
-                    Number(grade.value) > 100 || Number(grade.value) < 0  ? check = false : check = true
-                    if(check === false) {
-                        return false;
-                    } else {
-                        return true;
-                    }
+                    grade.value.every(function(gradeValue) {
+                        Number(gradeValue.value) > 100 || Number(gradeValue.value) < 0  ? check = false : check = true
+                        if(check === false) {
+                            return false;
+                        } else {
+                            return true;
+                        }
+                    })
                 });
                 return check
             },

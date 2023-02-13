@@ -18,10 +18,14 @@ class GradeController extends Controller
         $total = 0;
 
         foreach($grades as $grade) {
-            $total = $total + $grade['value'];
+            foreach($grade['value'] as $value) {
+                $total = $total + $value['value'];
+            }
         }
 
-        $average = $total/count($grades);
+        $average = $total/(count($grades)*4);
+
+        dd($average);
 
         $student_grade->update([
             'grade' => $grades,

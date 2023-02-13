@@ -204,7 +204,24 @@ class EnrollmentController extends Controller
         foreach($subjects as $subject) {
             $grades[] = [
                 'label' => $subject->subject->name,
-                'value' => 0
+                'value' => [
+                    [
+                        'label' => 'first',
+                        'value' => 0
+                    ],
+                    [
+                        'label' => 'second',
+                        'value' => 0
+                    ],
+                    [
+                        'label' => 'third',
+                        'value' => 0
+                    ],
+                    [
+                        'label' => 'fourth',
+                        'value' => 0
+                    ]
+                ]
             ];
         }
 
@@ -413,7 +430,24 @@ class EnrollmentController extends Controller
         foreach($subjects as $subject) {
             $grades[] = [
                 'label' => $subject->subject->name,
-                'value' => 0
+                'value' => [
+                    [
+                        'label' => 'first',
+                        'value' => 0
+                    ],
+                    [
+                        'label' => 'second',
+                        'value' => 0
+                    ],
+                    [
+                        'label' => 'third',
+                        'value' => 0
+                    ],
+                    [
+                        'label' => 'fourth',
+                        'value' => 0
+                    ]
+                ]
             ];
         }
 
