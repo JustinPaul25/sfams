@@ -21,7 +21,11 @@
                     </ul>
                 </div>
                 <div class="bg-white p-3 border-t-4 border-blue-700 mt-4">
-                    <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">Grades</h1>
+                    <div class="flex justify-between">
+                        <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">Grades</h1>
+                        <button @click="openGradesModal()" class="text-blue-700 font-bold hover:opacity-75">View Table</button>
+                    </div>
+
                     <ul
                         class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
                         <li v-for="grade in student.grades" class="flex items-center py-3">
@@ -150,11 +154,40 @@
                 </div>
             </div>
         </div>
+        <sweet-modal ref="gradesModal">
+            <div>
+                <p class="font-bold text-lg">{{ student.last_name }}, {{ student.first_name }} Grades</p>
+                <table class="table-auto w-full mt-2 border border-current">
+                    <thead>
+                        <tr>
+                            <th class="border border-current">Subject</th>
+                            <th class="border border-current">1st</th>
+                            <th class="border border-current">2nd</th>
+                            <th class="border border-current">3rd</th>
+                            <th class="border border-current">4th</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(value, name, index) in student.grade.grade">
+                            <td class="border border-current">{{ value.label }}</td>
+                            <td  v-for="(grade, name, index) in value.value" class="border border-current">
+                                <p>{{ grade.value }}</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </sweet-modal>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['student']
+        props: ['student'],
+        methods: {
+            openGradesModal() {
+                this.$refs.gradesModal.open()
+            },
+        }
     }
 </script>
