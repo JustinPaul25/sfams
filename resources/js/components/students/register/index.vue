@@ -55,9 +55,9 @@
                     </ol>
                 </nav>
                 <step-one v-if="step == 1" :levels="levels" :branches="branches" @next-step="nextStepTwo"></step-one>
-                <step-two v-if="step == 2" @prev-step="step -= 1" :levels="levels" @next-step="nextStepFour"></step-two>
-                <step-three v-if="step == 3" @prev-step="step -= 1" @next-step="nextStepFour"></step-three>
-                <step-four v-if="step == 4" :levels="levels" @prev-step="step -= 1" :form="form"></step-four>
+                <step-two v-if="step == 2" @prev-step="prevStep" :levels="levels" @next-step="nextStepFour"></step-two>
+                <step-three v-if="step == 3" @prev-step="prevStep" @next-step="nextStepFour"></step-three>
+                <step-four v-if="step == 4" :levels="levels" @prev-step="prevStep" :form="form"></step-four>
             </div>
         </div>
         </form>
@@ -66,10 +66,10 @@
 
 <script>
 
-import StepOne from './stepOne.vue'
-import StepTwo from './stepTwo.vue'
-import StepThree from './stepThree.vue'
 import StepFour from './stepFour.vue'
+import StepOne from './stepOne.vue'
+import StepThree from './stepThree.vue'
+import StepTwo from './stepTwo.vue'
 
 export default {
     components: { StepOne, StepTwo, StepThree, StepFour },
@@ -84,9 +84,28 @@ export default {
         incStep(inc) {
             this.step = this.step + inc
         },
+        prevStep() {
+            if(this.step === 4) {
+                if(this.form.grade_entered_id === 1) {
+                    this.step = this.step - 3
+                } else {
+                    this.step -= 1
+                }
+            } else {
+                this.step -= 1
+            }
+        },
         nextStepTwo(form) {
             this.form = form
-            this.incStep(1)
+            if(form.grade_entered_id === 1) {
+                this.form.last_school_attended = 'N/A'
+                this.form.last_school_address = 'N/A'
+                this.form.last_school_grade_section = 'N/A'
+                this.form.last_school_school_year = 'N/A'
+                this.incStep(3)
+            } else {
+                this.incStep(1)
+            }
         },
         nextStepThree(form) {
             this.form.last_school_attended = form.last_school_attended
