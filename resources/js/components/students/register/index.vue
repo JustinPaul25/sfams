@@ -56,8 +56,7 @@
                 </nav>
                 <step-one v-if="step == 1" :levels="levels" :branches="branches" @next-step="nextStepTwo"></step-one>
                 <step-two v-if="step == 2" @prev-step="prevStep" :levels="levels" @next-step="nextStepFour"></step-two>
-                <step-three v-if="step == 3" @prev-step="prevStep" @next-step="nextStepFour"></step-three>
-                <step-four v-if="step == 4" :levels="levels" @prev-step="prevStep" :form="form"></step-four>
+                <step-four v-if="step == 3" :levels="levels" @prev-step="prevStep" :form="form"></step-four>
             </div>
         </div>
         </form>
@@ -85,9 +84,9 @@ export default {
             this.step = this.step + inc
         },
         prevStep() {
-            if(this.step === 4) {
+            if(this.step === 3) {
                 if(this.form.grade_entered_id === 1) {
-                    this.step = this.step - 3
+                    this.step = this.step - 2
                 } else {
                     this.step -= 1
                 }
@@ -102,7 +101,7 @@ export default {
                 this.form.last_school_address = 'N/A'
                 this.form.last_school_grade_section = 'N/A'
                 this.form.last_school_school_year = 'N/A'
-                this.incStep(3)
+                this.incStep(2)
             } else {
                 this.incStep(1)
             }
@@ -119,7 +118,7 @@ export default {
             this.form.last_school_address = form.last_school_address
             this.form.last_school_grade_section = form.last_school_grade_section
             this.form.last_school_school_year = form.last_school_school_year
-            this.incStep(2)
+            this.incStep(1)
         }
     }
 }
