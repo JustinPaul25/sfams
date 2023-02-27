@@ -101,11 +101,11 @@ class EnrollmentController extends Controller
             $department = 'KINDER';
         }
 
-        if($request->input('grade_entered_id') > 2 && $request->input('grade_entered_id') < 9) {
+        if($request->input('grade_entered_id') > 3 && $request->input('grade_entered_id') < 11) {
             $department = 'ELEM';
         }
 
-        if($request->input('grade_entered_id') > 8 && $request->input('grade_entered_id') < 13) {
+        if($request->input('grade_entered_id') > 9 && $request->input('grade_entered_id') < 15) {
             $department = 'SRH';
         }
 
@@ -166,9 +166,9 @@ class EnrollmentController extends Controller
                 $departmentReq = Requirement::where('department', 'Elementary')
                     ->where('transferee', true)->first();
             }
-        } else if ( $student->grade_entered_id < 12 ) {
+        } else if ( $student->grade_entered_id < 13 ) {
             $department = 'Junior High';
-            if($student->grade_entered_id === 8) {
+            if($student->grade_entered_id === 9) {
                 $departmentReq = Requirement::where('department', 'Junior High')
                     ->where('transferee', false)->first();
             } else {
@@ -177,7 +177,7 @@ class EnrollmentController extends Controller
             }
         } else {
             $department = 'Senior High';
-            if($student->grade_entered_id === 11) {
+            if($student->grade_entered_id === 12) {
                 $departmentReq = Requirement::where('department', 'Junior High')
                     ->where('transferee', false)->first();
             } else {
@@ -344,7 +344,7 @@ class EnrollmentController extends Controller
 
         if($student->grade_level_id + 1 < 8) {
             $department = 'Elementary';
-        } else if ( $student->grade_level_id + 1 < 12 ) {
+        } else if ( $student->grade_level_id + 1 < 13 ) {
             $department = 'Junior High';
         } else {
             $department = 'Senior High';
