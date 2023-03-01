@@ -208,7 +208,8 @@
                 grades.forEach(element => {
                     average = Number(average) + Number(element.value[index].value)
                 });
-                return average/grades.length;
+                let ave = average/grades.length;
+                return Math.round(ave * 10) / 10;
             },
         }
     }
