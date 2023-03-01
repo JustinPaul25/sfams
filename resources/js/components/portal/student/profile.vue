@@ -174,6 +174,21 @@
                                 <p>{{ grade.value }}</p>
                             </td>
                         </tr>
+                        <tr>
+                            <td class="border border-current font-bold">Average:</td>
+                            <td class="border border-current">
+                                {{ getPeriodAverage(student.grade.grade, 0) }}
+                            </td>
+                            <td class="border border-current">
+                                {{ getPeriodAverage(student.grade.grade, 1) }}
+                            </td>
+                            <td class="border border-current">
+                                {{ getPeriodAverage(student.grade.grade, 2) }}
+                            </td>
+                            <td class="border border-current">
+                                {{ getPeriodAverage(student.grade.grade, 3) }}
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -187,6 +202,13 @@
         methods: {
             openGradesModal() {
                 this.$refs.gradesModal.open()
+            },
+            getPeriodAverage(grades, index) {
+                let average = 0;
+                grades.forEach(element => {
+                    average = Number(average) + Number(element.value[index].value)
+                });
+                return average/grades.length;
             },
         }
     }

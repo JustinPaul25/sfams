@@ -208,6 +208,21 @@
                                 <input v-model="grade.value" type="number" min="1" max="100" class="w-full text-center">
                             </td>
                         </tr>
+                        <tr>
+                            <td class="border border-current font-bold">Average:</td>
+                            <td class="border border-current">
+                                <input :value="getPeriodAverage(grades, 0)" disabled type="number" min="1" max="100" class="w-full text-center">
+                            </td>
+                            <td class="border border-current">
+                                <input :value="getPeriodAverage(grades, 1)" disabled type="number" min="1" max="100" class="w-full text-center">
+                            </td>
+                            <td class="border border-current">
+                                <input :value="getPeriodAverage(grades, 2)" disabled type="number" min="1" max="100" class="w-full text-center">
+                            </td>
+                            <td class="border border-current">
+                                <input :value="getPeriodAverage(grades, 3)" disabled type="number" min="1" max="100" class="w-full text-center">
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
                 <div v-if="showError" class="text-xs font-bold text-red-500">
@@ -265,6 +280,13 @@
             }
         },
         methods: {
+            getPeriodAverage(grades, index) {
+                let average = 0;
+                grades.forEach(element => {
+                    average = Number(average) + Number(element.value[index].value)
+                });
+                return average/grades.length;
+            },
             async getStudents() {
                 await this.$store.dispatch("student/getStudents", {
                     params: {
