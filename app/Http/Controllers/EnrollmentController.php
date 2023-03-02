@@ -101,7 +101,7 @@ class EnrollmentController extends Controller
             $department = 'KINDER';
         }
 
-        if($request->input('grade_entered_id') > 3 && $request->input('grade_entered_id') < 11) {
+        if($request->input('grade_entered_id') > 2 && $request->input('grade_entered_id') < 11) {
             $department = 'ELEM';
         }
 

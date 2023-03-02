@@ -13,17 +13,39 @@
             <div class="grid grid-cols-8 gap-8 mt-8">
                 <div class="col-span-8 sm:col-span-4 lg:col-span-2">
                     <div class="relative inline-block text-gray-700 w-full">
-                        <input v-model="search" type="text" class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Search Student">
-                        <div class="absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none">
-                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-blue-500"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <select v-model="level" class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Regular input">
+                            <option value="" selected>All Grades</option>
+                            <option v-for="level in levels" :value="level.id">{{ level.level }}</option>
+                        </select>
+                        <div
+                            class="absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" class="text-blue-500 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                        </div>
+                        <div
+                            class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"
+                        >
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"
+                                fill-rule="evenodd"
+                            ></path>
+                            </svg>
                         </div>
                     </div>
                 </div>
                 <div class="col-span-8 sm:col-span-4 lg:col-span-2">
                     <div class="relative inline-block text-gray-700 w-full">
-                        <select v-model="level" class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Regular input">
-                            <option value="" selected>All Grades</option>
-                            <option v-for="level in levels" :value="level.id">{{ level.level }}</option>
+                        <select v-model="section" class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Regular input">
+                            <option value="" selected>All Sections</option>
+                            <option :value="1">A</option>
+                            <option :value="2">B</option>
+                            <option :value="3">C</option>
+                            <option :value="4">D</option>
+                            <option :value="5">E</option>
                         </select>
                         <div
                             class="absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none"
@@ -97,6 +119,14 @@
                     </div>
                 </div>
             </div>
+            <div class="col-span-8 sm:col-span-4 lg:col-span-2 mt-2">
+                    <div class="relative inline-block text-gray-700 w-full">
+                        <input v-model="search" type="text" class="w-full h-10 pl-9 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Search Student">
+                        <div class="absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-blue-500"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                    </div>
+                </div>
             <div class="mt-2 flex flex-col">
                 <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
@@ -116,7 +146,7 @@
                             <tbody class="divide-y divide-gray-200 bg-white">
                             <tr v-for="student in students">
                                 <td class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 hover:text-blue-700"><a :href="`/student/${student.id}`">{{ student.last_name }}, {{ student.first_name }}</a></td>
-                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">{{ student.grade_level.level }}</td>
+                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">{{ student.grade_level.level }} - {{ student.section.section }}</td>
                                 <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">
                                     <span v-if="student.status == 'ENROLLED'" class="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blue-600 bg-blue-200 uppercase last:mr-0 mr-1">
                                         Enrolled
@@ -246,6 +276,7 @@
                 level: '',
                 sort_by: 'asc',
                 status: '',
+                section: '',
                 grades: [],
                 selectedStudent: null,
                 showError: false,
@@ -272,6 +303,9 @@
             level(newSearch, oldSearch) {
                 this.getStudents()
             },
+            section(newSearch, oldSearch) {
+                this.getStudents()
+            },
             sort_by(newSearch, oldSearch) {
                 this.getStudents()
             },
@@ -294,7 +328,8 @@
                         name: this.search,
                         level: this.level,
                         sort_by: this.sort_by,
-                        status: this.status
+                        status: this.status,
+                        section: this.section
                     }
                 });
             },

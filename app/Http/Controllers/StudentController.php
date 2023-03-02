@@ -27,6 +27,10 @@ class StudentController extends Controller
             $query = $query->where('grade_level_id', $request->input('level'));
         }
 
+        if($request->filled('section')) {
+            $query = $query->where('section_id', $request->input('section'));
+        }
+
         if($request->filled('status')) {
             $query = $query->where('status', $request->input('status'));
         } else {
