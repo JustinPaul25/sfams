@@ -22,16 +22,43 @@
                 </div>
                 <div class="bg-white p-3 border-t-4 border-blue-700 mt-4">
                     <div class="flex justify-between">
-                        <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">Grades</h1>
-                        <button @click="openGradesModal()" class="text-blue-700 font-bold hover:opacity-75">View Table</button>
+                        <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">
+                            My Grades <br>
+                            <span class="text-blue-700 text-2xl capitalize">{{ student.grade_level.level }}</span>
+                        </h1>
+                        <button @click="openGradesModal()" class="text-blue-700 hover:opacity-75"><span class="text-sm">View Grades</span></button>
                     </div>
 
                     <ul
                         class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
-                        <li v-for="grade in student.grades" class="flex items-center py-3">
-                            <span>{{ grade.grade_level.level }}</span>
+                        <li class="flex items-center py-3">
+                            <span>First Grading</span>
                             <span class="ml-auto font-bold">
-                                Avg: {{ grade.average }}
+                                Avg: {{ getPeriodAverage(student.grade.grade, 0) }}
+                            </span>
+                        </li>
+                        <li class="flex items-center py-3">
+                            <span>Second Grading</span>
+                            <span class="ml-auto font-bold">
+                                Avg: {{ getPeriodAverage(student.grade.grade, 1) }}
+                            </span>
+                        </li>
+                        <li class="flex items-center py-3">
+                            <span>Third Grading</span>
+                            <span class="ml-auto font-bold">
+                                Avg: {{ getPeriodAverage(student.grade.grade, 2) }}
+                            </span>
+                        </li>
+                        <li class="flex items-center py-3">
+                            <span>Fourth Grading</span>
+                            <span class="ml-auto font-bold">
+                                Avg: {{ getPeriodAverage(student.grade.grade, 3) }}
+                            </span>
+                        </li>
+                        <li class="flex items-center py-3">
+                            <span class="font-bold text-lg">General Average</span>
+                            <span class="ml-auto font-bold text-lg">
+                                {{ generalAve() }}
                             </span>
                         </li>
                     </ul>
@@ -200,6 +227,11 @@
     export default {
         props: ['student'],
         methods: {
+            generalAve() {
+                const student = this.student
+                let ave = (this.getPeriodAverage(student.grade.grade, 0) + this.getPeriodAverage(student.grade.grade, 1) + this.getPeriodAverage(student.grade.grade, 2) + this.getPeriodAverage(student.grade.grade, 3))/4
+                return Math.round(ave * 10) / 10;
+            },
             openGradesModal() {
                 this.$refs.gradesModal.open()
             },
