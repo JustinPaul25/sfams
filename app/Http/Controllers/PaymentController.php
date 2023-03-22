@@ -44,6 +44,7 @@ class PaymentController extends Controller
             'type' => 'STUDENT',
             'section_id' => $request->section_id,
             'grade_level_id' => $student->grade_entered_id,
+            'or_number' => $request->or_number,
         ]);
 
         StudentNotification::create([
@@ -84,6 +85,7 @@ class PaymentController extends Controller
         $branch->payments()->create([
             'school_year_id' => $current_sy->id,
             'description' => $desc,
+            'or_number' => $request->or_number,
             'amount' => $request->input('back_account') + $request->input('renewal') + $request->input('royalty') + $request->input('per_student_total'),
             'type' => 'BRANCH',
         ]);

@@ -128,7 +128,7 @@
                     <table class="min-w-full divide-y divide-gray-300">
                         <thead class="bg-gray-50">
                         <tr>
-                            <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Transaction Number</th>
+                            <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">OR Number</th>
                             <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Description</th>
                             <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Amount</th>
                             <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Date</th>
@@ -136,7 +136,7 @@
                         </thead>
                         <tbody class="divide-y divide-gray-200 bg-white">
                         <tr v-for="payment in student.payments">
-                            <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-blue-700 sm:pl-6">{{ payment.id }}</td>
+                            <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-blue-700 sm:pl-6">{{ payment.or_number }}</td>
                             <td class="whitespace-nowrap px-3 py-4 text-xs text-gray-500">{{ payment.description }}</td>
                             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">₱ {{ payment.amount }}</td>
                             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ payment.created_at }}</td>
@@ -158,7 +158,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
-                                        
+
                                     </th>
                                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
                                         Remaining Balance

@@ -278,6 +278,7 @@ class EnrollmentController extends Controller
             'type' => 'STUDENT',
             'section_id' => $request->input('section'),
             'grade_level_id' => $student->grade_entered_id,
+            'or_number' => $request->or_number,
         ]);
 
         $student->studentRequirement()->create([
@@ -421,6 +422,7 @@ class EnrollmentController extends Controller
             'type' => 'STUDENT',
             'section_id' => $request->input('section'),
             'grade_level_id' => $student->grade_level_id + 1,
+            'or_number' => $request->or_number,
         ]);
 
         $subjects = GradeLevelSubject::where('branch_id', $student->branch_id)->where('grade_level_id', $student->grade_level_id + 1)->get();

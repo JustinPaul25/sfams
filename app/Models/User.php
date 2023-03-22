@@ -56,6 +56,8 @@ class User extends Authenticatable implements HasMedia
 
     protected $appends = ['role'];
 
+    protected $with = ['branch'];
+
     public function getRoleAttribute()
     {
         $roles = $this->getRoleNames();

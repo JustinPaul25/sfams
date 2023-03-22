@@ -19,7 +19,7 @@
             </div>
         </div>
         <p class="text-centered text-2xl text-gray-900 pt-2 font-bold">Personal Details</p>
-        <div class="pt-3 sm:pt-2">
+        <div class="pt-3 sm:pt-2" v-if="app.is_auth">
             <div role="group" aria-labelledby="label-notifications">
                 <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-baseline">
                     <div>
@@ -34,7 +34,7 @@
                     <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>Branch</dt>
                     <div class="mt-1 sm:mt-0 sm:col-span-2">
                         <div class="relative inline-block text-gray-700 w-full">
-                            <select v-model="form.branch" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
+                            <select v-model="form.branch" :disabled="app.is_auth && !app.is_admin" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
                                 <option value="" disabled selected>Select Branch</option>
                                 <option v-for="branch in branches" :value="branch.id">{{ branch.name }} - {{ branch.address }}</option>
                             </select>
@@ -44,7 +44,15 @@
             </dl>
         </div>
         <div class="mx-auto">
-            <dl class="rounded-lg sm:grid sm:grid-cols-3">
+            <div class="p-2">
+                <label class="flex content-center">
+                    <input v-model="withMiddle" type="checkbox" class="accent-blue-800 w-6 h-6">
+                    <span class="ml-2 font-bold">
+                        With Middle Name
+                    </span>
+                </label>
+            </div>
+            <dl v-if="withMiddle" class="rounded-lg sm:grid sm:grid-cols-3">
                 <div class="flex flex-col p-2">
                     <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>First Name</dt>
                     <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -58,6 +66,24 @@
                     <div class="mt-1 sm:mt-0 sm:col-span-2">
                         <div class="relative inline-block text-gray-700 w-full">
                             <input v-model="form.middle_name" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Middle Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col p-2">
+                    <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>Last Name</dt>
+                    <div class="mt-1 sm:mt-0 sm:col-span-2">
+                        <div class="relative inline-block text-gray-700 w-full">
+                            <input v-model="form.last_name" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Last Name">
+                        </div>
+                    </div>
+                </div>
+            </dl>
+            <dl v-else class="rounded-lg sm:grid sm:grid-cols-2">
+                <div class="flex flex-col p-2">
+                    <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>First Name</dt>
+                    <div class="mt-1 sm:mt-0 sm:col-span-2">
+                        <div class="relative inline-block text-gray-700 w-full">
+                            <input v-model="form.first_name" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="First Name">
                         </div>
                     </div>
                 </div>
@@ -238,6 +264,7 @@ export default {
     data() {
         return {
             required: [],
+            withMiddle: false,
             form: {
                 first_name: '',
                 middle_name: '',
@@ -341,6 +368,11 @@ export default {
             }
             return isCleared
         },
+    },
+    mounted() {
+        if(this.app.is_auth) {
+            this.form.branch = this.app.current_user.branch.id
+        }
     }
 }
 </script>

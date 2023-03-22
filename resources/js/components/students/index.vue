@@ -6,9 +6,9 @@
                     <h1 class="text-xl font-semibold text-gray-900">Students</h1>
                     <p class="mt-2 text-sm text-gray-700">A table of recorded students.</p>
                 </div>
-                <!-- <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+                <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
                     <a href="/students/form" class="inline-flex items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto">Record Student</a>
-                </div> -->
+                </div>
             </div>
             <div class="grid grid-cols-8 gap-8 mt-8">
                 <div class="col-span-8 sm:col-span-4 lg:col-span-2">
