@@ -17,6 +17,10 @@ class TransactionsController extends Controller
             $payments = $payments->where('type', $request->input('type'));
         }
 
+        if($request->filled('or_number')) {
+            $payments = $payments->where('or_number', 'like', '%'.$request->input('or_number').'%');
+        }
+
         if($request->filled('sortBy')) {
             if($request->input('sortBy')  === "date") {
                 $payments = $payments->whereDate('created_at', '=', date($request->input('date')));
@@ -24,7 +28,7 @@ class TransactionsController extends Controller
 
             if($request->input('sortBy')  === "month") {
                 $month = explode("-", $request->input('month'));
-            
+
                 $payments = $payments->whereYear('created_at', '=', $month[0])
                                     ->whereMonth('created_at', '=', $month[1]);
             }
@@ -34,7 +38,7 @@ class TransactionsController extends Controller
             }
 
             if($request->input('sortBy')  === "range") {
-                $to = date('Y-m-d', strtotime($request->input('to'). ' + 1 days')); 
+                $to = date('Y-m-d', strtotime($request->input('to'). ' + 1 days'));
                 $payments = $payments->whereBetween('created_at', [date($request->input('from')), date($to)]);
             }
         }

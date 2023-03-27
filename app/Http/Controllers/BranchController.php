@@ -47,7 +47,7 @@ class BranchController extends Controller
         ]);
 
         $branch = Branch::create([
-            'name' => $request->input('name'),
+            'name' => ucwords($request->input('name')),
             'address' => $request->input('address'),
             'user_id' => $user->id,
             'student_count' => $request->input('students'),
