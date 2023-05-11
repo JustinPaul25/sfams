@@ -86,6 +86,7 @@ class StudentController extends Controller
     {
         return $student->update([
             'email' => $request->input('email'),
+            'lrn' => $request->input('lrn'),
             'first_name' => $request->input('first_name'),
             'last_name' => $request->input('last_name'),
             'middle_name' => $request->input('middle_name'),

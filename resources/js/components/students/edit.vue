@@ -3,6 +3,12 @@
       <form @submit.prevent="updateStudent()">
         <div class="overflow-hidden shadow sm:rounded-md">
           <div class="px-4 py-5 sm:p-6">
+            <div class="grid grid-cols-6 gap-6">
+              <div class="col-span-6 sm:col-span-2">
+                <p class="text-centered text-2xl text-gray-900 pt-2 font-bold">LRN</p>
+                <input required v-model="form.lrn" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
+              </div>
+            </div>
             <p class="text-centered text-2xl text-gray-900 pt-2 font-bold">Personal Details</p>
             <div class="grid grid-cols-6 gap-6">
               <div class="col-span-6 sm:col-span-2">
@@ -101,7 +107,7 @@
         form: {}
       }
     },
-    watch: { 
+    watch: {
       student: function(newVal, oldVal) { // watch it
         console.log('Prop changed: ', newVal, ' | was: ', oldVal)
       }
