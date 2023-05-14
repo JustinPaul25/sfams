@@ -133,7 +133,7 @@
                         <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
                         <table class="min-w-full divide-y divide-gray-300">
                             <thead class="bg-gray-50">
-                            <tr>
+                            <tr><th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">LRN</th>
                                 <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Student Name</th>
                                 <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Grade</th>
                                 <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">Status</th>
@@ -145,6 +145,7 @@
                             </thead>
                             <tbody class="divide-y divide-gray-200 bg-white">
                             <tr v-for="student in students">
+                                <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">{{ student.lrn }}</td>
                                 <td class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 hover:text-blue-700"><a :href="`/student/${student.id}`">{{ student.last_name }}, {{ student.first_name }}</a></td>
                                 <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">{{ student.grade_level.level }} - {{ student.section.section }}</td>
                                 <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">
