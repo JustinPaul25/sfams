@@ -220,13 +220,13 @@
             <p v-if="!checkRequirements() > 0" class="font-bold text-lg">No Requirements Left</p>
             <p v-else class="font-bold text-lg">Requirements Left</p>
             <ul v-if="checkRequirements() > 0" class="list-disc">
-                <li v-if="student.requirements.ECCD_checklist === 0">ECCD Checklist</li>
-                <li v-if="student.requirements.good_moral === 0">Good Moral</li>
-                <li v-if="student.requirements.birth_cert === 0">Birth Certificate PSA (Original)</li>
-                <li v-if="student.requirements.card === 0">Form 138 (Card)</li>
-                <li v-if="student.requirements.coc === 0">Certificate of Completion</li>
-                <li v-if="student.requirements.form_137 === 0">Form 137</li>
-                <li v-if="student.requirements.picture === 0">1x1 Picture</li>
+                <li v-if="student.requirements.ECCD_checklist === false">ECCD Checklist</li>
+                <li v-if="student.requirements.good_moral === false">Good Moral</li>
+                <li v-if="student.requirements.birth_cert === false">Birth Certificate PSA (Original)</li>
+                <li v-if="student.requirements.card === false">Form 138 (Card)</li>
+                <li v-if="student.requirements.coc === false">Certificate of Completion</li>
+                <li v-if="student.requirements.form_137 === false">Form 137</li>
+                <li v-if="student.requirements.picture === false">1x1 Picture</li>
             </ul>
         </sweet-modal>
         <sweet-modal ref="gradesModal">
@@ -260,7 +260,7 @@
                 let reqCount = 0;
 
                 for(let key in requirements) {
-                    if(requirements[key] === 0) {
+                    if(requirements[key] === false) {
                         reqCount++
                     }
                 }
