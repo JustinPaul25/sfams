@@ -232,7 +232,7 @@
             </dl>
             <dl class="rounded-lg sm:grid sm:grid-cols-2">
                 <div class="flex flex-col p-2">
-                    <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>City</dt>
+                    <dt class="mt-2 text-lg leading-6 font-medium text-gray-700 ml-2"><span style="color:#ff0000">*</span>City/Municipality</dt>
                     <div class="mt-1 sm:mt-0 sm:col-span-2">
                         <div class="relative inline-block text-gray-700 w-full">
                             <input v-model="form.city" type="text" class="w-full h-10 pl-6 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="City">
