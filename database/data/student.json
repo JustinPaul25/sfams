@@ -1,12 +1,14 @@
 [
     {
-        "branch_id": "9",
+        "branch_id": 9,
+        "lrn": "0912373",
+        "gender": false,
         "first_name": "Curt Klerr",
         "middle_name": "P",
         "last_name": "Florida",
         "birth_date": "October 4, 2010",
         "birth_place": "Panabo Polymedic Hospital, Inc.",
-        "grade_enter_id": "Grade 2",
+        "grade_enter_id": 4,
         "phone": "0947 555 4820",
         "email": "Florida@gmail.com",
         "father_name": "Lawrence",
@@ -24,5 +26,5 @@
         "last_school_grade_section": "Grade 1",
         "last_school_school_year": "2021-2022"
     }
-    
+
 ]
