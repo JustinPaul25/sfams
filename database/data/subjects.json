@@ -1,7 +1,21 @@
 [
     {
-        "branch_id": 0,
-        "name": "subject_name",
-        "grade_level_id": 0
+
+        "branch_id": 2  ,
+        "name":[ "Math, English, Esp, Filipino, Aral pan, Mapeh, Science, Mother tongue"],
+        "grade_level_id": 5
+    },
+
+    {
+
+        "branch_id": 4  ,
+        "name":[ "Math, English, Esp, Filipino, Aral pan, Mapeh, Science, HELE/TLE"],
+        "grade_level_id": 6
+    },
+    {
+
+        "branch_id": 6  ,
+        "name":[ "Math, English, Esp, Filipino, Aral pan, Mapeh, Science, HELE/TLE"],
+        "grade_level_id": 7
     }
 ]
