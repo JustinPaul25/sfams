@@ -2,27 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use App\Models\Branch;
-use App\Models\Enroll;
-use App\Models\Section;
-use App\Models\Student;
-use App\Types\RoleType;
-use App\Models\GradeLevel;
-use App\Models\SchoolYear;
-use App\Models\Requirement;
-use App\Models\Notification;
-use Illuminate\Http\Request;
 use App\Mail\StudentEnrolled;
+use App\Models\Branch;
 use App\Models\BranchAccount;
 use App\Models\BranchUtility;
-use App\Models\PaymentUtility;
+use App\Models\Enroll;
+use App\Models\GradeLevel;
 use App\Models\GradeLevelSubject;
+use App\Models\PaymentUtility;
+use App\Models\Requirement;
+use App\Models\SchoolYear;
+use App\Models\Section;
+use App\Models\Student;
 use App\Models\StudentNotification;
-use App\Models\StudentRequirements;
+use App\Models\User;
+use App\Types\RoleType;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class EnrollmentController extends Controller
 {
@@ -38,7 +36,7 @@ class EnrollmentController extends Controller
     {
         $user = auth()->user();
 
-        if($user->isAdmin()) {
+        if($user->isAdmin() || $user->isStaff()) {
             $query = Student::query();
 
             if($request->filled('name')) {

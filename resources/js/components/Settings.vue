@@ -17,7 +17,7 @@
                 Branch Fee Utility
             </button>
 
-            <button v-if="checkRole()" @click="selected = 3" :class="selected === 3 ? 'border-current text-blue-500' : 'hover:text-blue-500 border-transparent text-gray-800'" class="-mb-px border-b p-4 font-semibold">
+            <button v-if="app.is_admin" @click="selected = 3" :class="selected === 3 ? 'border-current text-blue-500' : 'hover:text-blue-500 border-transparent text-gray-800'" class="-mb-px border-b p-4 font-semibold">
                 School Year Utility
             </button>
         </nav>
@@ -32,11 +32,11 @@
 </template>
 
 <script>
-import Student from "./utilities/student.vue";
-import Branch from "./utilities/branch.vue";
 import SchoolYear from "./utilities/SchoolYear.vue";
-import Subject from "./utilities/subject.vue";
+import Branch from "./utilities/branch.vue";
 import GradeLevelSubject from "./utilities/gradeLevelSubject.vue";
+import Student from "./utilities/student.vue";
+import Subject from "./utilities/subject.vue";
 
 export default {
     components: {
@@ -53,7 +53,13 @@ export default {
     },
     methods: {
         checkRole() {
-            return this.app.is_admin
+            if(this.app.is_admin) {
+                return true
+            } else if (this.app.is_staff) {
+                return true
+            } else {
+                return false
+            }
         }
     }
 }
