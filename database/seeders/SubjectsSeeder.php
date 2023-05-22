@@ -24,7 +24,7 @@ class SubjectsSeeder extends Seeder
         foreach($branches as $branch) {
             foreach($subjects as $subject) {
                 foreach($subject->name as $name) {
-                    $has_subject = Subject::where('name', $name)->where('branch_id', $subject->branch_id)->first();
+                    $has_subject = Subject::where('name', $name)->where('branch_id', $branch->id)->first();
                     if($has_subject) {
                         GradeLevelSubject::create([
                             'branch_id' => $branch->id,
@@ -33,7 +33,7 @@ class SubjectsSeeder extends Seeder
                         ]);
                     } else {
                         $current_subject = Subject::create([
-                            'branch_id' => $subject->branch_id,
+                            'branch_id' => $branch->id,
                             'name' => $name,
                         ]);
 

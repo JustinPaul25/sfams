@@ -1,63 +1,63 @@
 [
 
     {
-        "name":[ "Reading/language, Writing, Filipino, Math"],
+        "name":[ "Reading/language", "Writing", "Filipino", "Math"],
         "grade_level_id": 1
     },
     {
-        "name":[ "Reading, Writing, Filipino, Math, Science"],
+        "name":[ "Reading", "Writing", "Filipino", "Math", "Science"],
         "grade_level_id": 2
     },
 
     {
-        "name":[ "Math, English, Mother tongue, Esp, Filipino, Aral pan, Mapeh   "],
+        "name":[ "Math", "English", "Mother tongue", "Esp", "Filipino", "Aral pan", "Mapeh"],
         "grade_level_id": 3
     },
     {
-        "name":[ "Math, English, Mother tongue, Esp, Filipino, Aral pan, Mapeh   "],
+        "name":[ "Math, English", "Mother tongue", "Esp", "Filipino", "Aral pan", "Mapeh"],
         "grade_level_id": 4
     },
     {
-        "name":[ "Math,English,Esp,Filipino,Aral pan,Mapeh,Science,Mother tongue"],
+        "name":[ "Math", "English", "Esp", "Filipino", "Aral pan", "Mapeh", "Science", "Mother tongue"],
         "grade_level_id": 5
     },
     {
 
 
-        "name":[ "Math,English,Esp,Filipino,Aral pan,Mapeh,Science,HELE/TLE"],
+        "name":[ "Math", "English", "Esp", "Filipino", "Aral pan", "Mapeh", "Science", "HELE/TLE"],
         "grade_level_id": 6
     },
     {
-        "name":[ "Math,English,Esp,Filipino,Aral pan,Mapeh,Science,HELE/TLE"],
+        "name":[ "Math", "English", "Esp", "Filipino", "Aral pan", "Mapeh", "Science", "HELE/TLE"],
         "grade_level_id": 7
     },
     {
-        "name":[ "Math,English,Esp,Filipino,Aral pan,Mapeh,Science,HELE/TLE"],
+        "name":[ "Math", "English", "Esp", "Filipino", "Aral pan", "Mapeh", "Science", "HELE/TLE"],
         "grade_level_id": 8
     },
     {
-        "name":[ "Math,English,Esp,Filipino,Aral pan,Mapeh,Science,HELE/TLE"],
+        "name":[ "Math", "English", "Esp", "Filipino", "Aral pan", "Mapeh", "Science,HELE/TLE"],
         "grade_level_id": 9
     },
     {
-        "name":[ "Math,English,Esp,Filipino,Aral pan,Mapeh,Science,HELE/TLE"],
+        "name":[ "Math", "English", "Esp", "Filipino", "Aral pan", "Mapeh", "Science", "HELE/TLE"],
         "grade_level_id": 10
     },
     {
-        "name":[ "Math,English,Esp,Filipino,Aral pan,Mapeh,Science,HELE/TLE"],
+        "name":[ "Math", "English", "Esp", "Filipino", "Aral pan", "Mapeh", "Science", "HELE/TLE"],
         "grade_level_id": 11
     },
     {
-        "name":[ "Math,English,Esp,Filipino,Aral pan,Mapeh,Science,HELE/TLE"],
+        "name":[ "Math", "English", "Esp", "Filipino", "Aral pan", "Mapeh", "Science", "HELE/TLE"],
         "grade_level_id": 12
     },
 
     {
-        "name":[ "Oral Communication in Context, Komunikasyon at Pananaliksik sa Wika at kultura, Media & Information, General Mathematics, Earth & Life Science, Physical Education and Health, English for Academics & Professional Purposes, Entrepreneurship, Introduction to World religion & Belief System  "],
+        "name":[ "Oral Communication in Context", "Komunikasyon at Pananaliksik sa Wika at kultura", "Media & Information", "General Mathematics", "Earth & Life Science", "Physical Education and Health", "English for Academics & Professional Purposes", "Entrepreneurship", "Introduction to World religion & Belief System"],
         "grade_level_id": 13
     },
     {
-        "name":[ "Contemporary Philippine Arts from the Regions,Introduction to Philosophy of the Human Person,Understanding Culture,Society & Politics,Personality Development,Physical Education & Health,Research in Daily Life 2,Pagsulat sa Filipino sa Piling Larangan (Akad,Isports,Sining at Tech-Voc),Philippine Politics & Governance,Elective 1"],
+        "name":[ "Contemporary Philippine Arts from the Regions", "Introduction to Philosophy of the Human Person", "Understanding Culture", "Society & Politics", "Personality Development", "Physical Education & Health", "Research in Daily Life 2", "Pagsulat sa Filipino sa Piling Larangan (Akad,Isports,Sining at Tech-Voc)", "Philippine Politics & Governance", "Elective 1"],
         "grade_level_id": 14
     }
 
