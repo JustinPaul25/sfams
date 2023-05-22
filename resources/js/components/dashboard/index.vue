@@ -104,7 +104,7 @@
             </div>
         </div>
         <div class="w-full lg:flex items-center">
-            <div class="w-11/12 mx-auto mb-8 px-8 mt-2">
+            <div class="w-full mx-auto mb-8 px-8 mt-2">
                 <population-component v-if="population_showChart" :labels="population_labels" :studdata="population_rawData" class="chart-style"></population-component>
             </div>
         </div>
