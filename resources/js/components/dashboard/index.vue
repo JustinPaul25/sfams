@@ -103,11 +103,11 @@
                 </ol>
             </div>
         </div>
-        <!-- <div class="w-full lg:flex items-center">
+        <div class="w-full lg:flex items-center">
             <div class="w-11/12 mx-auto mb-8 px-8 mt-2">
                 <population-component v-if="population_showChart" :labels="population_labels" :studdata="population_rawData" class="chart-style"></population-component>
             </div>
-        </div> -->
+        </div>
         <div class="flex-1 pb-8">
             <div class="mt-8">
                 <div class="shadow sm:hidden">
@@ -227,21 +227,22 @@ export default {
                 this.branches = response.data.branch_count
             })
         },
-        // async getDatas() {
-        //     axios.get('/enroll-data')
-        //     .then(response => {
-        //         response.data.enroll.forEach((val, key, arr) => {
-        //             this.population_rawData.push(val.students)
-        //             this.population_labels.push(parseInt(val.school_year.to));
-        //             if (Object.is(arr.length - 1, key)) {
-        //                 this.population_rawData.push(((val.students) * parseFloat(response.data.rate)) +  parseFloat(val.students))
-        //                 this.population_labels.push(parseInt(val.school_year.to) + 1);
-        //                 this.showChart = true
-        //             }
-        //         });
-        //         return
-        //     })
-        // },
+        async getDatas() {
+            axios.get('/enroll-data')
+            .then(response => {
+                console.log(response.data);
+                response.data.enroll.forEach((val, key, arr) => {
+                    this.population_rawData.push(val.students)
+                    this.population_labels.push(parseInt(val.school_year.to));
+                    if (Object.is(arr.length - 1, key)) {
+                        this.population_rawData.push(((val.students) * parseFloat(response.data.rate)) +  parseFloat(val.students))
+                        this.population_labels.push(parseInt(val.school_year.to) + 1);
+                        this.population_showChart = true
+                    }
+                });
+                return
+            })
+        },
         async getBranches() {
             axios.get('/branch-list')
             .then(response => {
@@ -254,7 +255,7 @@ export default {
         },
     },
     created() {
-        //this.getDatas();
+        this.getDatas();
         this.getTransactions();
         this.getBranches();
     }

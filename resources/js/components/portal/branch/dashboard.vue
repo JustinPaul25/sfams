@@ -183,6 +183,7 @@
             async getDatas() {
                 axios.get('/enroll-data')
                 .then(response => {
+                    console.log(response.data);
                     response.data.enroll.forEach((val, key, arr) => {
                         this.rawData.push(val.students)
                         this.labels.push(parseInt(val.school_year.to));
