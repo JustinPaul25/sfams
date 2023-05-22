@@ -1,5 +1,5 @@
 <template>
-    <canvas id="myChart" height="400"></canvas>
+    <canvas id="myChart" width="1000" height="400" style="max-height: 1000px; display: flex"></canvas>
 </template>
 
 <script>
@@ -17,6 +17,8 @@
                 const ctx = document.getElementById('myChart');
                 const labels = this.labels
                 const population = this.studdata
+
+                ctx.maxHeight = 1100;
 
                 const myChart = new Chart(ctx, {
                     type: 'line',

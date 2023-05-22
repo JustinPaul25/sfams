@@ -80,6 +80,11 @@
                     </div>
                 </div>
             </div>
+            <div class="w-full lg:flex items-center">
+                <div class="w-11/12 mx-auto mb-8 px-8 mt-2">
+                    <chart-component v-if="showChart" :labels="labels" :studdata="rawData" class="chart-style"></chart-component>
+                </div>
+            </div>
             <div class="px-4 sm:px-6 lg:px-8">
                 <div class="mt-8 flex flex-col">
                     <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -106,11 +111,6 @@
                         </div>
                     </div>
                     </div>
-                </div>
-            </div>
-            <div class="w-full lg:flex items-center">
-                <div class="w-full mx-auto mb-8 px-8">
-                    <chart-component v-if="showChart" :labels="labels" :studdata="rawData"></chart-component>
                 </div>
             </div>
         </main>
@@ -165,7 +165,7 @@
 </template>
 
 <script>
-    import ChartComponent from '../../incomeChart.vue'
+    import ChartComponent from '../../incomeChart.vue';
 
     export default {
         props: ['branch', 'students'],
@@ -209,3 +209,9 @@
         }
     }
 </script>
+
+<style scoped>
+.chart-style {
+    max-height: 1100px !important;
+}
+</style>

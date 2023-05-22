@@ -89,38 +89,57 @@
                     <!-- More items... -->
                 </div>
                 </div>
-
-                <!-- Activity list (smallest breakpoint only) -->
+            </div>
+        </main>
+        <div class="w-full lg:flex items-center">
+            <div class="lg:w-8/12 w-full mx-auto mb-8 px-8">
+                <chart-component v-if="labels.length !== 0" :labels="labels" :datas="datas"></chart-component>
+            </div>
+            <div class="lg:w-4/12 w-full mx-auto mb-8 px-8">
+                <ol class="list-decimal">
+                    <li class="text-xs text-blue-700 font-bold" v-for="branch in branchData">
+                        {{ branch.name }} - <span class="font-semibold text-gray-800">{{ branch.address }}</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <!-- <div class="w-full lg:flex items-center">
+            <div class="w-11/12 mx-auto mb-8 px-8 mt-2">
+                <population-component v-if="population_showChart" :labels="population_labels" :studdata="population_rawData" class="chart-style"></population-component>
+            </div>
+        </div> -->
+        <div class="flex-1 pb-8">
+            <div class="mt-8">
                 <div class="shadow sm:hidden">
                     <div class="flex">
                         <h2 class="max-w-6xl mt-8 px-4 text-lg leading-6 font-medium text-blue-700 sm:px-6 lg:px-8 mr-auto">Recent Payments</h2>
                         <a href="/reports" class="max-w-6xl mt-8 px-4 leading-6 hover:opacity-75 text-blue-700 sm:px-6 lg:px-8 ml-auto cursor-pointer">View more</a>
                     </div>
-                <ul role="list" class="mt-2 divide-y divide-gray-200 overflow-hidden shadow sm:hidden">
-                    <li v-for="transaction in transactions">
-                    <a href="#" class="block px-4 py-4 bg-white hover:bg-gray-50">
-                        <span class="flex items-center space-x-4">
-                        <span class="flex-1 flex space-x-2 truncate">
-                            <!-- Heroicon name: solid/cash -->
-                            <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="flex flex-col text-gray-500 text-sm truncate">
-                            <span class="truncate">{{ transaction.type === 'STUDENT' ? transaction.student.first_name+' '+transaction.student.last_name : transaction.branch.name }}</span>
-                            <span class="text-gray-900 font-medium">₱ {{transaction.amount}}</span>
-                            <time datetime="2020-07-11">{{ transaction.created_at }}</time>
+                    <ul role="list" class="mt-2 divide-y divide-gray-200 overflow-hidden shadow sm:hidden">
+                        <li v-for="transaction in transactions">
+                        <a href="#" class="block px-4 py-4 bg-white hover:bg-gray-50">
+                            <span class="flex items-center space-x-4">
+                            <span class="flex-1 flex space-x-2 truncate">
+                                <!-- Heroicon name: solid/cash -->
+                                <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="flex flex-col text-gray-500 text-sm truncate">
+                                <span class="truncate">{{ transaction.type === 'STUDENT' ? transaction.student.first_name+' '+transaction.student.last_name : transaction.branch.name }}</span>
+                                <span class="text-gray-900 font-medium">₱ {{transaction.amount}}</span>
+                                <time datetime="2020-07-11">{{ transaction.created_at }}</time>
+                                </span>
                             </span>
-                        </span>
-                        <!-- Heroicon name: solid/chevron-right -->
-                        <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                        </svg>
-                        </span>
-                    </a>
-                    </li>
+                            <!-- Heroicon name: solid/chevron-right -->
+                            <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            </span>
+                        </a>
+                        </li>
 
-                    <!-- More transactions... -->
-                </ul>
+                        <!-- More transactions... -->
+                    </ul>
                 </div>
 
                 <!-- Activity table (small breakpoint and up) -->
@@ -169,28 +188,18 @@
                 </div>
                 </div>
             </div>
-        </main>
-        <div class="w-full lg:flex items-center">
-            <div class="lg:w-8/12 w-full mx-auto mb-8 px-8">
-                <chart-component v-if="labels.length !== 0" :labels="labels" :datas="datas"></chart-component>
-            </div>
-            <div class="lg:w-4/12 w-full mx-auto mb-8 px-8">
-                <ol class="list-decimal">
-                    <li class="text-xs text-blue-700 font-bold" v-for="branch in branchData">
-                        {{ branch.name }} - <span class="font-semibold text-gray-800">{{ branch.address }}</span>
-                    </li>
-                </ol>
-            </div>
         </div>
     </div>
 </template>
 
 <script>
-import ChartComponent from '../branchesChart.vue'
+import ChartComponent from '../branchesChart.vue';
+import PopulationComponent from '../incomeChart.vue';
 
 export default {
     components: {
-        ChartComponent
+        ChartComponent,
+        PopulationComponent
     },
     data() {
         return {
@@ -203,6 +212,9 @@ export default {
             labels: [],
             datas: [],
             branchData: [],
+            population_rawData: [],
+            population_labels: [],
+            population_showChart: false
         }
     },
     methods: {
@@ -215,21 +227,21 @@ export default {
                 this.branches = response.data.branch_count
             })
         },
-        async getDatas() {
-            axios.get('/enroll-data')
-            .then(response => {
-                // response.data.enroll.forEach((val, key, arr) => {
-                //     this.rawData.push(val.students)
-                //     this.labels.push(parseInt(val.school_year.to));
-                //     if (Object.is(arr.length - 1, key)) {
-                //         this.rawData.push(((val.students) * parseFloat(response.data.rate)) +  parseFloat(val.students))
-                //         this.labels.push(parseInt(val.school_year.to) + 1);
-                //         this.showChart = true
-                //     }
-                // });
-                return
-            })
-        },
+        // async getDatas() {
+        //     axios.get('/enroll-data')
+        //     .then(response => {
+        //         response.data.enroll.forEach((val, key, arr) => {
+        //             this.population_rawData.push(val.students)
+        //             this.population_labels.push(parseInt(val.school_year.to));
+        //             if (Object.is(arr.length - 1, key)) {
+        //                 this.population_rawData.push(((val.students) * parseFloat(response.data.rate)) +  parseFloat(val.students))
+        //                 this.population_labels.push(parseInt(val.school_year.to) + 1);
+        //                 this.showChart = true
+        //             }
+        //         });
+        //         return
+        //     })
+        // },
         async getBranches() {
             axios.get('/branch-list')
             .then(response => {
@@ -239,7 +251,7 @@ export default {
                 })
                 this.branchData = response.data
             })
-        }
+        },
     },
     created() {
         //this.getDatas();
@@ -248,3 +260,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.chart-style {
+    max-height: 1100px !important;
+}
+</style>

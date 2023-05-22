@@ -180,37 +180,37 @@
             <div>
                 <p class="font-bold text-lg">Requirements Left</p>
                 <div v-if="requirements">
-                    <div v-if="requirements.coc === 0">
+                    <div v-if="requirements.coc === false">
                         <label class="inline-flex items-center mt-3">
                             <input v-model="form.coc" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" checked><span class="ml-2 text-gray-700">Certificate of Completion</span>
                         </label>
                     </div>
-                    <div v-if="requirements.birth_cert === 0">
+                    <div v-if="requirements.birth_cert === false">
                         <label class="inline-flex items-center mt-3">
                             <input v-model="form.birth_cert" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" checked><span class="ml-2 text-gray-700">PSA Birth Certificate (Original)</span>
                         </label>
                     </div>
-                    <div v-if="requirements.ECCD_checklist === 0">
+                    <div v-if="requirements.ECCD_checklist === false">
                         <label class="inline-flex items-center mt-3">
                             <input v-model="form.ECCD_checklist" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" checked><span class="ml-2 text-gray-700">ECCD Checklist</span>
                         </label>
                     </div>
-                    <div v-if="requirements.card === 0">
+                    <div v-if="requirements.card === false">
                         <label class="inline-flex items-center mt-3">
                             <input v-model="form.card" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" checked><span class="ml-2 text-gray-700">Card (Form 138)</span>
                         </label>
                     </div>
-                    <div v-if="requirements.picture === 0">
+                    <div v-if="requirements.picture === false">
                         <label class="inline-flex items-center mt-3">
                             <input v-model="form.picture" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" checked><span class="ml-2 text-gray-700">1x1 Picture</span>
                         </label>
                     </div>
-                    <div v-if="requirements.good_moral === 0">
+                    <div v-if="requirements.good_moral === false">
                         <label class="inline-flex items-center mt-3">
                             <input v-model="form.good_moral" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" checked><span class="ml-2 text-gray-700">Good Moral</span>
                         </label>
                     </div>
-                    <div v-if="requirements.form_137 === 0">
+                    <div v-if="requirements.form_137 === false">
                         <label class="inline-flex items-center mt-3">
                             <input v-model="form.form_137" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" checked><span class="ml-2 text-gray-700">Form 137</span>
                         </label>
@@ -397,7 +397,7 @@
                 let reqCount = 0;
 
                 for(let key in requirements) {
-                    if(requirements[key] === 0) {
+                    if(requirements[key] === false) {
                         reqCount++
                     }
                 }
