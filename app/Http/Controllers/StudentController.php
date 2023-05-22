@@ -40,7 +40,7 @@ class StudentController extends Controller
             });
         }
 
-        if(!$user->isAdmin()) {
+        if(!$user->isAdmin() && !$user->isStaff()) {
             $query->where('branch_id', $user->branch->id);
         }
 
