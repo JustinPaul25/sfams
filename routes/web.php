@@ -1,29 +1,27 @@
 <?php
 
-use App\Models\User;
-use App\Models\GradeLevel;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\URL;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BranchController;
+use App\Http\Controllers\BranchPortalController;
+use App\Http\Controllers\BranchStudentController;
+use App\Http\Controllers\EnrollController;
+use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\GradeController;
+use App\Http\Controllers\GradeLevelSubjectController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogsController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\GradeController;
-use App\Http\Controllers\BranchController;
-use App\Http\Controllers\EnrollController;
-use App\Http\Controllers\ReportController;
 use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\SubjectController;
-use App\Http\Controllers\UtilitiesController;
-use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SchoolYearController;
-use App\Http\Controllers\BranchPortalController;
-use App\Http\Controllers\NotificationController;
-use App\Http\Controllers\TransactionsController;
-use App\Http\Controllers\BranchStudentController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentPortalController;
-use App\Http\Controllers\GradeLevelSubjectController;
+use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\TransactionsController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\UtilitiesController;
+use App\Models\GradeLevel;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,7 +54,7 @@ Route::get('/password-reset', function() {
 
 Route::post('/password-reset', [UserController::class, 'resetPassword']);
 
-Route::group(['middleware' => ['role:Administrator|staff|Branch']], function () {
+Route::group(['middleware' => ['role:Administrator|Staff|Branch']], function () {
     Route::get('/reports', [ReportController::class, 'index']);
 
     Route::get('/students', [StudentController::class, 'index'])->name('students');
@@ -89,7 +87,7 @@ Route::group(['middleware' => ['role:Administrator|staff|Branch']], function () 
     Route::get('/enroll-data', [EnrollController::class, 'datas']);
 });
 
-Route::group(['middleware' => ['role:Administrator|Branch']], function () {
+Route::group(['middleware' => ['role:Administrator|Branch|Staff']], function () {
     Route::get('/utilities', [UtilitiesController::class, 'index']);
     Route::get('/utilities/list', [UtilitiesController::class, 'list']);
     Route::put('/utility/{paymentUtility}', [UtilitiesController::class, 'update']);
