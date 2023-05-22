@@ -263,6 +263,10 @@
         </div>
       </div>
       <div id="printMe" hidden>
+        <div style="text-align: center;">
+            <img style="display: block; margin: 0 auto; height: 70px; width: 70px;" alt="image name" :src="app.logo_url" />
+        </div>
+        <p class="text-white font-bold text-5xl"><img class="w-40 h-40 ml-auto mr-auto" alt="image name" :src="app.logo_url" /></p>
         <p style="text-align: center; margin-bottom: -10px; font-size: 1.5em; font-weight: bold;">Philippine Baptist Christian College of Mindanao, Inc.</p>
         <p style="text-align: center;">Fd. Rd. 2, Tibal-og, Sto Tomas Davao del Norte</p>
         <p style="text-align: right;"> Date: {{ dateNow() }}</p>

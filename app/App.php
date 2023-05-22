@@ -20,6 +20,7 @@ class App
             'logs' => Notification::with('user')->get(),
             'app_logo' => url('img/logo.jpg'),
             'school_year' => SchoolYear::where('status', 'active')->first(),
+            'logo_url' => url('img/logo.png'),
         ];
     }
 }

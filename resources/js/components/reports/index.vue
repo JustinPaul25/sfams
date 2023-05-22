@@ -155,6 +155,9 @@
             </div>
         </div>
         <div id="printMe" hidden>
+            <div style="text-align: center;">
+                <img style="display: block; margin: 0 auto; height: 70px; width: 70px;" alt="image name" :src="app.logo_url" />
+            </div>
             <p style="text-align: center; margin-bottom: -10px; font-size: 0.5rem; font-weight: bold;">Philippine Baptist Christian College of Mindanao, Inc.</p>
             <p style="text-align: center; font-size: 0.5em;">Fd. Rd. 2, Tibal-og, Sto Tomas Davao del Norte</p>
             <p style="text-align: center; margin: 25px 0px; font-size: 1rem; font-weight: bold;">Transaction Report</p>
