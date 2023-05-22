@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,6 +24,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             PaymentUtilitiesSeeder::class,
             RequirementsSeeder::class,
+            NewStudentSeeder::class,
+            SubjectsSeeder::class
         ]);
     }
 }
